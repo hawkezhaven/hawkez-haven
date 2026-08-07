@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import { useServiceWorker } from "@/hooks/use-service-worker.ts";
 import { DefaultProviders } from "./components/providers/default.tsx";
 import AppLayout from "./components/layout/AppLayout.tsx";
@@ -52,6 +53,7 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      <Analytics />
     </DefaultProviders>
   );
 }
