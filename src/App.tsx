@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { useServiceWorker } from "@/hooks/use-service-worker.ts";
 import { DefaultProviders } from "./components/providers/default.tsx";
 import AppLayout from "./components/layout/AppLayout.tsx";
@@ -51,6 +52,7 @@ export default function App() {
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <SpeedInsights />
       </BrowserRouter>
     </DefaultProviders>
   );
