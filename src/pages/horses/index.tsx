@@ -8,7 +8,6 @@ export default function HorsesPage() {
 
   return (
     <div className="bg-[#f5f0e8]">
-      {/* Header */}
       <section className="bg-[#1a1a18] text-[#f5f0e8] py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 text-[#b8922a]">
@@ -24,7 +23,6 @@ export default function HorsesPage() {
         </div>
       </section>
 
-      {/* Permanent Residents */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="flex items-center gap-3 mb-10">
           <span className="block h-px w-8 bg-[#b8922a]" />
@@ -35,7 +33,6 @@ export default function HorsesPage() {
         </div>
       </section>
 
-      {/* Rehoming Candidates */}
       <section className="bg-[#ede5d4] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-4">
@@ -49,7 +46,6 @@ export default function HorsesPage() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
         <h2 className="font-serif text-4xl md:text-5xl text-[#1a1a18] max-w-2xl mx-auto">Thinking about adoption or sponsorship?</h2>
         <p className="mt-4 text-[#4a4a42] max-w-lg mx-auto">Every connection starts with a conversation. We'd love to hear from you.</p>
@@ -70,7 +66,7 @@ function HorseCard({ horse }: { horse: (typeof HORSES)[0] }) {
   return (
     <Link to={`/horses/${horse.id}`} className="bg-white rounded-2xl group block overflow-hidden shadow-sm border border-[#ddd4be]/50 cursor-pointer">
       <div className="relative aspect-[4/5] overflow-hidden bg-[#ede5d4]">
-        <img src={horse.image} alt={horse.name} loading="lazy" className="h-full w-full object-contain object-center transition-transform duration-[900ms] ease-out group-hover:scale-105" />
+        <img src={horse.image} alt={horse.name} loading="lazy" className="h-full w-full object-cover object-center transition-transform duration-[900ms] ease-out group-hover:scale-105" />
         <span className={`absolute top-4 left-4 px-3 py-1 rounded-full text-[0.65rem] tracking-[0.18em] uppercase font-medium ${horse.status === "Permanent Resident" ? "bg-[#1a1a18] text-[#b8922a]" : "bg-[#ede5d4] text-[#1a1a18]"}`}>
           {horse.status}
         </span>
