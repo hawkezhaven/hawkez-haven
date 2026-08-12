@@ -6,7 +6,9 @@ const DEFAULT_TITLE = "Hawkez Haven | Equine Rescue & Rehabilitation in New Zeal
 const DEFAULT_DESCRIPTION =
   "Hawkez Haven is a New Zealand horse rescue and rehabilitation organisation. We rescue, rehabilitate and rehome horses, giving every horse a second chance.";
 
-const PAGE_META: Record<string, { title: string; description: string }> = {
+type Meta = { title: string; description: string; canonical?: string };
+
+const PAGE_META: Record<string, Meta> = {
   "/": { title: DEFAULT_TITLE, description: DEFAULT_DESCRIPTION },
   "/about": {
     title: "About Hawkez Haven | Equine Rescue & Rehabilitation",
@@ -123,7 +125,7 @@ export default function SEO() {
       pathname === "/education" ||
       pathname === "/shop";
 
-    const meta = horseName
+    const meta: Meta = horseName
       ? {
           title: `${horseName} | Hawkez Haven Horse Rescue`,
           description: `Read ${horseName}'s journey at Hawkez Haven, including their story, personality, rehabilitation and future.`,
