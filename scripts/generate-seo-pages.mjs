@@ -94,14 +94,6 @@ for (const [path, meta] of Object.entries(pages)) {
     /<meta property="og:description" content=".*?"\s*\/>/i,
     `<meta property="og:description" content="${escapeHtml(meta.description)}" />`,
   );
-  html = html.replace(
-    /<meta name="twitter:title" content=".*?"\s*\/>/i,
-    `<meta name="twitter:title" content="${escapeHtml(meta.title)}" />`,
-  );
-  html = html.replace(
-    /<meta name="twitter:description" content=".*?"\s*\/>/i,
-    `<meta name="twitter:description" content="${escapeHtml(meta.description)}" />`,
-  );
 
   const output = path === "/" ? resolve(distDir, "index.html") : resolve(distDir, path.slice(1), "index.html");
   await mkdir(dirname(output), { recursive: true });
