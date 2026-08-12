@@ -1,64 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://hawkezhaven.org/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <url>
-    <loc>https://hawkezhaven.org/about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://hawkezhaven.org/horses</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://hawkezhaven.org/adoption</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://hawkezhaven.org/sponsorship</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://hawkezhaven.org/foster</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://hawkezhaven.org/volunteer</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://hawkezhaven.org/experiences</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://hawkezhaven.org/support</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://hawkezhaven.org/contact</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
+  <url><loc>https://hawkezhaven.org/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://hawkezhaven.org/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hawkezhaven.org/horses</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://hawkezhaven.org/adoption</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://hawkezhaven.org/sponsorship</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hawkezhaven.org/foster</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hawkezhaven.org/volunteer</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hawkezhaven.org/experiences</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hawkezhaven.org/support</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://hawkezhaven.org/contact</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hawkezhaven.org/horses/rip</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hawkezhaven.org/horses/haven</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hawkezhaven.org/horses/pedro</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hawkezhaven.org/horses/diablo</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hawkezhaven.org/horses/khan</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hawkezhaven.org/horses/kohan</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hawkezhaven.org/horses/joey</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hawkezhaven.org/horses/ritz</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hawkezhaven.org/horses/electra</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://hawkezhaven.org/horses/kahu</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
