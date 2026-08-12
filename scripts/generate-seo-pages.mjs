@@ -1,0 +1,111 @@
+import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { dirname, resolve } from "node:path";
+
+const distDir = resolve("dist");
+const template = await readFile(resolve(distDir, "index.html"), "utf8");
+
+const site = "https://hawkezhaven.org";
+
+const pages = {
+  "/": {
+    title: "Hawkez Haven | Equine Rescue & Rehabilitation in New Zealand",
+    description:
+      "Hawkez Haven is a New Zealand horse rescue and rehabilitation organisation. We rescue, rehabilitate and rehome horses, giving every horse a second chance.",
+  },
+  "/about": {
+    title: "About Hawkez Haven | Horse Rescue & Rehabilitation NZ",
+    description:
+      "Learn about Hawkez Haven, our welfare-first approach to horse rescue, rehabilitation, responsible rehoming and giving horses a genuine second chance.",
+  },
+  "/horses": {
+    title: "Our Horses | Hawkez Haven Horse Rescue NZ",
+    description:
+      "Meet the horses of Hawkez Haven and follow their individual journeys through rescue, rehabilitation, recovery and responsible rehoming.",
+  },
+  "/adoption": {
+    title: "Horse Adoption | Hawkez Haven New Zealand",
+    description:
+      "Learn how horse adoption works at Hawkez Haven, including our welfare-first matching process, approved homes and lifelong support.",
+  },
+  "/sponsorship": {
+    title: "Sponsor a Rescue Horse | Hawkez Haven NZ",
+    description:
+      "Support a Hawkez Haven rescue horse through sponsorship and help provide feed, veterinary care, rehabilitation and a second chance.",
+  },
+  "/foster": {
+    title: "Foster a Rescue Horse | Hawkez Haven New Zealand",
+    description:
+      "Find out how fostering can help a Hawkez Haven rescue horse recover, rebuild confidence and prepare for their next chapter.",
+  },
+  "/volunteer": {
+    title: "Volunteer | Hawkez Haven Horse Rescue NZ",
+    description:
+      "Volunteer with Hawkez Haven and help with horse care, rehabilitation, education and the day-to-day work behind a welfare-focused rescue.",
+  },
+  "/education": {
+    title: "Horse Education & Experiences | Hawkez Haven NZ",
+    description:
+      "Explore horse education, horsemanship and practical experiences at Hawkez Haven, with welfare and understanding at the heart of every lesson.",
+  },
+  "/experiences": {
+    title: "Horse Experiences & Horsemanship | Hawkez Haven NZ",
+    description:
+      "Discover horsemanship experiences and education at Hawkez Haven, designed to build knowledge, confidence, safety and a better understanding of horses.",
+  },
+  "/support": {
+    title: "Support Hawkez Haven | Help Give Horses a Second Chance",
+    description:
+      "Support Hawkez Haven through donations and other ways to help provide rescue horses with care, rehabilitation and a safe future.",
+  },
+  "/contact": {
+    title: "Contact Hawkez Haven | Horse Rescue New Zealand",
+    description:
+      "Contact Hawkez Haven about horse rescue, adoption, sponsorship, volunteering, fostering, lessons and other enquiries.",
+  },
+};
+
+function escapeHtml(value) {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
+for (const [path, meta] of Object.entries(pages)) {
+  const canonical = `${site}${path === "/" ? "/" : path}`;
+  let html = template;
+
+  html = html.replace(/<title>.*?<\/title>/i, `<title>${escapeHtml(meta.title)}</title>`);
+  html = html.replace(
+    /<meta name="description" content=".*?"\s*\/>/i,
+    `<meta name="description" content="${escapeHtml(meta.description)}" />`,
+  );
+  html = html.replace(
+    /<link rel="canonical" href=".*?"\s*\/>/i,
+    `<link rel="canonical" href="${canonical}" />`,
+  );
+  html = html.replace(
+    /<meta property="og:title" content=".*?"\s*\/>/i,
+    `<meta property="og:title" content="${escapeHtml(meta.title)}" />`,
+  );
+  html = html.replace(
+    /<meta property="og:description" content=".*?"\s*\/>/i,
+    `<meta property="og:description" content="${escapeHtml(meta.description)}" />`,
+  );
+  html = html.replace(
+    /<meta name="twitter:title" content=".*?"\s*\/>/i,
+    `<meta name="twitter:title" content="${escapeHtml(meta.title)}" />`,
+  );
+  html = html.replace(
+    /<meta name="twitter:description" content=".*?"\s*\/>/i,
+    `<meta name="twitter:description" content="${escapeHtml(meta.description)}" />`,
+  );
+
+  const output = path === "/" ? resolve(distDir, "index.html") : resolve(distDir, path.slice(1), "index.html");
+  await mkdir(dirname(output), { recursive: true });
+  await writeFile(output, html, "utf8");
+}
+
+console.log(`Generated SEO-aware entry HTML for ${Object.keys(pages).length} routes.`);
