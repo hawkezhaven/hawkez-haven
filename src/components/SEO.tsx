@@ -6,7 +6,7 @@ const DEFAULT_TITLE = "Hawkez Haven | Equine Rescue & Rehabilitation in New Zeal
 const DEFAULT_DESCRIPTION =
   "Hawkez Haven is a New Zealand horse rescue and rehabilitation organisation. We rescue, rehabilitate and rehome horses, giving every horse a second chance.";
 
-const PAGE_META: Record<string, { title: string; description: string; canonical?: string }> = {
+const PAGE_META: Record<string, { title: string; description: string }> = {
   "/": { title: DEFAULT_TITLE, description: DEFAULT_DESCRIPTION },
   "/about": {
     title: "About Hawkez Haven | Equine Rescue & Rehabilitation",
@@ -98,19 +98,36 @@ function setCanonical(url: string) {
   element.setAttribute("href", url);
 }
 
+function setStructuredData(id: string, data: Record<string, unknown>) {
+  let element = document.getElementById(id) as HTMLScriptElement | null;
+  if (!element) {
+    element = document.createElement("script");
+    element.id = id;
+    element.type = "application/ld+json";
+    document.head.appendChild(element);
+  }
+  element.textContent = JSON.stringify(data);
+}
+
 export default function SEO() {
   const { pathname } = useLocation();
 
   useEffect(() => {
     const horseMatch = pathname.match(/^\/horses\/([^/]+)$/);
-    const horseName = horseMatch ? HORSE_NAMES[horseMatch[1]] : undefined;
+    const horseSlug = horseMatch?.[1];
+    const horseName = horseSlug ? HORSE_NAMES[horseSlug] : undefined;
     const basePath = pathname === "/education" ? "/experiences" : pathname === "/shop" ? "/support" : pathname;
+    const isNoIndex =
+      pathname === "/hub" ||
+      pathname.startsWith("/enquire/") ||
+      pathname === "/education" ||
+      pathname === "/shop";
 
     const meta = horseName
       ? {
           title: `${horseName} | Hawkez Haven Horse Rescue`,
           description: `Read ${horseName}'s journey at Hawkez Haven, including their story, personality, rehabilitation and future.`,
-          canonical: `/horses/${horseMatch![1]}`,
+          canonical: `/horses/${horseSlug}`,
         }
       : PAGE_META[basePath] || {
           title: "Hawkez Haven | Second Chances for Horses",
@@ -120,19 +137,50 @@ export default function SEO() {
     const canonical = `${SITE}${meta.canonical || basePath}`;
     document.title = meta.title;
     setMeta("description", meta.description);
-    setMeta("robots", pathname === "/hub" || pathname.startsWith("/enquire/") || pathname === "/education" || pathname === "/shop" ? "noindex,follow" : "index,follow");
+    setMeta("robots", isNoIndex ? "noindex,follow" : "index,follow");
     setProperty("og:title", meta.title);
     setProperty("og:description", meta.description);
     setProperty("og:url", canonical);
-    setProperty("og:type", "website");
+    setProperty("og:type", horseName ? "profile" : "website");
     setProperty("og:image", `${SITE}/images/hero-horse.jpg`);
     setProperty("og:image:type", "image/jpeg");
     setProperty("og:site_name", "Hawkez Haven");
     setProperty("og:locale", "en_NZ");
+    setMeta("twitter:card", "summary_large_image");
     setMeta("twitter:title", meta.title);
     setMeta("twitter:description", meta.description);
     setMeta("twitter:image", `${SITE}/images/hero-horse.jpg`);
     setCanonical(canonical);
+
+    setStructuredData("hawkez-haven-organization-schema", {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "Hawkez Haven",
+      url: SITE,
+      description: DEFAULT_DESCRIPTION,
+      areaServed: "New Zealand",
+    });
+
+    setStructuredData("hawkez-haven-website-schema", {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "Hawkez Haven",
+      url: SITE,
+      inLanguage: "en-NZ",
+    });
+
+    if (horseName && horseSlug) {
+      setStructuredData("hawkez-haven-horse-schema", {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        name: `${horseName} | Hawkez Haven Horse Rescue`,
+        url: canonical,
+        description: meta.description,
+        isPartOf: { "@type": "WebSite", name: "Hawkez Haven", url: SITE },
+      });
+    } else {
+      document.getElementById("hawkez-haven-horse-schema")?.remove();
+    }
   }, [pathname]);
 
   return null;
