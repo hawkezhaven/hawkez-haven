@@ -1,4 +1,5 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { useServiceWorker } from "@/hooks/use-service-worker.ts";
 import { DefaultProviders } from "./components/providers/default.tsx";
 import AppLayout from "./components/layout/AppLayout.tsx";
@@ -18,11 +19,22 @@ import ContactPage from "./pages/contact.tsx";
 import HubPage from "./pages/hub.tsx";
 import EnquiryPage from "./pages/enquire/EnquiryPage.tsx";
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [pathname]);
+
+  return null;
+}
+
 export default function App() {
   useServiceWorker();
   return (
     <DefaultProviders>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/auth/callback" element={<AuthCallback />} />
           <Route element={<AppLayout />}>
