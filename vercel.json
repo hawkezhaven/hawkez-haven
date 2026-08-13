@@ -1,5 +1,16 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
+    { "source": "/about", "destination": "/about/index.html" },
+    { "source": "/horses", "destination": "/horses/index.html" },
+    { "source": "/adoption", "destination": "/adoption/index.html" },
+    { "source": "/sponsorship", "destination": "/sponsorship/index.html" },
+    { "source": "/foster", "destination": "/foster/index.html" },
+    { "source": "/volunteer", "destination": "/volunteer/index.html" },
+    { "source": "/education", "destination": "/education/index.html" },
+    { "source": "/experiences", "destination": "/experiences/index.html" },
+    { "source": "/support", "destination": "/support/index.html" },
+    { "source": "/contact", "destination": "/contact/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
