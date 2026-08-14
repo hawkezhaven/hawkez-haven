@@ -148,6 +148,53 @@ function escapeHtml(value) {
     .replaceAll("'", "&#39;");
 }
 
+const homepageBody = `
+  <main>
+    <article>
+      <header>
+        <p>Aotearoa · Equine Rescue &amp; Rehabilitation</p>
+        <h1>Where Second Chances Find Their Stride</h1>
+        <p>Connection Before Correction.</p>
+        <p>Every horse deserves the chance to heal, trust again and find the home they were always meant to have.</p>
+      </header>
+      <section>
+        <h2>A place built on patience, trust and second chances.</h2>
+        <p>Hawkez Haven is an equine rescue, rehabilitation and rehoming service in New Zealand, built on one simple belief: every horse deserves to be understood. We take in horses through owner surrender, off-the-track rehabilitation, and situations where owners are no longer able to provide ongoing care.</p>
+        <p>Every horse is given the time, space and support they need to heal and move forward. Rehabilitation here is not about rushing a horse to fit a timeline. It is about trust, connection and meeting each horse where they are.</p>
+      </section>
+      <section>
+        <h2>What we do</h2>
+        <h3>Rescue</h3><p>Emergency intake, veterinary triage and a safe soft landing.</p>
+        <h3>Rehabilitation</h3><p>Nutrition, farrier care, bodywork and unhurried retraining.</p>
+        <h3>Education</h3><p>Horsemanship lessons and practical education for all ages.</p>
+        <h3>Rehoming</h3><p>Careful matching of horse and human, with welfare at the centre.</p>
+      </section>
+      <nav aria-label="Hawkez Haven main resources">
+        <h2>Explore Hawkez Haven</h2>
+        <ul>
+          <li><a href="/horses">Meet Our Horses</a></li>
+          <li><a href="/adoption">Horse Adoption</a></li>
+          <li><a href="/sponsorship">Sponsor a Rescue Horse</a></li>
+          <li><a href="/volunteer">Volunteer</a></li>
+          <li><a href="/about">About Hawkez Haven</a></li>
+          <li><a href="/support">Support Hawkez Haven</a></li>
+          <li><a href="/contact">Contact Hawkez Haven</a></li>
+        </ul>
+      </nav>
+    </article>
+  </main>
+`;
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "NonprofitOrganization",
+  "name": "Hawkez Haven",
+  "url": site,
+  "logo": `${site}/icon/icon-192.png`,
+  "description": pages["/"].description,
+  "areaServed": "New Zealand",
+};
+
 function renderPage(path, meta, body = "") {
   const canonical = `${site}${path === "/" ? "/" : path}`;
   let html = template;
@@ -170,6 +217,13 @@ function renderPage(path, meta, body = "") {
     `<meta property="og:description" content="${escapeHtml(meta.description)}" />`,
   );
 
+  if (path === "/") {
+    html = html.replace(
+      "</head>",
+      `<script type="application/ld+json">${JSON.stringify(organizationSchema)}</script>\n  </head>`,
+    );
+  }
+
   if (body) {
     html = html.replace(
       '<div id="root"></div>',
@@ -182,7 +236,8 @@ function renderPage(path, meta, body = "") {
 }
 
 for (const [path, meta] of Object.entries(pages)) {
-  const { html, output } = renderPage(path, meta);
+  const body = path === "/" ? homepageBody : "";
+  const { html, output } = renderPage(path, meta, body);
   await mkdir(dirname(output), { recursive: true });
   await writeFile(output, html, "utf8");
 }
