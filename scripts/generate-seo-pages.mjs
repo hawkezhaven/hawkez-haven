@@ -64,6 +64,81 @@ const pages = {
   },
 };
 
+// These pages are included in the sitemap and need their own crawlable HTML
+// document rather than falling back to the root SPA shell.
+const horsePages = {
+  rip: {
+    name: "Rip",
+    title: "Rip | Hawkez Haven Horse Rescue New Zealand",
+    description:
+      "Meet Rip, the Thoroughbred who inspired Hawkez Haven. Follow his rescue, rehabilitation, recovery and lifelong journey as the heart of the sanctuary.",
+    image: "/images/rip.jpg",
+  },
+  haven: {
+    name: "Haven",
+    title: "Haven | Hawkez Haven Horse Rescue New Zealand",
+    description:
+      "Meet Haven, a Thoroughbred mare whose journey from uncertainty to trust made her a permanent resident and confidence-building horse at Hawkez Haven.",
+    image: "/images/haven.jpg",
+  },
+  pedro: {
+    name: "Pedro",
+    title: "Pedro | Hawkez Haven Horse Rescue New Zealand",
+    description:
+      "Meet Pedro, the gentle chestnut Thoroughbred who became a teacher of partnership, confidence and horsemanship at Hawkez Haven.",
+    image: "/images/pedro.jpg",
+  },
+  diablo: {
+    name: "Diablo",
+    title: "Diablo | Hawkez Haven Horse Rescue New Zealand",
+    description:
+      "Meet Diablo, Hawkez Haven's little rebel. Follow the young Thoroughbred's story of growth, recovery and finding a permanent place in the herd.",
+    image: "/images/diablo.jpg",
+  },
+  khan: {
+    name: "Khan",
+    title: "Khan | Hawkez Haven Horse Rescue New Zealand",
+    description:
+      "Meet Khan, a striking Thoroughbred gelding whose scars tell a story of survival and whose future is protected at Hawkez Haven.",
+    image: "/images/khan.jpg",
+  },
+  kohan: {
+    name: "Kohan",
+    title: "Kohan | Hawkez Haven Horse Rescue New Zealand",
+    description:
+      "Meet Kohan, an OTT Thoroughbred on his rehabilitation journey at Hawkez Haven, learning trust, confidence and a new chapter in life.",
+    image: "/images/kohan.jpg",
+  },
+  joey: {
+    name: "Joey",
+    title: "Joey | Hawkez Haven Horse Rescue New Zealand",
+    description:
+      "Meet Joey, a Thoroughbred whose journey through soundness, rehabilitation and careful retraining continues at Hawkez Haven.",
+    image: "/images/joey.jpg",
+  },
+  ritz: {
+    name: "Ritz",
+    title: "Ritz | Hawkez Haven Horse Rescue New Zealand",
+    description:
+      "Meet Ritz, a striking Thoroughbred gelding whose next chapter is being carefully matched to the right approved home through Hawkez Haven.",
+    image: "/images/ritz.jpg",
+  },
+  electra: {
+    name: "Electra",
+    title: "Electra | Hawkez Haven Horse Rescue New Zealand",
+    description:
+      "Meet Electra, a young mare continuing her rehabilitation journey at Hawkez Haven while she builds confidence, trust and a safe future.",
+    image: "/images/electra.jpg",
+  },
+  kahu: {
+    name: "Kahu",
+    title: "Kahu | Hawkez Haven Horse Rescue New Zealand",
+    description:
+      "Meet Kahu, a Thoroughbred gelding whose rehabilitation and ongoing development are part of his second-chance journey at Hawkez Haven.",
+    image: "/images/kahu.jpg",
+  },
+};
+
 function escapeHtml(value) {
   return value
     .replaceAll("&", "&amp;")
@@ -73,7 +148,7 @@ function escapeHtml(value) {
     .replaceAll("'", "&#39;");
 }
 
-for (const [path, meta] of Object.entries(pages)) {
+function renderPage(path, meta, body = "") {
   const canonical = `${site}${path === "/" ? "/" : path}`;
   let html = template;
 
@@ -95,9 +170,31 @@ for (const [path, meta] of Object.entries(pages)) {
     `<meta property="og:description" content="${escapeHtml(meta.description)}" />`,
   );
 
+  if (body) {
+    html = html.replace(
+      '<div id="root"></div>',
+      `<div id="root">${body}</div>`,
+    );
+  }
+
   const output = path === "/" ? resolve(distDir, "index.html") : resolve(distDir, path.slice(1), "index.html");
+  return { html, output };
+}
+
+for (const [path, meta] of Object.entries(pages)) {
+  const { html, output } = renderPage(path, meta);
   await mkdir(dirname(output), { recursive: true });
   await writeFile(output, html, "utf8");
 }
 
-console.log(`Generated SEO-aware entry HTML for ${Object.keys(pages).length} routes.`);
+for (const [id, horse] of Object.entries(horsePages)) {
+  const path = `/horses/${id}`;
+  const body = `<main><article><h1>${escapeHtml(horse.name)}</h1><p>${escapeHtml(horse.description)}</p><img src="${escapeHtml(horse.image)}" alt="${escapeHtml(horse.name)} at Hawkez Haven" /></article></main>`;
+  const { html, output } = renderPage(path, horse, body);
+  await mkdir(dirname(output), { recursive: true });
+  await writeFile(output, html, "utf8");
+}
+
+console.log(
+  `Generated SEO-aware entry HTML for ${Object.keys(pages).length} routes and ${Object.keys(horsePages).length} horse pages.`,
+);
