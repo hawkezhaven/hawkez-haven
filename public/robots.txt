@@ -1,6 +1,38 @@
+# Hawkez Haven crawler policy
+# Public website content may be crawled and indexed.
 User-agent: *
 Allow: /
-
 Disallow: /auth/
+
+# Explicitly allow major search and AI crawlers.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
 
 Sitemap: https://hawkezhaven.org/sitemap.xml
