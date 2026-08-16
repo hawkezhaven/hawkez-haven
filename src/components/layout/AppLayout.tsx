@@ -18,10 +18,10 @@ const heroImages: Record<string, string> = {
 
 function PageHeroStyles({ page }: { page: string }) {
   const image = heroImages[page];
-  if (!image || page === "sponsorship") return null;
 
   return (
     <style>{`
+      ${image ? `
       main.page-${page} > div > section:first-child {
         position: relative;
         min-height: 430px;
@@ -80,6 +80,35 @@ function PageHeroStyles({ page }: { page: string }) {
         main.page-${page} > div > section:first-child p {
           font-size: 1rem;
           line-height: 1.65;
+        }
+      }
+      ` : ""}
+
+      /* Sponsorship has its own approved hero component; replace only its
+         hero photo here so the rest of the sponsorship page stays untouched. */
+      main.page-sponsorship > div > section:first-child {
+        background-color: #1a1a18;
+        background-repeat: no-repeat;
+        background-position: center, right center;
+        background-size: 100% 100%, contain;
+        background-image:
+          linear-gradient(90deg,
+            rgba(26,26,24,1) 0%,
+            rgba(26,26,24,.96) 34%,
+            rgba(26,26,24,.72) 50%,
+            rgba(26,26,24,.25) 70%,
+            rgba(26,26,24,0) 100%),
+          url('/images/joey-story.jpg');
+      }
+
+      main.page-sponsorship > div > section:first-child > img {
+        display: none;
+      }
+
+      @media (max-width: 767px) {
+        main.page-sponsorship > div > section:first-child {
+          background-position: center, right center;
+          background-size: 100% 100%, contain;
         }
       }
     `}</style>
