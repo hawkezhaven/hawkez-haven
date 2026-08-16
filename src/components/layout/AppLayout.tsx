@@ -5,15 +5,15 @@ import SEO from "../SEO.tsx";
 
 const heroImages: Record<string, string> = {
   about: "/images/electra.jpg",
-  horses: "/images/pasture-haven.jpg",
+  horses: "/images/pasture.jpg",
   adoption: "/images/kahu.jpg",
   foster: "/images/joey-story.jpg",
-  volunteer: "/images/khan.jpg",
+  volunteer: "/images/kohan.jpg",
   support: "/images/haven.jpg",
   contact: "/images/rip.jpg",
   experiences: "/images/ritz.jpg",
   education: "/images/ritz.jpg",
-  hub: "/images/kohan.jpg",
+  hub: "/images/khan.jpg",
 };
 
 function PageHeroStyles({ page }: { page: string }) {
