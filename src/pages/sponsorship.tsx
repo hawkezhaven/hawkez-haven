@@ -179,7 +179,7 @@ export default function SponsorshipPage() {
             {PERMANENT_RESIDENTS.map(horse => (
               <div key={horse.id} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[#ddd4be]/50">
                 <div className="relative aspect-[16/10] overflow-hidden">
-                  <img src={horse.image} alt={horse.name} loading="lazy" className="h-full w-full object-cover" />
+                  <img src={horse.id === "pedro" ? "/images/pedro-sponsorship.webp" : horse.image} alt={horse.name} loading="lazy" className="h-full w-full object-cover" />
                   <span className="absolute top-3 left-3 px-2 py-0.5 rounded-full text-[0.6rem] tracking-widest uppercase font-medium bg-[#1a1a18] text-[#b8922a]">
                     {horse.status}
                   </span>
@@ -302,7 +302,7 @@ export default function SponsorshipPage() {
                             : "border-transparent hover:border-[#ddd4be]"
                         }`}
                       >
-                        <img src={horse.image} alt={horse.name} className="w-full aspect-[4/3] object-cover" />
+                        <img src={horse.id === "pedro" ? "/images/pedro-sponsorship.webp" : horse.image} alt={horse.name} className="w-full aspect-[4/3] object-cover" />
                         <div className="bg-white px-3 py-2">
                           <p className="font-serif text-sm text-[#1a1a18]">{horse.name}</p>
                         </div>
