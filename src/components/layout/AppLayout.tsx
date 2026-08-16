@@ -20,6 +20,36 @@ function PageHeroStyles({ page }: { page: string }) {
   const image = heroImages[page];
   if (!image || page === "sponsorship") return null;
 
+  const desktopGradient = page === "adoption"
+    ? `linear-gradient(90deg,
+        rgba(26,26,24,1) 0%,
+        rgba(26,26,24,.96) 32%,
+        rgba(26,26,24,.72) 45%,
+        rgba(26,26,24,.30) 58%,
+        rgba(26,26,24,.06) 72%,
+        rgba(26,26,24,0) 100%)`
+    : `linear-gradient(90deg,
+        rgba(26,26,24,1) 0%,
+        rgba(26,26,24,.98) 38%,
+        rgba(26,26,24,.90) 50%,
+        rgba(26,26,24,.48) 68%,
+        rgba(26,26,24,.12) 84%,
+        rgba(26,26,24,0) 100%)`;
+
+  const mobileGradient = page === "adoption"
+    ? `linear-gradient(90deg,
+        rgba(26,26,24,1) 0%,
+        rgba(26,26,24,.94) 35%,
+        rgba(26,26,24,.58) 52%,
+        rgba(26,26,24,.18) 70%,
+        rgba(26,26,24,0) 100%)`
+    : `linear-gradient(90deg,
+        rgba(26,26,24,1) 0%,
+        rgba(26,26,24,.98) 42%,
+        rgba(26,26,24,.82) 57%,
+        rgba(26,26,24,.38) 75%,
+        rgba(26,26,24,0) 100%)`;
+
   return (
     <style>{`
       /* Use the same core treatment as Pedro: preserve the whole photo,
@@ -34,15 +64,7 @@ function PageHeroStyles({ page }: { page: string }) {
         background-repeat: no-repeat;
         background-position: center, right center;
         background-size: 100% 100%, contain;
-        background-image:
-          linear-gradient(90deg,
-            rgba(26,26,24,1) 0%,
-            rgba(26,26,24,.98) 38%,
-            rgba(26,26,24,.90) 50%,
-            rgba(26,26,24,.48) 68%,
-            rgba(26,26,24,.12) 84%,
-            rgba(26,26,24,0) 100%),
-          url('${image}');
+        background-image: ${desktopGradient}, url('${image}');
       }
 
       main.page-${page} > div > section:first-child > div {
@@ -59,14 +81,7 @@ function PageHeroStyles({ page }: { page: string }) {
           min-height: 680px;
           background-position: center, right center;
           background-size: 100% 100%, contain;
-          background-image:
-            linear-gradient(90deg,
-              rgba(26,26,24,1) 0%,
-              rgba(26,26,24,.98) 42%,
-              rgba(26,26,24,.82) 57%,
-              rgba(26,26,24,.38) 75%,
-              rgba(26,26,24,0) 100%),
-            url('${image}');
+          background-image: ${mobileGradient}, url('${image}');
         }
 
         main.page-${page} > div > section:first-child > div {
