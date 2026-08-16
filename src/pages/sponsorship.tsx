@@ -79,7 +79,7 @@ export default function SponsorshipPage() {
           src="/images/pedro-sponsorship.webp"
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 -z-20 h-full w-full object-cover object-center"
+          className="absolute inset-0 -z-20 h-full w-full object-contain object-right"
         />
         <div className="absolute inset-0 -z-10 bg-[#1a1a18]/70" aria-hidden="true" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
