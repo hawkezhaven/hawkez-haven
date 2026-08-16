@@ -98,7 +98,7 @@ function PageHeroStyles({ page }: { page: string }) {
             rgba(26,26,24,.72) 50%,
             rgba(26,26,24,.25) 70%,
             rgba(26,26,24,0) 100%),
-          url('/images/joey-story.jpg');
+          url('/images/diablo.jpg');
       }
 
       main.page-sponsorship > div > section:first-child > img {
