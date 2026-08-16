@@ -74,8 +74,15 @@ export default function SponsorshipPage() {
   return (
     <div className="bg-[#f5f0e8]">
       {/* Header */}
-      <section className="bg-[#1a1a18] text-[#f5f0e8] py-24 md:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative isolate overflow-hidden bg-[#1a1a18] text-[#f5f0e8] py-24 md:py-32">
+        <img
+          src="/images/pedro-sponsorship.webp"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 -z-20 h-full w-full object-cover object-center"
+        />
+        <div className="absolute inset-0 -z-10 bg-[#1a1a18]/70" aria-hidden="true" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 text-[#b8922a]">
             <span className="block h-px w-8 bg-[#b8922a]" />
             <span className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">Sponsorship</span>
