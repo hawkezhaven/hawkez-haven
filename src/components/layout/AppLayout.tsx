@@ -33,16 +33,63 @@ function PageHeroStyles({ page }: { page: string }) {
           background-repeat: no-repeat;
           background-position: center, right center;
           background-size: 100% 100%, auto 100%;
-          background-image: linear-gradient(90deg, #1a1a18 0%, #1a1a18 44%, rgba(26,26,24,.92) 58%, rgba(26,26,24,.22) 78%, rgba(26,26,24,0) 100%), url('${image}');
+          background-image: linear-gradient(90deg, #1a1a18 0%, #1a1a18 40%, rgba(26,26,24,.94) 54%, rgba(26,26,24,.25) 76%, rgba(26,26,24,0) 100%), url('${image}');
+        }
+
+        main.page-${page} > div > section:first-child > div {
+          position: relative;
+          z-index: 2;
+          width: 52%;
+          max-width: 760px;
+          margin-left: 0;
+          margin-right: auto;
         }
       }
+
       @media (max-width: 767px) {
         main.page-${page} > div > section:first-child {
-          background-color: #1a1a18;
+          position: relative;
+          min-height: 680px;
+          display: flex;
+          align-items: center;
+          overflow: hidden;
+          isolation: isolate;
+          background: #1a1a18 !important;
+        }
+
+        main.page-${page} > div > section:first-child::after {
+          content: "";
+          position: absolute;
+          z-index: -1;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          width: 42%;
+          background-image: linear-gradient(90deg, rgba(26,26,24,.25) 0%, rgba(26,26,24,0) 100%), url('${image}');
           background-repeat: no-repeat;
-          background-position: center, right bottom;
-          background-size: 100% 100%, auto 58%;
-          background-image: linear-gradient(180deg, rgba(26,26,24,1) 0%, rgba(26,26,24,.94) 55%, rgba(26,26,24,.42) 100%), url('${image}');
+          background-position: center, center;
+          background-size: 100% 100%, cover;
+          opacity: .82;
+        }
+
+        main.page-${page} > div > section:first-child > div {
+          position: relative;
+          z-index: 1;
+          width: 64%;
+          max-width: none;
+          margin-left: 0;
+          margin-right: auto;
+          padding-right: 0;
+        }
+
+        main.page-${page} > div > section:first-child h1 {
+          font-size: clamp(2.65rem, 9vw, 3.5rem);
+          line-height: 1.05;
+        }
+
+        main.page-${page} > div > section:first-child p {
+          font-size: 1rem;
+          line-height: 1.65;
         }
       }
     `}</style>
