@@ -10,7 +10,7 @@ const heroImages: Record<string, string> = {
   foster: "/images/joey-story.jpg",
   volunteer: "/images/kohan.jpg",
   support: "/images/haven.jpg",
-  contact: "/images/rip.jpg",
+  contact: "/images/pedro.jpg",
   experiences: "/images/ritz.jpg",
   education: "/images/ritz.jpg",
   hub: "/images/khan.jpg",
@@ -83,6 +83,24 @@ function PageHeroStyles({ page }: { page: string }) {
         }
       }
       ` : ""}
+
+      /* Home keeps its existing hero content/photo, but adopts the same
+         dark reading space and right-aligned, contained photo treatment. */
+      main.page-home > div > section:first-child {
+        background-color: #1a1a18;
+      }
+
+      main.page-home > div > section:first-child > img {
+        object-fit: contain;
+        object-position: right center;
+      }
+
+      @media (max-width: 767px) {
+        main.page-home > div > section:first-child > img {
+          object-fit: contain;
+          object-position: right center;
+        }
+      }
 
       /* Sponsorship has its own approved hero component; replace only its
          hero photo here so the rest of the sponsorship page stays untouched. */
