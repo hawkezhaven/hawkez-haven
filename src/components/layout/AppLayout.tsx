@@ -4,16 +4,16 @@ import Footer from "./Footer.tsx";
 import SEO from "../SEO.tsx";
 
 const heroImages: Record<string, string> = {
-  about: "/images/electra.jpg",
-  horses: "/images/pasture.jpg",
-  adoption: "/images/kahu.jpg",
-  foster: "/images/joey-story.jpg",
-  volunteer: "/images/kohan.jpg",
-  support: "/images/haven.jpg",
-  contact: "/images/pedro.jpg",
-  experiences: "/images/ritz.jpg",
-  education: "/images/ritz.jpg",
-  hub: "/images/khan.jpg",
+  about: "/images/hero-electra.png",
+  horses: "/images/hero-horses.jpg",
+  adoption: "/images/hero-kahu.jpg",
+  foster: "/images/hero-joey.png",
+  volunteer: "/images/hero-kohan.png",
+  support: "/images/hero-haven.jpg",
+  contact: "/images/hero-pedro.jpg",
+  experiences: "/images/hero-ritzz.png",
+  education: "/images/hero-ritzz.png",
+  hub: "/images/hero-khan.jpg",
 };
 
 function PageHeroStyles({ page }: { page: string }) {
@@ -30,23 +30,33 @@ function PageHeroStyles({ page }: { page: string }) {
         overflow: hidden;
         background-color: #1a1a18;
         background-repeat: no-repeat;
-        background-position: center, right center;
-        background-size: 100% 100%, contain;
-        background-image:
-          linear-gradient(90deg,
-            rgba(26,26,24,1) 0%,
-            rgba(26,26,24,.98) 32%,
-            rgba(26,26,24,.82) 46%,
-            rgba(26,26,24,.38) 64%,
-            rgba(26,26,24,.08) 82%,
-            rgba(26,26,24,0) 100%),
-          url('${image}');
+        background-size: 100% 100%;
+        background-image: linear-gradient(90deg,
+          rgba(26,26,24,1) 0%,
+          rgba(26,26,24,.98) 30%,
+          rgba(26,26,24,.88) 43%,
+          rgba(26,26,24,.52) 58%,
+          rgba(26,26,24,.12) 76%,
+          rgba(26,26,24,0) 100%);
+      }
+
+      main.page-${page} > div > section:first-child::after {
+        content: "";
+        position: absolute;
+        inset: 0 0 0 auto;
+        width: 52%;
+        height: 100%;
+        z-index: 1;
+        background-image: url('${image}');
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-size: contain;
       }
 
       main.page-${page} > div > section:first-child > div {
         position: relative;
         z-index: 2;
-        width: 52%;
+        width: 48%;
         max-width: 760px;
         margin-left: 0;
         margin-right: auto;
@@ -55,16 +65,19 @@ function PageHeroStyles({ page }: { page: string }) {
       @media (max-width: 767px) {
         main.page-${page} > div > section:first-child {
           min-height: 680px;
-          background-position: center, right center;
-          background-size: 100% 100%, contain;
-          background-image:
-            linear-gradient(90deg,
-              rgba(26,26,24,1) 0%,
-              rgba(26,26,24,.97) 34%,
-              rgba(26,26,24,.72) 48%,
-              rgba(26,26,24,.24) 67%,
-              rgba(26,26,24,0) 100%),
-            url('${image}');
+          background-image: linear-gradient(90deg,
+            rgba(26,26,24,1) 0%,
+            rgba(26,26,24,.98) 30%,
+            rgba(26,26,24,.82) 46%,
+            rgba(26,26,24,.38) 66%,
+            rgba(26,26,24,.08) 84%,
+            rgba(26,26,24,0) 100%);
+        }
+
+        main.page-${page} > div > section:first-child::after {
+          width: 58%;
+          background-position: right bottom;
+          background-size: contain;
         }
 
         main.page-${page} > div > section:first-child > div {
@@ -84,8 +97,8 @@ function PageHeroStyles({ page }: { page: string }) {
       }
       ` : ""}
 
-      /* Home keeps its existing hero content/photo, but adopts the same
-         dark reading space and right-aligned, contained photo treatment. */
+      /* Home keeps its Rip + Turbo hero exactly as supplied, while matching
+         the same dark reading-space treatment used by the inner heroes. */
       main.page-home > div > section:first-child {
         background-color: #1a1a18;
       }
@@ -102,31 +115,50 @@ function PageHeroStyles({ page }: { page: string }) {
         }
       }
 
-      /* Sponsorship has its own approved hero component; replace only its
-         hero photo here so the rest of the sponsorship page stays untouched. */
+      /* Sponsorship keeps Diablo, but uses the same banner structure and
+         readable dark-to-photo flow as every other hero. */
       main.page-sponsorship > div > section:first-child {
+        position: relative;
+        overflow: hidden;
         background-color: #1a1a18;
         background-repeat: no-repeat;
-        background-position: center, right center;
-        background-size: 100% 100%, contain;
-        background-image:
-          linear-gradient(90deg,
-            rgba(26,26,24,1) 0%,
-            rgba(26,26,24,.96) 34%,
-            rgba(26,26,24,.72) 50%,
-            rgba(26,26,24,.25) 70%,
-            rgba(26,26,24,0) 100%),
-          url('/images/diablo.jpg');
+        background-size: 100% 100%;
+        background-image: linear-gradient(90deg,
+          rgba(26,26,24,1) 0%,
+          rgba(26,26,24,.96) 30%,
+          rgba(26,26,24,.82) 44%,
+          rgba(26,26,24,.38) 62%,
+          rgba(26,26,24,.08) 82%,
+          rgba(26,26,24,0) 100%);
+      }
+
+      main.page-sponsorship > div > section:first-child::after {
+        content: "";
+        position: absolute;
+        inset: 0 0 0 auto;
+        width: 52%;
+        height: 100%;
+        z-index: 1;
+        background-image: url('/images/hero-diablo.jpg');
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-size: contain;
       }
 
       main.page-sponsorship > div > section:first-child > img {
         display: none;
       }
 
+      main.page-sponsorship > div > section:first-child > div {
+        position: relative;
+        z-index: 2;
+      }
+
       @media (max-width: 767px) {
-        main.page-sponsorship > div > section:first-child {
-          background-position: center, right center;
-          background-size: 100% 100%, contain;
+        main.page-sponsorship > div > section:first-child::after {
+          width: 58%;
+          background-position: right bottom;
+          background-size: contain;
         }
       }
     `}</style>
