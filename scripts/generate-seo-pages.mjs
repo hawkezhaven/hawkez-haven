@@ -47,18 +47,23 @@ function escapeHtml(value) {
   return value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#39;");
 }
 
-function upsertTag(html, regex, tag) {
-  return regex.test(html) ? html.replace(regex, tag) : html.replace("</head>", `${tag}\n  </head>`);
+function upsertHeadTag(html, pattern, tag) {
+  const headEnd = html.search(/<\/head>/i);
+  if (headEnd === -1) throw new Error("Cannot prerender SEO metadata: </head> is missing from dist/index.html");
+  const head = html.slice(0, headEnd);
+  const tail = html.slice(headEnd);
+  const cleanedHead = head.replace(pattern, "");
+  return `${cleanedHead}${tag}\n  ${tail}`;
 }
 
 function renderPage(path, meta, body = "") {
   const canonical = `${site}${path}`;
   let html = template;
-  html = upsertTag(html, /<title>.*?<\/title>/is, `<title>${escapeHtml(meta.title)}</title>`);
-  html = upsertTag(html, /<meta\s+name=["']description["'][^>]*>/i, `<meta name="description" content="${escapeHtml(meta.description)}" />`);
-  html = upsertTag(html, /<link\s+rel=["']canonical["'][^>]*>/i, `<link rel="canonical" href="${canonical}" />`);
-  html = upsertTag(html, /<meta\s+property=["']og:title["'][^>]*>/i, `<meta property="og:title" content="${escapeHtml(meta.title)}" />`);
-  html = upsertTag(html, /<meta\s+property=["']og:description["'][^>]*>/i, `<meta property="og:description" content="${escapeHtml(meta.description)}" />`);
+  html = upsertHeadTag(html, /<title>[\s\S]*?<\/title>/gi, `<title>${escapeHtml(meta.title)}</title>`);
+  html = upsertHeadTag(html, /<meta\s+name=["']description["'][^>]*>/gi, `<meta name="description" content="${escapeHtml(meta.description)}" />`);
+  html = upsertHeadTag(html, /<link\s+rel=["']canonical["'][^>]*>/gi, `<link rel="canonical" href="${canonical}" />`);
+  html = upsertHeadTag(html, /<meta\s+property=["']og:title["'][^>]*>/gi, `<meta property="og:title" content="${escapeHtml(meta.title)}" />`);
+  html = upsertHeadTag(html, /<meta\s+property=["']og:description["'][^>]*>/gi, `<meta property="og:description" content="${escapeHtml(meta.description)}" />`);
   if (body) html = html.replace('<div id="root"></div>', `<div id="root">${body}</div>`);
   return { html, output: path === "/" ? resolve(distDir, "index.html") : resolve(distDir, path.slice(1), "index.html") };
 }
@@ -67,11 +72,13 @@ const horseLinks = Object.entries(horsePages).map(([id, horse]) => `<li><a href=
 const homepageBody = `<main><article><header><p>Aotearoa · Equine Rescue &amp; Rehabilitation</p><h1>Where Second Chances Find Their Stride</h1><p>Connection Before Correction.</p><p>Every horse deserves the chance to heal, trust again and find the home they were always meant to have.</p></header><section><h2>A place built on patience, trust and second chances.</h2><p>Hawkez Haven is an equine rescue, rehabilitation and rehoming service in New Zealand, built on one simple belief: every horse deserves to be understood.</p><p>Every horse is given the time, space and support they need to heal and move forward.</p></section><nav aria-label="Hawkez Haven main resources"><h2>Explore Hawkez Haven</h2><ul><li><a href="/horses">Meet Our Horses</a></li><li><a href="/adoption">Horse Adoption</a></li><li><a href="/sponsorship">Sponsor a Rescue Horse</a></li><li><a href="/foster">Foster a Rescue Horse</a></li><li><a href="/volunteer">Volunteer</a></li><li><a href="/experiences">Horse Experiences &amp; Horsemanship</a></li><li><a href="/about">About Hawkez Haven</a></li><li><a href="/support">Support Hawkez Haven</a></li><li><a href="/contact">Contact Hawkez Haven</a></li></ul></nav></article></main>`;
 const horsesBody = `<main><article><h1>Our Horses</h1><p>Meet the horses of Hawkez Haven and follow their individual journeys through rescue, rehabilitation, recovery and responsible rehoming.</p><section aria-labelledby="horse-stories"><h2 id="horse-stories">Horse Rescue Stories</h2><ul>${horseLinks}</ul></section><p><a href="/adoption">Learn about horse adoption</a> · <a href="/support">Support Hawkez Haven</a> · <a href="/contact">Contact Hawkez Haven</a></p></article></main>`;
 
+const generatedFiles = [];
 for (const [path, meta] of Object.entries(pages)) {
   const body = path === "/" ? homepageBody : path === "/horses" ? horsesBody : routeBody[path] || "";
   const { html, output } = renderPage(path, meta, body);
   await mkdir(dirname(output), { recursive: true });
   await writeFile(output, html, "utf8");
+  generatedFiles.push([output, meta]);
 }
 
 for (const [id, horse] of Object.entries(horsePages)) {
@@ -80,6 +87,16 @@ for (const [id, horse] of Object.entries(horsePages)) {
   const { html, output } = renderPage(path, horse, body);
   await mkdir(dirname(output), { recursive: true });
   await writeFile(output, html, "utf8");
+  generatedFiles.push([output, horse]);
 }
 
-console.log(`Generated crawlable HTML with title and description for ${Object.keys(pages).length} routes and ${Object.keys(horsePages).length} horse pages.`);
+for (const [output, meta] of generatedFiles) {
+  const html = await readFile(output, "utf8");
+  const title = html.match(/<title>([\s\S]*?)<\/title>/i)?.[1];
+  const description = html.match(/<meta\s+name=["']description["'][^>]*content=["']([^"']+)["'][^>]*>/i)?.[1];
+  if (!title || !description || title !== escapeHtml(meta.title) || description !== escapeHtml(meta.description)) {
+    throw new Error(`SEO prerender verification failed for ${output}: expected title and description in the generated <head>`);
+  }
+}
+
+console.log(`Verified prerendered title and description metadata for ${generatedFiles.length} pages.`);
