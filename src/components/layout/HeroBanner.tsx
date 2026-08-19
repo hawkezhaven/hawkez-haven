@@ -91,6 +91,8 @@ export default function HeroBanner() {
         <img
           src={hero.image}
           alt={hero.alt}
+          width={1920}
+          height={1080}
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a18]/85 via-[#1a1a18]/35 to-[#1a1a18]/10" />
