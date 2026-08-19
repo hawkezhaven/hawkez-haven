@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { useServiceWorker } from "@/hooks/use-service-worker.ts";
 import { DefaultProviders } from "./components/providers/default.tsx";
 import AppLayout from "./components/layout/AppLayout.tsx";
-import AuthCallback from "./pages/auth/Callback.tsx";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import AboutPage from "./pages/about.tsx";
@@ -36,7 +35,6 @@ export default function App() {
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
-          <Route path="/auth/callback" element={<AuthCallback />} />
           <Route element={<AppLayout />}>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<AboutPage />} />
