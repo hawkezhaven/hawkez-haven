@@ -8,7 +8,7 @@ export default function Footer() {
         {/* Brand */}
         <div className="max-w-sm">
           <img
-            src="/images/hawkez-logo-transparent.png"
+            src="/images/hawkez-haven-horizontal.png"
             alt="Hawkez Haven"
             className="h-16 w-auto object-contain brightness-0 invert sepia saturate-200 hue-rotate-10"
           />
