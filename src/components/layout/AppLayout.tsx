@@ -64,25 +64,28 @@ function PageHeroStyles({ page }: { page: string }) {
 
       @media (max-width: 767px) {
         main.page-${page} > div > section:first-child {
-          min-height: 680px;
-          background-image: linear-gradient(90deg,
+          min-height: 0;
+          align-items: flex-start;
+          background-image: linear-gradient(180deg,
             rgba(26,26,24,1) 0%,
-            rgba(26,26,24,.98) 30%,
-            rgba(26,26,24,.82) 46%,
-            rgba(26,26,24,.38) 66%,
-            rgba(26,26,24,.08) 84%,
-            rgba(26,26,24,0) 100%);
+            rgba(26,26,24,1) 58%,
+            rgba(26,26,24,.88) 72%,
+            rgba(26,26,24,.45) 86%,
+            rgba(26,26,24,.12) 100%);
         }
 
         main.page-${page} > div > section:first-child::after {
-          width: 58%;
-          background-position: right bottom;
+          inset: auto 0 0 0;
+          width: 100%;
+          height: 42%;
+          background-position: center bottom;
           background-size: contain;
         }
 
         main.page-${page} > div > section:first-child > div {
-          width: 62%;
+          width: 100%;
           max-width: none;
+          padding-bottom: 260px;
         }
 
         main.page-${page} > div > section:first-child h1 {
@@ -97,8 +100,7 @@ function PageHeroStyles({ page }: { page: string }) {
       }
       ` : ""}
 
-      /* Home keeps its Rip + Turbo hero exactly as supplied, while matching
-         the same dark reading-space treatment used by the inner heroes. */
+      /* Home keeps its Rip + Turbo hero exactly as supplied. */
       main.page-home > div > section:first-child {
         background-color: #1a1a18;
       }
@@ -115,8 +117,7 @@ function PageHeroStyles({ page }: { page: string }) {
         }
       }
 
-      /* Sponsorship keeps Diablo, but uses the same banner structure and
-         readable dark-to-photo flow as every other hero. */
+      /* Sponsorship uses the same responsive hero treatment as the inner pages. */
       main.page-sponsorship > div > section:first-child {
         position: relative;
         overflow: hidden;
@@ -155,10 +156,29 @@ function PageHeroStyles({ page }: { page: string }) {
       }
 
       @media (max-width: 767px) {
+        main.page-sponsorship > div > section:first-child {
+          min-height: 0;
+          align-items: flex-start;
+          background-image: linear-gradient(180deg,
+            rgba(26,26,24,1) 0%,
+            rgba(26,26,24,1) 58%,
+            rgba(26,26,24,.88) 72%,
+            rgba(26,26,24,.45) 86%,
+            rgba(26,26,24,.12) 100%);
+        }
+
         main.page-sponsorship > div > section:first-child::after {
-          width: 58%;
-          background-position: right bottom;
+          inset: auto 0 0 0;
+          width: 100%;
+          height: 42%;
+          background-position: center bottom;
           background-size: contain;
+        }
+
+        main.page-sponsorship > div > section:first-child > div {
+          width: 100%;
+          max-width: none;
+          padding-bottom: 260px;
         }
       }
     `}</style>
