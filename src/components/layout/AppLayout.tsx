@@ -158,27 +158,27 @@ function PageHeroStyles({ page }: { page: string }) {
       @media (max-width: 767px) {
         main.page-sponsorship > div > section:first-child {
           min-height: 0;
-          align-items: flex-start;
-          background-image: linear-gradient(180deg,
-            rgba(26,26,24,1) 0%,
-            rgba(26,26,24,1) 58%,
-            rgba(26,26,24,.88) 72%,
-            rgba(26,26,24,.45) 86%,
-            rgba(26,26,24,.12) 100%);
-        }
-
-        main.page-sponsorship > div > section:first-child::after {
-          inset: auto 0 0 0;
-          width: 100%;
-          height: 42%;
-          background-position: center bottom;
-          background-size: contain;
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          background-image: none;
         }
 
         main.page-sponsorship > div > section:first-child > div {
           width: 100%;
           max-width: none;
-          padding-bottom: 260px;
+          padding-bottom: 32px;
+        }
+
+        main.page-sponsorship > div > section:first-child::after {
+          position: relative;
+          inset: auto;
+          width: 100%;
+          height: 420px;
+          flex: 0 0 420px;
+          z-index: 1;
+          background-position: center center;
+          background-size: contain;
         }
       }
     `}</style>
