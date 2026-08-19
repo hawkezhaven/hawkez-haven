@@ -64,8 +64,6 @@ const pages = {
   },
 };
 
-// These pages are included in the sitemap and need their own crawlable HTML
-// document rather than falling back to the root SPA shell.
 const horsePages = {
   rip: {
     name: "Rip",
@@ -175,7 +173,9 @@ const homepageBody = `
           <li><a href="/horses">Meet Our Horses</a></li>
           <li><a href="/adoption">Horse Adoption</a></li>
           <li><a href="/sponsorship">Sponsor a Rescue Horse</a></li>
+          <li><a href="/foster">Foster a Rescue Horse</a></li>
           <li><a href="/volunteer">Volunteer</a></li>
+          <li><a href="/experiences">Horse Experiences &amp; Horsemanship</a></li>
           <li><a href="/about">About Hawkez Haven</a></li>
           <li><a href="/support">Support Hawkez Haven</a></li>
           <li><a href="/contact">Contact Hawkez Haven</a></li>
