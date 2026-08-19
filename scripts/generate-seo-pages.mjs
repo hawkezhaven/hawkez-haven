@@ -3,7 +3,6 @@ import { dirname, resolve } from "node:path";
 
 const distDir = resolve("dist");
 const template = await readFile(resolve(distDir, "index.html"), "utf8");
-
 const site = "https://hawkezhaven.org";
 
 const pages = {
@@ -137,6 +136,17 @@ const horsePages = {
   },
 };
 
+const routeBody = {
+  "/about": `<main><article><h1>More Than A Rescue.</h1><p>Hawkez Haven was built on one simple belief: every horse deserves the opportunity to heal, to be understood and to find where they truly belong.</p><h2>Why Hawkez Haven Exists</h2><p>Hawkez Haven was created to give horses the time, patience and understanding they deserve. Rehabilitation is about rebuilding confidence, trust and hope, at each horse's own pace.</p><p><a href="/horses">Meet our horses</a> · <a href="/adoption">Learn about adoption</a> · <a href="/support">Support Hawkez Haven</a></p></article></main>`,
+  "/adoption": `<main><article><h1>A Lifetime Commitment Begins Here</h1><p>Every horse deserves the right home — not just the next home. Our adoption process is designed to match each horse with the people best suited to their future.</p><h2>The right match matters more than a quick match.</h2><p>We take time to understand each horse's temperament, needs and future goals, and we learn about your experience, setup and the life you can offer.</p><p><a href="/horses">Meet our horses</a> · <a href="/enquire/adoption">Start an adoption enquiry</a></p></article></main>`,
+  "/sponsorship": `<main><article><h1>Support a Rescue Horse</h1><p>Sponsor a Hawkez Haven horse and help provide the feed, veterinary care, rehabilitation and day-to-day support that makes a second chance possible.</p><h2>Every contribution helps</h2><p>Your support helps us keep welfare at the centre of each horse's rehabilitation journey.</p><p><a href="/horses">Meet the horses</a> · <a href="/support">Other ways to support Hawkez Haven</a></p></article></main>`,
+  "/foster": `<main><article><h1>Foster a Rescue Horse</h1><p>Fostering can give a rescue horse a safe place to recover, rebuild confidence and prepare for their next chapter.</p><p><a href="/enquire/foster">Ask about fostering</a> · <a href="/horses">Meet the horses</a></p></article></main>`,
+  "/volunteer": `<main><article><h1>Volunteer with Hawkez Haven</h1><p>Help with horse care, rehabilitation, education and the day-to-day work behind a welfare-focused rescue.</p><p><a href="/enquire/volunteer">Volunteer enquiry</a> · <a href="/about">Learn about our approach</a></p></article></main>`,
+  "/experiences": `<main><article><h1>Horse Experiences &amp; Horsemanship</h1><p>Explore horsemanship experiences and practical education designed to build knowledge, confidence, safety and a better understanding of horses.</p><p><a href="/enquire/experiences">Make an enquiry</a> · <a href="/contact">Contact Hawkez Haven</a></p></article></main>`,
+  "/support": `<main><article><h1>Support Hawkez Haven</h1><p>Help provide rescue horses with feed, care, rehabilitation and a safe future.</p><p><a href="/sponsorship">Sponsor a horse</a> · <a href="/contact">Contact Hawkez Haven</a></p></article></main>`,
+  "/contact": `<main><article><h1>Contact Hawkez Haven</h1><p>Contact us about horse rescue, adoption, sponsorship, volunteering, fostering, lessons and other enquiries.</p><p><a href="/enquire/general">Start a general enquiry</a></p></article></main>`,
+};
+
 function escapeHtml(value) {
   return value
     .replaceAll("&", "&amp;")
@@ -153,113 +163,28 @@ const horseLinks = Object.entries(horsePages)
   )
   .join("\n          ");
 
-const homepageBody = `
-  <main>
-    <article>
-      <header>
-        <p>Aotearoa · Equine Rescue &amp; Rehabilitation</p>
-        <h1>Where Second Chances Find Their Stride</h1>
-        <p>Connection Before Correction.</p>
-        <p>Every horse deserves the chance to heal, trust again and find the home they were always meant to have.</p>
-      </header>
-      <section>
-        <h2>A place built on patience, trust and second chances.</h2>
-        <p>Hawkez Haven is an equine rescue, rehabilitation and rehoming service in New Zealand, built on one simple belief: every horse deserves to be understood. We take in horses through owner surrender, off-the-track rehabilitation, and situations where owners are no longer able to provide ongoing care.</p>
-        <p>Every horse is given the time, space and support they need to heal and move forward. Rehabilitation here is not about rushing a horse to fit a timeline. It is about trust, connection and meeting each horse where they are.</p>
-      </section>
-      <section>
-        <h2>What we do</h2>
-        <h3>Rescue</h3><p>Emergency intake, veterinary triage and a safe soft landing.</p>
-        <h3>Rehabilitation</h3><p>Nutrition, farrier care, bodywork and unhurried retraining.</p>
-        <h3>Education</h3><p>Horsemanship lessons and practical education for all ages.</p>
-        <h3>Rehoming</h3><p>Careful matching of horse and human, with welfare at the centre.</p>
-      </section>
-      <nav aria-label="Hawkez Haven main resources">
-        <h2>Explore Hawkez Haven</h2>
-        <ul>
-          <li><a href="/horses">Meet Our Horses</a></li>
-          <li><a href="/adoption">Horse Adoption</a></li>
-          <li><a href="/sponsorship">Sponsor a Rescue Horse</a></li>
-          <li><a href="/foster">Foster a Rescue Horse</a></li>
-          <li><a href="/volunteer">Volunteer</a></li>
-          <li><a href="/experiences">Horse Experiences &amp; Horsemanship</a></li>
-          <li><a href="/about">About Hawkez Haven</a></li>
-          <li><a href="/support">Support Hawkez Haven</a></li>
-          <li><a href="/contact">Contact Hawkez Haven</a></li>
-        </ul>
-      </nav>
-    </article>
-  </main>
-`;
+const homepageBody = `<main><article><header><p>Aotearoa · Equine Rescue &amp; Rehabilitation</p><h1>Where Second Chances Find Their Stride</h1><p>Connection Before Correction.</p><p>Every horse deserves the chance to heal, trust again and find the home they were always meant to have.</p></header><section><h2>A place built on patience, trust and second chances.</h2><p>Hawkez Haven is an equine rescue, rehabilitation and rehoming service in New Zealand, built on one simple belief: every horse deserves to be understood.</p><p>Every horse is given the time, space and support they need to heal and move forward.</p></section><nav aria-label="Hawkez Haven main resources"><h2>Explore Hawkez Haven</h2><ul><li><a href="/horses">Meet Our Horses</a></li><li><a href="/adoption">Horse Adoption</a></li><li><a href="/sponsorship">Sponsor a Rescue Horse</a></li><li><a href="/foster">Foster a Rescue Horse</a></li><li><a href="/volunteer">Volunteer</a></li><li><a href="/experiences">Horse Experiences &amp; Horsemanship</a></li><li><a href="/about">About Hawkez Haven</a></li><li><a href="/support">Support Hawkez Haven</a></li><li><a href="/contact">Contact Hawkez Haven</a></li></ul></nav></article></main>`;
 
-const horsesBody = `
-  <main>
-    <article>
-      <h1>Our Horses</h1>
-      <p>Meet the horses of Hawkez Haven and follow their individual journeys through rescue, rehabilitation, recovery and responsible rehoming.</p>
-      <section aria-labelledby="horse-stories">
-        <h2 id="horse-stories">Horse Rescue Stories</h2>
-        <ul>
-          ${horseLinks}
-        </ul>
-      </section>
-      <p><a href="/adoption">Learn about horse adoption</a> · <a href="/support">Support Hawkez Haven</a> · <a href="/contact">Contact Hawkez Haven</a></p>
-    </article>
-  </main>
-`;
+const horsesBody = `<main><article><h1>Our Horses</h1><p>Meet the horses of Hawkez Haven and follow their individual journeys through rescue, rehabilitation, recovery and responsible rehoming.</p><section aria-labelledby="horse-stories"><h2 id="horse-stories">Horse Rescue Stories</h2><ul>${horseLinks}</ul></section><p><a href="/adoption">Learn about horse adoption</a> · <a href="/support">Support Hawkez Haven</a> · <a href="/contact">Contact Hawkez Haven</a></p></article></main>`;
 
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "NonprofitOrganization",
-  "name": "Hawkez Haven",
-  "url": site,
-  "logo": `${site}/icon/icon-192.png`,
-  "description": pages["/"].description,
-  "areaServed": "New Zealand",
-};
+const organizationSchema = {"@context":"https://schema.org","@type":"NonprofitOrganization","name":"Hawkez Haven","url":site,"logo":`${site}/icon/icon-192.png`,"description":pages["/"].description,"areaServed":"New Zealand"};
 
 function renderPage(path, meta, body = "") {
   const canonical = `${site}${path === "/" ? "/" : path}`;
   let html = template;
-
   html = html.replace(/<title>.*?<\/title>/i, `<title>${escapeHtml(meta.title)}</title>`);
-  html = html.replace(
-    /<meta name="description" content=".*?"\s*\/>/i,
-    `<meta name="description" content="${escapeHtml(meta.description)}" />`,
-  );
-  html = html.replace(
-    /<link rel="canonical" href=".*?"\s*\/>/i,
-    `<link rel="canonical" href="${canonical}" />`,
-  );
-  html = html.replace(
-    /<meta property="og:title" content=".*?"\s*\/>/i,
-    `<meta property="og:title" content="${escapeHtml(meta.title)}" />`,
-  );
-  html = html.replace(
-    /<meta property="og:description" content=".*?"\s*\/>/i,
-    `<meta property="og:description" content="${escapeHtml(meta.description)}" />`,
-  );
-
-  if (path === "/") {
-    html = html.replace(
-      "</head>",
-      `<script type="application/ld+json">${JSON.stringify(organizationSchema)}</script>\n  </head>`,
-    );
-  }
-
-  if (body) {
-    html = html.replace(
-      '<div id="root"></div>',
-      `<div id="root">${body}</div>`,
-    );
-  }
-
+  html = html.replace(/<meta name="description" content=".*?"\s*\/>/i, `<meta name="description" content="${escapeHtml(meta.description)}" />`);
+  html = html.replace(/<link rel="canonical" href=".*?"\s*\/>/i, `<link rel="canonical" href="${canonical}" />`);
+  html = html.replace(/<meta property="og:title" content=".*?"\s*\/>/i, `<meta property="og:title" content="${escapeHtml(meta.title)}" />`);
+  html = html.replace(/<meta property="og:description" content=".*?"\s*\/>/i, `<meta property="og:description" content="${escapeHtml(meta.description)}" />`);
+  if (path === "/") html = html.replace("</head>", `<script type="application/ld+json">${JSON.stringify(organizationSchema)}</script>\n  </head>`);
+  if (body) html = html.replace('<div id="root"></div>', `<div id="root">${body}</div>`);
   const output = path === "/" ? resolve(distDir, "index.html") : resolve(distDir, path.slice(1), "index.html");
   return { html, output };
 }
 
 for (const [path, meta] of Object.entries(pages)) {
-  const body = path === "/" ? homepageBody : path === "/horses" ? horsesBody : "";
+  const body = path === "/" ? homepageBody : path === "/horses" ? horsesBody : routeBody[path] || "";
   const { html, output } = renderPage(path, meta, body);
   await mkdir(dirname(output), { recursive: true });
   await writeFile(output, html, "utf8");
@@ -267,12 +192,10 @@ for (const [path, meta] of Object.entries(pages)) {
 
 for (const [id, horse] of Object.entries(horsePages)) {
   const path = `/horses/${id}`;
-  const body = `<main><article><h1>${escapeHtml(horse.name)}</h1><p>${escapeHtml(horse.description)}</p><img src="${escapeHtml(horse.image)}" alt="${escapeHtml(horse.name)} at Hawkez Haven" /><nav aria-label="Horse navigation"><a href="/horses">Back to Our Horses</a> · <a href="/adoption">Horse Adoption</a> · <a href="/support">Support Hawkez Haven</a></nav></article></main>`;
+  const body = `<main><article><h1>${escapeHtml(horse.name)}</h1><p>${escapeHtml(horse.description)}</p><img src="${escapeHtml(horse.image)}" alt="${escapeHtml(horse.name)} at Hawkez Haven" width="1200" height="800" /><nav aria-label="Horse navigation"><a href="/horses">Back to Our Horses</a> · <a href="/adoption">Horse Adoption</a> · <a href="/support">Support Hawkez Haven</a></nav></article></main>`;
   const { html, output } = renderPage(path, horse, body);
   await mkdir(dirname(output), { recursive: true });
   await writeFile(output, html, "utf8");
 }
 
-console.log(
-  `Generated SEO-aware entry HTML for ${Object.keys(pages).length} routes and ${Object.keys(horsePages).length} horse pages.`,
-);
+console.log(`Generated SEO-aware entry HTML for ${Object.keys(pages).length} routes and ${Object.keys(horsePages).length} horse pages.`);
