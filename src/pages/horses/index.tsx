@@ -44,14 +44,14 @@ export default function HorsesPage() {
 function HorseCard({ horse }: { horse: (typeof HORSES)[0] }) {
   return (
     <Link to={`/horses/${horse.id}`} className="bg-white rounded-2xl group block overflow-hidden shadow-sm border border-[#ddd4be]/50 cursor-pointer">
-      <div className="relative overflow-hidden bg-[#ede5d4] aspect-[3/2]">
+      <div className="relative overflow-hidden bg-[#ede5d4] aspect-[3/2] flex items-center justify-center p-2">
         <img
           src={horse.image}
           alt={`${horse.name} at Hawkez Haven`}
           loading="lazy"
           width={1200}
           height={800}
-          className="h-full w-full object-cover object-center transition-transform duration-[900ms] ease-out group-hover:scale-105"
+          className="max-h-full max-w-full h-auto w-auto object-contain transition-transform duration-[900ms] ease-out group-hover:scale-105"
         />
         <span className={`absolute top-4 left-4 px-3 py-1 rounded-full text-[0.65rem] tracking-[0.18em] uppercase font-medium ${horse.status === "Permanent Resident" ? "bg-[#1a1a18] text-[#b8922a]" : "bg-[#ede5d4] text-[#1a1a18]"}`}>{horse.status}</span>
       </div>
