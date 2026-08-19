@@ -1,21 +1,22 @@
 import { useState } from "react";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
+import { useAction } from "convex/react";
+import { api } from "@/convex/_generated/api.js";
 
 type Field = { id: string; label: string; type?: "text" | "textarea" | "select"; options?: string[] };
 
 type Props = {
   subject: string;
   fields?: Field[];
-  /** When true, submissions are sent through FormSubmit's hosted email endpoint. */
+  /** When true, submissions are sent through the Convex/Resend server action. */
   serverSend?: boolean;
 };
-
-const FORM_ENDPOINT = "https://formsubmit.co/ajax/hawkezhaven@gmail.com";
 
 export default function EnquiryForm({ subject, fields = [], serverSend = false }: Props) {
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const sendEnquiry = useAction(api.enquiry.sendEnquiry);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -31,37 +32,18 @@ export default function EnquiryForm({ subject, fields = [], serverSend = false }
     const message = (data.get("message") as string) ?? "";
 
     if (serverSend) {
-      const payload: Record<string, string> = {
-        name,
-        email,
-        phone,
-        message,
-        _subject: subject,
-        _replyto: email,
-        _template: "table",
-        _url: window.location.href,
-        _honey: "",
-      };
-
-      fields.forEach(field => {
-        payload[field.label] = (data.get(field.id) as string) ?? "";
-      });
-
       try {
-        const response = await fetch(FORM_ENDPOINT, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify(payload),
+        await sendEnquiry({
+          subject,
+          name,
+          email,
+          phone: phone || undefined,
+          message: message || undefined,
+          extraFields: fields.map(field => ({
+            label: field.label,
+            value: (data.get(field.id) as string) ?? "",
+          })),
         });
-
-        const result = (await response.json().catch(() => null)) as { success?: boolean; message?: string } | null;
-
-        if (!response.ok || result?.success === false) {
-          throw new Error(result?.message || "Unable to submit the enquiry.");
-        }
 
         setSent(true);
       } catch (err) {
@@ -189,7 +171,7 @@ export default function EnquiryForm({ subject, fields = [], serverSend = false }
         />
       </div>
 
-      {/* Honeypot field for spam protection; legitimate visitors never see or fill this. */}
+      {/* Honeypot field for spam protection. */}
       <input name="_honey" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
 
       <button
