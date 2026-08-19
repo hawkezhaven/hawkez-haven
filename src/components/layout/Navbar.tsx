@@ -15,7 +15,7 @@ const MORE_LINKS = [
   { label: "Sponsorship", href: "/sponsorship" },
   { label: "Foster Program", href: "/foster" },
   { label: "Volunteer", href: "/volunteer" },
-  { label: "Education & Lessons", href: "/education" },
+  { label: "Education & Lessons", href: "/experiences" },
   { label: "The Hub", href: "/hub" },
 ];
 
@@ -33,7 +33,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setMobileOpen(false);
     setMoreOpen(false);
@@ -49,7 +48,6 @@ export default function Navbar() {
     <>
       <header className={`sticky top-0 z-50 transition-all duration-500 ${navBg}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-6 py-4">
-          {/* Logo */}
           <Link to="/" aria-label="Hawkez Haven — Home" className="shrink-0">
             <img
               src="/images/hawkez-haven-horizontal.png"
@@ -58,7 +56,6 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Desktop nav */}
           <nav className="hidden md:flex items-center justify-end gap-5 lg:gap-7">
             {NAV_LINKS.map(({ label, href }) => (
               <Link
@@ -74,7 +71,6 @@ export default function Navbar() {
               </Link>
             ))}
 
-            {/* More dropdown */}
             <div className="relative">
               <button
                 type="button"
@@ -106,7 +102,6 @@ export default function Navbar() {
             </div>
           </nav>
 
-          {/* Mobile hamburger */}
           <button
             type="button"
             className="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-full border border-white/20 text-white cursor-pointer"
@@ -118,7 +113,6 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Mobile menu */}
       {mobileOpen && (
         <div className="fixed inset-0 z-40 bg-[#b8922a] flex flex-col pt-20 px-6 pb-8 overflow-y-auto">
           <button
