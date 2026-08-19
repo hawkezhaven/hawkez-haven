@@ -1,25 +1,7 @@
 import path from "node:path";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react-swc";
-import { defineConfig, type Plugin } from "vite";
-
-function replaceLegacyHerculesAssets(): Plugin {
-  const replacements: Record<string, string> = {
-    "https://hercules-cdn.com/file_lrJQml96WQlUGWerpWilHhr5": "/images/hero-horse.jpg",
-  };
-
-  return {
-    name: "replace-legacy-hercules-assets",
-    transform(code, id) {
-      if (!id.includes("/src/") || !id.endsWith(".tsx")) return null;
-      let next = code;
-      for (const [legacy, local] of Object.entries(replacements)) {
-        next = next.split(legacy).join(local);
-      }
-      return next === code ? null : { code: next, map: null };
-    },
-  };
-}
+import { defineConfig } from "vite";
 
 export default defineConfig({
   server: {
@@ -28,7 +10,7 @@ export default defineConfig({
     allowedHosts: true,
     hmr: { overlay: false },
   },
-  plugins: [react(), tailwindcss(), replaceLegacyHerculesAssets()],
+  plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
       "@/convex": path.resolve(__dirname, "./convex"),
