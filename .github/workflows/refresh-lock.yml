@@ -1,11 +1,7 @@
 name: Refresh pnpm lockfile
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - package.json
-      - pnpm-lock.yaml
+  workflow_dispatch:
 
 permissions:
   contents: write
