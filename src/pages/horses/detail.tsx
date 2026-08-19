@@ -23,7 +23,7 @@ export default function HorseDetailPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div className="relative">
-            <img src={horse.image} alt={horse.name} className="w-full rounded-3xl object-cover aspect-[4/3]" />
+            <img src={horse.image} alt={horse.name} width={1200} height={900} className="w-full rounded-3xl object-cover aspect-[4/3]" />
             <span className={`absolute top-5 left-5 px-4 py-1.5 rounded-full text-[0.65rem] tracking-[0.18em] uppercase font-medium ${horse.status === "Permanent Resident" ? "bg-[#1a1a18] text-[#b8922a]" : "bg-[#ede5d4] text-[#1a1a18]"}`}>
               {horse.status}
             </span>
@@ -156,7 +156,7 @@ export default function HorseDetailPage() {
             {others.map(h => (
               <Link key={h.id} to={`/horses/${h.id}`} className="bg-white rounded-2xl group block overflow-hidden shadow-sm border border-[#ddd4be]/50 cursor-pointer">
                 <div className="relative aspect-[16/10] overflow-hidden">
-                  <img src={h.image} alt={h.name} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <img src={h.image} alt={h.name} width={1200} height={900} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   <span className={`absolute top-4 left-4 px-3 py-1 rounded-full text-[0.65rem] tracking-[0.18em] uppercase font-medium ${h.status === "Permanent Resident" ? "bg-[#1a1a18] text-[#b8922a]" : "bg-[#ede5d4] text-[#1a1a18]"}`}>
                     {h.status}
                   </span>
