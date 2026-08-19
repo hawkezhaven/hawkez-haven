@@ -54,7 +54,7 @@ export default function Navbar() {
             <img
               src="/images/hawkez-haven-horizontal.png"
               alt="Hawkez Haven"
-              className="h-12 w-auto object-contain"
+              className="h-16 w-auto object-contain"
             />
           </Link>
 
