@@ -45,7 +45,7 @@ function HorseCard({ horse }: { horse: (typeof HORSES)[0] }) {
   return (
     <Link to={`/horses/${horse.id}`} className="bg-white rounded-2xl group block overflow-hidden shadow-sm border border-[#ddd4be]/50 cursor-pointer">
       <div className="relative aspect-[4/5] overflow-hidden bg-[#ede5d4]">
-        <img src={horse.image} alt={horse.name} loading="lazy" className="h-full w-full object-contain object-center transition-transform duration-[900ms] ease-out group-hover:scale-105" />
+        <img src={horse.image} alt={horse.name} width={1200} height={900} loading="lazy" className="h-full w-full object-contain object-center transition-transform duration-[900ms] ease-out group-hover:scale-105" />
         <span className={`absolute top-4 left-4 px-3 py-1 rounded-full text-[0.65rem] tracking-[0.18em] uppercase font-medium ${horse.status === "Permanent Resident" ? "bg-[#1a1a18] text-[#b8922a]" : "bg-[#ede5d4] text-[#1a1a18]"}`}>{horse.status}</span>
       </div>
       <div className="p-6">
