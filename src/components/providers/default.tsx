@@ -1,5 +1,4 @@
 import { HelmetProvider } from "react-helmet-async";
-import { AuthProvider } from "./auth.tsx";
 import { ConvexProvider } from "./convex.tsx";
 import { QueryClientProvider } from "./query-client.tsx";
 import { ThemeProvider } from "./theme.tsx";
@@ -9,18 +8,16 @@ import { TooltipProvider } from "../ui/tooltip.tsx";
 export function DefaultProviders({ children }: { children: React.ReactNode }) {
   return (
     <HelmetProvider>
-      <AuthProvider>
-        <ConvexProvider>
-          <QueryClientProvider>
-            <TooltipProvider>
-              <ThemeProvider>
-                <Toaster />
-                {children}
-              </ThemeProvider>
-            </TooltipProvider>
-          </QueryClientProvider>
-        </ConvexProvider>
-      </AuthProvider>
+      <ConvexProvider>
+        <QueryClientProvider>
+          <TooltipProvider>
+            <ThemeProvider>
+              <Toaster />
+              {children}
+            </ThemeProvider>
+          </TooltipProvider>
+        </QueryClientProvider>
+      </ConvexProvider>
     </HelmetProvider>
   );
 }
