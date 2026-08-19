@@ -52,7 +52,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" aria-label="Hawkez Haven — Home" className="shrink-0">
             <img
-              src="/images/hawkez-logo-transparent.png"
+              src="/images/hawkez-haven-horizontal.png"
               alt="Hawkez Haven"
               className="h-12 w-auto object-contain"
             />
