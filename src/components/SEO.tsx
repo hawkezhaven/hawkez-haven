@@ -182,7 +182,7 @@ export default function SEO() {
         url: canonical,
         description: meta.description,
         mainEntity: {
-          "@type": "Person",
+          "@type": "Thing",
           name: horseName,
           description: meta.description,
         },
