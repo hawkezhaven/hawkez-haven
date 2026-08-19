@@ -11,49 +11,49 @@ type Meta = { title: string; description: string; canonical?: string };
 const PAGE_META: Record<string, Meta> = {
   "/": { title: DEFAULT_TITLE, description: DEFAULT_DESCRIPTION },
   "/about": {
-    title: "About Hawkez Haven | Equine Rescue & Rehabilitation",
+    title: "About Hawkez Haven | Horse Rescue & Rehabilitation NZ",
     description:
-      "Learn about Hawkez Haven, our welfare-first approach, and why Connection Before Correction guides our horse rescue, rehabilitation and rehoming work.",
+      "Learn about Hawkez Haven, our welfare-first approach to horse rescue, rehabilitation, responsible rehoming and giving horses a genuine second chance.",
   },
   "/horses": {
-    title: "Our Horses | Hawkez Haven",
+    title: "Our Horses | Hawkez Haven Horse Rescue NZ",
     description:
-      "Meet the horses of Hawkez Haven and read their stories, personalities and journeys through rescue, rehabilitation and second chances.",
+      "Meet the horses of Hawkez Haven and follow their individual journeys through rescue, rehabilitation, recovery and responsible rehoming.",
   },
   "/adoption": {
-    title: "Horse Adoption | Hawkez Haven",
+    title: "Horse Adoption | Hawkez Haven New Zealand",
     description:
-      "Explore horse adoption through Hawkez Haven, including our welfare-first matching process and requirements for responsible lifelong homes.",
+      "Learn how horse adoption works at Hawkez Haven, including our welfare-first matching process, approved homes and lifelong support.",
   },
   "/sponsorship": {
-    title: "Sponsor a Horse | Hawkez Haven",
+    title: "Sponsor a Rescue Horse | Hawkez Haven NZ",
     description:
-      "Support a Hawkez Haven horse through sponsorship and help provide feed, veterinary care, farrier care, rehabilitation and ongoing welfare.",
+      "Support a Hawkez Haven rescue horse through sponsorship and help provide feed, veterinary care, rehabilitation and a second chance.",
   },
   "/foster": {
-    title: "Foster a Horse | Hawkez Haven",
+    title: "Foster a Rescue Horse | Hawkez Haven New Zealand",
     description:
-      "Learn about fostering horses with Hawkez Haven and how a safe, suitable foster home can help a horse on their journey toward a better future.",
+      "Find out how fostering can help a Hawkez Haven rescue horse recover, rebuild confidence and prepare for their next chapter.",
   },
   "/volunteer": {
-    title: "Volunteer | Hawkez Haven",
+    title: "Volunteer | Hawkez Haven Horse Rescue NZ",
     description:
-      "Find out how you can volunteer with Hawkez Haven and support horses through rehabilitation, care, education and day-to-day rescue work.",
+      "Volunteer with Hawkez Haven and help with horse care, rehabilitation, education and the day-to-day work behind a welfare-focused rescue.",
   },
   "/experiences": {
-    title: "Equine Education & Experiences | Hawkez Haven",
+    title: "Horse Experiences & Horsemanship | Hawkez Haven NZ",
     description:
-      "Explore Hawkez Haven horsemanship lessons, education and practical equine experiences built around safety, connection and understanding.",
+      "Discover horsemanship experiences and education at Hawkez Haven, designed to build knowledge, confidence, safety and a better understanding of horses.",
   },
   "/support": {
     title: "Support Hawkez Haven | Help Give Horses a Second Chance",
     description:
-      "Support Hawkez Haven's horse rescue and rehabilitation work through donations, sponsorship and other ways to help horses find their second chance.",
+      "Support Hawkez Haven through donations and other ways to help provide rescue horses with care, rehabilitation and a safe future.",
   },
   "/contact": {
-    title: "Contact Hawkez Haven | Equine Rescue & Rehabilitation",
+    title: "Contact Hawkez Haven | Horse Rescue New Zealand",
     description:
-      "Contact Hawkez Haven in New Zealand about horse rescue, rehabilitation, adoption, sponsorship, volunteering, lessons and general enquiries.",
+      "Contact Hawkez Haven about horse rescue, adoption, sponsorship, volunteering, fostering, lessons and other enquiries.",
   },
 };
 
@@ -127,8 +127,8 @@ export default function SEO() {
 
     const meta: Meta = horseName
       ? {
-          title: `${horseName} | Hawkez Haven Horse Rescue`,
-          description: `Read ${horseName}'s journey at Hawkez Haven, including their story, personality, rehabilitation and future.`,
+          title: `${horseName} | Hawkez Haven Horse Rescue New Zealand`,
+          description: `Meet ${horseName}, follow their rescue, rehabilitation and second-chance journey at Hawkez Haven Horse Rescue New Zealand.`,
           canonical: `/horses/${horseSlug}`,
         }
       : PAGE_META[basePath] || {
@@ -146,19 +146,22 @@ export default function SEO() {
     setProperty("og:type", horseName ? "profile" : "website");
     setProperty("og:image", `${SITE}/images/hero-horse.jpg`);
     setProperty("og:image:type", "image/jpeg");
+    setProperty("og:image:alt", `${meta.title} — Hawkez Haven`);
     setProperty("og:site_name", "Hawkez Haven");
     setProperty("og:locale", "en_NZ");
     setMeta("twitter:card", "summary_large_image");
     setMeta("twitter:title", meta.title);
     setMeta("twitter:description", meta.description);
     setMeta("twitter:image", `${SITE}/images/hero-horse.jpg`);
+    setMeta("twitter:image:alt", `${meta.title} — Hawkez Haven`);
     setCanonical(canonical);
 
     setStructuredData("hawkez-haven-organization-schema", {
       "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": "NonprofitOrganization",
       name: "Hawkez Haven",
       url: SITE,
+      logo: `${SITE}/icon/icon-192.png`,
       description: DEFAULT_DESCRIPTION,
       areaServed: "New Zealand",
     });
@@ -174,10 +177,15 @@ export default function SEO() {
     if (horseName && horseSlug) {
       setStructuredData("hawkez-haven-horse-schema", {
         "@context": "https://schema.org",
-        "@type": "AboutPage",
-        name: `${horseName} | Hawkez Haven Horse Rescue`,
+        "@type": "ProfilePage",
+        name: `${horseName} | Hawkez Haven Horse Rescue New Zealand`,
         url: canonical,
         description: meta.description,
+        mainEntity: {
+          "@type": "Person",
+          name: horseName,
+          description: meta.description,
+        },
         isPartOf: { "@type": "WebSite", name: "Hawkez Haven", url: SITE },
       });
     } else {
