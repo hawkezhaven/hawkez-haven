@@ -146,6 +146,13 @@ function escapeHtml(value) {
     .replaceAll("'", "&#39;");
 }
 
+const horseLinks = Object.entries(horsePages)
+  .map(
+    ([id, horse]) =>
+      `<li><a href="/horses/${id}">${escapeHtml(horse.name)}</a> — ${escapeHtml(horse.description)}</li>`,
+  )
+  .join("\n          ");
+
 const homepageBody = `
   <main>
     <article>
@@ -181,6 +188,22 @@ const homepageBody = `
           <li><a href="/contact">Contact Hawkez Haven</a></li>
         </ul>
       </nav>
+    </article>
+  </main>
+`;
+
+const horsesBody = `
+  <main>
+    <article>
+      <h1>Our Horses</h1>
+      <p>Meet the horses of Hawkez Haven and follow their individual journeys through rescue, rehabilitation, recovery and responsible rehoming.</p>
+      <section aria-labelledby="horse-stories">
+        <h2 id="horse-stories">Horse Rescue Stories</h2>
+        <ul>
+          ${horseLinks}
+        </ul>
+      </section>
+      <p><a href="/adoption">Learn about horse adoption</a> · <a href="/support">Support Hawkez Haven</a> · <a href="/contact">Contact Hawkez Haven</a></p>
     </article>
   </main>
 `;
@@ -236,7 +259,7 @@ function renderPage(path, meta, body = "") {
 }
 
 for (const [path, meta] of Object.entries(pages)) {
-  const body = path === "/" ? homepageBody : "";
+  const body = path === "/" ? homepageBody : path === "/horses" ? horsesBody : "";
   const { html, output } = renderPage(path, meta, body);
   await mkdir(dirname(output), { recursive: true });
   await writeFile(output, html, "utf8");
@@ -244,7 +267,7 @@ for (const [path, meta] of Object.entries(pages)) {
 
 for (const [id, horse] of Object.entries(horsePages)) {
   const path = `/horses/${id}`;
-  const body = `<main><article><h1>${escapeHtml(horse.name)}</h1><p>${escapeHtml(horse.description)}</p><img src="${escapeHtml(horse.image)}" alt="${escapeHtml(horse.name)} at Hawkez Haven" /></article></main>`;
+  const body = `<main><article><h1>${escapeHtml(horse.name)}</h1><p>${escapeHtml(horse.description)}</p><img src="${escapeHtml(horse.image)}" alt="${escapeHtml(horse.name)} at Hawkez Haven" /><nav aria-label="Horse navigation"><a href="/horses">Back to Our Horses</a> · <a href="/adoption">Horse Adoption</a> · <a href="/support">Support Hawkez Haven</a></nav></article></main>`;
   const { html, output } = renderPage(path, horse, body);
   await mkdir(dirname(output), { recursive: true });
   await writeFile(output, html, "utf8");
