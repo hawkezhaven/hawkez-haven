@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import { useAction } from "convex/react";
 import { api } from "@/convex/_generated/api.js";
 
-// Activation_App Live client ID — used only to load the JS SDK UI.
-// All API calls (create/capture) go through the Convex server actions.
+// Same live PayPal application used by the working Hawkez Haven payment flow.
+// One-time donations use Orders/CAPTURE; sponsorships remain subscriptions.
 const CLIENT_ID = "AfKaKhtMrDF33E63Jdc2Ow1QjwQG2lGQCjx95OF5ccHYIqhNveA0g5PFWvtVuYBAG68VEl7EtXHtctvC";
 const NAMESPACE = "paypalOrder";
-const SDK_URL = `https://www.paypal.com/sdk/js?client-id=${CLIENT_ID}&intent=capture&disable-funding=venmo&currency=NZD`;
+const SDK_URL = `https://www.paypal.com/sdk/js?client-id=${CLIENT_ID}&components=buttons&intent=capture&commit=true&currency=NZD&disable-funding=venmo`;
 
 declare global {
   interface Window {
@@ -28,19 +28,32 @@ type OrderButtonOptions = {
 };
 
 let sdkLoaded = false;
+let sdkLoading = false;
 const pendingCallbacks: (() => void)[] = [];
 
 function loadOrderSdk(cb: () => void) {
-  if (sdkLoaded) { cb(); return; }
+  if (sdkLoaded && window[NAMESPACE]?.Buttons) {
+    cb();
+    return;
+  }
+
   pendingCallbacks.push(cb);
-  if (document.querySelector(`script[data-namespace="${NAMESPACE}"]`)) return;
+
+  if (sdkLoading || document.querySelector(`script[data-namespace="${NAMESPACE}"]`)) return;
+
+  sdkLoading = true;
   const script = document.createElement("script");
   script.src = SDK_URL;
   script.setAttribute("data-namespace", NAMESPACE);
   script.onload = () => {
     sdkLoaded = true;
-    pendingCallbacks.forEach(fn => fn());
-    pendingCallbacks.length = 0;
+    sdkLoading = false;
+    const callbacks = pendingCallbacks.splice(0);
+    callbacks.forEach(fn => fn());
+  };
+  script.onerror = () => {
+    sdkLoading = false;
+    pendingCallbacks.splice(0).forEach(fn => fn());
   };
   document.head.appendChild(script);
 }
@@ -63,7 +76,6 @@ export default function PayPalOrderButton({ amount, itemName, onSuccess, onCance
   const createOrderAction = useAction(api.paypal.createOrder);
   const captureOrderAction = useAction(api.paypal.captureOrder);
 
-  // Sanitise item name for use as a DOM id
   const containerId = `paypal-order-btn-${itemName.replace(/[^a-zA-Z0-9]/g, "-").toLowerCase()}`;
 
   useEffect(() => {
@@ -74,23 +86,29 @@ export default function PayPalOrderButton({ amount, itemName, onSuccess, onCance
 
     loadOrderSdk(() => {
       if (rendered.current || !containerRef.current) return;
-      rendered.current = true;
-      setLoading(false);
 
       const paypal = window[NAMESPACE];
-      if (!paypal) { setFailed(true); onError?.(); return; }
+      if (!paypal) {
+        setLoading(false);
+        setFailed(true);
+        onError?.();
+        return;
+      }
+
+      rendered.current = true;
+      setLoading(false);
 
       const btn = paypal.Buttons({
         style: { layout: "vertical", color: "gold", shape: "pill", label: "pay" },
 
-        // Order is created server-side via Convex action
+        // Use the exact same server-side Orders/CAPTURE route as the working
+        // Hawkez Haven one-time payment buttons.
         createOrder: () =>
           createOrderAction({
-            amountNzd: String(amount),
+            amountNzd: Number(amount).toFixed(2),
             itemName,
           }),
 
-        // Capture is confirmed server-side; success state only set on confirmed capture
         onApprove: async (data) => {
           try {
             const result = await captureOrderAction({ orderId: data.orderID });
@@ -107,19 +125,28 @@ export default function PayPalOrderButton({ amount, itemName, onSuccess, onCance
           }
         },
 
-        onCancel: () => { onCancel?.(); },
-        onError:  () => { setFailed(true); onError?.(); },
+        onCancel: () => onCancel?.(),
+        onError: () => {
+          setFailed(true);
+          onError?.();
+        },
       });
 
-      if (btn.isEligible()) {
-        btn.render(`#${containerId}`).catch(() => { setFailed(true); onError?.(); });
-      } else {
+      if (!btn.isEligible()) {
         setFailed(true);
         onError?.();
+        return;
       }
+
+      btn.render(`#${containerId}`).catch(() => {
+        setFailed(true);
+        onError?.();
+      });
     });
 
-    return () => { rendered.current = false; };
+    return () => {
+      rendered.current = false;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [amount, itemName]);
 
