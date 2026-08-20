@@ -36,7 +36,6 @@ function loadOrderSdk(cb: () => void) {
   }
 
   pendingCallbacks.push(cb);
-
   if (sdkLoading || document.querySelector(`script[data-namespace="${NAMESPACE}"]`)) return;
 
   sdkLoading = true;
@@ -46,8 +45,7 @@ function loadOrderSdk(cb: () => void) {
   script.onload = () => {
     sdkLoaded = true;
     sdkLoading = false;
-    const callbacks = pendingCallbacks.splice(0);
-    callbacks.forEach(fn => fn());
+    pendingCallbacks.splice(0).forEach(fn => fn());
   };
   script.onerror = () => {
     sdkLoading = false;
@@ -66,7 +64,7 @@ type Props = {
 
 export default function PayPalOrderButton({ amount, itemName, onSuccess, onCancel, onError }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const rendered = useRef(false);
+  const renderVersion = useRef(0);
   const [loading, setLoading] = useState(true);
   const [confirmed, setConfirmed] = useState(false);
   const [failed, setFailed] = useState(false);
@@ -76,16 +74,16 @@ export default function PayPalOrderButton({ amount, itemName, onSuccess, onCance
   const containerId = `paypal-order-btn-${itemName.replace(/[^a-zA-Z0-9]/g, "-").toLowerCase()}`;
 
   useEffect(() => {
-    rendered.current = false;
+    const version = ++renderVersion.current;
+    const container = containerRef.current;
+
     setLoading(true);
     setConfirmed(false);
     setFailed(false);
-
-    const container = containerRef.current;
     if (container) container.innerHTML = "";
 
     loadOrderSdk(() => {
-      if (rendered.current || !containerRef.current) return;
+      if (version !== renderVersion.current || !containerRef.current) return;
 
       const paypal = window[NAMESPACE];
       if (!paypal) {
@@ -95,16 +93,9 @@ export default function PayPalOrderButton({ amount, itemName, onSuccess, onCance
         return;
       }
 
-      rendered.current = true;
-      setLoading(false);
-
       const btn = paypal.Buttons({
         style: { layout: "vertical", color: "gold", shape: "pill", label: "pay" },
-        createOrder: () =>
-          createOrderAction({
-            amountNzd: Number(amount).toFixed(2),
-            itemName,
-          }),
+        createOrder: () => createOrderAction({ amountNzd: Number(amount).toFixed(2), itemName }),
         onApprove: async (data) => {
           try {
             const result = await captureOrderAction({ orderId: data.orderID });
@@ -128,48 +119,36 @@ export default function PayPalOrderButton({ amount, itemName, onSuccess, onCance
       });
 
       if (!btn.isEligible()) {
+        setLoading(false);
         setFailed(true);
         onError?.();
         return;
       }
 
-      btn.render(`#${containerId}`).catch(() => {
+      btn.render(`#${containerId}`).then(() => {
+        if (version === renderVersion.current) setLoading(false);
+      }).catch(() => {
+        if (version !== renderVersion.current) return;
+        setLoading(false);
         setFailed(true);
         onError?.();
       });
     });
 
     return () => {
-      rendered.current = false;
+      renderVersion.current++;
       if (container) container.innerHTML = "";
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [amount, itemName]);
 
-  if (confirmed) {
-    return (
-      <div className="mt-4 rounded-full bg-[#b8922a]/10 px-4 py-2 text-center text-xs text-[#b8922a] font-medium">
-        Payment confirmed — thank you!
-      </div>
-    );
-  }
-
-  if (failed) {
-    return (
-      <div className="mt-4 rounded-full bg-[#4a4a42]/10 px-4 py-2 text-center text-xs text-[#4a4a42]">
-        Payment could not be completed. Please try again.
-      </div>
-    );
-  }
+  if (confirmed) return <div className="mt-4 rounded-full bg-[#b8922a]/10 px-4 py-2 text-center text-xs text-[#b8922a] font-medium">Payment confirmed — thank you!</div>;
+  if (failed) return <div className="mt-4 rounded-full bg-[#4a4a42]/10 px-4 py-2 text-center text-xs text-[#4a4a42]">Payment could not be completed. Please try again.</div>;
 
   return (
-    <div ref={containerRef}>
-      {loading && (
-        <div className="flex justify-center py-2">
-          <span className="text-xs text-[#4a4a42]">Loading…</span>
-        </div>
-      )}
-      <div id={containerId} className="min-h-[42px]" />
+    <div>
+      {loading && <div className="flex justify-center py-2"><span className="text-xs text-[#4a4a42]">Loading…</span></div>}
+      <div ref={containerRef} id={containerId} className="min-h-[42px]" />
     </div>
   );
 }
