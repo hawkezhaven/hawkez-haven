@@ -192,7 +192,7 @@ export default function SEO() {
 
     setStructuredData("hawkez-haven-page-schema", {
       "@context": "https://schema.org",
-      "@type": horseName ? "ProfilePage" : "WebPage",
+      "@type": horseName ? "WebPage" : "WebPage",
       name: meta.title,
       url: canonical,
       description: meta.description,
@@ -205,12 +205,12 @@ export default function SEO() {
     if (horseName && horseSlug) {
       setStructuredData("hawkez-haven-horse-schema", {
         "@context": "https://schema.org",
-        "@type": "ProfilePage",
+        "@type": "WebPage",
         name: `${horseName} | Hawkez Haven Horse Rescue New Zealand`,
         url: canonical,
         description: meta.description,
-        mainEntity: {
-          "@type": "Thing",
+        about: {
+          "@type": "Animal",
           name: horseName,
           description: meta.description,
         },
