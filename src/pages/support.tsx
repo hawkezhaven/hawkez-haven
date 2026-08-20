@@ -96,14 +96,14 @@ export default function SupportPage() {
         </section>
       ))}
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="max-w-xl mx-auto text-center">
-          <div className="flex items-center justify-center gap-3 mb-6">
+          <div className="flex items-center justify-center gap-3 mb-8">
             <span className="block h-px w-8 bg-[#b8922a]" />
             <p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium text-[#4a4a42]">Give what feels right</p>
             <span className="block h-px w-8 bg-[#b8922a]" />
           </div>
-          <div className="py-2">
+          <div className="bg-white rounded-2xl p-8 border border-[#ddd4be]/50 shadow-sm">
             <PayPalButton containerId="support-page" />
           </div>
         </div>
