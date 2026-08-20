@@ -73,6 +73,7 @@ export default function PayPalOrderButton({ amount, itemName, onSuccess, onCance
 
   const createOrderAction = useAction(api.paypal.createOrder);
   const captureOrderAction = useAction(api.paypal.captureOrder);
+  const containerId = `paypal-order-btn-${itemName.replace(/[^a-zA-Z0-9]/g, "-").toLowerCase()}`;
 
   useEffect(() => {
     rendered.current = false;
@@ -80,14 +81,8 @@ export default function PayPalOrderButton({ amount, itemName, onSuccess, onCance
     setConfirmed(false);
     setFailed(false);
 
-    // The custom "Give what feels right" amount changes this component's
-    // amount while it remains mounted. Clear the old PayPal iframe before
-    // rendering the new button, otherwise PayPal can reject a second render
-    // into the same container.
     const container = containerRef.current;
     if (container) container.innerHTML = "";
-
-    const containerId = `paypal-order-btn-${itemName.replace(/[^a-zA-Z0-9]/g, "-").toLowerCase()}`;
 
     loadOrderSdk(() => {
       if (rendered.current || !containerRef.current) return;
@@ -105,13 +100,11 @@ export default function PayPalOrderButton({ amount, itemName, onSuccess, onCance
 
       const btn = paypal.Buttons({
         style: { layout: "vertical", color: "gold", shape: "pill", label: "pay" },
-
         createOrder: () =>
           createOrderAction({
             amountNzd: Number(amount).toFixed(2),
             itemName,
           }),
-
         onApprove: async (data) => {
           try {
             const result = await captureOrderAction({ orderId: data.orderID });
@@ -127,7 +120,6 @@ export default function PayPalOrderButton({ amount, itemName, onSuccess, onCance
             onError?.();
           }
         },
-
         onCancel: () => onCancel?.(),
         onError: () => {
           setFailed(true);
@@ -171,13 +163,13 @@ export default function PayPalOrderButton({ amount, itemName, onSuccess, onCance
   }
 
   return (
-    <div>
+    <div ref={containerRef}>
       {loading && (
         <div className="flex justify-center py-2">
           <span className="text-xs text-[#4a4a42]">Loading…</span>
         </div>
       )}
-      <div ref={containerRef} id={`paypal-order-btn-${itemName.replace(/[^a-zA-Z0-9]/g, "-").toLowerCase()}`} className="min-h-[42px]" />
+      <div id={containerId} className="min-h-[42px]" />
     </div>
   );
 }
