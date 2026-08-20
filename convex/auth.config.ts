@@ -1,10 +1,7 @@
 import { AuthConfig } from "convex/server";
 
+// Authentication is not currently used by Hawkez Haven.
+// Keep the Convex auth config valid without the retired Hercules/OIDC provider.
 export default {
-  providers: [
-    {
-      domain: process.env.HERCULES_OIDC_AUTHORITY!,
-      applicationID: process.env.HERCULES_OIDC_CLIENT_ID!,
-    },
-  ],
+  providers: [],
 } satisfies AuthConfig;
