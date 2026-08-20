@@ -5,7 +5,7 @@
 import { action } from "./_generated/server";
 import { v } from "convex/values";
 
-const CLIENT_ID = "AfKaKhtMrDF33E63Jdc2Ow1QjwQG2lGQCjx95OF5ccHYIqhNveA0g5PFWvtVuYBAG68VEl7EtXHtctvC";
+const CLIENT_ID = "BAAq9wz-L1cOmxowQLyBTXr8i8x-rjnemjD-jCt2p2wad_EL5WCMzcUk4bAPgMPQhO1NmEoZJqab7zVsp0";
 const PAYPAL_API_BASE = "https://api-m.paypal.com";
 
 async function getAccessToken(): Promise<string> {
