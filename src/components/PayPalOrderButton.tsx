@@ -1,12 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { useAction } from "convex/react";
 import { api } from "@/convex/_generated/api.js";
+import { PAYPAL_CLIENT_ID } from "@/lib/paypal.ts";
 
-// Same live PayPal application used by the working Hawkez Haven payment flow.
-// One-time donations use Orders/CAPTURE; sponsorships remain subscriptions.
-const CLIENT_ID = "AfKaKhtMrDF33E63Jdc2Ow1QjwQG2lGQCjx95OF5ccHYIqhNveA0g5PFWvtVuYBAG68VEl7EtXHtctvC";
 const NAMESPACE = "paypalOrder";
-const SDK_URL = `https://www.paypal.com/sdk/js?client-id=${CLIENT_ID}&components=buttons&intent=capture&commit=true&currency=NZD&disable-funding=venmo`;
+const SDK_URL = `https://www.paypal.com/sdk/js?client-id=${PAYPAL_CLIENT_ID}&components=buttons&intent=capture&commit=true&currency=NZD&disable-funding=venmo`;
 
 declare global {
   interface Window {
@@ -76,13 +74,20 @@ export default function PayPalOrderButton({ amount, itemName, onSuccess, onCance
   const createOrderAction = useAction(api.paypal.createOrder);
   const captureOrderAction = useAction(api.paypal.captureOrder);
 
-  const containerId = `paypal-order-btn-${itemName.replace(/[^a-zA-Z0-9]/g, "-").toLowerCase()}`;
-
   useEffect(() => {
     rendered.current = false;
     setLoading(true);
     setConfirmed(false);
     setFailed(false);
+
+    // The custom "Give what feels right" amount changes this component's
+    // amount while it remains mounted. Clear the old PayPal iframe before
+    // rendering the new button, otherwise PayPal can reject a second render
+    // into the same container.
+    const container = containerRef.current;
+    if (container) container.innerHTML = "";
+
+    const containerId = `paypal-order-btn-${itemName.replace(/[^a-zA-Z0-9]/g, "-").toLowerCase()}`;
 
     loadOrderSdk(() => {
       if (rendered.current || !containerRef.current) return;
@@ -101,8 +106,6 @@ export default function PayPalOrderButton({ amount, itemName, onSuccess, onCance
       const btn = paypal.Buttons({
         style: { layout: "vertical", color: "gold", shape: "pill", label: "pay" },
 
-        // Use the exact same server-side Orders/CAPTURE route as the working
-        // Hawkez Haven one-time payment buttons.
         createOrder: () =>
           createOrderAction({
             amountNzd: Number(amount).toFixed(2),
@@ -146,6 +149,7 @@ export default function PayPalOrderButton({ amount, itemName, onSuccess, onCance
 
     return () => {
       rendered.current = false;
+      if (container) container.innerHTML = "";
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [amount, itemName]);
@@ -167,13 +171,13 @@ export default function PayPalOrderButton({ amount, itemName, onSuccess, onCance
   }
 
   return (
-    <div ref={containerRef}>
+    <div>
       {loading && (
         <div className="flex justify-center py-2">
           <span className="text-xs text-[#4a4a42]">Loading…</span>
         </div>
       )}
-      <div id={containerId} className="min-h-[42px]" />
+      <div ref={containerRef} id={`paypal-order-btn-${itemName.replace(/[^a-zA-Z0-9]/g, "-").toLowerCase()}`} className="min-h-[42px]" />
     </div>
   );
 }
