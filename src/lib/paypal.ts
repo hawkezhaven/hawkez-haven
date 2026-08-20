@@ -1,16 +1,16 @@
 // PayPal configuration for Hawkez Haven
 
-// Public PayPal Client ID used by the existing working Orders/CAPTURE flow.
+// Public PayPal Client ID used by the live Orders/CAPTURE flow.
 // VITE_PAYPAL_CLIENT_ID can override it in Vercel; the Client Secret remains server-side.
 export const PAYPAL_CLIENT_ID =
   import.meta.env.VITE_PAYPAL_CLIENT_ID ||
-  "AfKaKhtMrDF33E63Jdc2Ow1QjwQG2lGQCjx95OF5ccHYIqhNveA0g5PFWvtVuYBAG68VEl7EtXHtctvC";
+  "BAAq9wz-L1cOmxowQLyBTXr8i8x-rjnemjD-jCt2p2wad_EL5WCMzcUk4bAPgMPQhO1NmEoZJqab7zVsp0";
 
 export const PAYPAL_HOSTED_BUTTON_ID = "CWREMT7E255UN";
 export const PAYPAL_EMAIL = "hawkez66@gmail.com";
 
 // --- Sponsorship subscription plans ---
-export const PAYPAL_SUBSCRIPTION_CLIENT_ID = "AfKaKhtMrDF33E63Jdc2Ow1QjwQG2lGQCjx95OF5ccHYIqhNveA0g5PFWvtVuYBAG68VEl7EtXHtctvC";
+export const PAYPAL_SUBSCRIPTION_CLIENT_ID = "BAAq9wz-L1cOmxowQLyBTXr8i8x-rjnemjD-jCt2p2wad_EL5WCMzcUk4bAPgMPQhO1NmEoZJqab7zVsp0";
 
 export const SUBSCRIPTION_PLAN_IDS: Record<string, string> = {
   "Chaff Sponsor":    "P-66W660330H5879158NJV2OAY",
@@ -18,7 +18,8 @@ export const SUBSCRIPTION_PLAN_IDS: Record<string, string> = {
   "Guardian Sponsor": "P-6DK30950XY6302345NJV2NOI",
 };
 
-// Build a PayPal donate URL with a preset amount in NZD
+// Build a PayPal donate URL with an optional preset amount in NZD.
+// Omitting amount lets PayPal handle the amount selection rather than hard-coding a test amount.
 export function paypalDonateUrl(amount?: number, itemName?: string): string {
   const params = new URLSearchParams({
     business: PAYPAL_EMAIL,
