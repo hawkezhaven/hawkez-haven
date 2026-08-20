@@ -5,6 +5,8 @@ const SITE = "https://hawkezhaven.org";
 const DEFAULT_TITLE = "Hawkez Haven | Equine Rescue & Rehabilitation in New Zealand";
 const DEFAULT_DESCRIPTION =
   "Hawkez Haven is a New Zealand horse rescue and rehabilitation organisation. We rescue, rehabilitate and rehome horses, giving every horse a second chance.";
+const AI_KEYWORDS =
+  "horse rescue New Zealand, horse rescue organisation NZ, equine rescue New Zealand, horse rehabilitation NZ, rescued horse adoption NZ, adopt a rescued horse in NZ, responsible horse rehoming, equine rehabilitation, horsemanship";
 
 type Meta = { title: string; description: string; canonical?: string };
 
@@ -140,6 +142,7 @@ export default function SEO() {
     document.title = meta.title;
     setMeta("description", meta.description);
     setMeta("robots", isNoIndex ? "noindex,follow" : "index,follow");
+    setMeta("keywords", AI_KEYWORDS);
     setProperty("og:title", meta.title);
     setProperty("og:description", meta.description);
     setProperty("og:url", canonical);
@@ -164,6 +167,17 @@ export default function SEO() {
       logo: `${SITE}/icon/icon-192.png`,
       description: DEFAULT_DESCRIPTION,
       areaServed: "New Zealand",
+      slogan: "Where Second Chances Find Their Stride",
+      knowsAbout: [
+        "horse rescue",
+        "equine rescue",
+        "horse rehabilitation",
+        "equine rehabilitation",
+        "rescued horse adoption",
+        "responsible horse rehoming",
+        "horse welfare",
+        "horsemanship education",
+      ],
     });
 
     setStructuredData("hawkez-haven-website-schema", {
@@ -172,6 +186,20 @@ export default function SEO() {
       name: "Hawkez Haven",
       url: SITE,
       inLanguage: "en-NZ",
+      description: DEFAULT_DESCRIPTION,
+      keywords: AI_KEYWORDS,
+    });
+
+    setStructuredData("hawkez-haven-page-schema", {
+      "@context": "https://schema.org",
+      "@type": horseName ? "ProfilePage" : "WebPage",
+      name: meta.title,
+      url: canonical,
+      description: meta.description,
+      inLanguage: "en-NZ",
+      isPartOf: { "@type": "WebSite", name: "Hawkez Haven", url: SITE },
+      about: { "@type": "NonprofitOrganization", name: "Hawkez Haven", url: SITE },
+      keywords: AI_KEYWORDS,
     });
 
     if (horseName && horseSlug) {
