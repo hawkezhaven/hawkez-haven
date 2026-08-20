@@ -96,14 +96,14 @@ export default function SupportPage() {
         </section>
       ))}
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="max-w-xl mx-auto text-center">
-          <div className="flex items-center justify-center gap-3 mb-8">
+          <div className="flex items-center justify-center gap-3 mb-6">
             <span className="block h-px w-8 bg-[#b8922a]" />
             <p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium text-[#4a4a42]">Give what feels right</p>
             <span className="block h-px w-8 bg-[#b8922a]" />
           </div>
-          <div className="bg-white rounded-2xl p-8 border border-[#ddd4be]/50 shadow-sm">
+          <div className="py-2">
             <PayPalButton containerId="support-page" />
           </div>
         </div>
@@ -137,7 +137,7 @@ export default function SupportPage() {
             Sponsor a Horse <ArrowRight size={16} />
           </Link>
           <Link to="/contact" className="inline-flex items-center gap-2 px-7 py-3 border border-[#1a1a18] text-[#1a1a18] text-sm font-medium rounded-full hover:bg-[#1a1a18] hover:text-[#f5f0e8] transition-colors cursor-pointer">
-            Get in Touch
+            Get in Touch <ArrowRight size={16} />
           </Link>
         </div>
       </section>
