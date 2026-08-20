@@ -1,9 +1,13 @@
 // PayPal configuration for Hawkez Haven
 
-// --- General hosted button (Give What Feels Right) ---
-export const PAYPAL_CLIENT_ID = "BAAjIJNjas4OBlKWsE7iOVNBLYHtoHwgZlLIRaf01Yos29y6DNX-EYqFTxFbjjN-4ofyFPxFjlaPZsua3g";
+// Public PayPal Client ID. Vite exposes VITE_* variables to the browser;
+// this is safe for a PayPal Client ID. The Client Secret stays server-side.
+export const PAYPAL_CLIENT_ID =
+  import.meta.env.VITE_PAYPAL_CLIENT_ID ||
+  "BAAjIJNjas4OBlKWsE7iOVNBLYHtoHwgZlLIRaf01Yos29y6DNX-EYqFTxFbjjN-4ofyFPxFjlaPZsua3g";
+
 export const PAYPAL_HOSTED_BUTTON_ID = "CWREMT7E255UN";
-export const PAYPAL_EMAIL = "hawkez66@gmail.com";
+export const PAYPAL_EMAIL = "hawkezhaven@gmail.com";
 
 // --- Sponsorship subscription plans ---
 export const PAYPAL_SUBSCRIPTION_CLIENT_ID = "AfKaKhtMrDF33E63Jdc2Ow1QjwQG2lGQCjx95OF5ccHYIqhNveA0g5PFWvtVuYBAG68VEl7EtXHtctvC";
