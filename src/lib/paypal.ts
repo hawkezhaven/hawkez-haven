@@ -10,7 +10,8 @@ export const PAYPAL_HOSTED_BUTTON_ID = "CWREMT7E255UN";
 export const PAYPAL_EMAIL = "hawkez66@gmail.com";
 
 // --- Sponsorship subscription plans ---
-export const PAYPAL_SUBSCRIPTION_CLIENT_ID = "BAAq9wz-L1cOmxowQLyBTXr8i8x-rjnemjD-jCt2p2wad_EL5WCMzcUk4bAPgMPQhO1NmEoZJqab7zVsp0";
+export const PAYPAL_SUBSCRIPTION_CLIENT_ID =
+  "BAAq9wz-L1cOmxowQLyBTXr8i8x-rjnemjD-jCt2p2wad_EL5WCMzcUk4bAPgMPQhO1NmEoZJqab7zVsp0";
 
 export const SUBSCRIPTION_PLAN_IDS: Record<string, string> = {
   "Chaff Sponsor":    "P-66W660330H5879158NJV2OAY",
@@ -18,18 +19,18 @@ export const SUBSCRIPTION_PLAN_IDS: Record<string, string> = {
   "Guardian Sponsor": "P-6DK30950XY6302345NJV2NOI",
 };
 
-// Build a PayPal donate URL with an optional preset amount in NZD.
-// Omitting amount lets PayPal handle the amount selection rather than hard-coding a test amount.
+// Build a PayPal standard payment URL with an optional preset amount in NZD.
 export function paypalDonateUrl(amount?: number, itemName?: string): string {
   const params = new URLSearchParams({
+    cmd: "_xclick",
     business: PAYPAL_EMAIL,
     currency_code: "NZD",
-    cmd: "_donations",
-    ...(amount ? { amount: String(amount) } : {}),
-    ...(itemName ? { item_name: itemName } : { item_name: "Hawkez Haven Donation" }),
+    item_name: itemName || "Support Hawkez Haven",
+    no_shipping: "1",
     return: "https://hawkezhaven.org",
+    ...(amount ? { amount: String(amount) } : {}),
   });
-  return `https://www.paypal.com/donate?${params.toString()}`;
+  return `https://www.paypal.com/cgi-bin/webscr?${params.toString()}`;
 }
 
 // PayPal SDK script URL
