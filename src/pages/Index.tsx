@@ -262,8 +262,8 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ── Adoption CTA banner (Haven and Rob) ───────────── */}
-      <section className="relative py-32 md:py-40 overflow-hidden">
+     {/* ── Adoption CTA banner ───────────────────────────── */}
+      <section className="relative py-36 md:py-48 min-h-[520px] flex items-center justify-center overflow-hidden">
         <img
           src="/images/pasture.jpg"
           alt="Haven and Rob at Hawkez Haven"
