@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Heart, Sprout, GraduationCap, HandHeart, ArrowUpRight, Quote } from "lucide-react";
-import { HORSES } from "@/lib/horses.ts";
+import { HORSES } from "@/lib/horses";
 
 const PREVIEW_HORSES = HORSES.slice(0, 4);
 const SPONSOR_HORSES = HORSES.filter(h => h.status === "Permanent Resident").slice(0, 4);
@@ -161,34 +161,41 @@ export default function Index() {
               <Link
                 key={horse.id}
                 to={`/horses/${horse.id}`}
-                className="bg-white rounded-2xl group block overflow-hidden shadow-sm border border-[#ddd4be]/50 cursor-pointer"
+                className="bg-white rounded-2xl group block overflow-hidden shadow-sm border border-[#ddd4be]/50 cursor-pointer transition-all duration-300 hover:shadow-md hover:-translate-y-1"
               >
-                <div className="relative aspect-[16/10] overflow-hidden bg-[#ede5d4]">
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#ede5d4]">
                   <img
                     src={horse.image}
-                    alt={horse.name}
+                    alt={`${horse.name} at Hawkez Haven`}
                     loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-105"
+                    className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                   />
-                  <span className={`absolute top-4 left-4 px-3 py-1 rounded-full text-[0.65rem] tracking-[0.18em] uppercase font-medium ${
+                  <span className={`absolute top-4 left-4 z-10 px-3 py-1 rounded-full text-[0.65rem] tracking-[0.18em] uppercase font-medium shadow-sm ${
                     horse.status === "Permanent Resident"
-                      ? "bg-[#1a1a18] text-[#b8922a]"
-                      : "bg-[#ede5d4] text-[#1a1a18]"
+                      ? "bg-[#1a1a18]/90 text-[#b8922a] backdrop-blur-sm"
+                      : "bg-[#ede5d4]/90 text-[#1a1a18] backdrop-blur-sm"
                   }`}>
                     {horse.status}
                   </span>
-                </div>
-                <div className="p-6">
-                  <div className="flex items-start justify-between gap-4">
-                    <h3 className="font-serif text-2xl leading-tight truncate min-w-0 text-[#1a1a18]">{horse.name}</h3>
-                    <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-[#ddd4be] text-[#1a1a18] group-hover:bg-[#b8922a] group-hover:border-[#b8922a] group-hover:text-white transition-colors">
-                      <ArrowUpRight size={14} />
+
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a18]/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <span className="w-full text-center py-2 px-3 bg-[#b8922a] text-white text-[0.7rem] tracking-wider uppercase font-semibold rounded-lg shadow-md transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 flex items-center justify-center gap-1.5">
+                      Read My Journey <ArrowUpRight size={13} />
                     </span>
                   </div>
-                  <p className="mt-3 text-sm text-[#4a4a42] leading-relaxed line-clamp-2">{horse.description}</p>
-                  <span className="mt-5 inline-flex items-center gap-2 text-xs tracking-[0.18em] uppercase text-[#8c6e1e] group-hover:text-[#b8922a] font-medium">
-                    Read My Journey <ArrowUpRight size={12} />
-                  </span>
+                </div>
+
+                <div className="p-5">
+                  <div className="flex items-start justify-between gap-3">
+                    <h3 className="font-serif text-xl leading-tight truncate min-w-0 text-[#1a1a18] group-hover:text-[#8c6e1e] transition-colors">
+                      {horse.name}
+                    </h3>
+                    <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-[#ddd4be] text-[#1a1a18] group-hover:bg-[#b8922a] group-hover:border-[#b8922a] group-hover:text-white transition-all duration-300">
+                      <ArrowUpRight size={13} />
+                    </span>
+                  </div>
+                  <p className="mt-2.5 text-xs text-[#4a4a42] leading-relaxed line-clamp-2">{horse.description}</p>
                 </div>
               </Link>
             ))}
