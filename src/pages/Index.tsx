@@ -11,9 +11,9 @@ export default function Index() {
       {/* ── Hero ─────────────────────────────────────────── */}
       <section className="relative min-h-[92vh] flex items-end overflow-hidden bg-[#1a1a18]">
         <img
-          src="https://hercules-cdn.com/file_lrJQml96WQlUGWerpWilHhr5"
+          src="/images/hero.jpg"
           alt="A rescued chestnut horse standing in a New Zealand paddock at golden hour"
-          className="absolute inset-0 h-full w-full object-cover opacity-80"
+          className="absolute inset-0 h-full w-full object-cover object-top opacity-80"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a18] via-[#1a1a18]/60 to-[#1a1a18]/10" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a18]/60 via-transparent to-transparent" />
@@ -262,12 +262,12 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ── Adoption CTA banner ───────────────────────────── */}
+      {/* ── Adoption CTA banner (Haven and Rob) ───────────── */}
       <section className="relative py-32 md:py-40 overflow-hidden">
         <img
           src="/images/pasture.jpg"
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover"
+          alt="Haven and Rob at Hawkez Haven"
+          className="absolute inset-0 h-full w-full object-cover object-top"
         />
         <div className="absolute inset-0 bg-[#1a1a18]/70" />
         <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 text-center text-[#f5f0e8]">
