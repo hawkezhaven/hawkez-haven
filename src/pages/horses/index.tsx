@@ -84,56 +84,6 @@ export default function HorsesPage() {
 
 function HorseCard({ horse }: { horse: (typeof HORSES)[0] }) {
   return (
-    <Link 
-      to={`/horses/${horse.id}`} 
-      className="bg-white rounded-2xl group block overflow-hidden shadow-sm border border-[#ddd4be]/50 cursor-pointer transition-all duration-300 hover:shadow-md hover:-translate-y-1"
-    >
-      <div className="relative overflow-hidden bg-[#ede5d4] aspect-[4/3] w-full">
-      <img
-  src={horse.image}
-  alt={`${horse.name} at Hawkez Haven`}
-  loading="lazy"
-  className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
-/>
-        
-        <span 
-          className={`absolute top-4 left-4 z-10 px-3 py-1 rounded-full text-[0.65rem] tracking-[0.18em] uppercase font-medium shadow-sm ${
-            horse.status === "Permanent Resident" 
-              ? "bg-[#1a1a18]/90 text-[#b8922a] backdrop-blur-sm" 
-              : "bg-[#ede5d4]/90 text-[#1a1a18] backdrop-blur-sm"
-          }`}
-        >
-          {horse.status}
-        </span>
-
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a18]/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
-          <span className="w-full text-center py-2.5 px-4 bg-[#b8922a] text-white text-xs tracking-wider uppercase font-semibold rounded-xl shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 flex items-center justify-center gap-2">
-            Read My Journey <ArrowUpRight size={14} />
-          </span>
-        </div>
-      </div>
-
-      <div className="p-6">
-        <div className="flex items-start justify-between gap-4">
-          <h3 className="font-serif text-2xl leading-tight text-[#1a1a18] group-hover:text-[#8c6e1e] transition-colors">
-            {horse.name}
-          </h3>
-          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-[#ddd4be] text-[#1a1a18] group-hover:bg-[#b8922a] group-hover:border-[#b8922a] group-hover:text-white transition-all duration-300">
-            <ArrowUpRight size={14} />
-          </span>
-        </div>
-        <p className="mt-2 text-xs text-[#b8922a] font-medium italic">
-          {horse.tagline}
-        </p>
-        <p className="mt-3 text-sm text-[#4a4a42] leading-relaxed line-clamp-2">
-          {horse.description}
-        </p>
-      </div>
-    </Link>
-  );
-}
-function HorseCard({ horse }: { horse: (typeof HORSES)[0] }) {
-  return (
     <div className="bg-white rounded-2xl group overflow-hidden shadow-sm border border-[#ddd4be]/50 flex flex-col justify-between transition-all duration-300 hover:shadow-md hover:-translate-y-1">
       <div>
         <Link to={`/horses/${horse.id}`} className="block">
