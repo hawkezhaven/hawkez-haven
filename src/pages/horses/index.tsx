@@ -40,7 +40,6 @@ export default function HorsesPage() {
     </div>
   );
 }
-
 function HorseCard({ horse }: { horse: (typeof HORSES)[0] }) {
   return (
     <Link 
