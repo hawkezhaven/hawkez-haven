@@ -93,8 +93,8 @@ function HorseCard({ horse }: { horse: (typeof HORSES)[0] }) {
           src={horse.image}
           alt={`${horse.name} at Hawkez Haven`}
           loading="lazy"
-          className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-        />
+          className="className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+/>
         
         <span 
           className={`absolute top-4 left-4 z-10 px-3 py-1 rounded-full text-[0.65rem] tracking-[0.18em] uppercase font-medium shadow-sm ${
