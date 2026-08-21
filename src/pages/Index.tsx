@@ -11,7 +11,7 @@ export default function Index() {
       {/* ── Hero ─────────────────────────────────────────── */}
       <section className="relative min-h-[92vh] flex items-end overflow-hidden bg-[#1a1a18]">
         <img
-          src="/images/hero-horses.jpg"
+          src="/images/hero-horse.jpg"
           alt="Rescued horses at Hawkez Haven"
           className="absolute inset-0 h-full w-full object-cover object-top opacity-80"
         />
