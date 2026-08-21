@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, Info } from "lucide-react";
 
 export default function AdoptionPage() {
   return (
@@ -23,6 +23,31 @@ export default function AdoptionPage() {
             </Link>
             <Link to="/enquire/adoption" className="inline-flex items-center gap-2 px-7 py-3 border border-[#f5f0e8]/30 text-[#f5f0e8] text-sm font-medium rounded-full hover:bg-[#f5f0e8]/10 transition-colors cursor-pointer">
               Start an enquiry
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Seasonal Intake & Capacity Notice */}
+      <section className="bg-[#ede5d4] border-y border-[#ddd4be]/80 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white/80 rounded-2xl p-6 sm:p-8 border border-[#b8922a]/30 flex flex-col md:flex-row items-start md:items-center gap-5 shadow-sm">
+            <div className="h-12 w-12 rounded-xl bg-[#b8922a]/10 flex items-center justify-center shrink-0 text-[#b8922a]">
+              <Info size={24} />
+            </div>
+            <div className="flex-1">
+              <h3 className="font-serif text-lg text-[#1a1a18] font-semibold">
+                Current Intake Status &amp; Capacity Notice
+              </h3>
+              <p className="mt-1 text-sm text-[#4a4a42] leading-relaxed">
+                As a self-funded haven, our intakes are strictly limited to ensure every resident receives dedicated rehabilitation, veterinary care, and daily support. We assess new intakes on a case-by-case basis as rehabilitation progress and paddock space allow.
+              </p>
+            </div>
+            <Link
+              to="/enquire/adoption"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1a1a18] text-[#f5f0e8] text-xs font-medium rounded-full hover:bg-[#b8922a] transition-colors shrink-0"
+            >
+              Intake &amp; Adoption Enquiries <ArrowRight size={14} />
             </Link>
           </div>
         </div>
@@ -179,7 +204,7 @@ export default function AdoptionPage() {
             ].map(({ q, a }) => (
               <div key={q} className="border-b border-[#ddd4be] pb-6">
                 <h3 className="font-serif text-lg text-[#1a1a18] mb-2">{q}</h3>
-                <p className="text-sm text-[#4a4a42] leading-relaxed">{a}</p>
+                <p className="text-sm text-[#4a4a42] leading-relaxed whitespace-pre-line">{a}</p>
               </div>
             ))}
           </div>
