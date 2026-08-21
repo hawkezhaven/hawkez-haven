@@ -163,12 +163,12 @@ export default function Index() {
                 to={`/horses/${horse.id}`}
                 className="bg-white rounded-2xl group block overflow-hidden shadow-sm border border-[#ddd4be]/50 cursor-pointer transition-all duration-300 hover:shadow-md hover:-translate-y-1"
               >
-                <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#ede5d4]">
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#1a1a18] flex items-center justify-center p-2">
                   <img
                     src={horse.image}
                     alt={`${horse.name} at Hawkez Haven`}
                     loading="lazy"
-                    className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                    className="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                   <span className={`absolute top-4 left-4 z-10 px-3 py-1 rounded-full text-[0.65rem] tracking-[0.18em] uppercase font-medium shadow-sm ${
                     horse.status === "Permanent Resident"
@@ -261,6 +261,7 @@ export default function Index() {
           </div>
         </div>
       </section>
+
       {/* ── Adoption CTA banner ───────────────────────────── */}
       <section className="relative py-32 md:py-40 overflow-hidden">
         <img
@@ -364,15 +365,15 @@ export default function Index() {
               <Link
                 key={horse.id}
                 to={`/horses/${horse.id}`}
-                className="group relative overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer"
+                className="group relative overflow-hidden rounded-2xl aspect-[4/5] bg-[#111110] flex items-center justify-center p-2 cursor-pointer border border-white/5"
               >
                 <img
                   src={horse.image}
                   alt={horse.name}
                   loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a18] to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a18] via-transparent to-transparent pointer-events-none" />
                 <div className="absolute bottom-0 left-0 right-0 p-4">
                   <div className="font-serif text-xl text-[#f5f0e8]">{horse.name}</div>
                   <div className="text-xs text-[#f5f0e8]/60">Permanent Resident</div>
