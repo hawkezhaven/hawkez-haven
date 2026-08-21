@@ -29,8 +29,20 @@ export const HORSES: Horse[] = [
     breed: "Thoroughbred",
     journeyBegan: "2021",
     tagline: "The horse who inspired it all.",
-    description: "The horse who inspired Hawkez Haven and remains at the heart of the rescue.",
+    description: "The foundation horse of Hawkez Haven who inspired our mission and remains the heart of our rescue.",
     storyTitle: "Rip - The Horse That Started It All",
+    disciplines: [
+      "Sanctuary Resident",
+      "Liberty & Groundwork",
+      "Foundation Teacher",
+      "Supervised Riding"
+    ],
+    riderLevel: "Intermediate+ (Ridden strictly within Hawkez Haven under supervision; not a public lesson horse).",
+    height: "16.2hh",
+    age: "10 years",
+    colour: "Bay",
+    image: "/images/rip.jpg",
+    lookingForward: "Rip will always call Hawkez Haven home. As our foundation resident, he continues to shape how we understand, care for, and listen to every horse who arrives after him.",
     fullStory: `Rip arrived at our home in August 2021 after a seven-hour journey from Upper Hutt back to Gisborne. He had been advertised simply as a "project horse," but it didn't take long to realize that Rip was so much more than that.
 
 When he arrived, his condition told a story that words could never fully explain. He suffered from severe rain rot, brittle and neglected feet, teeth that desperately needed attention, worms, and was significantly underweight. His tailbone carried a painful infection, and overall, he was in poor condition. But perhaps the hardest wounds to see were the ones he carried inside.
@@ -67,13 +79,15 @@ His story is not one of rescue.
 
 It is a story of second chances.
 
-And in many ways, Rip didn't just find a home at Hawkez Haven — he helped build it.`,
-    lookingForward: "Rip will always call Hawkez Haven home. He continues to help us shape the way we care for and understand every horse who arrives after him.",
-    riderLevel: "Intermediate+. Rip is not a beginner lesson horse. He is used within Hawkez Haven only and is suitable for intermediate riders under Hawkez Haven supervision.",
-    height: "16.2hh",
-    age: "10 years",
-    colour: "Bay",
-    image: "/images/rip.jpg",
+And in many ways, Rip didn't just find a home at Hawkez Haven — he helped build it.
+
+Care, Health & Well-being:
+
+• Hoof & Joint Care: Regular balanced farrier care and senior mineral supplementation to support strong, healthy hooves.
+
+• Skin Management: Requires breathable, clean rugging in wet winter months to safeguard against recurring skin sensitivities.
+
+• Routine & Environment: Thrives with a predictable herd routine, calm handling, and strong trust-based leadership.`
   },
   {
     id: "haven",
@@ -83,8 +97,20 @@ And in many ways, Rip didn't just find a home at Hawkez Haven — he helped buil
     breed: "Thoroughbred",
     journeyBegan: "2026",
     tagline: "Sweet, trustworthy, and endlessly kind.",
-    description: "A confidence-building horse who is sweet and trustworthy within Hawkez Haven.",
+    description: "Our gentle teaching mare and confidence builder, helping riders develop connection and trust.",
     storyTitle: "Haven - The Horse Who Found Her Place",
+    disciplines: [
+      "Confidence Building",
+      "Road & Trail Riding",
+      "Groundwork & Liberty",
+      "Teaching Team"
+    ],
+    riderLevel: "Confident Rider (Calm and steady in new trail environments; sweet and patient at home).",
+    height: "16.0hh",
+    age: "13 years",
+    colour: "Dark Bay",
+    image: "/images/haven.jpg",
+    lookingForward: "Haven remains a forever resident of Hawkez Haven, continuing her vital role in our Teaching Team to help riders build genuine confidence and connection.",
     fullStory: `Not all horses that arrive at Hawkez Haven have been neglected or mistreated.
 
 Some simply find themselves in the wrong hands, misunderstood, or placed in homes that are not equipped to understand who they truly are.
@@ -129,13 +155,15 @@ Today, she knows she doesn't have to.
 
 She is home.
 
-And she will always have a place at Hawkez Haven.`,
-    lookingForward: "Haven remains a permanent resident of Hawkez Haven, helping riders build confidence and connection at home.",
-    riderLevel: "Confident rider. Haven requires a calm, confident rider in unfamiliar environments and trail situations.",
-    height: "16hh",
-    age: "13 years",
-    colour: "Dark Bay",
-    image: "/images/haven.jpg",
+And she will always have a place at Hawkez Haven.
+
+Care, Health & Well-being:
+
+• Routine & Handling: Responds best to clear, gentle boundaries and consistent, patient handlers.
+
+• Workload: Enjoys road hacking, trail adventures, and structured horsemanship lessons.
+
+• Management: Standard balanced nutrition, regular farrier care, and quality herd paddock turnout.`
   },
   {
     id: "pedro",
@@ -145,8 +173,20 @@ And she will always have a place at Hawkez Haven.`,
     breed: "Thoroughbred",
     journeyBegan: "2025",
     tagline: "Our gentle teacher.",
-    description: "One of our teaching horses, used for groundwork, horsemanship and confidence building.",
+    description: "Affectionately known as 'Big Red,' a placid, kind chestnut gelding who thrives on routine and partnership.",
     storyTitle: "Pedro - The Horse Who Chose Partnership",
+    disciplines: [
+      "Pleasure Riding",
+      "Groundwork & Liberty",
+      "Teaching Team",
+      "Farm & Trail Hacking"
+    ],
+    riderLevel: "Beginner to Experienced (Best suited to a knowledgeable home with consistent routine).",
+    height: "16.1hh",
+    age: "10 years",
+    colour: "Chestnut",
+    image: "/images/pedro.jpg",
+    lookingForward: "Pedro is available on a long-term Personalized Care Lease to an approved home, retaining the lifelong security of always having Hawkez Haven as his home.",
     fullStory: `Not every horse that arrives at Hawkez Haven has suffered neglect.
 
 Some arrive carrying something much harder to see — a lifetime of habits, opinions, and a belief that they have to rely only on themselves.
@@ -179,13 +219,11 @@ Pedro has become a huge part of Hawkez Haven.
 
 And Hawkez Haven has become a huge part of Pedro.
 
-While Pedro will never be offered for adoption, his story isn't ending here. One of the greatest things a rescue horse can do is continue helping others, and Pedro has spent his time at Hawkez Haven doing exactly that.
+While Pedro will never be offered for outright sale or permanent separation, his story isn't ending here. One of the greatest things a rescue horse can do is continue helping others, and Pedro has spent his time at Hawkez Haven doing exactly that.
 
 He has helped people rebuild confidence, find companionship, and discover the quiet magic that horses can bring into our lives.
 
-Now, Pedro is preparing for his next chapter.
-
-He will be heading off on a long-term lease to help another human along in their own journey. This isn't goodbye, nor is it the end of his story. Pedro will always have a home at Hawkez Haven, and our gates will always remain open for him.
+Now, Pedro is preparing for his next chapter on a long-term lease to help another human along in their own journey. This isn't goodbye, nor is it the end of his story. Pedro will always have a home at Hawkez Haven, and our gates will always remain open for him.
 
 We aren't letting Pedro go.
 
@@ -199,13 +237,15 @@ Pedro became both.
 
 And wherever his hooves may take him next, he will always carry a piece of Hawkez Haven with him.
 
-Just as Hawkez Haven will always carry a piece of Pedro.`,
-    lookingForward: "Pedro will remain part of the Hawkez Haven Teaching Team, quietly guiding the humans and horses who need him.",
-    riderLevel: "Beginner to Intermediate.",
-    height: "16.1hh",
-    age: "10 years",
-    colour: "Chestnut",
-    image: "/images/pedro.jpg",
+Just as Hawkez Haven will always carry a piece of Pedro.
+
+Care, Health & Well-being:
+
+• Routine & Paddock Life: Thrives in a predictable daily routine with consistent herd turnout and one-on-one handling.
+
+• Workload: Active pleasure horse who enjoys pleasure riding, trail rides, and horsemanship groundwork.
+
+• Hoof & Nutrition: Regular farrier care and balanced equine nutrition supporting his active lifestyle.`
   },
   {
     id: "diablo",
@@ -215,8 +255,20 @@ Just as Hawkez Haven will always carry a piece of Pedro.`,
     breed: "Thoroughbred",
     journeyBegan: "2025",
     tagline: "Our tiny little rebel.",
-    description: "Our young horse in education, learning trust, groundwork and life skills at his own pace.",
+    description: "Our cheeky young horse in education, learning trust, groundwork, and life skills at his own pace.",
     storyTitle: "Diablo - The Little Rebel",
+    disciplines: [
+      "Young Horse Education",
+      "Groundwork & In-Hand",
+      "Liberty Training",
+      "Herd Member"
+    ],
+    riderLevel: "In Education (Not currently available for public riding; backed with his primary handler).",
+    height: "14.1hh",
+    age: "3 years",
+    colour: "Redwood Bay",
+    image: "/images/diablo.jpg",
+    lookingForward: "Diablo will remain a permanent member of Hawkez Haven, growing up alongside our herd and completing his education at his own pace.",
     fullStory: `Diablo arrived at Hawkez Haven as a tiny two-year-old colt.
 
 He wasn't quite filled out. He hadn't reached his full height. He wasn't trained, and he certainly wasn't polished. In many ways, Diablo arrived as a blank canvas — unnamed, unraced, unregistered, and still trying to find where he belonged in the world.
@@ -287,13 +339,15 @@ And if there's one thing Diablo has taught us, it's this:
 
 Never underestimate the smallest horse in the paddock.
 
-Because sometimes, they leave the biggest hoofprints on your heart.`,
-    lookingForward: "Diablo will remain part of Hawkez Haven as he grows up alongside our herd.",
-    riderLevel: "Not applicable. Diablo is a young horse in education and is not currently ridden.",
-    height: "14.1hh",
-    age: "3 years",
-    colour: "Redwood Bay",
-    image: "/images/diablo.jpg",
+Because sometimes, they leave the biggest hoofprints on your heart.
+
+Care, Health & Well-being:
+
+• Digestive Health: Carefully managed diet and grazing protocol following his recovery from colic.
+
+• Vice Management: Monitored for windsucking with environmental enrichment, paddock turnout, and supportive digestion management.
+
+• Education: Consistent groundwork, in-hand agility, and desensitization respecting his youthful physical growth.`
   },
   {
     id: "khan",
@@ -303,8 +357,20 @@ Because sometimes, they leave the biggest hoofprints on your heart.`,
     breed: "Thoroughbred",
     journeyBegan: "2025",
     tagline: "The horse who taught us scars tell a story of survival.",
-    description: "A strong-willed gelding used within our riding and education programme.",
+    description: "The 'paddock Labrador' of Hawkez Haven—loyal, deeply intuitive, and a much-loved teaching and companion gelding.",
     storyTitle: "Khan - The Bling Buster",
+    disciplines: [
+      "Farm & Trail Hacking",
+      "Groundwork & Horsemanship",
+      "Teaching Team",
+      "Equine Companionship"
+    ],
+    riderLevel: "Confident Rider (Honest, thoughtful nature; appreciates a steady, confident partner).",
+    height: "16.2hh",
+    age: "10 years",
+    colour: "Bay",
+    image: "/images/khan.jpg",
+    lookingForward: "Khan remains a forever resident and core member of our Teaching Team, sharing his honest nature with riders who appreciate the horse beneath the scars.",
     fullStory: `Khan is the kind of horse that turns heads.
 
 With his striking looks and gentle presence, people are immediately drawn to him. But it isn't long before their eyes wander to the scars he carries, and that's when we learned an unfortunate truth:
@@ -369,13 +435,15 @@ At Hawkez Haven, we don't see the scars.
 
 We see Khan.
 
-And that has always been more than enough.`,
-    lookingForward: "Khan will continue as part of the Hawkez Haven Teaching Team, working with riders who match his honest, thoughtful nature.",
-    riderLevel: "Confident rider. Khan does not require an advanced rider but appreciates confidence and consistency.",
-    height: "16.2hh",
-    age: "10 years",
-    colour: "Bay",
-    image: "/images/khan.jpg",
+And that has always been more than enough.
+
+Care, Health & Well-being:
+
+• Hoof & Scar Care: Front bulb and leg scars are fully healed and sound; monitored during routine grooming and farrier visits.
+
+• Rugging Preference: Highly sensitive to heavy or non-breathable rugs due to past rain rot trauma; prefers lightweight, breathable protection.
+
+• Handling: Incredibly affectionate, loyal, and gentle; loves following his handlers and receiving one-on-one attention.`
   },
   {
     id: "kahu",
@@ -385,9 +453,20 @@ And that has always been more than enough.`,
     breed: "Thoroughbred",
     journeyBegan: "2025",
     tagline: "The horse who chose to live again.",
-    description: "A former eventing prospect, kind and dependable, working towards being ready for his future home.",
+    description: "A former eventing prospect who overcame severe shutdown and malnutrition to rediscover his joy and sparkle.",
     storyTitle: "Kahu - The Horse Who Chose to Live Again",
-    disciplines: ["Jumping", "Dressage", "Cross Country", "Pleasure Riding"],
+    disciplines: [
+      "Jumping & Eventing Prospect",
+      "Dressage",
+      "Cross Country",
+      "Pleasure & Trail Riding"
+    ],
+    riderLevel: "Intermediate (Kind, dependable nature with athletic potential for an all-round equestrian home).",
+    height: "16.1hh",
+    age: "10 years",
+    colour: "Plain Bay",
+    image: "/images/kahu.jpg",
+    lookingForward: "Kahu is a future rehoming candidate. When ready, we will look for an intermediate home that appreciates his dependable heart and athletic capability.",
     fullStory: `Kahu came to Hawkez Haven alongside Khan, but while the two horses arrived from the same place, their journeys could not have been more different.
 
 Kahu arrived in poor condition.
@@ -464,13 +543,15 @@ Because Kahu has already done the hard part.
 
 He chose to live again.
 
-And for a horse that once gave up on everything, that is perhaps the greatest second chance of all.`,
-    lookingForward: "Kahu is a future rehoming candidate. When he is ready, we will look for an intermediate home that suits his kind, dependable nature.",
-    riderLevel: "Intermediate.",
-    height: "16.1hh",
-    age: "10 years",
-    colour: "Plain Bay",
-    image: "/images/kahu-tacked.jpg",
+And for a horse that once gave up on everything, that is perhaps the greatest second chance of all.
+
+Care, Health & Well-being:
+
+• Nutrition: Thriving on a balanced, high-forage diet following complete recovery of body condition and digestive strength.
+
+• Athletic Conditioning: Responding well to progressive training, dressage flatwork, and jumping exercises.
+
+• Temperament: Honest, gentle, and deeply appreciative of a calm, loving bond with his handler.`
   },
   {
     id: "ritz",
@@ -480,8 +561,20 @@ And for a horse that once gave up on everything, that is perhaps the greatest se
     breed: "Thoroughbred",
     journeyBegan: "2026",
     tagline: "Not dangerous. Just misunderstood.",
-    description: "A 17hh gentle giant continuing his rehabilitation and education with us.",
+    description: "A striking 17hh gentle giant who loves quiet road rides, partnership, and clear, compassionate boundaries.",
     storyTitle: "Ritz - The Gentle Giant",
+    disciplines: [
+      "Road & Trail Riding",
+      "Pleasure Hacking",
+      "Groundwork & Partnership",
+      "Liberty Training"
+    ],
+    riderLevel: "Intermediate (Requires a calm, confident handler who prioritizes connection before correction).",
+    height: "17.0hh",
+    age: "9 years",
+    colour: "Plain Bay",
+    image: "/images/ritz.jpg",
+    lookingForward: "Ritz is continuing his rehabilitation and education. His future placement will be matched to an intermediate handler who understands sensitive Thoroughbreds.",
     fullStory: `Ritz is impossible to miss.
 
 Standing at an impressive 17 hands high, this beautiful nine-year-old Off-The-Track Thoroughbred has a presence that naturally commands attention. Schooled, trained, and intelligent, Ritz is every bit the horse people dream of owning.
@@ -550,15 +643,17 @@ Not a problem horse.
 
 Just a very big horse with an even bigger heart.
 
-And we wouldn't have him any other way.`,
-    lookingForward: "Ritz is a future rehoming candidate. His future home will be determined when he is ready.",
-    riderLevel: "Intermediate.",
-    height: "17hh",
-    age: "9 years",
-    colour: "Plain Bay",
-    image: "/images/ritz.jpg",
+And we wouldn't have him any other way.
+
+Care, Health & Well-being:
+
+• Handling & Riding: Flourishes with one-on-one hacking and scenic trail rides; prefers varied routines over repetitive arena schooling.
+
+• Boundaries: Requires clear, gentle, and firm leadership to maintain confidence and trust.
+
+• Management: Regular farrier care, routine dental maintenance, and spacious paddock grazing.`
   },
- {
+  {
     id: "joey",
     name: "Joey",
     status: "Future Rehoming Candidate",
@@ -618,8 +713,20 @@ Long-Term Care Lease Opportunity:
     breed: "Thoroughbred",
     journeyBegan: "2025",
     tagline: "Fiery, intelligent, and learning to trust.",
-    description: "A young mare used within education for understanding horse body language and trust.",
+    description: "A spirited, gorgeous young mare learning confidence, body language, and trust after rehabilitating a severe leg injury.",
     storyTitle: "Electra - The Mare Who Chose to Trust",
+    disciplines: [
+      "Groundwork & Liberty",
+      "Horsemanship Education",
+      "Potential Restart / Companion",
+      "Trail In-Hand"
+    ],
+    riderLevel: "Intermediate to Experienced (Requires patient, knowledgeable horse handling).",
+    height: "16.1hh",
+    age: "6 years",
+    colour: "Dark Bay",
+    image: "/images/electra.jpg",
+    lookingForward: "Electra is a future rehoming candidate. When ready, her future home will require horse experience and an understanding of sensitive, intelligent mares.",
     fullStory: `Electra arrived at Hawkez Haven alongside Diablo.
 
 She was still just a baby herself — a young mare with a body that had yet to fill out and a mind that had yet to learn that the world could be a safe place.
@@ -730,13 +837,15 @@ It is earned.
 
 And after months of patience, kindness, and simply showing up, Electra finally decided that perhaps humans aren't so bad after all.
 
-For a horse who once wanted nothing more than to run away, that might just be the greatest journey of all.`,
-    lookingForward: "Electra is a future rehoming candidate. Her future home will require horse experience.",
-    riderLevel: "Intermediate. Electra's future home will require horse experience.",
-    height: "16.1hh",
-    age: "6 years",
-    colour: "Dark Bay",
-    image: "/images/electra.jpg",
+For a horse who once wanted nothing more than to run away, that might just be the greatest journey of all.
+
+Care, Health & Well-being:
+
+• Leg Rehab: Hind leg laceration fully healed and sound; monitored during daily grooming.
+
+• Emotional Support: Thrives with predictable routines and gentle reassurance to prevent anxiety.
+
+• Future Pathway: Ongoing groundwork and liberty training, with potential for restart under saddle or placement in an experienced home.`
   },
   {
     id: "kohan",
@@ -746,9 +855,20 @@ For a horse who once wanted nothing more than to run away, that might just be th
     breed: "Thoroughbred",
     journeyBegan: "2025",
     tagline: "Not today.",
-    description: "Curious, intelligent and independent. A horse who refused to give up.",
+    description: "Curious, intelligent, and spirited. A resilient Thoroughbred warrior who fought through a life-threatening infection.",
     storyTitle: "Kohan - The Horse Who Refused to Give Up",
-    disciplines: ["Pleasure Riding"],
+    disciplines: [
+      "Pleasure Riding",
+      "Cross Country & Trail Hacking",
+      "Groundwork & Agility",
+      "Active Partnership"
+    ],
+    riderLevel: "Intermediate to Experienced (High-energy, active mind requiring purposeful work and consistent guidance).",
+    height: "16.2hh",
+    age: "7 years",
+    colour: "Golden Bay",
+    image: "/images/kohan.jpg",
+    lookingForward: "Kohan is a future rehoming candidate seeking an experienced, active equestrian partner who appreciates his drive, intelligence, and warrior spirit.",
     fullStory: `Kohan arrived at Hawkez Haven straight off the racetrack.
 
 At just seven years old, he was originally meant to become my daughter's horse — a young Thoroughbred who needed a little schooling, a few manners installed, and someone to teach him that life didn't always have to happen at one hundred miles an hour.
@@ -867,14 +987,16 @@ Because Kohan is proof that sometimes, when the world says it's time to let go, 
 
 And if we've learned anything from Kohan, it's this:
 
-Never underestimate a Thoroughbred with a high-intensity mind, enormous determination, and a reason to keep living.`,
-    lookingForward: "Kohan is a future rehoming candidate. His future home must understand horses and appreciate his thoughtful nature.",
-    riderLevel: "Intermediate to Experienced. Kohan's future home must understand horses and appreciate his thoughtful nature.",
-    height: "16.2hh",
-    age: "7 years",
-    colour: "Golden Bay",
-    image: "/images/kohan.jpg",
-  },
+Never underestimate a Thoroughbred with a high-intensity mind, enormous determination, and a reason to keep living.
+
+Care, Health & Well-being:
+
+• Leg & Soundness: Cellulitis injury fully recovered and sound; benefits from active turnout and regular exercise.
+
+• Hoof Management: Front feet managed bare and healthy with balanced trimming and mineral support.
+
+• Energy & Activity: Requires an engaged, active partner who channels his quick mind into trail riding, cross-country, and groundwork.`
+  }
 ];
 
 export const PERMANENT_RESIDENTS = HORSES.filter(h => h.status === "Permanent Resident");
