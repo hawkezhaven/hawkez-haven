@@ -11,8 +11,8 @@ export default function Index() {
       {/* ── Hero ─────────────────────────────────────────── */}
       <section className="relative min-h-[92vh] flex items-end overflow-hidden bg-[#1a1a18]">
         <img
-          src="/images/hero.jpg"
-          alt="A rescued chestnut horse standing in a New Zealand paddock at golden hour"
+          src="/images/hero-horses.jpg"
+          alt="Rescued horses at Hawkez Haven"
           className="absolute inset-0 h-full w-full object-cover object-top opacity-80"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a18] via-[#1a1a18]/60 to-[#1a1a18]/10" />
