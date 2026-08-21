@@ -470,7 +470,7 @@ And for a horse that once gave up on everything, that is perhaps the greatest se
     height: "16.1hh",
     age: "10 years",
     colour: "Plain Bay",
-    image: "/images/kahu.jpg",
+    image: "/images/kahu-tacked.jpg",
   },
   {
     id: "ritz",
