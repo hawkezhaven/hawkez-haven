@@ -559,7 +559,6 @@ And we wouldn't have him any other way.`,
     image: "/images/ritz.jpg",
   },
   {
-   {
     id: "joey",
     name: "Joey",
     status: "Future Rehoming Candidate",
@@ -646,7 +645,6 @@ And Joey, after nineteen years of giving so much to others, has finally been giv
 After all, legends don't retire quietly.
 
 Sometimes, they simply find a new arena to shine in.`
-  },
   },
   {
     id: "electra",
