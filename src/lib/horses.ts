@@ -559,6 +559,7 @@ And we wouldn't have him any other way.`,
     image: "/images/ritz.jpg",
   },
   {
+   {
     id: "joey",
     name: "Joey",
     status: "Future Rehoming Candidate",
@@ -566,8 +567,20 @@ And we wouldn't have him any other way.`,
     breed: "Thoroughbred",
     journeyBegan: "2026",
     tagline: "Legends don't retire quietly.",
-    description: "The older gentleman of our herd and a much-loved member of Hawkez Haven.",
+    description: "Our 19yo veteran Thoroughbred gelding and former Horse of the Year showjumper (formerly Rampant), thriving after rehabilitation and ready for a quiet, purposeful care lease home.",
     storyTitle: "Joey - The Horse Who Refused to Retire",
+    disciplines: [
+      "Light Pleasure Riding",
+      "Groundwork & Liberty",
+      "Companionship",
+      "In-Hand Hacking"
+    ],
+    riderLevel: "Confident Beginner to Experienced Home (Companionship & Light Duties)",
+    height: "16.1hh - 16.2hh",
+    age: "19 years",
+    colour: "Dapple Liver Bay",
+    image: "/images/joey-story.jpg",
+    lookingForward: "Joey is available on a long-term Personalized Care Lease. We are seeking a compassionate, knowledgeable home that appreciates his rich history, manages his front hoof care and seasonal grass thoughtfully, and provides him with a relaxed, loving routine.",
     fullStory: `Joey arrived at Hawkez Haven in early 2026 carrying a name that many people in the horse world would recognize.
 
 Previously known as "Rampant," Joey had lived a life that many horses could only dream of. From what we understand, his journey began on the racetrack before continuing into the showjumping world, where he went on to compete at Horse of the Year and make his owners incredibly proud.
@@ -632,13 +645,8 @@ And Joey, after nineteen years of giving so much to others, has finally been giv
 
 After all, legends don't retire quietly.
 
-Sometimes, they simply find a new arena to shine in.`,
-    lookingForward: "Joey remains a future rehoming candidate. He may be considered for the right home — a lease or foster placement, or in suitable circumstances a permanent adoption — with someone who truly understands his history, his feet and his ongoing needs. Any decision about Joey's future will always be made with his welfare and comfort as the first priority.",
-    riderLevel: "Confident Beginner.",
-    height: "16.2hh",
-    age: "19 years",
-    colour: "Dapple Liver Bay",
-    image: "/images/joey-story.jpg",
+Sometimes, they simply find a new arena to shine in.`
+  },
   },
   {
     id: "electra",
