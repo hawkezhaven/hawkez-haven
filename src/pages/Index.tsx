@@ -225,24 +225,42 @@ export default function Index() {
           <div>
             <div className="flex items-center gap-3 text-[0.65rem] tracking-[0.18em] uppercase font-medium">
               <span className="block h-px w-8 bg-[#b8922a]" />
-              Success stories
+              Rehabilitation Milestones
             </div>
             <h2 className="mt-4 font-serif text-4xl md:text-5xl leading-tight text-[#1a1a18]">
-              The Moment a Horse Chooses to Trust Again
+              The Breakthroughs That Matter Most
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-[#4a4a42]">
-              Every horse arrives with a different story. Some have known kindness. Others have only known uncertainty.
+              In under a year of dedication, Hawkez Haven has welcomed 10 rescues through our gates. Every horse arrived with a unique past—facing health setbacks, uncertainty, or a need for patient re-handling.
             </p>
-            <p className="mt-4 text-lg leading-relaxed text-[#4a4a42]">
-              At Hawkez Haven, we don't rush rehabilitation. We give each horse the time, patience and understanding they need to feel safe again.
+            <p className="mt-4 text-base leading-relaxed text-[#4a4a42]">
+              Today, <strong className="text-[#1a1a18] font-semibold">100% of these rescues</strong> have made profound breakthroughs: regaining healthy body condition, mastering calm groundwork, and rediscovering trust in human hands.
             </p>
-            <p className="mt-4 text-lg leading-relaxed text-[#4a4a42]">
-              Those quiet moments, when a horse finally relaxes, reaches out or chooses to trust, remind us why we do this every single day.
-            </p>
+
+            {/* Adoption Intake Notice Box */}
+            <div className="mt-8 rounded-2xl bg-[#ede5d4]/70 p-6 border border-[#ddd4be]">
+              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#8c6e1e]">
+                <span className="h-2 w-2 rounded-full bg-[#b8922a] animate-pulse" />
+                Adoption Intake Notice
+              </div>
+              <h3 className="mt-2 font-serif text-xl text-[#1a1a18]">
+                First Intake Opening Late Spring / Summer
+              </h3>
+              <p className="mt-2 text-sm text-[#4a4a42] leading-relaxed">
+                Our rehabilitation candidates are currently finishing their groundwork and trust education. Applications for our very first intake of ready-to-rehome horses will officially open as the warmer weather arrives.
+              </p>
+              <div className="mt-4">
+                <Link
+                  to="/horses"
+                  className="inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-wider text-[#8c6e1e] hover:text-[#b8922a] transition-colors"
+                >
+                  View candidates in education <ArrowUpRight size={13} />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-
       {/* ── Adoption CTA banner ───────────────────────────── */}
       <section className="relative py-32 md:py-40 overflow-hidden">
         <img
