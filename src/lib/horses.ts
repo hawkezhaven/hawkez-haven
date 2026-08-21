@@ -558,7 +558,7 @@ And we wouldn't have him any other way.`,
     colour: "Plain Bay",
     image: "/images/ritz.jpg",
   },
-  {
+ {
     id: "joey",
     name: "Joey",
     status: "Future Rehoming Candidate",
@@ -569,10 +569,10 @@ And we wouldn't have him any other way.`,
     description: "Our 19yo veteran Thoroughbred gelding and former Horse of the Year showjumper (formerly Rampant), thriving after rehabilitation and ready for a quiet, purposeful care lease home.",
     storyTitle: "Joey - The Horse Who Refused to Retire",
     disciplines: [
-      "Light Pleasure Riding",
+      "Pleasure Riding",
       "Groundwork & Liberty",
       "Companionship",
-      "In-Hand Hacking"
+      "Light Hacking"
     ],
     riderLevel: "Confident Beginner to Experienced Home (Companionship & Light Duties)",
     height: "16.1hh - 16.2hh",
@@ -580,71 +580,35 @@ And we wouldn't have him any other way.`,
     colour: "Dapple Liver Bay",
     image: "/images/joey-story.jpg",
     lookingForward: "Joey is available on a long-term Personalized Care Lease. We are seeking a compassionate, knowledgeable home that appreciates his rich history, manages his front hoof care and seasonal grass thoughtfully, and provides him with a relaxed, loving routine.",
-    fullStory: `Joey arrived at Hawkez Haven in early 2026 carrying a name that many people in the horse world would recognize.
+    fullStory: `Joey arrived at Hawkez Haven in early 2026 carrying a name that many in the New Zealand equestrian community would recognise.
 
-Previously known as "Rampant," Joey had lived a life that many horses could only dream of. From what we understand, his journey began on the racetrack before continuing into the showjumping world, where he went on to compete at Horse of the Year and make his owners incredibly proud.
+Previously known as Rampant, Joey lived a life that many horses could only dream of. From his early days on the racetrack to competing in showjumping at Horse of the Year, he made his connections immensely proud. But decades of giving his absolute all had taken a toll on his body.
 
-While we only know parts of Joey's history and can only speak to what we have been told, one thing became immediately apparent when he arrived at Hawkez Haven:
+When Joey stepped off the float, he carried himself with the unmistakable dignity of a former champion—coat gleaming, kind eye, and a gentle presence. Beneath that presence, however, years of wear and tear had left his front feet sore and exhausted. At times, even walking across a paddock was uncomfortable.
 
-This horse had given his all.
+Rather than accepting that his story was finished, we went to work. Alongside our farrier, Joey began receiving targeted minerals, supportive natural feed additions, and dedicated hoof protection.
 
-At nineteen years old, Joey came to us in beautiful condition. His coat shone, his body condition was good, and he carried himself with the presence of a horse who had once been a superstar.
+Month by month, Joey began to soften and heal. By May 2026, the transformation was unmistakable: the horse who had struggled to take a few steps was trotting and cantering across his paddock with playful enthusiasm.
 
-But his feet told another story.
+Joey proved that retirement wasn’t on his agenda just yet. He loves having a purpose, enjoys light interactions, and thrives when he is treated as a valued partner.
 
-Years of wear and tear, combined with what appeared to be ongoing issues with his front feet and repeated farrier interventions, had left Joey struggling. He could barely walk comfortably and often found himself stopping after only a few steps to graze because moving any further was simply too painful.
+Care, Hoof Management & Well-being:
 
-Watching him was heartbreaking.
+• Hoof Care: Requires regular, attentive farrier visits and ongoing mineral support. He benefits from supportive boots or pads when navigating hard or stony ground.
 
-This was a horse who had spent his life carrying riders, jumping fences, and giving everything asked of him.
+• Pasture Management: Sensitive to lush or high-sugar spring grass. Thoughtful paddock rotation and grazing management are essential.
 
-And now, he couldn't comfortably walk across a paddock.
+• Workload: Suitable for light pleasure riding, groundwork, and quiet hacks. Joey is not available for jumping, competition, or intense schooling.
 
-Working alongside our farrier, we decided to take a different approach. Joey began receiving carefully selected minerals, natural remedies in his feed, and supportive bandaging and padding for his front hooves.
+• Handling: Joey thrives under calm, consistent, and patient hands. He is a gentle soul who gives his heart completely once trust is established.
 
-Then we waited.
+Long-Term Care Lease Opportunity:
 
-January turned into February.
+• Lifelong Safety Net: Hawkez Haven retains ownership, ensuring Joey will always have a safe haven should your circumstances ever change.
 
-February turned into March.
+• Ongoing Support: We remain available for guidance regarding his hoof care, nutrition, and management.
 
-And slowly, Joey began to remind us who he was.
-
-By May 2026, the transformation was remarkable.
-
-The horse who could barely take a few steps was suddenly running around his paddock like a younger version of himself. He threw his legs playfully into the air and embraced life with an enthusiasm that left us all smiling.
-
-Joey had been heading toward retirement.
-
-But Joey had other ideas.
-
-He made it very clear that retirement wasn't on the cards just yet.
-
-Today, Joey continues to prove that he is more than capable of carrying out light duties, and while he remains happy and comfortable doing so, that is exactly what he will continue to do — until the day he tells us otherwise.
-
-Because at Hawkez Haven, the horses get a say too.
-
-Joey is a powerful horse with an even bigger heart. Despite everything his body has endured over the years, he continues to show gratitude toward both his paddock mates and his handlers every single day.
-
-His recovery has surprised us all.
-
-More than that, Joey has reminded us that age is just a number and that sometimes, retirement isn't something we decide for a horse — they decide it for themselves.
-
-Joey may be considered for the right home — a lease, foster placement, or in suitable circumstances a permanent adoption — with someone who understands exactly what Hawkez Haven believes. Any decision about his future will take his history, his feet and his ongoing needs into account, with his welfare and comfort always coming first.
-
-That horses are never 'just horses.'
-
-They are partners.
-
-They are teachers.
-
-They are family.
-
-And Joey, after nineteen years of giving so much to others, has finally been given the second chance he deserves.
-
-After all, legends don't retire quietly.
-
-Sometimes, they simply find a new arena to shine in.`
+• Ideal Home: A quiet, knowledgeable property where he will be loved as part of the family, receive daily interaction, and enjoy a fulfilling routine.`
   },
   {
     id: "electra",
