@@ -89,11 +89,11 @@ function HorseCard({ horse }: { horse: (typeof HORSES)[0] }) {
       className="bg-white rounded-2xl group block overflow-hidden shadow-sm border border-[#ddd4be]/50 cursor-pointer transition-all duration-300 hover:shadow-md hover:-translate-y-1"
     >
       <div className="relative overflow-hidden bg-[#ede5d4] aspect-[4/3] w-full">
-        <img
-          src={horse.image}
-          alt={`${horse.name} at Hawkez Haven`}
-          loading="lazy"
-          className="className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
+      <img
+  src={horse.image}
+  alt={`${horse.name} at Hawkez Haven`}
+  loading="lazy"
+  className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
 />
         
         <span 
