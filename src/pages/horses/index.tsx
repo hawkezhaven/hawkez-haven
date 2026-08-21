@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Heart } from "lucide-react";
 import { HORSES } from "@/lib/horses";
 
 export default function HorsesPage() {
@@ -87,7 +87,6 @@ function HorseCard({ horse }: { horse: (typeof HORSES)[0] }) {
     <div className="bg-white rounded-2xl group overflow-hidden shadow-sm border border-[#ddd4be]/50 flex flex-col justify-between transition-all duration-300 hover:shadow-md hover:-translate-y-1">
       <div>
         <Link to={`/horses/${horse.id}`} className="block">
-          {/* Card Image Container with dark backing */}
           <div className="relative overflow-hidden bg-[#1a1a18] aspect-[4/3] w-full flex items-center justify-center p-2">
             <img
               src={horse.image}
@@ -137,7 +136,6 @@ function HorseCard({ horse }: { horse: (typeof HORSES)[0] }) {
         </div>
       </div>
 
-      {/* Direct Sponsor Button on Card */}
       <div className="p-6 pt-3">
         <Link
           to={`/sponsorship?horse=${encodeURIComponent(horse.name)}`}
