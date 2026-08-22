@@ -465,7 +465,7 @@ Care, Health & Well-being:
     height: "16.1hh",
     age: "10 years",
     colour: "Plain Bay",
-    image: "/images/kahu.jpg",
+    image: "/images/kahu-tacked.jpg",
     lookingForward: "Kahu is a future rehoming candidate. When ready, we will look for an intermediate home that appreciates his dependable heart and athletic capability.",
     fullStory: `Kahu came to Hawkez Haven alongside Khan, but while the two horses arrived from the same place, their journeys could not have been more different.
 
