@@ -10,8 +10,33 @@ export default function HorseDetailPage() {
 
   const others = HORSES.filter(h => h.id !== horse.id).slice(0, 3);
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "ItemPage",
+    "name": `${horse.name} | Hawkez Haven Horse Rescue New Zealand`,
+    "url": `https://hawkezhaven.org/horses/${horse.id}`,
+    "description": horse.description,
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Hawkez Haven",
+      "url": "https://hawkezhaven.org/"
+    },
+    "mainEntity": {
+      "@type": "Thing",
+      "name": horse.name,
+      "description": horse.description,
+      "image": `https://hawkezhaven.org${horse.image}`
+    }
+  };
+
   return (
     <div className="bg-[#f5f0e8]">
+      {/* Structured Data for SEO / Search Console */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+
       {/* Back */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
         <Link to="/horses" className="inline-flex items-center gap-2 text-sm text-[#4a4a42] hover:text-[#b8922a] transition-colors cursor-pointer">
