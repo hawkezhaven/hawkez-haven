@@ -244,12 +244,12 @@ export default function ExperiencesPage() {
             <div className="p-8 md:p-10 flex flex-col justify-between">
               <div>
                 {exp.image && (
-                  <div className="mb-6 overflow-hidden rounded-2xl">
+                  <div className="mb-6 overflow-hidden rounded-2xl bg-[#ede5d4]/60 border border-[#ddd4be]/50 shadow-sm flex items-center justify-center p-2">
                     <img
                       src={exp.image}
                       alt={exp.title}
                       loading="lazy"
-                      className="w-full h-64 sm:h-72 object-cover object-[center_30%] rounded-2xl border border-[#ddd4be]/40 shadow-sm"
+                      className="w-full max-h-80 sm:max-h-96 object-contain rounded-xl"
                     />
                   </div>
                 )}
