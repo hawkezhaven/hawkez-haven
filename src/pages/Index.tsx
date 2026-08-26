@@ -8,11 +8,12 @@ const SPONSOR_HORSES = HORSES.filter(h => h.status === "Permanent Resident").sli
 export default function Index() {
   return (
     <div className="bg-[#f5f0e8]">
-      {/* ── Hero ─────────────────────────────────────────── */}
+     {/* ── Hero ─────────────────────────────────────────── */}
       <section className="relative min-h-[92vh] flex items-end overflow-hidden bg-[#1a1a18]">
         <img
           src="/images/hero-horse.jpg"
-          alt="Rescued horses at Hawkez Haven"
+          alt="Rescued horse at Hawkez Haven"
+          fetchPriority="high"
           className="absolute inset-0 h-full w-full object-cover object-top opacity-80"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a18] via-[#1a1a18]/60 to-[#1a1a18]/10" />
