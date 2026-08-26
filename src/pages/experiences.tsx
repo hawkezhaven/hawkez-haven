@@ -14,6 +14,7 @@ type Experience = {
   level: string;
   desc: string;
   learn: string[];
+  image?: string;
 };
 
 const EXPERIENCE_OPTIONS: string[] = [
@@ -85,19 +86,43 @@ const EXPERIENCES: Experience[] = [
   {
     id: "riding",
     title: "Riding Experience",
-    subtitle: "With Pedro, Haven & Khan",
+    subtitle: "With Peanut, Pedro, Haven & Khan",
+    image: "/images/peanut-riding-lessons.jpg",
     duration: "2 hours",
     price: "$110",
     priceNote: "per person",
     maxPeople: "Up to 2 riders",
     level: "Beginner to intermediate riders",
-    desc: "A riding session built around you and the horse in front of you — not a one-size-fits-all lesson. You'll begin on the ground, building connection before you get in the saddle, then work through balance, feel and communication at a pace that suits you and your horse. Other suitable horses currently in Hawkez Haven's care may also be used depending on availability and suitability at the time.",
+    desc: "A riding session built around you and the horse in front of you — not a one-size-fits-all lesson. You'll begin on the ground, building connection before you get in the saddle, then work through balance, feel and communication at a pace that suits you and your horse. Each session is matched to the right mount, including our sweet bush pony Peanut for younger and smaller riders, alongside Pedro, Haven, and Khan.",
     learn: [
       "Groundwork before riding",
       "Balance, position and feel",
       "Communicating through the reins and seat",
       "Building confidence in and out of the saddle",
       "Understanding your horse's responses",
+    ],
+  },
+  {
+    id: "riding-lessons",
+    title: "Riding Lessons",
+    subtitle: "With Peanut, Pedro, Haven, Khan & eventually Diablo",
+    image: "/images/pedro-lesson.jpg",
+    duration: "1 hour",
+    price: "",
+    priceNote: "",
+    priceLines: [
+      "Children under 15 — $50 per 1-hour lesson",
+      "Ages 16+ / Adults — $70 per 1-hour lesson",
+    ],
+    maxPeople: "Private (1 rider per lesson)",
+    level: "Beginners welcome (all ages)",
+    desc: "Private, progressive horsemanship lessons focused on building confident and capable horse people. Lessons include safe handling, grooming, tacking up, groundwork and ridden skills tailored to the rider's experience.\n\nWe have horses and ponies to suit every age and stage—including Peanut, our 6-year-old bush pony mare who is an amazing asset for younger and smaller students building their confidence, alongside Pedro, Haven, and Khan.\n\nBeginners welcome. Horse or pony provided. By appointment.",
+    learn: [
+      "Safe handling and grooming",
+      "Tacking up and preparation",
+      "Groundwork and ridden skills",
+      "Balance, position and feel",
+      "Building confidence at your own pace",
     ],
   },
   {
@@ -134,28 +159,6 @@ const EXPERIENCES: Experience[] = [
       "Simple groundwork activities",
       "Each horse's rescue story",
       "Supervised name-painting on their favourite horse",
-    ],
-  },
-  {
-    id: "riding-lessons",
-    title: "Riding Lessons",
-    subtitle: "Private, progressive horsemanship lessons",
-    duration: "1 hour",
-    price: "",
-    priceNote: "",
-    priceLines: [
-      "Children under 15 — $50 per 1-hour lesson",
-      "Ages 16+ / Adults — $70 per 1-hour lesson",
-    ],
-    maxPeople: "Private (1 rider per lesson)",
-    level: "Beginners welcome",
-    desc: "Private, progressive horsemanship lessons focused on building confident and capable horse people. Lessons may include safe handling, grooming, tacking up, groundwork and ridden skills, tailored to the rider's experience and confidence.\n\nBeginners welcome. Horse provided. By appointment.",
-    learn: [
-      "Safe handling and grooming",
-      "Tacking up and preparation",
-      "Groundwork and ridden skills",
-      "Balance, position and feel",
-      "Building confidence at your own pace",
     ],
   },
   {
@@ -238,17 +241,29 @@ export default function ExperiencesPage() {
                 Book this experience <ArrowRight size={16} />
               </Link>
             </div>
-            <div className="p-8 md:p-10">
-              <p className="text-[#4a4a42] leading-relaxed mb-6 whitespace-pre-line">{exp.desc}</p>
-              <h4 className="text-[0.65rem] tracking-[0.18em] uppercase font-medium text-[#b8922a] mb-4">What you'll learn</h4>
-              <ul className="space-y-2">
-                {exp.learn.map(item => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-[#4a4a42]">
-                    <span className="mt-2 block w-1.5 h-1.5 rounded-full bg-[#b8922a] shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+            <div className="p-8 md:p-10 flex flex-col justify-between">
+              <div>
+                {exp.image && (
+                  <div className="mb-6 overflow-hidden rounded-2xl">
+                    <img
+                      src={exp.image}
+                      alt={exp.title}
+                      loading="lazy"
+                      className="w-full h-64 sm:h-72 object-cover object-[center_30%] rounded-2xl border border-[#ddd4be]/40 shadow-sm"
+                    />
+                  </div>
+                )}
+                <p className="text-[#4a4a42] leading-relaxed mb-6 whitespace-pre-line">{exp.desc}</p>
+                <h4 className="text-[0.65rem] tracking-[0.18em] uppercase font-medium text-[#b8922a] mb-4">What you'll learn</h4>
+                <ul className="space-y-2">
+                  {exp.learn.map(item => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-[#4a4a42]">
+                      <span className="mt-2 block w-1.5 h-1.5 rounded-full bg-[#b8922a] shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         ))}
