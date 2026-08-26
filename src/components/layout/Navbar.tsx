@@ -7,6 +7,7 @@ const NAV_LINKS = [
   { label: "About", href: "/about" },
   { label: "Horses", href: "/horses" },
   { label: "Support Us", href: "/support" },
+  { label: "Volunteer", href: "/volunteer" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -14,7 +15,6 @@ const MORE_LINKS = [
   { label: "Adoption", href: "/adoption" },
   { label: "Sponsorship", href: "/sponsorship" },
   { label: "Foster Program", href: "/foster" },
-  { label: "Volunteer", href: "/volunteer" },
   { label: "Education & Lessons", href: "/experiences" },
   { label: "The Hub", href: "/hub" },
 ];
