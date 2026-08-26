@@ -87,7 +87,7 @@ const EXPERIENCES: Experience[] = [
     id: "riding",
     title: "Riding Experience",
     subtitle: "With Peanut, Pedro, Haven & Khan",
-    image: "/images/peanut-riding-lessons.jpg",
+    image: "/images/Peanut-riding-lessons.jpg",
     duration: "2 hours",
     price: "$110",
     priceNote: "per person",
