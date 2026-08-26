@@ -8,7 +8,7 @@ export default function Footer() {
         {/* Brand */}
         <div className="max-w-sm">
           <img
-            src="/images/hawkez-haven-horizontal.png"
+            src="/images/hawkez-logo-transparent.png"
             alt="Hawkez Haven"
             className="h-16 w-auto object-contain brightness-0 invert sepia saturate-200 hue-rotate-10"
           />
@@ -23,9 +23,9 @@ export default function Footer() {
           <p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium text-[#b8922a]">Explore</p>
           <ul className="mt-5 space-y-3">
             {[
-              { label: "About", href: "/about" },
+              { label: "About Us", href: "/about" },
               { label: "Meet Our Horses", href: "/horses" },
-              { label: "Adoption", href: "/adoption" },
+              { label: "Horse Adoption", href: "/adoption" },
               { label: "Sponsorship", href: "/sponsorship" },
               { label: "Foster Program", href: "/foster" },
             ].map(({ label, href }) => (
@@ -45,7 +45,7 @@ export default function Footer() {
             {[
               { label: "Volunteer", href: "/volunteer" },
               { label: "Experiences & Lessons", href: "/experiences" },
-              { label: "Support Us", href: "/support" },
+              { label: "Support & Donate", href: "/support" },
               { label: "The Hub", href: "/hub" },
             ].map(({ label, href }) => (
               <li key={label}>
@@ -65,20 +65,22 @@ export default function Footer() {
               <p className="text-[0.6rem] tracking-widest uppercase flex items-center gap-2 text-[#f5f0e8]/50">
                 Facebook
               </p>
-              <div className="mt-2 space-y-1.5">
+              <div className="mt-2 flex flex-col gap-1.5">
                 <a
                   href="https://www.facebook.com/profile.php?id=61591877430343"
-                  target="_blank" rel="noopener noreferrer"
-                  className="block hover:text-[#b8922a] transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#b8922a] transition-colors"
                 >
                   Hawkez Haven – Second Chances
                 </a>
                 <a
                   href="https://www.facebook.com/HORSENCO/"
-                  target="_blank" rel="noopener noreferrer"
-                  className="block hover:text-[#b8922a] transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#b8922a] transition-colors text-xs text-[#f5f0e8]/60"
                 >
-                  HORSENCO
+                  HORSENCO Community
                 </a>
               </div>
             </li>
