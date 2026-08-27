@@ -159,9 +159,9 @@ export default function SEO() {
     setMeta("twitter:image:alt", `${meta.title} — Hawkez Haven`);
     setCanonical(canonical);
 
-    setStructuredData("hawkez-haven-organization-schema", {
+    setStructuredData("hawkez-haven-organisation-schema", {
       "@context": "https://schema.org",
-      "@type": "NonprofitOrganization",
+      "@type": "Non-profitOrganisation",
       name: "Hawkez Haven",
       url: SITE,
       logo: `${SITE}/icon/icon-192.png`,
@@ -198,7 +198,7 @@ export default function SEO() {
       description: meta.description,
       inLanguage: "en-NZ",
       isPartOf: { "@type": "WebSite", name: "Hawkez Haven", url: SITE },
-      about: { "@type": "NonprofitOrganization", name: "Hawkez Haven", url: SITE },
+      about: { "@type": "Non-profitOrganisation", name: "Hawkez Haven", url: SITE },
       keywords: AI_KEYWORDS,
     });
 
