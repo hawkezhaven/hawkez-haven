@@ -161,7 +161,7 @@ export default function SEO() {
 
     setStructuredData("hawkez-haven-organisation-schema", {
       "@context": "https://schema.org",
-      "@type": "Non-profitOrganisation",
+      "@type": "AnimalShelter",
       name: "Hawkez Haven",
       url: SITE,
       logo: `${SITE}/icon/icon-192.png`,
@@ -198,7 +198,7 @@ export default function SEO() {
       description: meta.description,
       inLanguage: "en-NZ",
       isPartOf: { "@type": "WebSite", name: "Hawkez Haven", url: SITE },
-      about: { "@type": "Non-profitOrganisation", name: "Hawkez Haven", url: SITE },
+      about: { "@type": "AnimalShelter", name: "Hawkez Haven", url: SITE },
       keywords: AI_KEYWORDS,
     });
 
