@@ -1,27 +1,71 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <script type="application/ld+json">
+   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "AnimalSanctuary",
-  "name": "Hawkez Haven",
-  "alternateName": [
-    "Hawkez Haven – Second Chances",
-    "Hawkez Haven Second Chances"
-  ],
-  "url": "https://hawkezhaven.org",
-  "logo": "https://hawkezhaven.org/logo.png",
-  "description": "Independent equine rescue, rehabilitation, and connection-based horsemanship facility in Manawatū, New Zealand.",
-  "slogan": "Where Second Chances Find Their Stride",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Ashhurst",
-    "addressRegion": "Manawatū-Whanganui",
-    "addressCountry": "NZ"
-  },
-  "sameAs": [
-    "https://www.wikidata.org/wiki/Q141190304"
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://hawkezhaven.org/#website",
+      "url": "https://hawkezhaven.org/",
+      "name": "Hawkez Haven",
+      "description": "Equine Rescue & Rehabilitation Sanctuary in New Zealand",
+      "publisher": {
+        "@id": "https://hawkezhaven.org/#organization"
+      },
+      "inLanguage": "en-NZ"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://hawkezhaven.org/#webpage",
+      "url": "https://hawkezhaven.org/",
+      "name": "Hawkez Haven | Equine Rescue & Rehabilitation in New Zealand",
+      "isPartOf": {
+        "@id": "https://hawkezhaven.org/#website"
+      },
+      "about": {
+        "@id": "https://hawkezhaven.org/#organization"
+      },
+      "description": "Hawkez Haven is a New Zealand equine rescue and rehabilitation sanctuary giving horses a second chance through connection, patience, and care.",
+      "inLanguage": "en-NZ"
+    },
+    {
+      "@type": ["AnimalShelter", "NGO"],
+      "@id": "https://hawkezhaven.org/#organization",
+      "name": "Hawkez Haven",
+      "alternateName": [
+        "Hawkez Haven – Second Chances",
+        "Hawkez Haven Second Chances"
+      ],
+      "url": "https://hawkezhaven.org/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://hawkezhaven.org/logo.png",
+        "caption": "Hawkez Haven Logo"
+      },
+      "image": "https://hawkezhaven.org/images/hero-horse.jpg",
+      "description": "Independent equine rescue, rehabilitation, and connection-based horsemanship sanctuary in New Zealand.",
+      "slogan": "Where Second Chances Find Their Stride",
+      "telephone": "+64 20 4053 6441",
+      "email": "hawkezhaven@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ashhurst",
+        "addressRegion": "Manawatū-Whanganui",
+        "addressCountry": "NZ"
+      },
+      "sameAs": [
+        "https://www.wikidata.org/wiki/Q141190304",
+        "https://www.facebook.com/HawkezHaven"
+      ],
+      "knowsAbout": [
+        "Horse Rescue",
+        "Equine Rehabilitation",
+        "Off-The-Track Thoroughbred Retraining",
+        "Horsemanship Lessons"
+      ]
+    }
   ]
 }
 </script>
