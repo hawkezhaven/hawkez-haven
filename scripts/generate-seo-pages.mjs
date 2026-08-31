@@ -17,6 +17,7 @@ const pages = {
   "/experiences": { title: "Horse Experiences & Horsemanship | Hawkez Haven NZ", description: "Discover horsemanship experiences and education at Hawkez Haven, designed to build knowledge, confidence, safety and a better understanding of horses." },
   "/support": { title: "Support Hawkez Haven | Help Give Horses a Second Chance", description: "Support Hawkez Haven through donations and other ways to help provide rescue horses with care, rehabilitation and a safe future." },
   "/contact": { title: "Contact Hawkez Haven | Horse Rescue New Zealand", description: "Contact Hawkez Haven about horse rescue, adoption, sponsorship, volunteering, fostering, lessons and other enquiries." },
+  "/gift-card": { title: "Hawkez Haven Gift Cards | Give a Second Chance", description: "Give a Hawkez Haven gift card and share meaningful horse experiences while supporting welfare-first rescue and rehabilitation." },
 };
 
 const horsePages = {
@@ -41,6 +42,7 @@ const routeBody = {
   "/experiences": `<main><article><h1>Horse Experiences &amp; Horsemanship</h1><p>Explore horsemanship experiences and practical education designed to build knowledge, confidence, safety and a better understanding of horses.</p><p><a href="/enquire/experiences">Make an enquiry</a> · <a href="/contact">Contact Hawkez Haven</a></p></article></main>`,
   "/support": `<main><article><h1>Support Hawkez Haven</h1><p>Help provide rescue horses with feed, care, rehabilitation and a safe future.</p><p><a href="/sponsorship">Sponsor a horse</a> · <a href="/contact">Contact Hawkez Haven</a></p></article></main>`,
   "/contact": `<main><article><h1>Contact Hawkez Haven</h1><p>Contact us about horse rescue, adoption, sponsorship, volunteering, fostering, lessons and other enquiries.</p><p><a href="/enquire/general">Start a general enquiry</a></p></article></main>`,
+  "/gift-card": `<main><article><h1>Give a Hawkez Haven Gift Card</h1><p>Give a meaningful horse experience while supporting Hawkez Haven's welfare-first rescue and rehabilitation work.</p><p><a href="/experiences">Explore horse experiences</a> · <a href="/support">Support Hawkez Haven</a></p></article></main>`,
 };
 
 function escapeHtml(value) {
