@@ -1,3 +1,4 @@
+import { useLayoutEffect } from "react";
 import { useLocation, Outlet } from "react-router-dom";
 import Navbar from "./Navbar.tsx";
 import Footer from "./Footer.tsx";
@@ -212,11 +213,13 @@ function Breadcrumbs({ pathname }: { pathname: string }) {
   if (segments.length === 0) return null;
 
   const page = segments[0];
-  const items = [{ label: pageLabels[page] ?? page.replace(/-/g, " "), href: `/${page}` }];
+  const titleCase = (value: string) =>
+    value.replace(/-/g, " ").replace(/\b\w/g, (character) => character.toUpperCase());
+  const items = [{ label: pageLabels[page] ?? titleCase(page), href: `/${page}` }];
 
   if (segments.length > 1) {
     items.push({
-      label: segments[segments.length - 1].replace(/-/g, " "),
+      label: titleCase(segments[segments.length - 1]),
       href: pathname,
     });
   }
@@ -260,6 +263,12 @@ export default function AppLayout() {
   const { pathname } = useLocation();
   const page = pathname.replace(/^\//, "").split("/")[0] || "home";
   const pageClass = `page-${page}`;
+
+  useLayoutEffect(() => {
+    // Static route files include a crawlable breadcrumb before the React root.
+    // Replace it with the route-aware React version before the first client paint.
+    document.getElementById("hawkez-haven-prerendered-breadcrumbs")?.remove();
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col">

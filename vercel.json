@@ -53,6 +53,7 @@
     { "source": "/foster", "destination": "/foster/index.html" },
     { "source": "/volunteer", "destination": "/volunteer/index.html" },
     { "source": "/experiences", "destination": "/experiences/index.html" },
+    { "source": "/gift-card", "destination": "/gift-card/index.html" },
     { "source": "/support", "destination": "/support/index.html" },
     { "source": "/contact", "destination": "/contact/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
