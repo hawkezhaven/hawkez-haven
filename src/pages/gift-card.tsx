@@ -46,7 +46,7 @@ export default function GiftCardPage() {
         <div className="grid lg:grid-cols-[minmax(0,1fr)_390px] gap-7 xl:gap-9 items-start">
           <div>
             <div className="space-y-5">
-              {/* Banner / header cards (unchanged content, visual layout preserved) */}
+              {/* Banner / header card */}
               <article className="relative overflow-hidden rounded-[18px] border-2 border-[#b77b28] bg-[#f8f0df] shadow-[0_14px_35px_rgba(35,28,18,.14)]">
                 <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
                   <img src="/images/hawkez-logo-transparent.png" alt="" className="w-[58%] max-w-[820px] opacity-[.075]" />
@@ -70,19 +70,7 @@ export default function GiftCardPage() {
                 </div>
               </article>
 
-              {/* Side-by-side view: render the actual PNGs at their natural width/height (width:100%, height:auto) */}
-              <article className="rounded-[18px] border-2 border-[#b77b28] bg-[#f8f0df] shadow-[0_14px_35px_rgba(35,28,18,.11)] p-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-start">
-                  <div>
-                    <img src={FRONT} alt="Hawkez Haven Gift Card — Front" className="w-full h-auto" />
-                  </div>
-                  <div>
-                    <img src={BACK} alt="Hawkez Haven Gift Card — Back" className="w-full h-auto" />
-                  </div>
-                </div>
-              </article>
-
-              {/* Interactive flip card: stable container sized to the smaller aspect so both faces visually match width; object-contain prevents cropping */}
+              {/* Single interactive flip card — front and back are not shown side-by-side */}
               <article className="mt-2 rounded-[18px] border-2 border-[#b77b28] bg-[#f8f0df] shadow-[0_14px_35px_rgba(35,28,18,.11)] p-4">
                 <div className="max-w-[680px] mx-auto">
                   <div
