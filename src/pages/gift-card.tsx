@@ -40,7 +40,7 @@ export default function GiftCardPage() {
     <main className="bg-[#f5f0e8] text-[#1a1a18]">
       <section className="relative overflow-hidden bg-[#1a1a18] text-[#f5f0e8] py-20 md:py-28">
         <div className="absolute inset-0 opacity-[0.055] pointer-events-none flex items-center justify-center">
-          <img src="/favicon.png" alt="" className="w-[520px] max-w-[85vw]" />
+          <img src="/images/hawkez-haven-horizontal.png" alt="" className="w-[760px] max-w-[88vw]" />
         </div>
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 text-[#b8922a] text-[0.65rem] tracking-[0.2em] uppercase font-medium">
@@ -58,7 +58,7 @@ export default function GiftCardPage() {
           <div>
             <div className="relative overflow-hidden rounded-3xl border border-[#b8922a]/30 bg-[#fbf8f1] shadow-xl aspect-[1.7/1] p-8 md:p-12 flex flex-col justify-between">
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.055]">
-                <img src="/favicon.png" alt="" className="w-[72%]" />
+                <img src="/images/hawkez-haven-horizontal.png" alt="" className="w-[72%]" />
               </div>
               <div className="relative flex items-start justify-between gap-4">
                 <div>
