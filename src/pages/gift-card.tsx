@@ -26,7 +26,8 @@ export default function GiftCardPage() {
     if (!validAmount) return "#";
     return paypalDonateUrl(Number(selectedAmount.toFixed(2)), `Hawkez Haven Gift Card - $${selectedAmount.toFixed(2)} NZD - ${recipient || "Gift"}`);
   }, [recipient, selectedAmount, validAmount]);
-  const confirmationEmail = `mailto:hawkezhaven@gmail.com?subject=${encodeURIComponent(`Gift Card Purchase - ${reference}`)}&body=${encodeURIComponent(`Hawkez Haven Gift Card\n\nGift Card Reference: ${reference}`)}`;
+
+  const confirmationEmail = `mailto:hawkezhaven@gmail.com?subject=${encodeURIComponent(`Gift Card Purchase - ${reference}`)}&body=${encodeURIComponent(`Hawkez Haven Gift Card\n\nGift Card Reference: ${reference}\nAmount: $${selectedAmount.toFixed(2)} NZD\nRecipient: ${recipient || 'Gift'}\nRecipient Email: ${recipientEmail || ''}\nFrom: ${from}\nMessage:\n${message}\n\nPlease process this gift card purchase via PayPal: ${paypalUrl}\n`)};`
 
   // Approved artwork filenames (do not change)
   const FRONT = "/images/hawkez-haven-gift-card-front.png";
@@ -59,7 +60,7 @@ export default function GiftCardPage() {
                     <h1 className="font-serif text-[clamp(34px,5.2vw,76px)] tracking-[.12em] leading-none">GIFT CARD</h1>
                     <p className="mt-2 text-sm">Give the gift of hope — support the rescue, rehabilitation and education work at Hawkez Haven.</p>
                   </div>
-                  <div className="absolute left-0 right-0 bottom-0 bg-[#0d2b20] text-[#f8f0df] flex items-center justify-center gap-x-[2.2%] px-3 py-[1.15%] text-[clamp(5px,.55vw,9px)] tracking-[.08em]">
+                  <div className="absolute left-0 right-0 bottom-0 bg-[#0d2b20] text-[#f8f0df] flex items-center justify-center gap-x-[2.2%] px-3 py-[1.15%] text-[clamp(5px,.55vw,9px)] tracking-[.06em]">
                     <span>♡ Horse Experiences</span>
                     <span>♡ Sponsorships</span>
                     <span>♡ Rehabilitation</span>
@@ -130,7 +131,7 @@ export default function GiftCardPage() {
             <div className="space-y-4">
               <div className="flex gap-2 flex-wrap">
                 {PRESET_AMOUNTS.map(a => (
-                  <button key={a} type="button" onClick={() => { setCustom(""); setAmount(a); }} className={`px-3 py-2 rounded-full border ${a === amount && !custom ? "bg-[#b8922a] text-white border-t[...]
+                  <button key={a} type="button" onClick={() => { setCustom(""); setAmount(a); }} className={`px-3 py-2 rounded-full border ${a === amount && !custom ? "bg-[#b8922a] text-white border-transparent" : "bg-white text-[#17261d] border-[#dcd6c4]"}`}>
                     ${a}
                   </button>
                 ))}
