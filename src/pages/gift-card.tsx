@@ -26,7 +26,7 @@ export default function GiftCardPage() {
     if (!validAmount) return "#";
     return paypalDonateUrl(Number(selectedAmount.toFixed(2)), `Hawkez Haven Gift Card - $${selectedAmount.toFixed(2)} NZD - ${recipient || "Gift"}`);
   }, [recipient, selectedAmount, validAmount]);
-  const confirmationEmail = `mailto:hawkezhaven@gmail.com?subject=${encodeURIComponent(`Gift Card Purchase - ${reference}`)}&body=${encodeURIComponent(`Hawkez Haven Gift Card\n\nGift Card Reference: ${reference}\nAmount: $${validAmount ? selectedAmount.toFixed(2) : ""} NZD\nTo: ${recipient}\nRecipient email: ${recipientEmail}\nFrom: ${from}\nMessage: ${message}\n\nI have completed payment via PayPal.`)}`;
+  const confirmationEmail = `mailto:hawkezhaven@gmail.com?subject=${encodeURIComponent(`Gift Card Purchase - ${reference}`)}&body=${encodeURIComponent(`Hawkez Haven Gift Card\n\nGift Card Reference: ${reference}\n\nRecipient: ${recipient}\nRecipient Email: ${recipientEmail}\n\nFrom: ${from}\n\nMessage:\n${message}\n\nAmount: $${selectedAmount.toFixed(2)} NZD`)}`;
 
   // Approved artwork filenames (do not change)
   const FRONT = "/images/hawkez-haven-gift-card-front.png";
@@ -40,7 +40,7 @@ export default function GiftCardPage() {
   function AspectImage({ src, aspect, alt }: { src: string; aspect: number; alt?: string }) {
     const paddingTop = `${(1 / aspect) * 100}%`;
     return (
-      <div className="relative w-full" style={{ paddingTop }}>
+      <div className="relative w-full overflow-hidden" style={{ paddingTop }}>
         <img src={src} alt={alt || ""} className="absolute inset-0 w-full h-full object-contain" />
       </div>
     );
@@ -68,7 +68,7 @@ export default function GiftCardPage() {
                     <h1 className="font-serif text-[clamp(34px,5.2vw,76px)] tracking-[.12em] leading-none">GIFT CARD</h1>
                     <p className="mt-2 text-sm">Give the gift of hope — support the rescue, rehabilitation and education work at Hawkez Haven.</p>
                   </div>
-                  <div className="absolute left-0 right-0 bottom-0 bg-[#0d2b20] text-[#f8f0df] flex items-center justify-center gap-x-[2.2%] px-3 py-[1.15%] text-[clamp(5px,.55vw,9px)] tracking-[.08em] uppercase whitespace-nowrap">
+                  <div className="absolute left-0 right-0 bottom-0 bg-[#0d2b20] text-[#f8f0df] flex items-center justify-center gap-x-[2.2%] px-3 py-[1.15%] text-[clamp(5px,.55vw,9px)] tracking-[.08em]">
                     <span>♡ Horse Experiences</span>
                     <span>♡ Sponsorships</span>
                     <span>♡ Rehabilitation</span>
@@ -149,7 +149,7 @@ export default function GiftCardPage() {
                     ))}</div>
                   </div>
 
-                  <div className="px-[6%] py-[4.5%] flex flex-col justify-between font-serif text-[#17261d]"><div className="space-y-[1.4%] text-[clamp(7px,.78vw,12px)]"><p><b>GIFTED TO:</b><span className="ml-2">{recipient || "—"}</span></p><p><b>FROM:</b><span className="ml-2">{from || "—"}</span></p><p><b>REFERENCE:</b><span className="ml-2">{reference}</span></p></div></div>
+                  <div className="px-[6%] py-[4.5%] flex flex-col justify-between font-serif text-[#17261d]"><div className="space-y-[1.4%] text-[clamp(7px,.78vw,12px)]"><p><b>GIFTED TO:</b><span className="block">{recipient || "(Recipient name)"}</span></p><p><b>FROM:</b><span className="block">{from || "(Your name)"}</span></p><p><b>MESSAGE:</b><span className="block italic">{message || "(Your message here)"}</span></p></div><div><p className="text-[clamp(7px,.78vw,12px)]"><b>CARD REFERENCE:</b></p><p className="font-mono text-[clamp(8px,.9vw,13px)] tracking-wider text-[#b8922a]">{reference}</p></div></div>
                 </div>
               </article>
 
@@ -165,7 +165,7 @@ export default function GiftCardPage() {
             <div className="space-y-4">
               <div className="flex gap-2 flex-wrap">
                 {PRESET_AMOUNTS.map(a => (
-                  <button key={a} type="button" onClick={() => { setCustom(""); setAmount(a); }} className={`px-3 py-2 rounded-full border ${a === amount && !custom ? "bg-[#b8922a] text-white border-transparent" : "bg-white"}`}>
+                  <button key={a} type="button" onClick={() => { setCustom(""); setAmount(a); }} className={`px-3 py-2 rounded-full border ${a === amount && !custom ? "bg-[#b8922a] text-white border-transparent" : "border-[#b8922a]/50 hover:border-[#b8922a]"}`}>
                     ${a}
                   </button>
                 ))}
