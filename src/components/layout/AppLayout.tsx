@@ -19,8 +19,8 @@ const heroImages: Record<string, string> = {
   volunteer: "/images/hero-kohan.png",
   support: "/images/hero-haven.jpg",
   contact: "/images/hero-pedro.jpg",
-  experiences: "/images/hero-ritz.jpg",
-  education: "/images/hero-ritz.jpg",
+  experiences: "/images/hero-ritz.png",
+  education: "/images/hero-ritz.png",
   hub: "/images/hero-khan.jpg",
 };
 
