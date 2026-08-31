@@ -14,6 +14,7 @@ import FosterPage from "./pages/foster.tsx";
 import VolunteerPage from "./pages/volunteer.tsx";
 import ExperiencesPage from "./pages/experiences.tsx";
 import SupportPage from "./pages/support.tsx";
+import GiftCardPage from "./pages/gift-card.tsx";
 import ContactPage from "./pages/contact.tsx";
 import HubPage from "./pages/hub.tsx";
 import EnquiryPage from "./pages/enquire/EnquiryPage.tsx";
@@ -47,6 +48,7 @@ export default function App() {
             <Route path="/education" element={<ExperiencesPage />} />
             <Route path="/experiences" element={<ExperiencesPage />} />
             <Route path="/support" element={<SupportPage />} />
+            <Route path="/gift-card" element={<GiftCardPage />} />
             <Route path="/shop" element={<SupportPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/hub" element={<HubPage />} />
