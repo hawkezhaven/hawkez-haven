@@ -51,7 +51,7 @@ export default function GiftCardPage() {
                 <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
                   <img src="/images/hawkez-logo-transparent.png" alt="" className="w-[58%] max-w-[820px] opacity-[.075]" />
                 </div>
-                <div className="relative h-full flex flex-col px-[4%] py-[2.5%]">
+                <div className="relative h-full flex flex-col px-[4%] py-[2.5%] lg:py-[4%]">
                   <div className="text-center">
                     <div className="font-serif text-[clamp(18px,2.45vw,36px)] tracking-[.17em] font-semibold">HAWKEZ HAVEN</div>
                     <div className="mt-[.25%] flex items-center justify-center gap-2"></div>
