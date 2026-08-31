@@ -2,6 +2,14 @@ import { useLocation, Outlet } from "react-router-dom";
 import Navbar from "./Navbar.tsx";
 import Footer from "./Footer.tsx";
 import SEO from "../SEO.tsx";
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "../ui/breadcrumb.tsx";
 
 const heroImages: Record<string, string> = {
   about: "/images/hero-electra.png",
@@ -14,6 +22,20 @@ const heroImages: Record<string, string> = {
   experiences: "/images/hero-ritzz.png",
   education: "/images/hero-ritzz.png",
   hub: "/images/hero-khan.jpg",
+};
+
+const pageLabels: Record<string, string> = {
+  about: "About",
+  horses: "Our Horses",
+  adoption: "Adoption",
+  foster: "Foster",
+  volunteer: "Volunteer",
+  support: "Support",
+  contact: "Contact",
+  experiences: "Experiences",
+  education: "Education",
+  hub: "Horse Hub",
+  sponsorship: "Sponsorship",
 };
 
 function PageHeroStyles({ page }: { page: string }) {
@@ -185,6 +207,55 @@ function PageHeroStyles({ page }: { page: string }) {
   );
 }
 
+function Breadcrumbs({ pathname }: { pathname: string }) {
+  const segments = pathname.split("/").filter(Boolean);
+  if (segments.length === 0) return null;
+
+  const page = segments[0];
+  const items = [{ label: pageLabels[page] ?? page.replace(/-/g, " "), href: `/${page}` }];
+
+  if (segments.length > 1) {
+    items.push({
+      label: segments[segments.length - 1].replace(/-/g, " "),
+      href: pathname,
+    });
+  }
+
+  const breadcrumbItems = [{ label: "Home", href: "/" }, ...items];
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumbItems.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.label,
+      item: `https://hawkezhaven.org${item.href}`,
+    })),
+  };
+
+  return (
+    <div className="border-b border-border/50 bg-background/95">
+      <div className="container mx-auto px-4 py-2 sm:px-6">
+        <Breadcrumb>
+          <BreadcrumbList>
+            {breadcrumbItems.map((item, index) => (
+              <BreadcrumbItem key={item.href}>
+                {index > 0 && <BreadcrumbSeparator />}
+                {index === breadcrumbItems.length - 1 ? (
+                  <BreadcrumbPage className="capitalize">{item.label}</BreadcrumbPage>
+                ) : (
+                  <BreadcrumbLink href={item.href} className="capitalize">{item.label}</BreadcrumbLink>
+                )}
+              </BreadcrumbItem>
+            ))}
+          </BreadcrumbList>
+        </Breadcrumb>
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+      </div>
+    </div>
+  );
+}
+
 export default function AppLayout() {
   const { pathname } = useLocation();
   const page = pathname.replace(/^\//, "").split("/")[0] || "home";
@@ -194,6 +265,7 @@ export default function AppLayout() {
     <div className="min-h-screen flex flex-col">
       <SEO />
       <Navbar />
+      <Breadcrumbs pathname={pathname} />
       <main className={`flex-1 ${pageClass}`}>
         <PageHeroStyles page={page} />
         <Outlet />
