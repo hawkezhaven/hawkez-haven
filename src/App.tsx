@@ -12,7 +12,7 @@ import HorseDetailPage from "./pages/horses/detail.tsx";
 import SponsorshipPage from "./pages/sponsorship.tsx";
 import FosterPage from "./pages/foster.tsx";
 import VolunteerPage from "./pages/volunteer.tsx";
-import ExperiencesPage from "./pages/experiences.tsx";
+import ExperiencesPage from "./pages/experiences-with-gift.tsx";
 import SupportPage from "./pages/support.tsx";
 import GiftCardPage from "./pages/gift-card.tsx";
 import ContactPage from "./pages/contact.tsx";
