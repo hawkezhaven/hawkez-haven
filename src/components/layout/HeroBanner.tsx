@@ -57,13 +57,13 @@ const HEROES: Record<string, HeroConfig> = {
     alt: "Diablo in black and white",
   },
   "/education": {
-    image: "/images/hero-ritz.png",
+    image: "/images/hero-roadride-ritz.png",
     eyebrow: "Education & Lessons",
     title: "Learn With The Horse In Mind.",
     alt: "Ritz being ridden at Hawkez Haven",
   },
   "/experiences": {
-    image: "/images/hero-ritz.png",
+    image: "/images/hero-roadride-ritz.png",
     eyebrow: "Education & Lessons",
     title: "Learn With The Horse In Mind.",
     alt: "Ritz being ridden at Hawkez Haven",
