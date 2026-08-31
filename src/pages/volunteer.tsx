@@ -94,7 +94,7 @@ export default function VolunteerPage() {
       <section className="bg-[#ede5d4] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
           <img
-            src="/images/saphira-khan.jpg"
+            src="/images/volunteer.jpg"
             alt="Volunteer with horses at Hawkez Haven"
             loading="lazy"
             className="w-full rounded-3xl object-cover aspect-[4/3]"
