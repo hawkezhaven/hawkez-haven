@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Gift } from "lucide-react";
 
 export default function HubPage() {
   return (
@@ -12,42 +12,40 @@ export default function HubPage() {
             <span className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">The Hub</span>
           </div>
           <h1 className="mt-6 font-serif text-5xl md:text-6xl text-[#f5f0e8] leading-tight max-w-3xl">
-            Community support, one item at a time.
+            Community support, one connection at a time.
           </h1>
           <p className="mt-6 text-lg text-[#f5f0e8]/70 max-w-2xl leading-relaxed">
-            The Hub is where community generosity meets horse care. Donated gear, fundraising activity, auctions and sales of donated items — with every dollar raised going directly to the horses in our care.
+            The Hub is a place to discover ways to support the horses of Hawkez Haven and stay connected with the work we do.
           </p>
         </div>
       </section>
 
-      {/* What The Hub is */}
+      {/* Gift Cards */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="flex items-center gap-3 mb-4">
           <span className="block h-px w-8 bg-[#b8922a]" />
-          <p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">How it works</p>
+          <p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">Gift Cards</p>
         </div>
-        <h2 className="font-serif text-4xl text-[#1a1a18] mb-10 max-w-2xl">A place for donated goods, gear and community giving.</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[
-            {
-              title: "Donated horse gear",
-              desc: "Quality second-hand tack, rugs, halters, feed equipment and other gear donated by the community — listed here so proceeds from their sale can go straight to horse care.",
-            },
-            {
-              title: "Auctions & fundraising sales",
-              desc: "Community fundraising events, auction lots and one-off sales. When something becomes available, it will be listed here with full details.",
-            },
-            {
-              title: "Donated goods & items",
-              desc: "Non-equine donated items — homewares, collectables, clothing and more — whose sale supports the Hawkez Haven horses. Every item listed has been generously contributed.",
-            },
-          ].map(({ title, desc }) => (
-            <div key={title} className="bg-white rounded-2xl p-8 border border-[#ddd4be]/50">
-              <div className="w-2 h-2 rounded-full bg-[#b8922a] mb-4" />
-              <h3 className="font-serif text-xl text-[#1a1a18] mb-3">{title}</h3>
-              <p className="text-sm text-[#4a4a42] leading-relaxed">{desc}</p>
-            </div>
-          ))}
+        <div className="grid lg:grid-cols-[1fr_420px] gap-10 items-center">
+          <div>
+            <h2 className="font-serif text-4xl text-[#1a1a18] mb-5">Give the gift of a second chance.</h2>
+            <p className="text-[#4a4a42] leading-relaxed max-w-2xl">
+              A Hawkez Haven gift card is a thoughtful way to support rescue, rehabilitation, education and horse experiences. Give someone something meaningful while helping the horses in our care.
+            </p>
+            <Link
+              to="/gift-card"
+              className="mt-8 inline-flex items-center gap-2 px-7 py-3 bg-[#b8922a] text-white text-sm font-medium rounded-full hover:bg-[#8c6e1e] transition-colors cursor-pointer"
+            >
+              View Gift Cards <ArrowRight size={16} />
+            </Link>
+          </div>
+          <div className="bg-white rounded-3xl p-10 border border-[#ddd4be]/50 shadow-sm text-center">
+            <Gift className="mx-auto text-[#b8922a] mb-5" size={42} strokeWidth={1.5} />
+            <h3 className="font-serif text-2xl text-[#1a1a18]">A gift with purpose.</h3>
+            <p className="mt-3 text-sm text-[#4a4a42] leading-relaxed">
+              Support the horses while giving someone an experience they can remember.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -67,63 +65,33 @@ export default function HubPage() {
         </div>
       </section>
 
-      {/* Coming soon */}
-      <section className="bg-[#ede5d4] py-20">
+      {/* Support */}
+      <section className="bg-[#ede5d4] py-20 mt-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
             <span className="block h-px w-8 bg-[#b8922a]" />
-            <p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">Listings</p>
+            <p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">Support the horses</p>
             <span className="block h-px w-8 bg-[#b8922a]" />
           </div>
-          <h2 className="font-serif text-3xl text-[#1a1a18] mb-4">Nothing listed at the moment.</h2>
+          <h2 className="font-serif text-3xl text-[#1a1a18] mb-4">Every contribution helps.</h2>
           <p className="text-[#4a4a42] text-sm leading-relaxed max-w-xl mx-auto">
-            When donated gear, auction items or fundraising sales become available, they will appear here. Check back soon or follow us on Facebook to be notified first.
+            Whether you choose a gift card or make a direct contribution, your support helps provide feed, farrier, veterinary care, rehabilitation and second chances.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <a
-              href="https://www.facebook.com/profile.php?id=61591877430343"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/gift-card"
               className="inline-flex items-center gap-2 px-7 py-3 bg-[#b8922a] text-white text-sm font-medium rounded-full hover:bg-[#8c6e1e] transition-colors cursor-pointer"
             >
-              Follow on Facebook <ArrowRight size={16} />
-            </a>
+              Gift Cards <ArrowRight size={16} />
+            </Link>
             <Link
-              to="/contact"
+              to="/support"
               className="inline-flex items-center gap-2 px-7 py-3 border border-[#1a1a18] text-[#1a1a18] text-sm font-medium rounded-full hover:bg-[#1a1a18] hover:text-[#f5f0e8] transition-colors cursor-pointer"
             >
-              Get in touch
+              Support Us <ArrowRight size={16} />
             </Link>
           </div>
         </div>
-      </section>
-
-      {/* Donate gear CTA */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="bg-[#1a1a18] rounded-3xl p-10 md:p-14 text-center">
-          <p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium text-[#b8922a]">Have something to donate?</p>
-          <h2 className="mt-4 font-serif text-3xl md:text-4xl text-[#f5f0e8] max-w-xl mx-auto">Horse gear or donated goods welcome.</h2>
-          <p className="mt-4 text-[#f5f0e8]/70 text-sm max-w-lg mx-auto">
-            If you have gear, equipment or other items you'd like to donate toward horse care — please get in touch. We'll list suitable items here and ensure proceeds go directly to the horses.
-          </p>
-          <Link
-            to="/contact"
-            className="mt-8 inline-flex items-center gap-2 px-7 py-3 bg-[#b8922a] text-white text-sm font-medium rounded-full hover:bg-[#8c6e1e] transition-colors cursor-pointer"
-          >
-            Contact Hawkez Haven <ArrowRight size={16} />
-          </Link>
-        </div>
-      </section>
-
-      {/* Link to Support Us */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 text-center">
-        <p className="text-sm text-[#4a4a42]">
-          Looking to make a direct financial contribution?{" "}
-          <Link to="/support" className="text-[#b8922a] hover:underline font-medium">
-            Visit Support Us
-          </Link>{" "}
-          to give toward feed, farrier, vet and rehabilitation.
-        </p>
       </section>
     </div>
   );
