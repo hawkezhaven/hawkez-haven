@@ -89,7 +89,7 @@ function HorseCard({ horse }: { horse: (typeof HORSES)[0] }) {
         <Link to={`/horses/${horse.id}`} className="block">
           <div className="relative overflow-hidden bg-[#1a1a18] aspect-[4/3] w-full flex items-center justify-center p-2">
             <img
-              src={horse.image}
+              src={horse.id === "electra" ? "/images/Electric.jpg" : horse.image}
               alt={`${horse.name} at Hawkez Haven`}
               loading="lazy"
               className="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-700 ease-out group-hover:scale-105"
