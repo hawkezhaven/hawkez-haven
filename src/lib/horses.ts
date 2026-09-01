@@ -725,7 +725,7 @@ Long-Term Care Lease Opportunity:
     height: "16.1hh",
     age: "6 years",
     colour: "Dark Bay",
-    image: "/images/electra.jpg",
+    image: "/images/miss-ele.jpg",
     lookingForward: "Electra is a future rehoming candidate. When ready, her future home will require horse experience and an understanding of sensitive, intelligent mares.",
     fullStory: `Electra arrived at Hawkez Haven alongside Diablo.
 
