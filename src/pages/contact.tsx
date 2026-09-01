@@ -29,8 +29,10 @@ export default function ContactPage() {
               <MapPin size={18} className="text-[#b8922a] mt-0.5 shrink-0" />
               <div>
                 <p className="font-medium text-[#1a1a18] mb-1">Location</p>
-                <p>Ashhurst, New Zealand</p>
-                <p className="text-xs text-[#4a4a42]/70 mt-1">Visits are by appointment only. We're a working property — please let us know before dropping in.</p>
+                <p>117 North Street</p>
+                <p>Ashhurst, Manawatū 4810</p>
+                <p>New Zealand</p>
+                <p className="text-xs text-[#4a4a42]/70 mt-2">Visits are by appointment only. We're a working property — please let us know before dropping in.</p>
               </div>
             </li>
             <li className="flex items-start gap-4">
@@ -79,10 +81,26 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* Form */}
+        {/* Form + location map */}
         <div>
           <h2 className="font-serif text-3xl text-[#1a1a18] mb-6">Send us a message</h2>
           <EnquiryForm subject="General Enquiry – Hawkez Haven" serverSend />
+
+          <div className="mt-12">
+            <h2 className="font-serif text-3xl text-[#1a1a18] mb-4">Find Hawkez Haven</h2>
+            <p className="text-sm text-[#4a4a42] leading-relaxed mb-5">
+              Hawkez Haven – Second Chances is based at 117 North Street, Ashhurst, Manawatū 4810, New Zealand. Visits are by appointment only.
+            </p>
+            <div className="overflow-hidden rounded-2xl border border-[#1a1a18]/10 bg-white shadow-sm">
+              <iframe
+                title="Map showing Hawkez Haven – Second Chances at 117 North Street, Ashhurst"
+                src="https://www.google.com/maps?q=117+North+Street,+Ashhurst,+Manawatu+4810,+New+Zealand&output=embed"
+                className="w-full h-[320px] md:h-[400px] border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </div>
         </div>
       </section>
     </div>
