@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import EnquiryForm from "./_components/EnquiryForm.tsx";
 
@@ -29,7 +29,7 @@ export default function ContactPage() {
               <MapPin size={18} className="text-[#b8922a] mt-0.5 shrink-0" />
               <div>
                 <p className="font-medium text-[#1a1a18] mb-1">Location</p>
-                <p>Ashhurst, New Zealand</p>
+                <p>117 North Street, Ashhurst, Manawatū 4810, New Zealand</p>
                 <p className="text-xs text-[#4a4a42]/70 mt-1">Visits are by appointment only. We're a working property — please let us know before dropping in.</p>
               </div>
             </li>
@@ -79,8 +79,31 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* Form */}
+        {/* Map + form */}
         <div>
+          <div className="mb-12">
+            <h2 className="font-serif text-3xl text-[#1a1a18] mb-3">Find Hawkez Haven</h2>
+            <p className="text-sm text-[#4a4a42] mb-6">117 North Street, Ashhurst, Manawatū 4810, New Zealand</p>
+            <div className="overflow-hidden rounded-2xl border border-[#1a1a18]/10 shadow-sm bg-white">
+              <iframe
+                title="Map showing Hawkez Haven at 117 North Street, Ashhurst, Manawatū"
+                src="https://www.google.com/maps?q=117+North+Street,+Ashhurst,+Manawatu+4810,+New+Zealand&output=embed"
+                className="w-full h-[320px] md:h-[380px] border-0"
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=117+North+Street%2C+Ashhurst%2C+Manawatu+4810%2C+New+Zealand"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#1a1a18] hover:text-[#b8922a] transition-colors"
+            >
+              Open in Google Maps <ExternalLink size={15} />
+            </a>
+          </div>
+
           <h2 className="font-serif text-3xl text-[#1a1a18] mb-6">Send us a message</h2>
           <EnquiryForm subject="General Enquiry – Hawkez Haven" serverSend />
         </div>
