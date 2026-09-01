@@ -5,11 +5,16 @@ import { paypalDonateUrl } from "@/lib/paypal.ts";
 
 const PRESET_AMOUNTS = [25, 50, 100, 150, 200];
 
+// Automatically creates a clear, organised gift-card number.
+// The date makes records easy to sort, while the random suffix prevents
+// numbers being predictable or duplicated when several cards are created.
 function makeReference() {
   const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-  let value = "HH-GIFT-";
-  for (let i = 0; i < 8; i += 1) value += chars[Math.floor(Math.random() * chars.length)];
-  return value;
+  const now = new Date();
+  const date = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, "0")}${String(now.getDate()).padStart(2, "0")}`;
+  let suffix = "";
+  for (let i = 0; i < 6; i += 1) suffix += chars[Math.floor(Math.random() * chars.length)];
+  return `HH-GC-${date}-${suffix}`;
 }
 
 export default function GiftCardPage() {
@@ -27,7 +32,7 @@ export default function GiftCardPage() {
     return paypalDonateUrl(Number(selectedAmount.toFixed(2)), `Hawkez Haven Gift Card - $${selectedAmount.toFixed(2)} NZD - ${recipient || "Gift"}`);
   }, [recipient, selectedAmount, validAmount]);
 
-  const confirmationEmail = `mailto:hawkezhaven@gmail.com?subject=${encodeURIComponent(`Gift Card Purchase - ${reference}`)}&body=${encodeURIComponent(`Hawkez Haven Gift Card\n\nGift Card Reference: ${reference}\nAmount: $${selectedAmount.toFixed(2)} NZD\nRecipient: ${recipient || 'Gift'}\nRecipient Email: ${recipientEmail || ''}\nFrom: ${from}\nMessage:\n${message}\n\nPlease process this gift card purchase via PayPal: ${paypalUrl}\n`)};`
+  const confirmationEmail = `mailto:hawkezhaven@gmail.com?subject=${encodeURIComponent(`Gift Card Purchase - ${reference}`)}&body=${encodeURIComponent(`Hawkez Haven Gift Card\n\nGift Card Number: ${reference}\nAmount: $${selectedAmount.toFixed(2)} NZD\nRecipient: ${recipient || 'Gift'}\nRecipient Email: ${recipientEmail || ''}\nFrom: ${from}\nMessage:\n${message}\n\nPlease process this gift card purchase via PayPal: ${paypalUrl}\n`)};`
 
   // Approved artwork filenames (do not change)
   const FRONT = "/images/hawkez-haven-gift-card-front.png";
@@ -130,6 +135,12 @@ export default function GiftCardPage() {
               <input value={recipientEmail} onChange={e => setRecipientEmail(e.target.value)} placeholder="Recipient email (optional)" className="w-full px-3 py-2 border rounded" />
               <input value={from} onChange={e => setFrom(e.target.value)} placeholder="From" className="w-full px-3 py-2 border rounded" />
               <textarea value={message} onChange={e => setMessage(e.target.value)} placeholder="Message (optional)" className="w-full px-3 py-2 border rounded h-24" />
+
+              <div className="rounded-xl border border-[#ddd4be] bg-[#f8f0df] px-4 py-3">
+                <div className="text-xs uppercase tracking-[.12em] text-[#17261d]/60">Gift Card No.</div>
+                <div className="mt-1 font-mono text-sm font-semibold tracking-wider">{reference}</div>
+                <div className="mt-1 text-xs text-[#17261d]/60">Automatically assigned for your gift card.</div>
+              </div>
 
               <a href={paypalUrl} className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0d2b20] text-white ${!validAmount ? "opacity-60 pointer-events-none" : "hover:opacity-90"}`}>
                 <span>Pay with PayPal</span>
