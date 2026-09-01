@@ -116,13 +116,13 @@ const EXPERIENCES: Experience[] = [
     ],
     maxPeople: "Private (1 rider per lesson)",
     level: "Beginners welcome (all ages)",
-    desc: "Private, progressive horsemanship lessons focused on building confident and capable horse people. Lessons include safe handling, grooming, tacking up, groundwork and ridden skills tailored to the rider's experience.\n\nWe have horses and ponies to suit every age and stage—including Peanut, our 6-year-old bush pony mare who is an amazing asset for younger and smaller students building their confidence, alongside Pedro, Haven, and Khan.\n\nBeginners welcome. Horse or pony provided. By appointment.",
+    desc: "Private, progressive horsemanship and riding lessons focused on building confident, capable horse people — not just riders who can sit in a saddle. Lessons include safe handling, grooming, tacking up, groundwork, horse behaviour and ridden skills tailored to the rider's experience and the horse's needs.\n\nWe have horses and ponies to suit different ages and stages, including Peanut, our bush pony mare who is an amazing asset for younger and smaller students building confidence, alongside Pedro, Haven and Khan.\n\nBeginners are welcome. Horse or pony provided. By appointment.",
     learn: [
-      "Safe handling and grooming",
+      "Safe handling, grooming and horse care",
       "Tacking up and preparation",
-      "Groundwork and ridden skills",
-      "Balance, position and feel",
-      "Building confidence at your own pace",
+      "Groundwork and communication before riding",
+      "Balance, position, feel and ridden skills",
+      "Reading your horse and adapting to their responses",
     ],
   },
   {
@@ -189,20 +189,36 @@ export default function ExperiencesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 text-[#b8922a]">
             <span className="block h-px w-8 bg-[#b8922a]" />
-            <span className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">Experiences & Education</span>
+            <span className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">Education & Horsemanship • Ashhurst, Manawatū</span>
           </div>
           <h1 className="mt-6 font-serif text-5xl md:text-6xl text-[#f5f0e8] leading-tight max-w-4xl">
-            Something for every kind of horse lover.
+            Learn to understand horses, not just ride them.
           </h1>
-          <p className="mt-6 text-lg text-[#f5f0e8]/70 max-w-2xl leading-relaxed">
-            At Hawkez Haven — home to all our horses — every experience is real, unhurried and designed to change the way you see horses forever. Whether you've never touched a horse or you've ridden for years, there is something here for you.
+          <p className="mt-6 text-lg text-[#f5f0e8]/70 max-w-3xl leading-relaxed">
+            Hawkez Haven offers horse riding lessons, groundwork, horse care education and practical horsemanship experiences in Ashhurst, Manawatū. Our aim is simple: build knowledgeable, confident horse people who can listen, communicate and make better decisions for the horses in their care.
           </p>
           <p className="mt-4 text-[#f5f0e8]/50 text-sm">All sessions are by appointment. Numbers are kept small so every person receives genuine time and attention.</p>
         </div>
       </section>
 
+      {/* Education philosophy */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+        <div className="rounded-3xl bg-white border border-[#ddd4be]/60 shadow-sm p-8 md:p-12">
+          <div className="flex items-center gap-3 text-[#b8922a] mb-5">
+            <span className="block h-px w-8 bg-[#b8922a]" />
+            <span className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">Education before expectation</span>
+          </div>
+          <h2 className="font-serif text-3xl md:text-4xl text-[#1a1a18] leading-tight mb-5">Knowledge, feel and connection — with the horse at the centre.</h2>
+          <div className="space-y-4 text-[#4a4a42] leading-relaxed">
+            <p>Good horsemanship is more than getting a horse to do what we ask. It is learning to notice what the horse is saying, understanding why they respond the way they do, and knowing when to slow down, change the question or simply listen.</p>
+            <p>At Hawkez Haven, education is welfare-first and practical. We teach horse care, safe handling, groundwork, communication, ridden skills and the thinking behind them. You will learn to read body language, recognise tension and uncertainty, develop timing and feel, and build trust without rushing the horse.</p>
+            <p>Whether you are a complete beginner, a returning rider, a parent wanting your child to learn safely, or an experienced horse person wanting to deepen your understanding, the goal is the same: <strong className="text-[#1a1a18]">become the kind of horse person your horse can trust.</strong></p>
+          </div>
+        </div>
+      </section>
+
       {/* Experience cards */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 space-y-8">
         {EXPERIENCES.map((exp, i) => (
           <div key={exp.id} id={exp.id} className={`rounded-3xl overflow-hidden grid lg:grid-cols-[1fr_1.6fr] border border-[#ddd4be]/50 shadow-sm ${i % 2 === 1 ? "bg-[#ede5d4]" : "bg-white"}`}>
             <div className="p-8 md:p-10 border-b lg:border-b-0 lg:border-r border-[#ddd4be]/50">
