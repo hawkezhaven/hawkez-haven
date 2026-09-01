@@ -2,6 +2,8 @@ import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Heart } from "lucide-react";
 import { HORSES } from "@/lib/horses.ts";
 import NotFound from "@/pages/NotFound.tsx";
+import BeforeAfterSection from "@/components/horses/BeforeAfterSection";
+import { BEFORE_AFTER } from "@/lib/beforeAfter";
 
 export default function HorseDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -9,6 +11,7 @@ export default function HorseDetailPage() {
   if (!horse) return <NotFound />;
 
   const others = HORSES.filter(h => h.id !== horse.id).slice(0, 3);
+  const beforeAfter = BEFORE_AFTER[horse.id];
 
   const schemaData = {
     "@context": "https://schema.org",
@@ -141,6 +144,14 @@ export default function HorseDetailPage() {
           ))}
         </div>
       </section>
+
+      {beforeAfter && (
+        <BeforeAfterSection
+          horseName={horse.name}
+          image={beforeAfter.image}
+          caption={beforeAfter.caption}
+        />
+      )}
 
       {/* Looking Forward */}
       <section className="bg-[#1a1a18] py-16">
