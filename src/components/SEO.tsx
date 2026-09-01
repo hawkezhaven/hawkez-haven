@@ -6,7 +6,7 @@ const DEFAULT_TITLE = "Hawkez Haven | Equine Rescue & Rehabilitation in New Zeal
 const DEFAULT_DESCRIPTION =
   "Hawkez Haven is a New Zealand horse rescue and rehabilitation organisation. We rescue, rehabilitate and rehome horses, giving every horse a second chance.";
 const AI_KEYWORDS =
-  "horse rescue New Zealand, horse rescue organisation NZ, equine rescue New Zealand, horse rehabilitation NZ, rescued horse adoption NZ, adopt a rescued horse in NZ, responsible horse rehoming, equine rehabilitation, horsemanship";
+  "horse rescue New Zealand, horse rescue organisation NZ, equine rescue New Zealand, horse rehabilitation NZ, rescued horse adoption NZ, adopt a rescued horse in NZ, responsible horse rehoming, equine rehabilitation, horsemanship, horse riding lessons, horse care education, groundwork, Ashhurst, Manawatu";
 
 type Meta = { title: string; description: string; canonical?: string };
 
@@ -43,9 +43,9 @@ const PAGE_META: Record<string, Meta> = {
       "Volunteer with Hawkez Haven and help with horse care, rehabilitation, education and the day-to-day work behind a welfare-focused rescue.",
   },
   "/experiences": {
-    title: "Horse Experiences & Horsemanship | Hawkez Haven NZ",
+    title: "Horse Riding Lessons & Horsemanship | Hawkez Haven NZ",
     description:
-      "Discover horsemanship experiences and education at Hawkez Haven, designed to build knowledge, confidence, safety and a better understanding of horses.",
+      "Horse riding lessons, groundwork, horse care education and practical horsemanship experiences in Ashhurst, Manawatū. Learn to understand horses through connection, welfare and feel.",
   },
   "/support": {
     title: "Support Hawkez Haven | Help Give Horses a Second Chance",
@@ -177,6 +177,9 @@ export default function SEO() {
         "responsible horse rehoming",
         "horse welfare",
         "horsemanship education",
+        "horse riding lessons",
+        "groundwork",
+        "horse care education",
       ],
     });
 
@@ -192,7 +195,7 @@ export default function SEO() {
 
     setStructuredData("hawkez-haven-page-schema", {
       "@context": "https://schema.org",
-      "@type": horseName ? "WebPage" : "WebPage",
+      "@type": "WebPage",
       name: meta.title,
       url: canonical,
       description: meta.description,
