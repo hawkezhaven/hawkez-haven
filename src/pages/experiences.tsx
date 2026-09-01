@@ -21,7 +21,8 @@ const EXPERIENCE_OPTIONS: string[] = [
   "Horse Care Discovery",
   "Groundwork & Connection",
   "Horsemanship Deep Dive",
-  "Riding Experience",
+  "Riding at Hawkez Haven",
+  "Road Ride",
   "Rescue & Rehabilitation Experience",
   "Senior Horse & Companion Session",
   "Family Horse Experience",
@@ -34,7 +35,7 @@ const EXPERIENCES: Experience[] = [
     title: "Horse Care Discovery",
     subtitle: "With Khan, Rip & Diablo",
     duration: "2 hours",
-    price: "$65",
+    price: "$50",
     priceNote: "per person",
     maxPeople: "Up to 4 people",
     level: "All ages & experience levels",
@@ -52,11 +53,11 @@ const EXPERIENCES: Experience[] = [
     title: "Groundwork & Connection",
     subtitle: "With Haven & Diablo",
     duration: "2.5 hours",
-    price: "$80",
+    price: "$45",
     priceNote: "per person",
     maxPeople: "Up to 3 people",
-    level: "Beginner to intermediate",
-    desc: "Groundwork is where every great horse-human partnership begins. In this session you'll discover how to communicate with a horse using body language, space and energy — before you ever get in the saddle. This is the foundation of everything we do at Hawkez Haven, and it is life-changing for the people who experience it.",
+    level: "Beginners welcome — no previous horse experience required",
+    desc: "Groundwork is where every great horse-human partnership begins. You don't need to arrive as a confident horse person — this session is designed to help you become one. Discover how to communicate with a horse using body language, space, timing and feel, before you ever get in the saddle. We'll work at a pace that builds understanding and confidence while keeping the horse's welfare at the centre.",
     learn: [
       "The language horses use with each other",
       "How to lead with confidence and respect",
@@ -70,11 +71,11 @@ const EXPERIENCES: Experience[] = [
     title: "Horsemanship Deep Dive",
     subtitle: "With Pedro, Khan, Haven & Diablo",
     duration: "3 hours",
-    price: "$100",
+    price: "$65",
     priceNote: "per person",
     maxPeople: "Up to 2 people",
     level: "Some horse experience preferred",
-    desc: "An immersive session for those who want to go deeper. You'll work with our horses to develop real feel, timing and understanding — the three pillars of great horsemanship. This session draws on the quiet wisdom of Pedro, Khan, Haven and Diablo and your own willingness to slow down, listen and learn. Transformative for anyone working with horses or hoping to.",
+    desc: "An immersive session for those who want to go deeper. You'll work with our horses to develop real feel, timing and understanding — the three pillars of great horsemanship. This session draws on the quiet wisdom of Pedro, Khan, Haven and Diablo and your own willingness to slow down, listen and learn.",
     learn: [
       "Pressure, release and timing",
       "Emotional regulation around horses",
@@ -85,21 +86,39 @@ const EXPERIENCES: Experience[] = [
   },
   {
     id: "riding",
-    title: "Riding Experience",
-    subtitle: "With Peanut, Pedro, Haven & Khan",
+    title: "Riding at Hawkez Haven",
+    subtitle: "A relaxed riding experience at the Haven",
     image: "/images/Peanut-riding-lessons.jpg",
-    duration: "2 hours",
-    price: "$110",
+    duration: "Up to 2 hours",
+    price: "$80",
     priceNote: "per person",
     maxPeople: "Up to 2 riders",
     level: "Beginner to intermediate riders",
-    desc: "A riding session built around you and the horse in front of you — not a one-size-fits-all lesson. You'll begin on the ground, building connection before you get in the saddle, then work through balance, feel and communication at a pace that suits you and your horse. Each session is matched to the right mount, including our sweet bush pony Peanut for younger and smaller riders, alongside Pedro, Haven, and Khan.",
+    desc: "A riding experience built around you and the horse in front of you — not a one-size-fits-all lesson. You'll begin on the ground, building connection before you get in the saddle, then work through balance, feel and communication at a pace that suits you and your horse. Each ride is matched to the right horse for the rider, including suitable horses and ponies at Hawkez Haven depending on availability and suitability.",
     learn: [
       "Groundwork before riding",
       "Balance, position and feel",
       "Communicating through the reins and seat",
       "Building confidence in and out of the saddle",
       "Understanding your horse's responses",
+    ],
+  },
+  {
+    id: "road-ride",
+    title: "Road Ride",
+    subtitle: "A longer ride beyond the Haven",
+    duration: "Up to 3 hours",
+    price: "$120",
+    priceNote: "per person",
+    maxPeople: "Up to 2 riders",
+    level: "Confident riders with suitable experience",
+    desc: "Take your horsemanship out beyond the property on a longer, guided ride. Road riding requires a horse and rider who are both ready for the environment, so this experience is for confident riders with suitable previous riding experience. We will discuss your experience before booking and match you with an appropriate horse where possible.",
+    learn: [
+      "Preparing yourself and your horse for a longer ride",
+      "Awareness and safety around roads and surroundings",
+      "Maintaining connection outside the arena or property",
+      "Rider balance and confidence over distance",
+      "Reading your horse in a changing environment",
     ],
   },
   {
@@ -130,7 +149,7 @@ const EXPERIENCES: Experience[] = [
     title: "Rescue & Rehabilitation Experience",
     subtitle: "With Rip, Joey, Electra & Kohan",
     duration: "3 hours",
-    price: "$90",
+    price: "$35",
     priceNote: "per person",
     maxPeople: "Up to 4 people",
     level: "All levels — no riding required",
@@ -166,7 +185,7 @@ const EXPERIENCES: Experience[] = [
     title: "Senior Horse & Companion Session",
     subtitle: "With Joey",
     duration: "1.5 hours",
-    price: "$55",
+    price: "$30",
     priceNote: "per person",
     maxPeople: "Up to 4 people",
     level: "Suitable for all ages including children",
@@ -184,7 +203,6 @@ const EXPERIENCES: Experience[] = [
 export default function ExperiencesPage() {
   return (
     <div className="bg-[#f5f0e8]">
-      {/* Header */}
       <section className="bg-[#1a1a18] text-[#f5f0e8] py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 text-[#b8922a]">
@@ -197,11 +215,14 @@ export default function ExperiencesPage() {
           <p className="mt-6 text-lg text-[#f5f0e8]/70 max-w-3xl leading-relaxed">
             Hawkez Haven offers horse riding lessons, groundwork, horse care education and practical horsemanship experiences in Ashhurst, Manawatū. Our aim is simple: build knowledgeable, confident horse people who can listen, communicate and make better decisions for the horses in their care.
           </p>
+          <div className="mt-8 inline-flex items-center rounded-full border border-[#b8922a]/40 bg-[#b8922a]/10 px-5 py-3 text-sm text-[#f5f0e8]/80">
+            <span className="text-[#b8922a] font-medium mr-2">Introductory pricing</span>
+            Selected experiences are currently offered at introductory rates while we build our education programme and community.
+          </div>
           <p className="mt-4 text-[#f5f0e8]/50 text-sm">All sessions are by appointment. Numbers are kept small so every person receives genuine time and attention.</p>
         </div>
       </section>
 
-      {/* Education philosophy */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
         <div className="rounded-3xl bg-white border border-[#ddd4be]/60 shadow-sm p-8 md:p-12">
           <div className="flex items-center gap-3 text-[#b8922a] mb-5">
@@ -217,7 +238,6 @@ export default function ExperiencesPage() {
         </div>
       </section>
 
-      {/* Experience cards */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 space-y-8">
         {EXPERIENCES.map((exp, i) => (
           <div key={exp.id} id={exp.id} className={`rounded-3xl overflow-hidden grid lg:grid-cols-[1fr_1.6fr] border border-[#ddd4be]/50 shadow-sm ${i % 2 === 1 ? "bg-[#ede5d4]" : "bg-white"}`}>
@@ -225,111 +245,33 @@ export default function ExperiencesPage() {
               <p className="text-xs italic text-[#b8922a] mb-2">{exp.subtitle}</p>
               <h2 className="font-serif text-3xl text-[#1a1a18] leading-tight">{exp.title}</h2>
               <div className="mt-6 space-y-3 text-sm text-[#4a4a42]">
-                <div className="flex items-center gap-3">
-                  <span className="text-[#b8922a] font-medium w-20 shrink-0">Duration</span>
-                  <span>{exp.duration}</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-[#b8922a] font-medium w-20 shrink-0">Price</span>
-                  {exp.priceLines ? (
-                    <div className="space-y-0.5">
-                      {exp.priceLines.map(line => (
-                        <p key={line} className="text-sm text-[#1a1a18]">{line}</p>
-                      ))}
-                    </div>
-                  ) : (
-                    <span className="font-serif text-xl text-[#1a1a18]">{exp.price} <span className="text-sm font-sans text-[#4a4a42]">{exp.priceNote}</span></span>
-                  )}
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-[#b8922a] font-medium w-20 shrink-0">Group</span>
-                  <span>{exp.maxPeople}</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <span className="text-[#b8922a] font-medium w-20 shrink-0">Level</span>
-                  <span>{exp.level}</span>
-                </div>
+                <div className="flex items-center gap-3"><span className="text-[#b8922a] font-medium w-20 shrink-0">Duration</span><span>{exp.duration}</span></div>
+                <div className="flex items-start gap-3"><span className="text-[#b8922a] font-medium w-20 shrink-0">Price</span>{exp.priceLines ? <div className="space-y-0.5">{exp.priceLines.map(line => <p key={line} className="text-sm text-[#1a1a18]">{line}</p>)}</div> : <span className="font-serif text-xl text-[#1a1a18]">{exp.price} <span className="text-sm font-sans text-[#4a4a42]">{exp.priceNote}</span></span>}</div>
+                <div className="flex items-center gap-3"><span className="text-[#b8922a] font-medium w-20 shrink-0">Group</span><span>{exp.maxPeople}</span></div>
+                <div className="flex items-start gap-3"><span className="text-[#b8922a] font-medium w-20 shrink-0">Level</span><span>{exp.level}</span></div>
               </div>
-              <Link
-                to="/enquire/experiences"
-                className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-[#b8922a] text-white text-sm font-medium rounded-full hover:bg-[#8c6e1e] transition-colors cursor-pointer"
-              >
-                Book this experience <ArrowRight size={16} />
-              </Link>
+              <Link to="/enquire/experiences" className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-[#b8922a] text-white text-sm font-medium rounded-full hover:bg-[#8c6e1e] transition-colors cursor-pointer">Book this experience <ArrowRight size={16} /></Link>
             </div>
-            <div className="p-8 md:p-10 flex flex-col justify-between">
-              <div>
-                {exp.image && (
-                  <div className="mb-6 overflow-hidden rounded-2xl bg-[#ede5d4]/60 border border-[#ddd4be]/50 shadow-sm flex items-center justify-center p-2">
-                    <img
-                      src={exp.image}
-                      alt={exp.title}
-                      loading="lazy"
-                      className="w-full max-h-80 sm:max-h-96 object-contain rounded-xl"
-                    />
-                  </div>
-                )}
-                <p className="text-[#4a4a42] leading-relaxed mb-6 whitespace-pre-line">{exp.desc}</p>
-                <h4 className="text-[0.65rem] tracking-[0.18em] uppercase font-medium text-[#b8922a] mb-4">What you'll learn</h4>
-                <ul className="space-y-2">
-                  {exp.learn.map(item => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-[#4a4a42]">
-                      <span className="mt-2 block w-1.5 h-1.5 rounded-full bg-[#b8922a] shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            <div className="p-8 md:p-10 flex flex-col justify-between"><div>
+              {exp.image && <div className="mb-6 overflow-hidden rounded-2xl bg-[#ede5d4]/60 border border-[#ddd4be]/50 shadow-sm flex items-center justify-center p-2"><img src={exp.image} alt={exp.title} loading="lazy" className="w-full max-h-80 sm:max-h-96 object-contain rounded-xl" /></div>}
+              <p className="text-[#4a4a42] leading-relaxed mb-6 whitespace-pre-line">{exp.desc}</p>
+              <h4 className="text-[0.65rem] tracking-[0.18em] uppercase font-medium text-[#b8922a] mb-4">What you'll learn</h4>
+              <ul className="space-y-2">{exp.learn.map(item => <li key={item} className="flex items-start gap-2 text-sm text-[#4a4a42]"><span className="mt-2 block w-1.5 h-1.5 rounded-full bg-[#b8922a] shrink-0" />{item}</li>)}</ul>
+            </div></div>
           </div>
         ))}
       </section>
 
-      {/* Good to know */}
-      <section className="bg-[#ede5d4] py-20">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="block h-px w-8 bg-[#b8922a]" />
-            <p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">Good to know</p>
-          </div>
-          <h2 className="font-serif text-3xl text-[#1a1a18] mb-8">Before you book</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              { title: "Location", desc: "All experiences take place at Hawkez Haven, Ashhurst, New Zealand. We are a working property — please do not drop in unannounced." },
-              { title: "What to wear", desc: "Closed-toe shoes are required. Long trousers are recommended. We'll provide any additional safety equipment needed." },
-              { title: "Booking", desc: "All sessions are by appointment only and subject to availability. We keep group sizes small so every visit is personal and meaningful." },
-              { title: "Cancellations", desc: "We understand things come up. Please give us as much notice as possible if you need to reschedule. We'll do our best to find a suitable alternative." },
-              { title: "Children", desc: "Children are welcome in most sessions. Please mention their ages when booking so we can match them with the right horse and experience." },
-              { title: "Payment", desc: "Payment is due at time of booking. We accept bank transfer and PayPal. Contact us for group pricing for 5+ people." },
-            ].map(({ title, desc }) => (
-              <div key={title} className="bg-white rounded-xl p-5 border border-[#ddd4be]/50">
-                <h3 className="font-medium text-[#1a1a18] text-sm mb-1">{title}</h3>
-                <p className="text-sm text-[#4a4a42] leading-relaxed">{desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <section className="bg-[#ede5d4] py-20"><div className="max-w-3xl mx-auto px-4 sm:px-6"><div className="flex items-center gap-3 mb-4"><span className="block h-px w-8 bg-[#b8922a]" /><p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">Good to know</p></div><h2 className="font-serif text-3xl text-[#1a1a18] mb-8">Before you book</h2><div className="grid md:grid-cols-2 gap-6">{[
+        { title: "Location", desc: "All experiences take place at Hawkez Haven, Ashhurst, New Zealand. We are a working property — please do not drop in unannounced." },
+        { title: "What to wear", desc: "Closed-toe shoes are required. Long trousers are recommended. We'll provide any additional safety equipment needed." },
+        { title: "Booking", desc: "All sessions are by appointment only and subject to availability. We keep group sizes small so every visit is personal and meaningful." },
+        { title: "Cancellations", desc: "We understand things come up. Please give us as much notice as possible if you need to reschedule. We'll do our best to find a suitable alternative." },
+        { title: "Children", desc: "Children are welcome in most sessions. Please mention their ages when booking so we can match them with the right horse and experience." },
+        { title: "Payment", desc: "Payment is due at time of booking. We accept bank transfer and PayPal. Contact us for group pricing for 5+ people." },
+      ].map(({ title, desc }) => <div key={title} className="bg-white rounded-xl p-5 border border-[#ddd4be]/50"><h3 className="font-medium text-[#1a1a18] text-sm mb-1">{title}</h3><p className="text-sm text-[#4a4a42] leading-relaxed">{desc}</p></div>)}</div></div></section>
 
-      {/* Booking form */}
-      <section className="max-w-2xl mx-auto px-4 sm:px-6 py-20">
-        <div className="flex items-center gap-3 mb-4">
-          <span className="block h-px w-8 bg-[#b8922a]" />
-          <p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">Book an experience</p>
-        </div>
-        <h2 className="font-serif text-4xl text-[#1a1a18] mb-3">Ready to visit?</h2>
-        <p className="text-[#4a4a42] mb-8 text-sm">Tell us which experience you're interested in, how many people, and your preferred dates. We'll confirm availability and send payment details.</p>
-        <EnquiryForm
-          subject="Experience Booking Enquiry"
-          serverSend
-          fields={[
-            { id: "experience", label: "Which experience(s) interest you?", type: "select", options: EXPERIENCE_OPTIONS },
-            { id: "people", label: "Number of people" },
-            { id: "dates", label: "Preferred dates / times" },
-            { id: "level", label: "Your horse experience (if any)" },
-          ]}
-        />
-      </section>
+      <section className="max-w-2xl mx-auto px-4 sm:px-6 py-20"><div className="flex items-center gap-3 mb-4"><span className="block h-px w-8 bg-[#b8922a]" /><p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">Book an experience</p></div><h2 className="font-serif text-4xl text-[#1a1a18] mb-3">Ready to visit?</h2><p className="text-[#4a4a42] mb-8 text-sm">Tell us which experience you're interested in, how many people, and your preferred dates. We'll confirm availability and send payment details.</p><EnquiryForm subject="Experience Booking Enquiry" serverSend fields={[{ id: "experience", label: "Which experience(s) interest you?", type: "select", options: EXPERIENCE_OPTIONS }, { id: "people", label: "Number of people" }, { id: "dates", label: "Preferred dates / times" }, { id: "level", label: "Your horse experience (if any)" }]} /></section>
     </div>
   );
 }
