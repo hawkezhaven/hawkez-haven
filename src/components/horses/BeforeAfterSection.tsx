@@ -29,7 +29,7 @@ export default function BeforeAfterSection({
           A visual look at the journey — where they started and where they are now.
         </p>
 
-        <figure className="max-w-5xl mx-auto">
+        <figure className="max-w-4xl mx-auto">
           <div className="overflow-hidden rounded-3xl border border-[#ddd4be]/70 bg-white shadow-sm">
             <img
               src={image}
