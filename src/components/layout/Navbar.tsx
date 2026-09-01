@@ -7,7 +7,6 @@ const NAV_LINKS = [
   { label: "About", href: "/about" },
   { label: "Horses", href: "/horses" },
   { label: "Support Us", href: "/support" },
-  { label: "Gift Cards", href: "/gift-card" },
   { label: "Volunteer", href: "/volunteer" },
   { label: "Contact", href: "/contact" },
 ];
@@ -18,6 +17,7 @@ const MORE_LINKS = [
   { label: "Foster Program", href: "/foster" },
   { label: "Experiences & Lessons", href: "/experiences" },
   { label: "The Hub", href: "/hub" },
+  { label: "Gift Cards", href: "/gift-card" },
 ];
 
 export default function Navbar() {
