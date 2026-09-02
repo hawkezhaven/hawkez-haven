@@ -60,34 +60,9 @@ function upsertHeadTag(html, pattern, tag) {
 function structuredData(meta, path) {
   const canonical = `${site}${path}`;
   const graph = [
-    {
-      "@type": "WebSite",
-      "@id": `${site}/#website`,
-      url: `${site}/`,
-      name: "Hawkez Haven",
-      description: "Hawkez Haven is a New Zealand horse rescue and rehabilitation organisation.",
-      inLanguage: "en-NZ",
-    },
-    {
-      "@type": "AnimalShelter",
-      "@id": `${site}/#organisation`,
-      name: "Hawkez Haven",
-      url: `${site}/`,
-      logo: `${site}/icon/icon-192.png`,
-      description: "Independent equine rescue, rehabilitation and connection-based horsemanship sanctuary in New Zealand.",
-      areaServed: "New Zealand",
-      slogan: "Where Second Chances Find Their Stride",
-    },
-    {
-      "@type": "WebPage",
-      "@id": `${canonical}#webpage`,
-      url: canonical,
-      name: meta.title,
-      description: meta.description,
-      inLanguage: "en-NZ",
-      isPartOf: { "@id": `${site}/#website` },
-      about: { "@id": `${site}/#organisation` },
-    },
+    { "@type": "WebSite", "@id": `${site}/#website`, url: `${site}/`, name: "Hawkez Haven", description: "Hawkez Haven is a New Zealand horse rescue and rehabilitation organisation.", inLanguage: "en-NZ" },
+    { "@type": "AnimalShelter", "@id": `${site}/#organisation`, name: "Hawkez Haven", url: `${site}/`, logo: `${site}/icon/icon-192.png`, description: "Independent equine rescue, rehabilitation and connection-based horsemanship sanctuary in New Zealand.", areaServed: "New Zealand", slogan: "Where Second Chances Find Their Stride" },
+    { "@type": "WebPage", "@id": `${canonical}#webpage`, url: canonical, name: meta.title, description: meta.description, inLanguage: "en-NZ", isPartOf: { "@id": `${site}/#website` }, about: { "@id": `${site}/#organisation` } },
   ];
   return `<script id="hawkez-haven-prerendered-schema" type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@graph": graph })}</script>`;
 }
@@ -95,9 +70,7 @@ function structuredData(meta, path) {
 function renderPage(path, meta, body = "") {
   const canonical = `${site}${path}`;
   let html = template;
-  if (path !== "/") {
-    html = html.replace(/<script\s+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>\s*/gi, "");
-  }
+  if (path !== "/") html = html.replace(/<script\s+type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>\s*/gi, "");
   html = upsertHeadTag(html, /<title>[\s\S]*?<\/title>/gi, `<title>${escapeHtml(meta.title)}</title>`);
   html = upsertHeadTag(html, /<meta\s+name=["']description["'][^>]*>/gi, `<meta name="description" content="${escapeHtml(meta.description)}" />`);
   html = upsertHeadTag(html, /<link\s+rel=["']canonical["'][^>]*>/gi, `<link rel="canonical" href="${canonical}" />`);
@@ -130,38 +103,13 @@ for (const [id, horse] of Object.entries(horsePages)) {
   const horseSchema = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": `${site}/#website`,
-        url: `${site}/`,
-        name: "Hawkez Haven",
-        inLanguage: "en-NZ",
-      },
-      {
-        "@type": "AnimalShelter",
-        "@id": `${site}/#organisation`,
-        name: "Hawkez Haven",
-        url: `${site}/`,
-      },
-      {
-        "@type": "WebPage",
-        "@id": `${site}${path}#webpage`,
-        url: `${site}${path}`,
-        name: horse.title,
-        description: horse.description,
-        inLanguage: "en-NZ",
-        isPartOf: { "@id": `${site}/#website` },
-        about: { "@id": `${site}${path}#animal` },
-      },
-      {
-        "@type": "Animal",
-        "@id": `${site}${path}#animal`,
-        name: horse.name,
-        description: horse.description,
-      },
+      { "@type": "WebSite", "@id": `${site}/#website`, url: `${site}/`, name: "Hawkez Haven", inLanguage: "en-NZ" },
+      { "@type": "AnimalShelter", "@id": `${site}/#organisation`, name: "Hawkez Haven", url: `${site}/` },
+      { "@type": "WebPage", "@id": `${site}${path}#webpage`, url: `${site}${path}`, name: horse.title, description: horse.description, inLanguage: "en-NZ", isPartOf: { "@id": `${site}/#website` }, about: { "@id": `${site}${path}#animal` } },
+      { "@type": "Animal", "@id": `${site}${path}#animal`, name: horse.name, description: horse.description },
     ],
   };
-  html = upsertHeadTag(html, /<\/head>/i, `<script id="hawkez-haven-prerendered-schema" type="application/ld+json">${JSON.stringify(horseSchema)}</script>`);
+  html = html.replace(/<\/head>/i, `<script id="hawkez-haven-prerendered-schema" type="application/ld+json">${JSON.stringify(horseSchema)}</script>\n  </head>`);
   await mkdir(dirname(output), { recursive: true });
   await writeFile(output, html, "utf8");
   generatedFiles.push([output, horseMeta]);
