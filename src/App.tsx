@@ -46,7 +46,6 @@ export default function App() {
             <Route path="/foster" element={<FosterPage />} />
             <Route path="/volunteer" element={<VolunteerPage />} />
             <Route path="/education" element={<ExperiencesPage />} />
-            <Route path="/experiences" element={<ExperiencesPage />} />
             <Route path="/support" element={<SupportPage />} />
             <Route path="/gift-card" element={<GiftCardPage />} />
             <Route path="/shop" element={<SupportPage />} />

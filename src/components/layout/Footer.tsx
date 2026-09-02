@@ -44,7 +44,7 @@ export default function Footer() {
           <ul className="mt-5 space-y-3">
             {[
               { label: "Volunteer", href: "/volunteer" },
-              { label: "Experiences & Lessons", href: "/experiences" },
+              { label: "Education & Horsemanship", href: "/education" },
               { label: "Support & Donate", href: "/support" },
               { label: "The Hub", href: "/hub" },
             ].map(({ label, href }) => (

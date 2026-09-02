@@ -42,10 +42,10 @@ const PAGE_META: Record<string, Meta> = {
     description:
       "Volunteer with Hawkez Haven and help with horse care, rehabilitation, education and the day-to-day work behind a welfare-focused rescue.",
   },
-  "/experiences": {
-    title: "Horse Riding Lessons & Horsemanship | Hawkez Haven NZ",
+  "/education": {
+    title: "Horse Education & Experiences | Hawkez Haven NZ",
     description:
-      "Horse riding lessons, groundwork, horse care education and practical horsemanship experiences in Ashhurst, Manawatū. Learn to understand horses through connection, welfare and feel.",
+      "Explore horse education, horsemanship and practical experiences at Hawkez Haven, with welfare and understanding at the heart of every lesson.",
   },
   "/support": {
     title: "Support Hawkez Haven | Help Give Horses a Second Chance",
@@ -120,11 +120,11 @@ export default function SEO() {
     const horseMatch = pathname.match(/^\/horses\/([^/]+)$/);
     const horseSlug = horseMatch?.[1];
     const horseName = horseSlug ? HORSE_NAMES[horseSlug] : undefined;
-    const basePath = pathname === "/education" ? "/experiences" : pathname === "/shop" ? "/support" : pathname;
+    const basePath = pathname === "/shop" ? "/support" : pathname;
     const isNoIndex =
       pathname === "/hub" ||
       pathname.startsWith("/enquire/") ||
-      pathname === "/education" ||
+      pathname === "/experiences" ||
       pathname === "/shop";
 
     const meta: Meta = horseName
