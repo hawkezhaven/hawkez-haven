@@ -62,12 +62,6 @@ const HEROES: Record<string, HeroConfig> = {
     title: "Learn With The Horse In Mind.",
     alt: "Kohan and Saphira at Hawkez Haven",
   },
-  "/experiences": {
-    image: "/education-hero.jpg",
-    eyebrow: "Education & Horsemanship",
-    title: "Learn With The Horse In Mind.",
-    alt: "Kohan and Saphira at Hawkez Haven",
-  },
   "/hub": {
     image: "/images/khan.jpg",
     eyebrow: "Hawkez Haven Hub",
