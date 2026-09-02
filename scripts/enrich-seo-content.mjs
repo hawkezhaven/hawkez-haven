@@ -44,9 +44,9 @@ const content = {
   "/foster": {
     h1: "Foster a Rescue Horse",
     sections: [
-      ["Fostering Creates Space for Recovery", "Foster homes can help suitable Hawkez Haven horses recover, rebuild confidence and prepare for their next chapter. Foster arrangements are considered carefully around the horse's needs and the experience and environment available."],
-      ["Welfare Comes First", "A foster placement is not simply extra grazing. The horse's management, handling, nutrition, health requirements and safety must be appropriate, with clear communication between Hawkez Haven and the foster home."],
-      ["A Step Toward a Safe Future", "For the right horse and the right home, fostering can provide valuable stability while a longer-term plan is developed."]
+      ["Fostering Creates Space for Recovery", "All horses currently available for adoption may also be considered for foster placement. Fostering gives a Hawkez Haven horse a safe, supportive home with grazing and daily care while they wait for the right forever home, allowing foster homes to be part of their journey up close without the lifelong commitment of ownership."],
+      ["Fostering and Adoption Are Connected", "Fostering and adoption are connected, but they are not the same commitment. A horse may be fostered while Hawkez Haven continues looking for their permanent home, and a foster placement does not automatically mean the horse is being adopted by the foster family."],
+      ["Welfare Comes First", "Fostering is more than providing extra grazing. The horse's management, handling, nutrition, health requirements and safety must be appropriate, with clear communication between Hawkez Haven and the foster home. The right foster home gives the horse stability while supporting their long-term welfare."]
     ]
   },
   "/volunteer": {
