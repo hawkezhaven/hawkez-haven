@@ -65,14 +65,6 @@ const content = {
       ["Connection Before Correction", "Students are encouraged to understand what a horse is communicating, build trust and make safe decisions before asking for performance."]
     ]
   },
-  "/experiences": {
-    h1: "Horse Experiences and Horsemanship",
-    sections: [
-      ["Practical Horse Experiences", "Hawkez Haven offers practical horsemanship experiences designed to build confidence, knowledge, safety and a better understanding of horses."],
-      ["More Than Riding", "Experiences can include grooming, handling, groundwork, horse care, tack knowledge and other practical education. Mounted work is approached according to the horse, rider and safety requirements."],
-      ["A Welfare-First Approach", "The goal is to create informed, confident people who understand horses and can make safer, kinder decisions around them."]
-    ]
-  },
   "/support": {
     h1: "Support Hawkez Haven",
     sections: [
