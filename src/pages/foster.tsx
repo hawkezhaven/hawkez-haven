@@ -13,32 +13,24 @@ export default function FosterPage() {
           </div>
           <h1 className="mt-6 font-serif text-5xl md:text-6xl text-[#f5f0e8] leading-tight max-w-3xl">Open your heart. Change a life.</h1>
           <p className="mt-6 text-lg text-[#f5f0e8]/70 max-w-2xl leading-relaxed">
-            Not every horse arrives ready for their forever home. Some need time. Some need healing. Our Foster Program allows members of the community to become part of a horse's journey without the lifelong commitment of ownership.
+            Fostering gives a Hawkez Haven rescue a safe, supportive home while we work towards finding the right forever home for them. All horses currently available for adoption may also be considered for foster placement, giving foster homes the chance to support a horse's journey up close without the lifelong commitment of ownership.
           </p>
         </div>
       </section>
 
-      {/* Types */}
+      {/* Foster relationship */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="flex items-center gap-3 mb-4">
           <span className="block h-px w-8 bg-[#b8922a]" />
-          <p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">Ways to foster</p>
+          <p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">Fostering a Hawkez Haven horse</p>
         </div>
-        <h2 className="font-serif text-4xl text-[#1a1a18] mb-10">Types of foster opportunities</h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          {[
-            { title: "Emergency Foster", desc: "For horses requiring immediate placement due to welfare concerns or urgent circumstances. You become a safe landing when it matters most." },
-            { title: "Rehabilitation Foster", desc: "For horses needing time to recover physically and emotionally before finding their forever homes. Patient, consistent care makes all the difference." },
-            { title: "Retirement & Companion Foster", desc: "Provide a peaceful and loving environment for our older horses who deserve comfort and companionship in their later years." },
-            { title: "Foster to Adopt", desc: "Sometimes a temporary arrangement becomes forever. Foster families may be considered for adoption if the match is right and both horse and person are ready." },
-          ].map(({ title, desc }) => (
-            <div key={title} className="bg-white rounded-2xl p-8 border border-[#ddd4be]/50">
-              <div className="w-2 h-2 rounded-full bg-[#b8922a] mb-4" />
-              <h3 className="font-serif text-xl text-[#1a1a18] mb-3">{title}</h3>
-              <p className="text-sm text-[#4a4a42] leading-relaxed">{desc}</p>
-            </div>
-          ))}
-        </div>
+        <h2 className="font-serif text-4xl text-[#1a1a18] mb-6">A safe home while they wait for their person.</h2>
+        <p className="text-[#4a4a42] max-w-3xl leading-relaxed mb-6">
+          Foster homes provide grazing, daily care and a chance to become part of a rescue horse's journey while they wait for the right forever home. It is a practical way to support a horse, while experiencing their connection, progress and personality up close.
+        </p>
+        <p className="text-[#4a4a42] max-w-3xl leading-relaxed">
+          Fostering and adoption are connected, but they are not the same commitment. A horse may be fostered while we continue looking for their permanent home, and a foster placement does not automatically mean the horse is being adopted by the foster family.
+        </p>
       </section>
 
       {/* What we ask / provide */}
@@ -49,7 +41,7 @@ export default function FosterPage() {
             <ul className="space-y-3">
               {[
                 "Safe fencing and suitable shelter.",
-                "Daily care and monitoring.",
+                "Grazing and daily care for the horse.",
                 "Good communication with Hawkez Haven.",
                 "Commitment to the welfare of the horse.",
                 "Willingness to provide updates and photographs.",
@@ -107,7 +99,7 @@ export default function FosterPage() {
               { id: "location", label: "Your location" },
               { id: "property", label: "Property size / setup" },
               { id: "experience", label: "Your horse experience" },
-              { id: "fosterType", label: "Type of foster interest (Emergency / Rehabilitation / Retirement / Foster-to-Adopt)" },
+              { id: "horse", label: "Horse you're interested in fostering (if known)" },
             ]}
           />
         </div>
