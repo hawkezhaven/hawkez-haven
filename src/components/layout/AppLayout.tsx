@@ -21,7 +21,7 @@ const heroImages: Record<string, string> = {
   support: "/images/hero-haven.jpg",
   contact: "/images/hero-pedro.jpg",
   experiences: "/images/hero-roadride-ritz.png",
-  education: "/images/education-hero.jpg",
+  education: "/education-hero.jpg",
   hub: "/images/hero-khan.jpg",
 };
 
