@@ -99,7 +99,7 @@ export default function FosterPage() {
               { id: "location", label: "Your location" },
               { id: "property", label: "Property size / setup" },
               { id: "experience", label: "Your horse experience" },
-              { id: "fosterType", label: "Foster interest" },
+              { id: "horse", label: "Horse you're interested in fostering (if known)" },
             ]}
           />
         </div>
