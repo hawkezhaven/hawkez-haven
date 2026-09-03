@@ -43,7 +43,7 @@ const PAGE_META: Record<string, Meta> = {
       "Volunteer with Hawkez Haven and help with horse care, rehabilitation, education and the day-to-day work behind a welfare-focused rescue.",
   },
   "/education": {
-    title: "Horse Education & Experiences | Hawkez Haven NZ",
+    title: "Education & Horsemanship | Hawkez Haven NZ",
     description:
       "Explore horse education, horsemanship and practical experiences at Hawkez Haven, with welfare and understanding at the heart of every lesson.",
   },
@@ -158,6 +158,11 @@ export default function SEO() {
     setMeta("twitter:image", `${SITE}/images/hero-horse.jpg`);
     setMeta("twitter:image:alt", `${meta.title} — Hawkez Haven`);
     setCanonical(canonical);
+
+    if (pathname === "/education") {
+      const educationH1 = document.querySelector("main h1") || document.querySelector("h1");
+      if (educationH1) educationH1.textContent = "Education & Horsemanship";
+    }
 
     setStructuredData("hawkez-haven-organisation-schema", {
       "@context": "https://schema.org",
