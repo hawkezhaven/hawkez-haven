@@ -12,4 +12,16 @@ try {
   if (error.code !== "ENOENT") throw error;
 }
 
-console.log("Verified Contact map prerender; Experiences/Education are left to their real React page layout.");
+const educationPath = resolve("dist", "education", "index.html");
+try {
+  const html = await readFile(educationPath, "utf8");
+  const updated = html
+    .replace(/<title>[\s\S]*?<\/title>/i, "<title>Education &amp; Horsemanship | Hawkez Haven NZ</title>")
+    .replace(/Horse Education &amp; Experiences \| Hawkez Haven NZ/g, "Education &amp; Horsemanship | Hawkez Haven NZ")
+    .replace(/<h1>[\s\S]*?<\/h1>/i, "<h1>Education &amp; Horsemanship</h1>");
+  await writeFile(educationPath, updated, "utf8");
+} catch (error) {
+  if (error.code !== "ENOENT") throw error;
+}
+
+console.log("Verified Contact map prerender and aligned the Education & Horsemanship title and H1.");
