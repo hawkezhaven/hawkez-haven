@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Github, Mail, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -35,7 +35,7 @@ export default function Footer() {
               </div>
             </li>
             <li>
-              <a href="https://github.com/hawkezhaven/hawkez-haven" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-[#b8922a] transition-colors"><Github size={13} /> Website on GitHub</a>
+              <a href="https://github.com/hawkezhaven/hawkez-haven" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-[#b8922a] transition-colors">Website on GitHub</a>
             </li>
             <li>
               <p className="text-[0.6rem] tracking-widest uppercase flex items-center gap-2 text-[#f5f0e8]/50"><Mail size={12} /> Email</p>
