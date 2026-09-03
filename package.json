@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "preview": "vite preview",
-    "build": "tsc -b && vite build && node scripts/generate-seo-pages.mjs && node scripts/enrich-seo-content.mjs && node scripts/add-breadcrumbs.mjs && node scripts/fix-education-prerender.mjs",
+    "build": "tsc -b && vite build && node scripts/generate-seo-pages.mjs && node scripts/enrich-seo-content.mjs && node scripts/add-breadcrumbs.mjs && node scripts/fix-education-prerender.mjs && node scripts/generate-legal-pages.mjs",
     "test": "vitest run",
     "lint": "eslint .",
     "prettier-fix": "prettier --write .",

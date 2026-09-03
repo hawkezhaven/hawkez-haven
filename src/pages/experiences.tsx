@@ -143,14 +143,25 @@ const EXPERIENCES: Experience[] = [
   },
 ];
 
+const FAQS = [
+  ["Do I need horse experience?", "Not always. Horse Care Discovery and the Family Horse Experience are suitable for beginners. Other sessions have their own experience requirements."],
+  ["Are the experiences suitable for children?", "Children are welcome in suitable sessions. Tell us the ages of everyone attending when you enquire so we can choose an appropriate horse and activity."],
+  ["Do you offer riding lessons?", "Yes. Riding lessons are available for beginner to intermediate riders, with lessons built around safe handling, balance, communication and the suitability of the horse."],
+  ["What does an experience cost?", "Current introductory prices are listed on the Education & Horsemanship page. Prices may change as the programme grows, and the current price will be confirmed when you book."],
+  ["How many people can attend?", "Group sizes are kept small so each person receives genuine time and attention. The maximum group size is listed for each experience."],
+  ["Where are the sessions held?", "All experiences take place at Hawkez Haven in Ashhurst, Manawatū, New Zealand. Visits are by appointment only."],
+  ["What should I wear?", "Closed-toe shoes are required and long trousers are recommended. We'll tell you about any additional safety equipment needed for your session."],
+  ["How do I book?", "Use the enquiry form on this page to tell us which experience you want, how many people are attending and your preferred dates. We'll confirm availability and payment details."],
+] as const;
+
 export default function ExperiencesPage() {
   return (
     <div className="bg-[#f5f0e8]">
       <section className="bg-[#1a1a18] text-[#f5f0e8] py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 text-[#b8922a]"><span className="block h-px w-8 bg-[#b8922a]" /><span className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">Education & Horsemanship • Ashhurst, Manawatū</span></div>
-          <h1 className="mt-6 font-serif text-5xl md:text-6xl text-[#f5f0e8] leading-tight max-w-4xl">Learn to understand horses, not just ride them.</h1>
-          <p className="mt-6 text-lg text-[#f5f0e8]/70 max-w-3xl leading-relaxed">Hawkez Haven offers horse riding lessons, groundwork, horse care education and practical horsemanship experiences in Ashhurst, Manawatū. Our aim is simple: build knowledgeable, confident horse people who can listen, communicate and make better decisions for the horses in their care.</p>
+          <h1 className="mt-6 font-serif text-5xl md:text-6xl text-[#f5f0e8] leading-tight max-w-4xl">Education & Horsemanship</h1>
+          <p className="mt-6 text-lg text-[#f5f0e8]/70 max-w-3xl leading-relaxed">Learn to understand horses, not just ride them. Hawkez Haven offers horse riding lessons, groundwork, horse care education and practical horsemanship experiences in Ashhurst, Manawatū. Our aim is simple: build knowledgeable, confident horse people who can listen, communicate and make better decisions for the horses in their care.</p>
           <div className="mt-8 inline-flex items-center rounded-full border border-[#b8922a]/40 bg-[#b8922a]/10 px-5 py-3 text-sm text-[#f5f0e8]/80"><span className="text-[#b8922a] font-medium mr-2">Introductory pricing</span> Selected experiences are currently offered at introductory rates while we build our education programme and community. Prices may change as the programme grows; current pricing will be confirmed at the time of booking.</div>
           <p className="mt-4 text-[#f5f0e8]/50 text-sm">All sessions are by appointment. Numbers are kept small so every person receives genuine time and attention.</p>
         </div>
@@ -168,6 +179,8 @@ export default function ExperiencesPage() {
       </section>
 
       <section className="bg-[#ede5d4] py-20"><div className="max-w-3xl mx-auto px-4 sm:px-6"><div className="flex items-center gap-3 mb-4"><span className="block h-px w-8 bg-[#b8922a]" /><p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">Good to know</p></div><h2 className="font-serif text-3xl text-[#1a1a18] mb-8">Before you book</h2><div className="grid md:grid-cols-2 gap-6">{[{title:"Location",desc:"All experiences take place at Hawkez Haven, Ashhurst, New Zealand. We are a working property — please do not drop in unannounced."},{title:"What to wear",desc:"Closed-toe shoes are required. Long trousers are recommended. We'll provide any additional safety equipment needed."},{title:"Booking",desc:"All sessions are by appointment only and subject to availability. We keep group sizes small so every visit is personal and meaningful."},{title:"Cancellations",desc:"We understand things come up. Please give us as much notice as possible if you need to reschedule. We'll do our best to find a suitable alternative."},{title:"Children",desc:"Children are welcome in most sessions. Please mention their ages when booking so we can match them with the right horse and experience."},{title:"Payment",desc:"Payment is due at time of booking. We accept bank transfer and PayPal. Contact us for group pricing for 5+ people."}].map(({title,desc})=><div key={title} className="bg-white rounded-xl p-5 border border-[#ddd4be]/50"><h3 className="font-medium text-[#1a1a18] text-sm mb-1">{title}</h3><p className="text-sm text-[#4a4a42] leading-relaxed">{desc}</p></div>)}</div></div></section>
+
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20"><div className="flex items-center gap-3 mb-4"><span className="block h-px w-8 bg-[#b8922a]" /><p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">Frequently asked questions</p></div><h2 className="font-serif text-3xl md:text-4xl text-[#1a1a18] mb-8">Questions before you visit?</h2><div className="space-y-4">{FAQS.map(([question, answer]) => <details key={question} className="bg-white rounded-2xl border border-[#ddd4be]/50 p-5"><summary className="cursor-pointer font-medium text-[#1a1a18]">{question}</summary><p className="mt-3 text-sm text-[#4a4a42] leading-relaxed">{answer}</p></details>)}</div></section>
 
       <section className="max-w-2xl mx-auto px-4 sm:px-6 py-20"><div className="flex items-center gap-3 mb-4"><span className="block h-px w-8 bg-[#b8922a]" /><p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">Book an experience</p></div><h2 className="font-serif text-4xl text-[#1a1a18] mb-3">Ready to visit?</h2><p className="text-[#4a4a42] mb-8 text-sm">Tell us which experience you're interested in, how many people, and your preferred dates. We'll confirm availability and send payment details.</p><EnquiryForm subject="Experience Booking Enquiry" serverSend fields={[{id:"experience",label:"Which experience(s) interest you?",type:"select",options:EXPERIENCE_OPTIONS},{id:"people",label:"Number of people"},{id:"dates",label:"Preferred dates / times"},{id:"level",label:"Your horse experience (if any)"}]} /></section>
     </div>
