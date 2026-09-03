@@ -2,13 +2,16 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const SITE = "https://hawkezhaven.org";
-const DEFAULT_DESCRIPTION = "Hawkez Haven is a New Zealand horse rescue and rehabilitation organisation giving horses a second chance through rescue, rehabilitation, education and responsible rehoming.";
-const AI_KEYWORDS = "horse rescue New Zealand, equine rescue, horse rehabilitation, horse adoption, horse welfare, horsemanship, horse riding lessons, groundwork, horse care education, Ashhurst, Manawatū";
+const DEFAULT_TITLE = "Hawkez Haven | Equine Rescue & Rehabilitation in New Zealand";
+const DEFAULT_DESCRIPTION =
+  "Hawkez Haven is a New Zealand horse rescue and rehabilitation organisation. We rescue, rehabilitate and rehome horses, giving every horse a second chance.";
+const AI_KEYWORDS =
+  "horse rescue New Zealand, horse rescue organisation NZ, equine rescue New Zealand, horse rehabilitation NZ, rescued horse adoption NZ, adopt a rescued horse in NZ, responsible horse rehoming, equine rehabilitation, horsemanship, horse riding lessons, horse care education, groundwork, Ashhurst, Manawatu";
 
 type Meta = { title: string; description: string; canonical?: string };
 
 const PAGE_META: Record<string, Meta> = {
-  "/": { title: "Hawkez Haven | Equine Rescue & Rehabilitation in New Zealand", description: DEFAULT_DESCRIPTION },
+  "/": { title: DEFAULT_TITLE, description: DEFAULT_DESCRIPTION },
   "/about": { title: "About Hawkez Haven | Horse Rescue & Rehabilitation NZ", description: "Learn about Hawkez Haven, our welfare-first approach to horse rescue, rehabilitation, responsible rehoming and giving horses a genuine second chance." },
   "/horses": { title: "Our Horses | Hawkez Haven Horse Rescue NZ", description: "Meet the horses of Hawkez Haven and follow their individual journeys through rescue, rehabilitation, recovery and responsible rehoming." },
   "/adoption": { title: "Horse Adoption | Hawkez Haven New Zealand", description: "Learn how horse adoption works at Hawkez Haven, including our welfare-first matching process, approved homes and lifelong support." },
@@ -23,42 +26,52 @@ const PAGE_META: Record<string, Meta> = {
   "/terms": { title: "Terms of Use | Hawkez Haven NZ", description: "Read the terms that apply to use of the Hawkez Haven website, enquiries, bookings, experiences, gift cards and donations." },
 };
 
-const HORSE_NAMES: Record<string, string> = {
-  rip: "Rip", haven: "Haven", pedro: "Pedro", diablo: "Diablo", khan: "Khan", kohan: "Kohan", joey: "Joey", ritz: "Ritz", electra: "Electra", kahu: "Kahu",
-};
+const HORSE_NAMES: Record<string, string> = { rip: "Rip", haven: "Haven", pedro: "Pedro", diablo: "Diablo", khan: "Khan", kohan: "Kohan", joey: "Joey", ritz: "Ritz", electra: "Electra", kahu: "Kahu" };
 
 function setMeta(name: string, content: string) {
-  let element = document.querySelector<HTMLMetaElement>(`meta[name="${name}"]`);
-  if (!element) { element = document.createElement("meta"); element.name = name; document.head.appendChild(element); }
-  element.content = content;
+  let element = document.querySelector(`meta[name="${name}"]`);
+  if (!element) { element = document.createElement("meta"); element.setAttribute("name", name); document.head.appendChild(element); }
+  element.setAttribute("content", content);
 }
 
 function setProperty(property: string, content: string) {
-  let element = document.querySelector<HTMLMetaElement>(`meta[property="${property}"]`);
+  let element = document.querySelector(`meta[property="${property}"]`);
   if (!element) { element = document.createElement("meta"); element.setAttribute("property", property); document.head.appendChild(element); }
-  element.content = content;
+  element.setAttribute("content", content);
 }
 
-function setCanonical(href: string) {
-  let element = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
-  if (!element) { element = document.createElement("link"); element.rel = "canonical"; document.head.appendChild(element); }
-  element.href = href;
+function setCanonical(url: string) {
+  let element = document.querySelector('link[rel="canonical"]');
+  if (!element) { element = document.createElement("link"); element.setAttribute("rel", "canonical"); document.head.appendChild(element); }
+  element.setAttribute("href", url);
 }
 
-function setStructuredData(id: string, data: unknown) {
+function setStructuredData(id: string, data: Record<string, unknown>) {
   let element = document.getElementById(id) as HTMLScriptElement | null;
   if (!element) { element = document.createElement("script"); element.id = id; element.type = "application/ld+json"; document.head.appendChild(element); }
   element.textContent = JSON.stringify(data);
 }
 
+const EDUCATION_FAQS = [
+  ["Do I need horse experience?", "Not always. Horse Care Discovery and the Family Horse Experience are suitable for beginners. Other sessions have their own experience requirements."],
+  ["Are the experiences suitable for children?", "Children are welcome in suitable sessions. Tell us the ages of everyone attending so we can choose an appropriate horse and activity."],
+  ["Do you offer riding lessons?", "Yes. Riding lessons are available for beginner to intermediate riders and are built around safe handling, balance, communication and horse suitability."],
+  ["What does an experience cost?", "Current introductory prices are listed on the Education & Horsemanship page and are confirmed at booking."],
+  ["How many people can attend?", "Group sizes are kept small. The maximum number is listed for each experience."],
+  ["Where are sessions held?", "All experiences take place at Hawkez Haven in Ashhurst, Manawatū, New Zealand, by appointment only."],
+  ["What should I wear?", "Closed-toe shoes are required and long trousers are recommended. We will tell you about any additional safety equipment needed."],
+  ["How do I book?", "Use the enquiry form on the page to tell us which experience you want, how many people are attending and your preferred dates."],
+] as const;
+
 export default function SEO() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    const basePath = pathname.startsWith("/horses/") ? "/horses" : pathname;
-    const horseSlug = pathname.startsWith("/horses/") ? pathname.split("/")[2] : undefined;
+    const horseMatch = pathname.match(/^\/horses\/([^/]+)$/);
+    const horseSlug = horseMatch?.[1];
     const horseName = horseSlug ? HORSE_NAMES[horseSlug] : undefined;
-    const isNoIndex = pathname.startsWith("/enquire/") || pathname === "/experiences";
+    const basePath = pathname === "/shop" ? "/support" : pathname;
+    const isNoIndex = pathname === "/hub" || pathname.startsWith("/enquire/") || pathname === "/experiences" || pathname === "/shop";
     const meta: Meta = horseName
       ? { title: `${horseName} | Hawkez Haven Horse Rescue New Zealand`, description: `Meet ${horseName}, follow their rescue, rehabilitation and second-chance journey at Hawkez Haven Horse Rescue New Zealand.`, canonical: `/horses/${horseSlug}` }
       : PAGE_META[basePath] || { title: "Hawkez Haven | Second Chances for Horses", description: DEFAULT_DESCRIPTION };
@@ -90,21 +103,16 @@ export default function SEO() {
     setStructuredData("hawkez-haven-website-schema", { "@context": "https://schema.org", "@type": "WebSite", name: "Hawkez Haven", url: SITE, inLanguage: "en-NZ", description: DEFAULT_DESCRIPTION, keywords: AI_KEYWORDS });
     setStructuredData("hawkez-haven-page-schema", { "@context": "https://schema.org", "@type": "WebPage", name: meta.title, url: canonical, description: meta.description, inLanguage: "en-NZ", isPartOf: { "@type": "WebSite", name: "Hawkez Haven", url: SITE }, about: { "@type": "AnimalShelter", name: "Hawkez Haven", url: SITE }, keywords: AI_KEYWORDS });
 
-    if (pathname === "/education") {
-      const faq = [
-        ["Do I need horse experience?", "Not always. Horse Care Discovery and the Family Horse Experience are suitable for beginners. Other sessions have their own experience requirements."],
-        ["Are the experiences suitable for children?", "Children are welcome in suitable sessions. Tell us the ages of everyone attending so we can choose an appropriate horse and activity."],
-        ["Do you offer riding lessons?", "Yes. Riding lessons are available for beginner to intermediate riders and are built around safe handling, balance, communication and horse suitability."],
-        ["What does an experience cost?", "Current introductory prices are listed on the Education & Horsemanship page and are confirmed at booking."],
-        ["How many people can attend?", "Group sizes are kept small. The maximum number is listed for each experience."],
-        ["Where are sessions held?", "All experiences take place at Hawkez Haven in Ashhurst, Manawatū, New Zealand, by appointment only."],
-        ["What should I wear?", "Closed-toe shoes are required and long trousers are recommended. We will tell you about any additional safety equipment needed."],
-        ["How do I book?", "Use the enquiry form on the page to tell us which experience you want, how many people are attending and your preferred dates."],
-      ];
-      setStructuredData("hawkez-haven-education-faq-schema", { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faq.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) });
+    if (horseName && horseSlug) {
+      setStructuredData("hawkez-haven-horse-schema", { "@context": "https://schema.org", "@type": "WebPage", name: `${horseName} | Hawkez Haven Horse Rescue New Zealand`, url: canonical, description: meta.description, about: { "@type": "Animal", name: horseName, description: meta.description }, isPartOf: { "@type": "WebSite", name: "Hawkez Haven", url: SITE } });
     } else {
-      const oldFaq = document.getElementById("hawkez-haven-education-faq-schema");
-      oldFaq?.remove();
+      document.getElementById("hawkez-haven-horse-schema")?.remove();
+    }
+
+    if (pathname === "/education") {
+      setStructuredData("hawkez-haven-education-faq-schema", { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: EDUCATION_FAQS.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) });
+    } else {
+      document.getElementById("hawkez-haven-education-faq-schema")?.remove();
     }
   }, [pathname]);
 
