@@ -17,6 +17,8 @@ import SupportPage from "./pages/support.tsx";
 import GiftCardPage from "./pages/gift-card.tsx";
 import ContactPage from "./pages/contact.tsx";
 import HubPage from "./pages/hub.tsx";
+import PrivacyPage from "./pages/privacy.tsx";
+import TermsPage from "./pages/terms.tsx";
 import EnquiryPage from "./pages/enquire/EnquiryPage.tsx";
 
 function ScrollToTop() {
@@ -51,6 +53,8 @@ export default function App() {
             <Route path="/shop" element={<SupportPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/hub" element={<HubPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/terms" element={<TermsPage />} />
             <Route path="/enquire/general" element={<EnquiryPage type="general" />} />
             <Route path="/enquire/adoption" element={<EnquiryPage type="adoption" />} />
             <Route path="/enquire/sponsorship" element={<EnquiryPage type="sponsorship" />} />
@@ -58,7 +62,6 @@ export default function App() {
             <Route path="/enquire/foster" element={<EnquiryPage type="foster" />} />
             <Route path="/enquire/experiences" element={<EnquiryPage type="experiences" />} />
             <Route path="/enquire/lessons" element={<EnquiryPage type="experiences" />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
