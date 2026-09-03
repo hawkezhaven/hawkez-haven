@@ -18,7 +18,7 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // Never intercept cross-origin requests. The Hercules CDN and other third parties already set their own HTTP cache headers
+  // Never intercept cross-origin requests; third parties already set their own HTTP cache headers
   let url;
   try {
     url = new URL(event.request.url);
