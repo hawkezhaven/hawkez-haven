@@ -99,23 +99,23 @@ const EXPERIENCES: Experience[] = [
     duration: "1 hour",
     price: "",
     priceNote: "",
-    priceLines: ["Under 15: $50", "Ages 16+: $70"],
-    maxPeople: "One rider",
-    level: "Beginner to intermediate riders",
-    desc: "Riding lessons are built around the horse and rider as a partnership. We start with safe handling and connection on the ground, then build balance, feel, communication and confidence in the saddle. Lessons are matched to the rider's age, experience and the suitability of the horse available on the day.",
-    learn: ["Safe horse handling and preparation", "Balance, position and feel", "Rein and seat communication", "Building confidence at the rider's pace", "Understanding the horse's responses"],
+    priceLines: ["Children under 15 — $50 per 1-hour lesson", "Ages 16+ / Adults — $70 per 1-hour lesson"],
+    maxPeople: "Private (1 rider per lesson)",
+    level: "Beginners welcome (all ages)",
+    desc: "Private, progressive horsemanship and riding lessons focused on building confident, capable horse people — not just riders who can sit in a saddle. Lessons include safe handling, grooming, tacking up, groundwork, horse behaviour and ridden skills tailored to the rider's experience and the horse's needs.\n\nWe have horses and ponies to suit different ages and stages, including Peanut, our bush pony mare who is an amazing asset for younger and smaller students building confidence, alongside Pedro, Haven and Khan.\n\nBeginners are welcome. Horse or pony provided. By appointment.",
+    learn: ["Safe handling, grooming and horse care", "Tacking up and preparation", "Groundwork and communication before riding", "Balance, position, feel and ridden skills", "Reading your horse and adapting to their responses"],
   },
   {
-    id: "rescue",
+    id: "rescue-education",
     title: "Rescue & Rehabilitation Experience",
-    subtitle: "See the work behind a second chance",
-    duration: "2 hours",
+    subtitle: "With Rip, Joey, Electra & Kohan",
+    duration: "3 hours",
     price: "$35",
     priceNote: "per person",
     maxPeople: "Up to 4 people",
-    level: "All ages & experience levels",
-    desc: "Get an honest look at what rescue and rehabilitation really involves. Learn how we assess a horse, support recovery, rebuild trust and make decisions based on welfare rather than a deadline. You'll spend time with suitable horses in our care and see the quiet, often unseen work that makes a second chance possible.",
-    learn: ["What happens when a horse arrives", "Nutrition and recovery basics", "Reading stress and confidence", "Rehabilitation and retraining principles", "Why welfare comes before rehoming"],
+    level: "All levels — no riding required",
+    desc: "Go behind the scenes of a real horse rescue. Meet our horses, hear their stories, and learn about the rehabilitation journey — from the moment a horse arrives frightened and unsure, to the day they find their stride again. This is an honest, moving and educational experience for horse lovers who want to understand welfare at a deeper level.",
+    learn: ["What equine rescue really looks like", "The physical and emotional toll of neglect", "How we assess and plan each horse's rehabilitation", "Life after racing and competition", "How to advocate for better horse welfare in NZ"],
   },
   {
     id: "family",
@@ -144,14 +144,14 @@ const EXPERIENCES: Experience[] = [
 ];
 
 const FAQS = [
-  ["Do I need horse experience?", "Not always. Horse Care Discovery and the Family Horse Experience are suitable for beginners. Other sessions have their own experience requirements, which are listed with each experience."],
+  ["Do I need horse experience?", "Not always. Horse Care Discovery and the Family Horse Experience are suitable for beginners. Other sessions have their own experience requirements."],
   ["Are the experiences suitable for children?", "Children are welcome in suitable sessions. Tell us the ages of everyone attending when you enquire so we can choose an appropriate horse and activity."],
   ["Do you offer riding lessons?", "Yes. Riding lessons are available for beginner to intermediate riders, with lessons built around safe handling, balance, communication and the suitability of the horse."],
   ["What does an experience cost?", "Current introductory prices are listed on the Education & Horsemanship page. Prices may change as the programme grows, and the current price will be confirmed when you book."],
   ["How many people can attend?", "Group sizes are kept small so each person receives genuine time and attention. The maximum group size is listed for each experience."],
   ["Where are the sessions held?", "All experiences take place at Hawkez Haven in Ashhurst, Manawatū, New Zealand. Visits are by appointment only."],
-  ["What should I wear?", "Closed-toe shoes are required and long trousers are recommended. We will tell you about any additional safety equipment needed for your session."],
-  ["How do I book?", "Use the enquiry form on this page to tell us which experience you want, how many people are attending and your preferred dates. We will confirm availability and payment details."],
+  ["What should I wear?", "Closed-toe shoes are required and long trousers are recommended. We'll tell you about any additional safety equipment needed for your session."],
+  ["How do I book?", "Use the enquiry form on this page to tell us which experience you want, how many people are attending and your preferred dates. We'll confirm availability and payment details."],
 ] as const;
 
 export default function ExperiencesPage() {
