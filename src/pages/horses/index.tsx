@@ -87,9 +87,9 @@ function HorseCard({ horse }: { horse: (typeof HORSES)[0] }) {
     <div className="bg-white rounded-2xl group overflow-hidden shadow-sm border border-[#ddd4be]/50 flex flex-col justify-between transition-all duration-300 hover:shadow-md hover:-translate-y-1">
       <div>
         <Link to={`/horses/${horse.id}`} className="block">
-          <div className="relative overflow-hidden bg-[#1a1a18] aspect-[4/3] w-full flex items-center justify-center p-2">
+          <div className="relative overflow-hidden bg-[#ede5d4] aspect-[4/3] w-full flex items-center justify-center">
             <img
-              src={horse.id === "electra" ? "/images/ELECTRIC.jpg" : horse.image}
+              src={horse.image}
               alt={`${horse.name} at Hawkez Haven`}
               loading="eager"
               fetchPriority={horse.id === "electra" ? "high" : "auto"}
