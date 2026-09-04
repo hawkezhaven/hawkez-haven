@@ -14,7 +14,11 @@ const horseReplacements = [
   ],
   [
     'image: "/images/miss-ele.jpg",',
-    'image: "/images/ELECTRIC.jpg",',
+    'image: "/images/ELECTRIC-web.jpg",',
+  ],
+  [
+    'image: "/images/kahu-tacked.jpg",',
+    'image: "/images/kahu-tacked-web.jpg",',
   ],
 ];
 
@@ -30,7 +34,7 @@ fs.writeFileSync(horsePath, horseContent);
 const seoPath = "scripts/generate-seo-pages.mjs";
 let seoContent = fs.readFileSync(seoPath, "utf8");
 const seoFrom = 'electra: { name: "Electra", title: "Electra | Hawkez Haven Horse Rescue New Zealand", description: "Meet Electra, a young mare continuing her rehabilitation journey at Hawkez Haven while she builds confidence, trust and a safe future.", image: "/images/electra.jpg" },';
-const seoTo = 'electra: { name: "Electra", title: "Electra | Hawkez Haven Horse Rescue New Zealand", description: "Meet Electra, a young mare continuing her rehabilitation journey at Hawkez Haven while she builds confidence, trust and a safe future.", image: "/images/ELECTRIC.jpg" },';
+const seoTo = 'electra: { name: "Electra", title: "Electra | Hawkez Haven Horse Rescue New Zealand", description: "Meet Electra, a young mare continuing her rehabilitation journey at Hawkez Haven while she builds confidence, trust and a safe future.", image: "/images/ELECTRIC-web.jpg" },';
 
 if (!seoContent.includes(seoFrom)) {
   throw new Error("Expected Electra SEO image entry was not found.");
@@ -38,4 +42,4 @@ if (!seoContent.includes(seoFrom)) {
 seoContent = seoContent.replace(seoFrom, seoTo);
 fs.writeFileSync(seoPath, seoContent);
 
-console.log("Updated Electra and Kohan rehabilitation wording and unified Electra image references.");
+console.log("Updated Electra and Kohan rehabilitation wording and unified optimised Electra and Kahu image references.");
