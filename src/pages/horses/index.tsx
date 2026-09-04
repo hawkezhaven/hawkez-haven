@@ -91,7 +91,9 @@ function HorseCard({ horse }: { horse: (typeof HORSES)[0] }) {
             <img
               src={horse.id === "electra" ? "/images/ELECTRIC.jpg" : horse.image}
               alt={`${horse.name} at Hawkez Haven`}
-              loading={horse.id === "electra" ? "eager" : "lazy"}
+              loading="eager"
+              fetchPriority={horse.id === "electra" ? "high" : "auto"}
+              decoding={horse.id === "electra" ? "sync" : "async"}
               className="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-700 ease-out group-hover:scale-105"
             />
             
