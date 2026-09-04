@@ -72,7 +72,7 @@ export default function HorsesPage() {
           </Link>
           <Link 
             to="/sponsorship" 
-            className="inline-flex items-center gap-2 px-7 py-3 border border-[#1a1a18] text-[#1a1a18] text-sm font-medium rounded-full hover:bg-[#1a1a18] hover:text-[#f5f0e8] transition-colors cursor-pointer"
+            className="inline-flex items-center gap-2 px-7 py-3 border border-[#1a1a18] text-[#1a1a18] font-medium rounded-full hover:bg-[#1a1a18] hover:text-[#f5f0e8] transition-colors cursor-pointer"
           >
             Sponsor a horse
           </Link>
@@ -91,7 +91,7 @@ function HorseCard({ horse }: { horse: (typeof HORSES)[0] }) {
             <img
               src={horse.id === "electra" ? "/images/ELECTRIC.jpg" : horse.image}
               alt={`${horse.name} at Hawkez Haven`}
-              loading="lazy"
+              loading={horse.id === "electra" ? "eager" : "lazy"}
               className="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-700 ease-out group-hover:scale-105"
             />
             
