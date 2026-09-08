@@ -1,5 +1,5 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
-import { dirname, resolve } from "node:path";
+const { mkdir, readFile, writeFile } = await import("node:fs/promises");
+const { dirname, resolve } = await import("node:path");
 
 const distDir = resolve("dist");
 const template = await readFile(resolve(distDir, "index.html"), "utf8");
@@ -17,6 +17,8 @@ const pages = {
   "/support": { title: "Support Hawkez Haven | Help Give Horses a Second Chance", description: "Support Hawkez Haven through donations and other ways to help provide rescue horses with care, rehabilitation and a safe future." },
   "/contact": { title: "Contact Hawkez Haven | Horse Rescue New Zealand", description: "Contact Hawkez Haven about horse rescue, adoption, sponsorship, volunteering, fostering, lessons and other enquiries." },
   "/gift-card": { title: "Hawkez Haven Gift Cards | Give a Second Chance", description: "Give a Hawkez Haven gift card and share meaningful horse experiences while supporting welfare-first rescue and rehabilitation." },
+  "/privacy": { title: "Privacy Statement | Hawkez Haven NZ", description: "Learn how Hawkez Haven collects, uses, stores and protects personal information in connection with our website, enquiries, bookings and support." },
+  "/terms": { title: "Terms of Use | Hawkez Haven NZ", description: "Read the terms that apply to use of the Hawkez Haven website, enquiries, bookings, horse adoption, experiences and support services." },
 };
 
 const horsePages = {
@@ -42,6 +44,8 @@ const routeBody = {
   "/support": `<main><article><h1>Support Hawkez Haven</h1><p>Help provide rescue horses with feed, care, rehabilitation and a safe future.</p><p><a href="/sponsorship">Sponsor a horse</a> · <a href="/contact">Contact Hawkez Haven</a></p></article></main>`,
   "/contact": `<main><article><h1>Contact Hawkez Haven</h1><p>Contact us about horse rescue, adoption, sponsorship, volunteering, fostering, lessons and other enquiries.</p><p><a href="/enquire/general">Start a general enquiry</a></p></article></main>`,
   "/gift-card": `<main><article><h1>Give a Hawkez Haven Gift Card</h1><p>Give a meaningful horse experience while supporting Hawkez Haven's welfare-first rescue and rehabilitation work.</p><p><a href="/education">Explore horse education and experiences</a> · <a href="/support">Support Hawkez Haven</a></p></article></main>`,
+  "/privacy": `<main><article><h1>Privacy Statement</h1><p>Hawkez Haven – Second Chances respects your privacy. This statement explains what personal information we collect, why we collect it, how we use it, and how you can contact us about your information.</p><p><a href="/terms">Read our Terms of Use</a> · <a href="/contact">Contact Hawkez Haven</a></p></article></main>`,
+  "/terms": `<main><article><h1>Terms of Use</h1><p>These terms explain the conditions that apply to use of the Hawkez Haven website, enquiries, bookings, horse adoption, experiences and support services.</p><p><a href="/privacy">Read our Privacy Statement</a> · <a href="/contact">Contact Hawkez Haven</a></p></article></main>`,
 };
 
 function escapeHtml(value) {
