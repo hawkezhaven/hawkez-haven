@@ -28,6 +28,13 @@ const PAGE_META: Record<string, Meta> = {
 
 const HORSE_NAMES: Record<string, string> = { rip: "Rip", haven: "Haven", pedro: "Pedro", diablo: "Diablo", khan: "Khan", kohan: "Kohan", joey: "Joey", ritz: "Ritz", electra: "Electra", kahu: "Kahu" };
 
+const SERVICE_PAGES: Record<string, { name: string; type: string }> = {
+  "/adoption": { name: "Horse Adoption", type: "Horse adoption and responsible rehoming" },
+  "/foster": { name: "Foster a Rescue Horse", type: "Horse fostering and rehabilitation support" },
+  "/sponsorship": { name: "Rescue Horse Sponsorship", type: "Rescue horse sponsorship and welfare support" },
+  "/education": { name: "Education & Horsemanship", type: "Horse education, horsemanship and practical horse experiences" },
+};
+
 function setMeta(name: string, content: string) {
   let element = document.querySelector(`meta[name="${name}"]`);
   if (!element) { element = document.createElement("meta"); element.setAttribute("name", name); document.head.appendChild(element); }
@@ -97,11 +104,44 @@ export default function SEO() {
     setMeta("twitter:image:alt", `${meta.title} — Hawkez Haven`);
     setCanonical(canonical);
 
-    setStructuredData("hawkez-haven-organisation-schema", {
-      "@context": "https://schema.org", "@type": "AnimalShelter", name: "Hawkez Haven", url: SITE, logo: `${SITE}/favicon.png`, description: DEFAULT_DESCRIPTION, areaServed: "New Zealand", slogan: "Where Second Chances Find Their Stride", knowsAbout: ["horse rescue", "equine rescue", "horse rehabilitation", "equine rehabilitation", "rescued horse adoption", "responsible horse rehoming", "horse welfare", "horsemanship education", "horse riding lessons", "groundwork", "horse care education"],
-    });
-    setStructuredData("hawkez-haven-website-schema", { "@context": "https://schema.org", "@type": "WebSite", name: "Hawkez Haven", url: SITE, inLanguage: "en-NZ", description: DEFAULT_DESCRIPTION, keywords: AI_KEYWORDS });
-    setStructuredData("hawkez-haven-page-schema", { "@context": "https://schema.org", "@type": "WebPage", name: meta.title, url: canonical, description: meta.description, inLanguage: "en-NZ", isPartOf: { "@type": "WebSite", name: "Hawkez Haven", url: SITE }, about: { "@type": "AnimalShelter", name: "Hawkez Haven", url: SITE }, keywords: AI_KEYWORDS });
+    const organisationSchema = {
+      "@context": "https://schema.org",
+      "@type": ["AnimalShelter", "Organization"],
+      "@id": `${SITE}/#organisation`,
+      name: "Hawkez Haven",
+      alternateName: ["Hawkez Haven – Second Chances", "Hawkez Haven Second Chances"],
+      url: SITE,
+      logo: `${SITE}/logo.png`,
+      image: `${SITE}/images/hero-horse.jpg`,
+      description: DEFAULT_DESCRIPTION,
+      areaServed: "New Zealand",
+      slogan: "Where Second Chances Find Their Stride",
+      telephone: "+64 20 4053 6441",
+      email: "hawkezhaven@gmail.com",
+      address: { "@type": "PostalAddress", addressLocality: "Ashhurst", addressRegion: "Manawatū-Whanganui", addressCountry: "NZ" },
+      sameAs: ["https://www.wikidata.org/wiki/Q141190304", "https://www.facebook.com/HawkezHaven"],
+      knowsAbout: ["Horse Rescue", "Equine Rehabilitation", "Off-The-Track Thoroughbred Retraining", "Horsemanship Lessons", "Horse Welfare"],
+    };
+
+    setStructuredData("hawkez-haven-organisation-schema", organisationSchema);
+    setStructuredData("hawkez-haven-website-schema", { "@context": "https://schema.org", "@type": "WebSite", name: "Hawkez Haven", url: SITE, inLanguage: "en-NZ", description: DEFAULT_DESCRIPTION, keywords: AI_KEYWORDS, publisher: { "@id": `${SITE}/#organisation` } });
+    setStructuredData("hawkez-haven-page-schema", { "@context": "https://schema.org", "@type": "WebPage", name: meta.title, url: canonical, description: meta.description, inLanguage: "en-NZ", isPartOf: { "@type": "WebSite", name: "Hawkez Haven", url: SITE }, about: { "@id": `${SITE}/#organisation` }, keywords: AI_KEYWORDS });
+
+    const service = SERVICE_PAGES[pathname];
+    if (service) {
+      setStructuredData("hawkez-haven-service-schema", {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name: service.name,
+        serviceType: service.type,
+        description: meta.description,
+        url: canonical,
+        areaServed: "New Zealand",
+        provider: { "@id": `${SITE}/#organisation`, name: "Hawkez Haven", url: SITE },
+      });
+    } else {
+      document.getElementById("hawkez-haven-service-schema")?.remove();
+    }
 
     if (horseName && horseSlug) {
       setStructuredData("hawkez-haven-horse-schema", { "@context": "https://schema.org", "@type": "WebPage", name: `${horseName} | Hawkez Haven Horse Rescue New Zealand`, url: canonical, description: meta.description, about: { "@type": "Animal", name: horseName, description: meta.description }, isPartOf: { "@type": "WebSite", name: "Hawkez Haven", url: SITE } });
