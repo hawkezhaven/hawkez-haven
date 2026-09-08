@@ -98,7 +98,7 @@ export default function SEO() {
     setCanonical(canonical);
 
     setStructuredData("hawkez-haven-organisation-schema", {
-      "@context": "https://schema.org", "@type": "AnimalShelter", name: "Hawkez Haven", url: SITE, logo: `${SITE}/icon/icon-192.png`, description: DEFAULT_DESCRIPTION, areaServed: "New Zealand", slogan: "Where Second Chances Find Their Stride", knowsAbout: ["horse rescue", "equine rescue", "horse rehabilitation", "equine rehabilitation", "rescued horse adoption", "responsible horse rehoming", "horse welfare", "horsemanship education", "horse riding lessons", "groundwork", "horse care education"],
+      "@context": "https://schema.org", "@type": "AnimalShelter", name: "Hawkez Haven", url: SITE, logo: `${SITE}/favicon.png`, description: DEFAULT_DESCRIPTION, areaServed: "New Zealand", slogan: "Where Second Chances Find Their Stride", knowsAbout: ["horse rescue", "equine rescue", "horse rehabilitation", "equine rehabilitation", "rescued horse adoption", "responsible horse rehoming", "horse welfare", "horsemanship education", "horse riding lessons", "groundwork", "horse care education"],
     });
     setStructuredData("hawkez-haven-website-schema", { "@context": "https://schema.org", "@type": "WebSite", name: "Hawkez Haven", url: SITE, inLanguage: "en-NZ", description: DEFAULT_DESCRIPTION, keywords: AI_KEYWORDS });
     setStructuredData("hawkez-haven-page-schema", { "@context": "https://schema.org", "@type": "WebPage", name: meta.title, url: canonical, description: meta.description, inLanguage: "en-NZ", isPartOf: { "@type": "WebSite", name: "Hawkez Haven", url: SITE }, about: { "@type": "AnimalShelter", name: "Hawkez Haven", url: SITE }, keywords: AI_KEYWORDS });
