@@ -74,6 +74,14 @@ const EDUCATION_FAQS = [
   ["How do I book?", "Use the enquiry form on the page to tell us which experience you want, how many people are attending and your preferred dates."],
 ] as const;
 
+const VOLUNTEER_FAQS = [
+  ["Where is Hawkez Haven located?", "We are based on a private property in Ashhurst, in the Manawatū region of New Zealand (just a short drive from Palmerston North). Volunteers arrange their own transport to and from the property."],
+  ["Do I need previous horse experience?", "Not necessarily. We welcome enthusiastic helpers for property maintenance, gear care, and supervised horse care. For handling sensitive horses or assisting with rehabilitation groundwork, prior horse experience is valued."],
+  ["What is the time commitment?", "We offer flexible volunteering opportunities. Some volunteers join us for scheduled weekend working bees, while others commit to regular weekly or fortnightly sessions."],
+  ["Do you offer on-site accommodation or international placements?", "Because we are an independent, private rescue facility, we do not currently have on-site volunteer accommodation or host international exchange programs. Our roles are suited for local day volunteers."],
+  ["What should I wear and bring?", "Sturdy, closed-toe footwear (work boots or paddock boots) is mandatory for safety around horses. Please wear comfortable outdoor clothing that you don't mind getting dirty, and bring a water bottle."],
+] as const;
+
 export default function SEO() {
   const { pathname } = useLocation();
 
@@ -157,6 +165,12 @@ export default function SEO() {
       setStructuredData("hawkez-haven-education-faq-schema", { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: EDUCATION_FAQS.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) });
     } else {
       document.getElementById("hawkez-haven-education-faq-schema")?.remove();
+    }
+
+    if (pathname === "/volunteer") {
+      setStructuredData("hawkez-haven-volunteer-faq-schema", { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: VOLUNTEER_FAQS.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) });
+    } else {
+      document.getElementById("hawkez-haven-volunteer-faq-schema")?.remove();
     }
   }, [pathname]);
 
