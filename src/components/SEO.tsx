@@ -24,6 +24,10 @@ const PAGE_META: Record<string, Meta> = {
   "/gift-card": { title: "Hawkez Haven Gift Cards | Give a Second Chance", description: "Give a Hawkez Haven gift card and share meaningful horse experiences while supporting welfare-first rescue and rehabilitation." },
   "/privacy": { title: "Privacy Statement | Hawkez Haven NZ", description: "Learn how Hawkez Haven collects, uses, stores and protects personal information in connection with our website, enquiries, bookings and support." },
   "/terms": { title: "Terms of Use | Hawkez Haven NZ", description: "Read the terms that apply to use of the Hawkez Haven website, enquiries, bookings, experiences, gift cards and donations." },
+  "/enquire/adoption": { title: "Horse Adoption Enquiry | Hawkez Haven NZ", description: "Submit an enquiry about adopting a Hawkez Haven rescue horse and learn more about our welfare-first approved home process." },
+  "/enquire/experiences": { title: "Horse Experience Enquiry | Hawkez Haven NZ", description: "Enquire about horse care, groundwork, horsemanship, riding and other practical experiences at Hawkez Haven." },
+  "/enquire/foster": { title: "Foster Horse Enquiry | Hawkez Haven NZ", description: "Submit an enquiry about fostering a Hawkez Haven rescue horse and supporting their rehabilitation and next chapter." },
+  "/enquire/volunteer": { title: "Volunteer Enquiry | Hawkez Haven NZ", description: "Submit an enquiry about volunteering with Hawkez Haven and helping with horse care, rehabilitation and education." },
 };
 
 const HORSE_NAMES: Record<string, string> = { rip: "Rip", haven: "Haven", pedro: "Pedro", diablo: "Diablo", khan: "Khan", kohan: "Kohan", joey: "Joey", ritz: "Ritz", electra: "Electra", kahu: "Kahu" };
