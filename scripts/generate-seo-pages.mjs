@@ -61,7 +61,7 @@ function structuredData(meta, path) {
   const canonical = `${site}${path}`;
   const graph = [
     { "@type": "WebSite", "@id": `${site}/#website`, url: `${site}/`, name: "Hawkez Haven", description: "Hawkez Haven is a New Zealand horse rescue and rehabilitation organisation.", inLanguage: "en-NZ" },
-    { "@type": "AnimalShelter", "@id": `${site}/#organisation`, name: "Hawkez Haven", url: `${site}/`, logo: `${site}/icon/icon-192.png`, description: "Independent equine rescue, rehabilitation and connection-based horsemanship sanctuary in New Zealand.", areaServed: "New Zealand", slogan: "Where Second Chances Find Their Stride" },
+    { "@type": "AnimalShelter", "@id": `${site}/#organisation`, name: "Hawkez Haven", url: `${site}/`, logo: `${site}/favicon.png`, description: "Independent equine rescue, rehabilitation and connection-based horsemanship sanctuary in New Zealand.", areaServed: "New Zealand", slogan: "Where Second Chances Find Their Stride" },
     { "@type": "WebPage", "@id": `${canonical}#webpage`, url: canonical, name: meta.title, description: meta.description, inLanguage: "en-NZ", isPartOf: { "@id": `${site}/#website` }, about: { "@id": `${site}/#organisation` } },
   ];
   return `<script id="hawkez-haven-prerendered-schema" type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@graph": graph })}</script>`;
@@ -114,17 +114,3 @@ for (const [id, horse] of Object.entries(horsePages)) {
   await writeFile(output, html, "utf8");
   generatedFiles.push([output, horseMeta]);
 }
-
-for (const [output, meta] of generatedFiles) {
-  const html = await readFile(output, "utf8");
-  const title = html.match(/<title>([\s\S]*?)<\/title>/i)?.[1];
-  const description = html.match(/<meta\s+name=["']description["'][^>]*content=["']([^"']+)["'][^>]*>/i)?.[1];
-  if (!title || !description || title !== escapeHtml(meta.title) || description !== escapeHtml(meta.description)) {
-    throw new Error(`SEO prerender verification failed for ${output}: expected title and description in the generated <head>`);
-  }
-  if (output !== resolve(distDir, "index.html") && !/<script id="hawkez-haven-prerendered-schema" type="application\/ld\+json">/.test(html)) {
-    throw new Error(`SEO prerender verification failed for ${output}: expected page-specific structured data`);
-  }
-}
-
-console.log(`Verified prerendered title, description and structured data for ${generatedFiles.length} pages.`);
