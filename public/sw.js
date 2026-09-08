@@ -1,5 +1,5 @@
-const CACHE_NAME = "hawkez-haven-v2";
-const urlsToCache = ["/", "/icon/icon-192.png", "/icon/icon-512.png"];
+const CACHE_NAME = "hawkez-haven-v3";
+const urlsToCache = ["/"];
 
 // Install event - cache core assets
 self.addEventListener("install", (event) => {
