@@ -31,10 +31,13 @@ export default function AboutPage() {
             Why Hawkez Haven Exists
           </h2>
           <p className="mt-6 text-[#4a4a42] leading-relaxed">
-            Hawkez Haven was created to give horses the time, patience and understanding they deserve. Too often, horses are asked to be ready before they have had the chance to recover — physically, emotionally, or both.
+            Hawkez Haven was created to give horses the time, patience and understanding they deserve. Too often, horses are asked to be ready before they have had the chance to recover — physically, emotionally, or both. We believe a second chance should mean more than simply moving a horse somewhere else; it should mean giving them the opportunity to become settled, understood and genuinely prepared for what comes next.
           </p>
           <p className="mt-4 text-[#4a4a42] leading-relaxed">
-            Here, rehabilitation is about more than physical recovery. It is about rebuilding confidence, trust and hope. It is about learning what each horse needs, not forcing them to fit a timeline that suits us.
+            Our work centres on rescue, rehabilitation and responsible rehoming. Some horses arrive carrying the effects of neglect, injury, difficult experiences or simply a lifetime of being misunderstood. Others need time to rebuild confidence and learn that people can be safe. We meet each horse where they are and work forward from there.
+          </p>
+          <p className="mt-4 text-[#4a4a42] leading-relaxed">
+            Rehabilitation is about more than physical recovery. It is about rebuilding confidence, trust and hope. It is about learning what each horse needs, addressing their health and wellbeing, and refusing to force them into a timeline that suits us.
           </p>
           <p className="mt-4 text-[#4a4a42] leading-relaxed">
             Every horse who arrives is given the space to become themselves again — at their own pace, in their own way, with people who choose to listen before they lead.
@@ -97,49 +100,73 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── What Makes Us Different ────────────────────────── */}
+      {/* ── How Rehabilitation Works ──────────────────────── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-        <div className="flex items-center gap-3 mb-4 text-[#b8922a]">
-          <span className="block h-px w-8 bg-[#b8922a]" />
-          <p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">The difference</p>
-        </div>
-        <h2 className="font-serif text-4xl md:text-5xl text-[#1a1a18] mb-14">
-          What Makes Hawkez Haven Different
-        </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[
-            {
-              title: "Individual rehabilitation",
-              desc: "No two horses recover in the same way. Each horse receives a tailored plan shaped by their history, health and temperament.",
-            },
-            {
-              title: "Honest horse matching",
-              desc: "We match horses to people based on compatibility, experience and lifestyle — never convenience or pressure.",
-            },
-            {
-              title: "Education before expectation",
-              desc: "We help adopters, volunteers and visitors understand horses before asking them to handle, ride or care for one.",
-            },
-            {
-              title: "Lifelong support",
-              desc: "Our relationship does not end at adoption. We remain available for guidance, advice and support for every horse's lifetime.",
-            },
-            {
-              title: "Quality over quantity",
-              desc: "We take in only what we can care for well. Every horse here receives attention, time and the resources they need.",
-            },
-          ].map(({ title, desc }) => (
-            <div key={title}>
-              <h3 className="font-serif text-xl text-[#1a1a18] mb-2">{title}</h3>
-              <p className="text-sm text-[#4a4a42] leading-relaxed">{desc}</p>
-            </div>
-          ))}
-        </div>
-        <blockquote className="mt-16 border-l-4 border-[#b8922a] pl-6 max-w-2xl">
-          <p className="font-serif italic text-2xl text-[#1a1a18]">
-            "We are not trying to save every horse quickly. We are trying to care for each horse properly."
+        <div className="max-w-3xl">
+          <div className="flex items-center gap-3 mb-4 text-[#b8922a]">
+            <span className="block h-px w-8 bg-[#b8922a]" />
+            <p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">The journey</p>
+          </div>
+          <h2 className="font-serif text-4xl md:text-5xl text-[#1a1a18] leading-tight">
+            What Rehabilitation Means Here
+          </h2>
+          <p className="mt-6 text-[#4a4a42] leading-relaxed">
+            There is no single Hawkez Haven rehabilitation programme. Each horse starts from a different place, so their journey is shaped around their individual needs. That can include veterinary and farrier care, nutrition, groundwork, confidence building, learning to communicate, or simply having enough time and consistency to settle.
           </p>
-        </blockquote>
+          <p className="mt-4 text-[#4a4a42] leading-relaxed">
+            We pay attention to the small things: how a horse responds to a person approaching, whether they can relax, how they cope with handling, what makes them worried and what helps them feel secure. Those observations matter because rehabilitation is not just about producing a rideable horse. It is about helping a horse become healthier, more confident and better understood.
+          </p>
+          <p className="mt-4 text-[#4a4a42] leading-relaxed">
+            For horses who are ready for a new home, that understanding becomes part of the matching process. We want adopters to know the horse in front of them — their strengths, their needs, their quirks and the support they may require — so that a second chance can become a lasting one.
+          </p>
+        </div>
+      </section>
+
+      {/* ── What Makes Us Different ────────────────────────── */}
+      <section className="bg-[#ede5d4] py-24 md:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3 mb-4 text-[#b8922a]">
+            <span className="block h-px w-8 bg-[#b8922a]" />
+            <p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">The difference</p>
+          </div>
+          <h2 className="font-serif text-4xl md:text-5xl text-[#1a1a18] mb-14">
+            What Makes Hawkez Haven Different
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Individual rehabilitation",
+                desc: "No two horses recover in the same way. Each horse receives a tailored plan shaped by their history, health and temperament.",
+              },
+              {
+                title: "Honest horse matching",
+                desc: "We match horses to people based on compatibility, experience and lifestyle — never convenience or pressure.",
+              },
+              {
+                title: "Education before expectation",
+                desc: "We help adopters, volunteers and visitors understand horses before asking them to handle, ride or care for one.",
+              },
+              {
+                title: "Lifelong support",
+                desc: "Our relationship does not end at adoption. We remain available for guidance, advice and support for every horse's lifetime.",
+              },
+              {
+                title: "Quality over quantity",
+                desc: "We take in only what we can care for well. Every horse here receives attention, time and the resources they need.",
+              },
+            ].map(({ title, desc }) => (
+              <div key={title} className="bg-[#f5f0e8]/70 rounded-2xl p-7">
+                <h3 className="font-serif text-xl text-[#1a1a18] mb-2">{title}</h3>
+                <p className="text-sm text-[#4a4a42] leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+          <blockquote className="mt-16 border-l-4 border-[#b8922a] pl-6 max-w-2xl">
+            <p className="font-serif italic text-2xl text-[#1a1a18]">
+              "We are not trying to save every horse quickly. We are trying to care for each horse properly."
+            </p>
+          </blockquote>
+        </div>
       </section>
 
       {/* ── Our Promise ────────────────────────────────────── */}
