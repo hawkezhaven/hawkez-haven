@@ -89,17 +89,17 @@ export default function HeroBanner() {
           height={1080}
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a18]/85 via-[#1a1a18]/35 to-[#1a1a18]/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a18]/85 via-[#1a1a18]/40 to-[#1a1a18]/15" />
         <div className="relative z-10 flex min-h-[56vh] md:min-h-[64vh] items-end">
-          <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-14 md:pb-20">
+          <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-10 sm:pb-14 md:pb-20">
             <div className="max-w-3xl">
-              <div className="flex items-center gap-3 text-[#b8922a]">
-                <span className="block h-px w-8 bg-[#b8922a]" />
-                <span className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">
+              <div className="inline-flex items-center gap-3 rounded-full bg-[#1a1a18]/55 px-4 py-2 backdrop-blur-sm text-[#d4ad43]">
+                <span className="block h-px w-7 bg-[#d4ad43]" />
+                <span className="text-[0.62rem] sm:text-[0.65rem] tracking-[0.18em] uppercase font-medium">
                   {hero.eyebrow}
                 </span>
               </div>
-              <h1 className="mt-5 font-serif text-5xl md:text-6xl lg:text-7xl text-[#f5f0e8] leading-[1.02] text-balance">
+              <h1 className="mt-4 sm:mt-5 max-w-2xl font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#f5f0e8] leading-[1.05] text-balance drop-shadow-[0_2px_10px_rgba(0,0,0,0.55)]">
                 {hero.title}
               </h1>
             </div>
