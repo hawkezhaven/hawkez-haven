@@ -46,4 +46,86 @@ try {
   if (error.code !== "ENOENT") throw error;
 }
 
-console.log("Verified Contact map prerender and aligned the Education & Horsemanship title, H1 and FAQ content.");
+const servicePages = {
+  "/adoption": {
+    name: "Horse Adoption",
+    serviceType: "Horse adoption and responsible rehoming",
+    description: "Welfare-first horse adoption and responsible rehoming through careful matching, approved homes and ongoing support.",
+  },
+  "/foster": {
+    name: "Rescue Horse Foster Program",
+    serviceType: "Rescue horse fostering",
+    description: "A supported foster pathway giving rescue horses a safe, suitable home while they wait for the right permanent placement.",
+  },
+  "/sponsorship": {
+    name: "Rescue Horse Sponsorship",
+    serviceType: "Horse rescue sponsorship",
+    description: "Horse sponsorship that helps provide feed, veterinary care, farrier care, rehabilitation and ongoing welfare.",
+  },
+  "/education": {
+    name: "Horse Education and Horsemanship",
+    serviceType: "Horse education and horsemanship experiences",
+    description: "Horse care, groundwork, horsemanship and practical education focused on welfare, safety, understanding and connection.",
+  },
+};
+
+const organisation = {
+  "@type": ["AnimalShelter", "Organization"],
+  "@id": "https://hawkezhaven.org/#organisation",
+  name: "Hawkez Haven",
+  alternateName: ["Hawkez Haven – Second Chances", "Hawkez Haven Second Chances"],
+  url: "https://hawkezhaven.org/",
+  logo: "https://hawkezhaven.org/favicon.png",
+  image: "https://hawkezhaven.org/images/hero-horse.jpg",
+  description: "Independent New Zealand equine rescue, rehabilitation, responsible rehoming and connection-based horsemanship organisation.",
+  areaServed: { "@type": "Country", name: "New Zealand" },
+  slogan: "Where Second Chances Find Their Stride",
+  email: "hawkezhaven@gmail.com",
+  telephone: "+64 20 4053 6441",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Ashhurst",
+    addressRegion: "Manawatū-Whanganui",
+    addressCountry: "NZ",
+  },
+  sameAs: ["https://www.facebook.com/HawkezHaven", "https://www.wikidata.org/wiki/Q141190304"],
+  knowsAbout: ["Horse Rescue", "Equine Rehabilitation", "Off-The-Track Thoroughbred Retraining", "Horsemanship Lessons", "Horse Welfare"],
+};
+
+for (const [path, service] of Object.entries(servicePages)) {
+  const file = resolve("dist", path.slice(1), "index.html");
+  try {
+    const html = await readFile(file, "utf8");
+    const schemaMatch = html.match(/<script id="hawkez-haven-prerendered-schema" type="application\/ld\+json">([\s\S]*?)<\/script>/i);
+    if (!schemaMatch) continue;
+
+    const schema = JSON.parse(schemaMatch[1]);
+    const graph = Array.isArray(schema["@graph"]) ? schema["@graph"] : [];
+    const orgIndex = graph.findIndex((item) => item["@id"] === organisation["@id"]);
+    if (orgIndex >= 0) graph[orgIndex] = { ...graph[orgIndex], ...organisation };
+    else graph.push(organisation);
+
+    const serviceId = `https://hawkezhaven.org${path}#service`;
+    const serviceNode = {
+      "@type": "Service",
+      "@id": serviceId,
+      name: service.name,
+      serviceType: service.serviceType,
+      description: service.description,
+      url: `https://hawkezhaven.org${path}`,
+      provider: { "@id": organisation["@id"] },
+      areaServed: organisation.areaServed,
+    };
+    const serviceIndex = graph.findIndex((item) => item["@id"] === serviceId);
+    if (serviceIndex >= 0) graph[serviceIndex] = serviceNode;
+    else graph.push(serviceNode);
+
+    const updatedSchema = JSON.stringify({ "@context": "https://schema.org", "@graph": graph });
+    const updatedHtml = html.replace(schemaMatch[0], `<script id="hawkez-haven-prerendered-schema" type="application/ld+json">${updatedSchema}</script>`);
+    await writeFile(file, updatedHtml, "utf8");
+  } catch (error) {
+    if (error.code !== "ENOENT") throw error;
+  }
+}
+
+console.log("Verified Contact map prerender, Education FAQ content, and strengthened prerendered organization and service schema.");
