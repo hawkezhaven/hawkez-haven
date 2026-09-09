@@ -204,6 +204,37 @@ function PageHeroStyles({ page }: { page: string }) {
           background-size: contain;
         }
       }
+
+      /* Education and Experiences: on phones the hero photo must sit BELOW all hero copy.
+         This prevents the appointment note from being rendered over the photograph. */
+      @media (max-width: 767px) {
+        main.page-education > div > section:first-child,
+        main.page-experiences > div > section:first-child {
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          background-image: none;
+        }
+
+        main.page-education > div > section:first-child > div,
+        main.page-experiences > div > section:first-child > div {
+          width: 100%;
+          max-width: none;
+          padding-bottom: 32px;
+        }
+
+        main.page-education > div > section:first-child::after,
+        main.page-experiences > div > section:first-child::after {
+          position: relative;
+          inset: auto;
+          width: 100%;
+          height: 300px;
+          flex: 0 0 300px;
+          z-index: 1;
+          background-position: center center;
+          background-size: cover;
+        }
+      }
     `}</style>
   );
 }
@@ -265,8 +296,6 @@ export default function AppLayout() {
   const pageClass = `page-${page}`;
 
   useLayoutEffect(() => {
-    // Static route files include a crawlable breadcrumb before the React root.
-    // Replace it with the route-aware React version before the first client paint.
     document.getElementById("hawkez-haven-prerendered-breadcrumbs")?.remove();
   }, []);
 
