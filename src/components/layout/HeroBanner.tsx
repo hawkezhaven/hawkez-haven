@@ -81,27 +81,30 @@ export default function HeroBanner() {
       <style>{`
         main[data-page-hero="true"] > div > section:first-child { display: none; }
       `}</style>
-      <section className="relative min-h-[56vh] md:min-h-[64vh] overflow-hidden bg-[#1a1a18] text-[#f5f0e8]">
+      <section className="relative min-h-[48vh] sm:min-h-[56vh] md:min-h-[64vh] overflow-hidden bg-[#1a1a18] text-[#f5f0e8]">
         <img
           src={hero.image}
           alt={hero.alt}
           width={1920}
           height={1080}
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a18]/85 via-[#1a1a18]/40 to-[#1a1a18]/15" />
-        <div className="relative z-10 flex min-h-[56vh] md:min-h-[64vh] items-end">
-          <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-10 sm:pb-14 md:pb-20">
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-3 rounded-full bg-[#1a1a18]/55 px-4 py-2 backdrop-blur-sm text-[#d4ad43]">
-                <span className="block h-px w-7 bg-[#d4ad43]" />
-                <span className="text-[0.62rem] sm:text-[0.65rem] tracking-[0.18em] uppercase font-medium">
-                  {hero.eyebrow}
-                </span>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a18]/90 via-[#1a1a18]/35 to-[#1a1a18]/10" />
+
+        <div className="relative z-10 flex min-h-[48vh] sm:min-h-[56vh] md:min-h-[64vh] items-end">
+          <div className="w-full px-4 sm:px-6 lg:px-8 pb-0 sm:pb-14 md:pb-20">
+            <div className="mx-auto max-w-7xl">
+              <div className="max-w-3xl bg-[#1a1a18]/90 px-5 py-5 sm:bg-transparent sm:px-0 sm:py-0 sm:backdrop-blur-none">
+                <div className="inline-flex items-center gap-3 text-[#d4ad43]">
+                  <span className="block h-px w-7 bg-[#d4ad43]" />
+                  <span className="text-[0.62rem] sm:text-[0.65rem] tracking-[0.18em] uppercase font-medium">
+                    {hero.eyebrow}
+                  </span>
+                </div>
+                <h1 className="mt-3 sm:mt-5 max-w-2xl font-serif text-[2.15rem] leading-[1.08] sm:text-5xl md:text-6xl lg:text-7xl text-[#f5f0e8] text-balance drop-shadow-[0_2px_10px_rgba(0,0,0,0.55)]">
+                  {hero.title}
+                </h1>
               </div>
-              <h1 className="mt-4 sm:mt-5 max-w-2xl font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#f5f0e8] leading-[1.05] text-balance drop-shadow-[0_2px_10px_rgba(0,0,0,0.55)]">
-                {hero.title}
-              </h1>
             </div>
           </div>
         </div>
