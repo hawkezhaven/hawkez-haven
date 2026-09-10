@@ -5,10 +5,18 @@ import vm from "node:vm";
 const distDir = resolve("dist");
 const horsesSource = await readFile(resolve("src/lib/horses.ts"), "utf8");
 
-// HORSES is the single source of truth for the horse pages. Read the existing
-// data at build time so the crawlable HTML can never drift from the visible site.
+// HORSES is the single source of truth for the horse pages. Read only the
+// HORSES declaration at build time so later exports in horses.ts cannot break
+// the lightweight data evaluation used for SEO prerendering.
+const horsesStart = horsesSource.indexOf("export const HORSES");
+const horsesEnd = horsesSource.indexOf("export const PERMANENT_RESIDENTS", horsesStart);
+
+if (horsesStart === -1 || horsesEnd === -1) {
+  throw new Error("Could not locate the HORSES data block in src/lib/horses.ts for SEO prerendering.");
+}
+
 const horsesCode = horsesSource
-  .slice(horsesSource.indexOf("export const HORSES"))
+  .slice(horsesStart, horsesEnd)
   .replace("export const HORSES: Horse[] =", "const HORSES =")
   .concat("\n;globalThis.__HORSES = HORSES;");
 
