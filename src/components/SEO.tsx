@@ -14,7 +14,7 @@ const PAGE_META: Record<string, Meta> = {
   "/": { title: DEFAULT_TITLE, description: DEFAULT_DESCRIPTION },
   "/about": { title: "About Hawkez Haven | Horse Rescue & Rehabilitation NZ", description: "Learn about Hawkez Haven, our welfare-first approach to horse rescue, rehabilitation, responsible rehoming and giving horses a genuine second chance." },
   "/horses": { title: "Our Horses | Hawkez Haven Horse Rescue NZ", description: "Meet the horses of Hawkez Haven and follow their individual journeys through rescue, rehabilitation, recovery and responsible rehoming." },
-  "/adoption": { title: "Horse Adoption | Hawkez Haven New Zealand", description: "Learn how horse adoption works at Hawkez Haven, including our welfare-first matching process, approved homes and lifelong support." },
+  "/adoption": { title: "Horse Adoption NZ | Rescue Horse Adoption | Hawkez Haven", description: "Adopt a rescue horse in New Zealand through Hawkez Haven. Our welfare-first process matches horses with suitable homes and provides ongoing support." },
   "/sponsorship": { title: "Sponsor a Rescue Horse | Hawkez Haven NZ", description: "Support a Hawkez Haven rescue horse through sponsorship and help provide feed, veterinary care, rehabilitation and a second chance." },
   "/foster": { title: "Foster a Rescue Horse | Hawkez Haven New Zealand", description: "Find out how fostering can help a Hawkez Haven rescue horse recover, rebuild confidence and prepare for their next chapter." },
   "/volunteer": { title: "Volunteer | Hawkez Haven Horse Rescue NZ", description: "Volunteer with Hawkez Haven and help with horse care, rehabilitation, education and the day-to-day work behind a welfare-focused rescue." },
