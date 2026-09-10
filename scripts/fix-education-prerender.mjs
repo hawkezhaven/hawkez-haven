@@ -36,8 +36,9 @@ const faqBody = `<section><h2>Frequently Asked Questions</h2><dl>${educationFaqs
 try {
   const html = await readFile(educationPath, "utf8");
   const updated = html
-    .replace(/<title>[\s\S]*?<\/title>/i, "<title>Education &amp; Horsemanship | Hawkez Haven NZ</title>")
-    .replace(/Horse Education &amp; Experiences \| Hawkez Haven NZ/g, "Education &amp; Horsemanship | Hawkez Haven NZ")
+    .replace(/<title>[\s\S]*?<\/title>/i, "<title>Horse Riding &amp; Horsemanship Manawatū | Hawkez Haven</title>")
+    .replace(/<meta\s+name=["']description["'][^>]*>/i, '<meta name="description" content="Horse riding lessons, groundwork, horse care and horsemanship experiences at Hawkez Haven in Ashhurst, Manawatū, New Zealand." />')
+    .replace(/Horse Education &amp; Experiences \| Hawkez Haven NZ/g, "Horse Riding &amp; Horsemanship Manawatū | Hawkez Haven")
     .replace(/<h1>[\s\S]*?<\/h1>/i, "<h1>Education &amp; Horsemanship</h1>")
     .replace(/<\/main>/i, `${faqBody}</main>`)
     .replace(/<\/head>/i, `<script id="hawkez-haven-education-faq-schema" type="application/ld+json">${faqJson}</script>\n</head>`);
