@@ -127,10 +127,16 @@ for (const horse of horses) {
 
   html = html.replace('<div id="root"></div>', `<div id="root">${body}</div>`);
 
-  const schemaPattern = /<script id=["']hawkez-haven-prerendered-schema["'][\\s\\S]*?<\\/script>\\s*/gi;
-  html = html.replace(schemaPattern, "");
+  const schemaStart = html.indexOf('<script id="hawkez-haven-prerendered-schema"');
+  if (schemaStart !== -1) {
+    const schemaEnd = html.indexOf("</script>", schemaStart);
+    if (schemaEnd !== -1) {
+      html = `${html.slice(0, schemaStart)}${html.slice(schemaEnd + "</script>".length)}`;
+    }
+  }
+
   html = html.replace(
-    /<\\/head>/i,
+    "</head>",
     `<script id="hawkez-haven-prerendered-schema" type="application/ld+json">${JSON.stringify(horseSchema(horse))}</script>\n  </head>`,
   );
 
