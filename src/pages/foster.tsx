@@ -43,9 +43,11 @@ export default function FosterPage() {
       </section>
 
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <h2 className="font-serif text-3xl md:text-4xl text-[#1a1a18] mb-6">Foster arrangements</h2>
+        <h2 className="font-serif text-3xl md:text-4xl text-[#1a1a18] mb-6">Foster arrangements & costs</h2>
         <div className="space-y-4 text-[#4a4a42] leading-relaxed">
-          <p>Any costs, responsibilities and practical arrangements are personally discussed and agreed upon for each individual circumstance, taking into account the needs of the horse and the foster home.</p>
+          <p>Every fostering arrangement is discussed between Hawkez Haven and the foster home individually, because every horse and every home is different.</p>
+          <p>Hawkez Haven will cover veterinary costs when a foster horse needs urgent veterinary care, as well as routine health needs such as worming and other agreed health-care requirements. Feed will be supplied by Hawkez Haven along with feeding instructions.</p>
+          <p>Foster homes are always welcome to put towards the horse they have fostered if they are happy to help contribute, but this is not expected. Any contribution or extra support from a foster home would never go unnoticed and is genuinely appreciated.</p>
           <p>Some horses may need a temporary foster placement while they continue their rehabilitation. Others may benefit from a longer-term arrangement while the right permanent home is being considered.</p>
           <p>Foster placements are considered carefully. Temperament, health, handling needs, herd situation, property setup and the foster family's experience all matter. A successful match is about more than having space available — it is about finding an environment where the horse can be safe, supported and understood.</p>
         </div>
