@@ -3,14 +3,16 @@ import { Link } from "react-router-dom";
 
 const EXPERIENCE_OPTIONS: string[] = [
   "Horse Care Discovery",
+  "Inside the Herd: The Secret Life of Horses",
   "Groundwork & Connection",
   "Horsemanship Deep Dive",
   "Riding at Hawkez Haven",
-  "Road Ride",
+  "Riding Outside the Haven: The Countryside Adventure",
   "Rescue & Rehabilitation Experience",
   "Senior Horse & Companion Session",
   "Family Horse Experience",
   "Riding Lessons",
+  "One-Off Riding Lesson",
 ];
 
 const ENQUIRY_TYPES: Record<string, { title: string; subtitle: string; fields: { id: string; label: string; type?: "text" | "textarea" | "select"; options?: string[] }[] }> = {
@@ -57,7 +59,7 @@ const ENQUIRY_TYPES: Record<string, { title: string; subtitle: string; fields: {
   },
   experiences: {
     title: "Book an Experience",
-    subtitle: "Tell us which experience you're interested in and your preferred dates.",
+    subtitle: "Tell us which experience you're interested in and your preferred dates. We'll confirm availability and any experience contribution or pricing before your booking is finalised.",
     fields: [
       { id: "experience", label: "Which experience(s) interest you?", type: "select", options: EXPERIENCE_OPTIONS },
       { id: "people", label: "Number of people" },
@@ -96,7 +98,6 @@ export default function EnquiryPage({ type }: Props) {
       </section>
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid lg:grid-cols-[1fr_2fr] gap-14">
-        {/* Sidebar */}
         <div>
           <p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium text-[#b8922a] mb-4">Other enquiries</p>
           <ul className="space-y-2">
@@ -108,7 +109,6 @@ export default function EnquiryPage({ type }: Props) {
           </ul>
         </div>
 
-        {/* Form */}
         <div>
           <EnquiryForm subject={info.title + " – Hawkez Haven"} fields={info.fields} serverSend />
         </div>
