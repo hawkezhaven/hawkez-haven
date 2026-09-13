@@ -64,14 +64,15 @@ function setStructuredData(id: string, data: Record<string, unknown>) {
 }
 
 const EDUCATION_FAQS = [
-  ["Do I need horse experience?", "Not always. Horse Care Discovery and the Family Horse Experience are suitable for beginners. Other sessions have their own experience requirements."],
-  ["Are the experiences suitable for children?", "Children are welcome in suitable sessions. Tell us the ages of everyone attending so we can choose an appropriate horse and activity."],
-  ["Do you offer riding lessons?", "Yes. Riding lessons are available for beginner to intermediate riders and are built around safe handling, balance, communication and horse suitability."],
-  ["What does an experience cost?", "Current introductory prices are listed on the Education & Horsemanship page and are confirmed at booking."],
+  ["Do I need horse experience?", "Not always. Horse Care Discovery, the homeschool workshop and the Family Horse Experience are suitable for beginners. Other sessions have their own experience requirements."],
+  ["Are the experiences suitable for children?", "Children are welcome in suitable sessions. The Inside the Herd: The Secret Life of Horses workshop is designed for school-aged children, while family and other sessions can be adapted to suit age and confidence. Tell us the ages of everyone attending when you enquire."],
+  ["Do you offer riding lessons?", "Yes. Riding lessons are available for beginners and developing riders, with lessons built around safe handling, balance, communication and the suitability of the horse. A one-off 1.5-hour lesson is also available for riders wanting a complete introduction or refresher."],
+  ["What does an experience cost?", "Current introductory prices are listed on the Education & Horsemanship page. Prices may change as the programme grows, and the current price will be confirmed when you book. Some experiences are described as an experience contribution because they directly support the horses in our care."],
+  ["Can I combine experiences?", "Yes. If you book Horse Care Discovery, you can also book Groundwork & Connection for a preferred future date and receive the available bundle discount. Ask about the Build Your Hawkez Haven Experience option when enquiring."],
   ["How many people can attend?", "Group sizes are kept small. The maximum number is listed for each experience."],
   ["Where are sessions held?", "All experiences take place at Hawkez Haven in Ashhurst, Manawatū, New Zealand, by appointment only."],
   ["What should I wear?", "Closed-toe shoes are required and long trousers are recommended. We will tell you about any additional safety equipment needed."],
-  ["How do I book?", "Use the enquiry form on the page to tell us which experience you want, how many people are attending and your preferred dates."],
+  ["How do I book?", "Use the enquiry form on the page to tell us which experience you want, how many people are attending and your preferred dates. We'll confirm availability and payment details before your booking is finalised."],
 ] as const;
 
 const VOLUNTEER_FAQS = [
