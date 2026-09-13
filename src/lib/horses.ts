@@ -33,7 +33,7 @@ export const HORSES: Horse[] = [
     storyTitle: "Rip - The Horse That Started It All",
     disciplines: [
       "Sanctuary Resident",
-      "Liberty & Groundwork",
+      "Groundwork",
       "Foundation Teacher",
       "Supervised Riding"
     ],
@@ -102,10 +102,10 @@ Care, Health & Well-being:
     disciplines: [
       "Confidence Building",
       "Road & Trail Riding",
-      "Groundwork & Liberty",
+      "Groundwork",
       "Teaching Team"
     ],
-    riderLevel: "Confident Rider (Calm and steady in new trail environments; sweet and patient at home).",
+    riderLevel: "Beginner (Calm and steady in new trail environments; sweet and patient at home).",
     height: "16.0hh",
     age: "13 years",
     colour: "Dark Bay",
@@ -260,7 +260,7 @@ Care, Health & Well-being:
     disciplines: [
       "Young Horse Education",
       "Groundwork & In-Hand",
-      "Liberty Training",
+      "Groundwork & Desensitization",
       "Herd Member"
     ],
     riderLevel: "In Education (Not currently available for public riding; backed with his primary handler).",
@@ -457,7 +457,7 @@ Care, Health & Well-being:
     storyTitle: "Kahu - The Horse Who Chose to Live Again",
     disciplines: [
       "Jumping & Eventing Prospect",
-      "Dressage",
+      "Jumping & Flatwork",
       "Cross Country",
       "Pleasure & Trail Riding"
     ],
@@ -549,7 +549,7 @@ Care, Health & Well-being:
 
 • Nutrition: Thriving on a balanced, high-forage diet following complete recovery of body condition and digestive strength.
 
-• Athletic Conditioning: Responding well to progressive training, dressage flatwork, and jumping exercises.
+• Athletic Conditioning: Responding well to progressive training, flatwork, and jumping exercises.
 
 • Temperament: Honest, gentle, and deeply appreciative of a calm, loving bond with his handler.`
   },
@@ -560,14 +560,14 @@ Care, Health & Well-being:
     sex: "Gelding",
     breed: "Thoroughbred",
     journeyBegan: "2026",
-    tagline: "Not dangerous. Just misunderstood.",
+    tagline: "Not bossy. Just misunderstood.",
     description: "A striking 17hh gentle giant who loves quiet road rides, partnership, and clear, compassionate boundaries.",
     storyTitle: "Ritz - The Gentle Giant",
     disciplines: [
       "Road & Trail Riding",
       "Pleasure Hacking",
       "Groundwork & Partnership",
-      "Liberty Training"
+      "Groundwork Education"
     ],
     riderLevel: "Intermediate (Requires a calm, confident handler who prioritizes connection before correction).",
     height: "17.0hh",
@@ -595,11 +595,9 @@ And he certainly wasn't a beginner's horse.
 
 As his new owner struggled to find confidence, Ritz quietly stepped into the role of leader. He used his size, his intelligence, and his experience to outsmart his rider, leaving both horse and human in a difficult position.
 
-Before long, the word 'dangerous' began to surround him.
+Before long, another reputation began to follow him — bossy, difficult, hard to handle.
 
-But Ritz was never dangerous.
-
-He was misunderstood.
+But Ritz wasn't bossy. He was misunderstood.
 
 Ritz arrived at Hawkez Haven in early 2026, and within two weeks, we had reached an understanding. We showed him what boundaries looked like, and in return, he showed us who he really was.
 
@@ -637,7 +635,7 @@ And sometimes, the horses that appear the most intimidating are simply waiting f
 
 With honesty, loyalty, kindness, and the commitment to keep showing up, Ritz became exactly who he was always meant to be.
 
-Not a dangerous horse.
+Not a label.
 
 Not a problem horse.
 
@@ -665,7 +663,7 @@ Care, Health & Well-being:
     storyTitle: "Joey - The Horse Who Refused to Retire",
     disciplines: [
       "Pleasure Riding",
-      "Groundwork & Liberty",
+      "Groundwork",
       "Companionship",
       "Light Hacking"
     ],
@@ -716,7 +714,7 @@ Long-Term Care Lease Opportunity:
     description: "A spirited, gorgeous young mare learning confidence, body language, and trust after rehabilitating a severe leg injury.",
     storyTitle: "Electra - The Mare Who Chose to Trust",
     disciplines: [
-      "Groundwork & Liberty",
+      "Groundwork",
       "Horsemanship Education",
       "Potential Restart / Companion",
       "Trail In-Hand"
@@ -845,7 +843,7 @@ Care, Health & Well-being:
 
 • Emotional Support: Thrives with predictable routines and gentle reassurance to prevent anxiety.
 
-• Future Pathway: Ongoing groundwork and liberty training, with potential for restart under saddle or placement in an experienced home.`
+• Future Pathway: Ongoing groundwork and horsemanship education, with potential for restart under saddle or placement in an experienced home.`
   },
   {
     id: "kohan",
@@ -871,7 +869,7 @@ Care, Health & Well-being:
     lookingForward: "Kohan is a future rehoming candidate seeking an experienced, active equestrian partner who appreciates his drive, intelligence, and warrior spirit.",
     fullStory: `Kohan arrived at Hawkez Haven straight off the racetrack.
 
-At just seven years old, he was originally meant to become my daughter's horse — a young Thoroughbred who needed a little schooling, a few manners installed, and someone to teach him that life didn't always have to happen at one hundred miles an hour.
+At just seven years old, he was a young Thoroughbred who needed schooling, manners, and someone to teach him that life didn't always have to happen at one hundred miles an hour.
 
 Because Kohan only knew one speed.
 
@@ -883,7 +881,7 @@ To put it simply, Kohan had a highly active mind.
 
 And we say that with nothing but love.
 
-The potential was there from the very beginning. After my daughter climbed aboard for the first time, we could all see it. Kohan just needed to quiet the noise in his own head and learn that life could be enjoyed rather than raced through.
+The potential was there from the very beginning. After someone at Hawkez Haven climbed aboard him for the first time, we could all see it. Kohan just needed to quiet the noise in his own head and learn that life could be enjoyed rather than raced through.
 
 Not long after arriving, however, Kohan became severely lame in his front foot.
 
