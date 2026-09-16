@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Heart } from "lucide-react";
 import { HORSES } from "@/lib/horses.ts";
+import { getHorseAge } from "@/lib/horseAge.ts";
 import NotFound from "@/pages/NotFound.tsx";
 import BeforeAfterSection from "@/components/horses/BeforeAfterSection";
 import { BEFORE_AFTER } from "@/lib/beforeAfter";
@@ -10,6 +11,7 @@ export default function HorseDetailPage() {
   const horse = HORSES.find(h => h.id === id);
   if (!horse) return <NotFound />;
 
+  const horseAge = getHorseAge(horse.id);
   const others = HORSES.filter(h => h.id !== horse.id).slice(0, 3);
   const beforeAfter = BEFORE_AFTER[horse.id];
 
@@ -114,7 +116,7 @@ export default function HorseDetailPage() {
             {[
               { label: "Height", value: horse.height },
               { label: "Colour", value: horse.colour },
-              { label: "Age", value: horse.age },
+              { label: "Age", value: horseAge },
               { label: "Sex", value: horse.sex },
               { label: "Status", value: horse.status },
             ].map(({ label, value }) => (
@@ -199,7 +201,7 @@ export default function HorseDetailPage() {
                 </div>
                 <div className="p-5">
                   <h3 className="font-serif text-xl text-[#1a1a18]">{h.name}</h3>
-                  <p className="mt-0.5 text-xs text-[#4a4a42]/70">{h.height} · {h.age}</p>
+                  <p className="mt-0.5 text-xs text-[#4a4a42]/70">{h.height} · {getHorseAge(h.id)}</p>
                   <p className="mt-1 text-xs italic text-[#b8922a]">{h.tagline}</p>
                 </div>
               </Link>
