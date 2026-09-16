@@ -25,6 +25,30 @@ if (!Array.isArray(horses) || horses.length === 0) {
   throw new Error("Could not load HORSES from src/lib/horses.ts for SEO prerendering.");
 }
 
+const HORSE_IDENTITIES = {
+  rip: { registeredName: "All Class AI (NZ)", dob: "2016-10-12", microchip: "985125000091723" },
+  haven: { registeredName: "Xtrapenny (NZ)", dob: "2012-08-28", microchip: "985125000058840" },
+  pedro: { registeredName: "Darhad (AUS)", dob: "2014-09-15", microchip: "985100012051656" },
+  diablo: { registeredName: "Kermandie Star (AUS)", dob: "2022-10-02", microchip: "985125000132224" },
+  ritz: { registeredName: "Point Break (NZ)", dob: "2016-10-30", microchip: "985125000092055" },
+  electra: { registeredName: "Blacken (AUS)", dob: "2019-10-08", microchip: "985125000118328" },
+  kohan: { registeredName: "Veneno (NZ)", dob: "2018-11-29", microchip: "985125000112397" },
+  kahu: { registeredName: "Kahu Rock (NZ)", dob: "2015-10-17", microchip: "985125000093898" },
+  khan: { registeredName: "Whiteout (NZ)", dob: "2015-10-27", microchip: "985125000076551" },
+  joey: { registeredName: "Rampant (NZ)", dob: "2006-09-16", microchip: "985125000002695" },
+};
+
+function getHorseAge(id) {
+  const identity = HORSE_IDENTITIES[id];
+  if (!identity) return "Age not recorded";
+  const [year, month, day] = identity.dob.split("-").map(Number);
+  const today = new Date();
+  let age = today.getFullYear() - year;
+  const birthdayThisYear = new Date(today.getFullYear(), month - 1, day);
+  if (today < birthdayThisYear) age -= 1;
+  return `${age} ${age === 1 ? "year" : "years"}`;
+}
+
 function escapeHtml(value) {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -61,6 +85,11 @@ for (const horse of horses) {
   let html = await readFile(file, "utf8");
   const story = storyHtml(horse.fullStory);
   const disciplines = (horse.disciplines ?? []).map((discipline) => `<li>${escapeHtml(discipline)}</li>`).join("");
+  const identity = HORSE_IDENTITIES[horse.id];
+  const age = getHorseAge(horse.id);
+  const identification = identity
+    ? `<h3>Identification</h3><dl><dt>Registered Name</dt><dd>${escapeHtml(identity.registeredName)}</dd><dt>Date of Birth</dt><dd>${escapeHtml(identity.dob)}</dd><dt>Microchip Number</dt><dd>${escapeHtml(identity.microchip)}</dd></dl>`
+    : "";
 
   const body = `<main><article aria-labelledby="horse-title">
     <header>
@@ -71,7 +100,8 @@ for (const horse of horses) {
     </header>
     <section aria-labelledby="horse-details">
       <h2 id="horse-details">Horse Details</h2>
-      <dl><dt>Height</dt><dd>${escapeHtml(horse.height)}</dd><dt>Colour</dt><dd>${escapeHtml(horse.colour)}</dd><dt>Age</dt><dd>${escapeHtml(horse.age)}</dd><dt>Sex</dt><dd>${escapeHtml(horse.sex)}</dd><dt>Status</dt><dd>${escapeHtml(horse.status)}</dd><dt>Rider Level</dt><dd>${escapeHtml(horse.riderLevel)}</dd></dl>
+      <dl><dt>Height</dt><dd>${escapeHtml(horse.height)}</dd><dt>Colour</dt><dd>${escapeHtml(horse.colour)}</dd><dt>Age</dt><dd>${escapeHtml(age)}</dd><dt>Sex</dt><dd>${escapeHtml(horse.sex)}</dd><dt>Status</dt><dd>${escapeHtml(horse.status)}</dd><dt>Rider Level</dt><dd>${escapeHtml(horse.riderLevel)}</dd></dl>
+      ${identification}
       ${disciplines ? `<h3>Disciplines</h3><ul>${disciplines}</ul>` : ""}
     </section>
     <section aria-labelledby="my-journey"><h2 id="my-journey">${escapeHtml(horse.storyTitle)}</h2>${story}</section>
