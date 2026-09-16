@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Heart } from "lucide-react";
 import { HORSES } from "@/lib/horses.ts";
-import { getHorseAge } from "@/lib/horseAge.ts";
+import { getHorseAge, getHorseIdentity } from "@/lib/horseAge.ts";
 import NotFound from "@/pages/NotFound.tsx";
 import BeforeAfterSection from "@/components/horses/BeforeAfterSection";
 import { BEFORE_AFTER } from "@/lib/beforeAfter";
@@ -12,6 +12,7 @@ export default function HorseDetailPage() {
   if (!horse) return <NotFound />;
 
   const horseAge = getHorseAge(horse.id);
+  const identity = getHorseIdentity(horse.id);
   const others = HORSES.filter(h => h.id !== horse.id).slice(0, 3);
   const beforeAfter = BEFORE_AFTER[horse.id];
 
@@ -36,20 +37,17 @@ export default function HorseDetailPage() {
 
   return (
     <div className="bg-[#f5f0e8]">
-      {/* Structured Data for SEO / Search Console */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
 
-      {/* Back */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
         <Link to="/horses" className="inline-flex items-center gap-2 text-sm text-[#4a4a42] hover:text-[#b8922a] transition-colors cursor-pointer">
           <ArrowLeft size={16} /> All horses
         </Link>
       </div>
 
-      {/* Hero */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div className="relative">
@@ -64,10 +62,8 @@ export default function HorseDetailPage() {
             </p>
             <h1 className="mt-3 font-serif text-5xl md:text-6xl text-[#1a1a18] leading-tight">{horse.name}</h1>
             <p className="mt-3 font-serif italic text-xl text-[#b8922a]">{horse.tagline}</p>
-
             <p className="mt-5 text-sm text-[#4a4a42] leading-relaxed">{horse.description}</p>
 
-            {/* Disciplines */}
             {horse.disciplines && horse.disciplines.length > 0 && (
               <div className="mt-5">
                 <p className="text-[0.6rem] tracking-widest uppercase text-[#4a4a42]/60 mb-2">Disciplines</p>
@@ -104,7 +100,6 @@ export default function HorseDetailPage() {
         </div>
       </section>
 
-      {/* Horse Details */}
       <section className="bg-[#ede5d4] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-8">
@@ -133,7 +128,30 @@ export default function HorseDetailPage() {
         </div>
       </section>
 
-      {/* My Journey */}
+      {identity && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="flex items-center gap-3 mb-8">
+            <span className="block h-px w-8 bg-[#b8922a]" />
+            <p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium text-[#1a1a18]">Identification</p>
+          </div>
+          <h2 className="font-serif text-3xl text-[#1a1a18] mb-10">Permanent identification record.</h2>
+          <dl className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-white rounded-2xl p-6 border border-[#ddd4be]/50">
+              <dt className="text-[0.6rem] tracking-widest uppercase text-[#4a4a42]/60 mb-2">Registered Name</dt>
+              <dd className="font-serif text-xl text-[#1a1a18]">{identity.registeredName}</dd>
+            </div>
+            <div className="bg-white rounded-2xl p-6 border border-[#ddd4be]/50">
+              <dt className="text-[0.6rem] tracking-widest uppercase text-[#4a4a42]/60 mb-2">Date of Birth</dt>
+              <dd className="font-serif text-xl text-[#1a1a18]">{new Date(`${identity.dob}T00:00:00`).toLocaleDateString("en-NZ", { day: "numeric", month: "long", year: "numeric" })}</dd>
+            </div>
+            <div className="bg-white rounded-2xl p-6 border border-[#ddd4be]/50">
+              <dt className="text-[0.6rem] tracking-widest uppercase text-[#4a4a42]/60 mb-2">Microchip Number</dt>
+              <dd className="font-mono text-base tracking-wide text-[#1a1a18] break-all">{identity.microchip}</dd>
+            </div>
+          </dl>
+        </section>
+      )}
+
       <section id="my-journey" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="flex items-center gap-3 mb-8">
           <span className="block h-px w-8 bg-[#b8922a]" />
@@ -155,7 +173,6 @@ export default function HorseDetailPage() {
         />
       )}
 
-      {/* Looking Forward */}
       <section className="bg-[#1a1a18] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-6">
@@ -181,7 +198,6 @@ export default function HorseDetailPage() {
         </div>
       </section>
 
-      {/* Other horses */}
       <section className="bg-[#ede5d4] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between flex-wrap gap-4 mb-10">
