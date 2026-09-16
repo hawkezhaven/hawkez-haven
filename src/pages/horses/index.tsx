@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, ArrowUpRight, Heart } from "lucide-react";
 import { HORSES } from "@/lib/horses";
+import { trackEvent } from "@/lib/analytics";
 
 export default function HorsesPage() {
   const residents = HORSES.filter(h => h.status === "Permanent Resident");
@@ -64,14 +65,16 @@ export default function HorsesPage() {
           Every connection starts with a conversation. We'd love to hear from you.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <Link 
-            to="/adoption" 
+          <Link
+            to="/adoption"
+            onClick={() => trackEvent("adoption_enquiry_click", { location: "horses_cta" })}
             className="inline-flex items-center gap-2 px-7 py-3 bg-[#b8922a] text-white text-sm font-medium rounded-full hover:bg-[#8c6e1e] transition-colors cursor-pointer"
           >
             Adoption enquiry <ArrowRight size={16} />
           </Link>
-          <Link 
-            to="/sponsorship" 
+          <Link
+            to="/sponsorship"
+            onClick={() => trackEvent("sponsorship_click", { location: "horses_cta" })}
             className="inline-flex items-center gap-2 px-7 py-3 border border-[#1a1a18] text-[#1a1a18] font-medium rounded-full hover:bg-[#1a1a18] hover:text-[#f5f0e8] transition-colors cursor-pointer"
           >
             Sponsor a horse
@@ -83,10 +86,24 @@ export default function HorsesPage() {
 }
 
 function HorseCard({ horse }: { horse: (typeof HORSES)[0] }) {
+  const trackHorseView = () => {
+    trackEvent("horse_profile_view", {
+      horse_name: horse.name,
+      horse_id: horse.id,
+    });
+  };
+
+  const trackHorseSponsor = () => {
+    trackEvent("horse_sponsorship_click", {
+      horse_name: horse.name,
+      horse_id: horse.id,
+    });
+  };
+
   return (
     <div className="bg-white rounded-2xl group overflow-hidden shadow-sm border border-[#ddd4be]/50 flex flex-col justify-between transition-all duration-300 hover:shadow-md hover:-translate-y-1">
       <div>
-        <Link to={`/horses/${horse.id}`} className="block">
+        <Link to={`/horses/${horse.id}`} onClick={trackHorseView} className="block">
           <div className="relative overflow-hidden bg-[#ede5d4] aspect-[4/3] w-full flex items-center justify-center">
             <img
               src={horse.image}
@@ -96,11 +113,11 @@ function HorseCard({ horse }: { horse: (typeof HORSES)[0] }) {
               decoding={horse.id === "electra" ? "sync" : "async"}
               className="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-700 ease-out group-hover:scale-105"
             />
-            
-            <span 
+
+            <span
               className={`absolute top-4 left-4 z-10 px-3 py-1 rounded-full text-[0.65rem] tracking-[0.18em] uppercase font-medium shadow-sm ${
-                horse.status === "Permanent Resident" 
-                  ? "bg-[#1a1a18]/90 text-[#b8922a] backdrop-blur-sm" 
+                horse.status === "Permanent Resident"
+                  ? "bg-[#1a1a18]/90 text-[#b8922a] backdrop-blur-sm"
                   : "bg-[#ede5d4]/90 text-[#1a1a18] backdrop-blur-sm"
               }`}
             >
@@ -117,13 +134,14 @@ function HorseCard({ horse }: { horse: (typeof HORSES)[0] }) {
 
         <div className="p-6 pb-2">
           <div className="flex items-start justify-between gap-4">
-            <Link to={`/horses/${horse.id}`}>
+            <Link to={`/horses/${horse.id}`} onClick={trackHorseView}>
               <h3 className="font-serif text-2xl leading-tight text-[#1a1a18] hover:text-[#8c6e1e] transition-colors">
                 {horse.name}
               </h3>
             </Link>
-            <Link 
+            <Link
               to={`/horses/${horse.id}`}
+              onClick={trackHorseView}
               className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-[#ddd4be] text-[#1a1a18] hover:bg-[#b8922a] hover:border-[#b8922a] hover:text-white transition-all duration-300"
             >
               <ArrowUpRight size={14} />
@@ -141,6 +159,7 @@ function HorseCard({ horse }: { horse: (typeof HORSES)[0] }) {
       <div className="p-6 pt-3">
         <Link
           to={`/sponsorship?horse=${encodeURIComponent(horse.name)}`}
+          onClick={trackHorseSponsor}
           className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#b8922a] text-white text-xs font-medium rounded-full hover:bg-[#8c6e1e] transition-colors w-full cursor-pointer shadow-sm"
         >
           <Heart size={14} /> Sponsor {horse.name}
