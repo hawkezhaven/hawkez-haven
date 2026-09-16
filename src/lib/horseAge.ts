@@ -7,7 +7,7 @@ export type HorseIdentity = {
 /** Permanent identification records for Hawkez Haven horses. */
 export const HORSE_IDENTITIES: Record<string, HorseIdentity> = {
   rip: {
-    registeredName: "All Class AI (NZ)",
+    registeredName: "All Class AL (NZ)",
     dob: "2016-10-12",
     microchip: "985125000091723",
   },
