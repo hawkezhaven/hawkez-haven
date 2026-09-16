@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 export default function Footer() {
   return (
@@ -30,8 +31,8 @@ export default function Footer() {
             <li>
               <p className="text-[0.6rem] tracking-widest uppercase text-[#f5f0e8]/50">Facebook</p>
               <div className="mt-2 flex flex-col gap-1.5">
-                <a href="https://www.facebook.com/profile.php?id=61591877430343" target="_blank" rel="noopener noreferrer" className="hover:text-[#b8922a] transition-colors">Hawkez Haven – Second Chances</a>
-                <a href="https://www.facebook.com/HORSENCO/" target="_blank" rel="noopener noreferrer" className="hover:text-[#b8922a] transition-colors text-xs text-[#f5f0e8]/60">HORSENCO Community</a>
+                <a href="https://www.facebook.com/profile.php?id=61591877430343" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent("facebook_click", { location: "footer", destination: "hawkez_haven" })} className="hover:text-[#b8922a] transition-colors">Hawkez Haven – Second Chances</a>
+                <a href="https://www.facebook.com/HORSENCO/" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent("facebook_click", { location: "footer", destination: "horsenco" })} className="hover:text-[#b8922a] transition-colors text-xs text-[#f5f0e8]/60">HORSENCO Community</a>
               </div>
             </li>
             <li>
@@ -39,11 +40,11 @@ export default function Footer() {
             </li>
             <li>
               <p className="text-[0.6rem] tracking-widest uppercase flex items-center gap-2 text-[#f5f0e8]/50"><Mail size={12} /> Email</p>
-              <a href="mailto:hawkezhaven@gmail.com" className="mt-2 block hover:text-[#b8922a] transition-colors">hawkezhaven@gmail.com</a>
+              <a href="mailto:hawkezhaven@gmail.com" onClick={() => trackEvent("email_click", { location: "footer" })} className="mt-2 block hover:text-[#b8922a] transition-colors">hawkezhaven@gmail.com</a>
             </li>
             <li>
               <p className="text-[0.6rem] tracking-widest uppercase flex items-center gap-2 text-[#f5f0e8]/50"><Phone size={12} /> Phone</p>
-              <a href="tel:+642040536441" className="mt-2 block hover:text-[#b8922a] transition-colors">020 4053 6441</a>
+              <a href="tel:+642040536441" onClick={() => trackEvent("phone_click", { location: "footer" })} className="mt-2 block hover:text-[#b8922a] transition-colors">020 4053 6441</a>
             </li>
           </ul>
         </div>
