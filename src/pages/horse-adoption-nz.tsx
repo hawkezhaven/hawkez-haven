@@ -3,7 +3,7 @@ import { ArrowRight, Heart, ShieldCheck } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import PageMeta from "@/components/PageMeta.tsx";
 
-const HERO_IMAGE = "/images/horse-adoption-nz-hawkez-haven.jpg";
+const HERO_IMAGE = "/images/hero_image_hub.png";
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
