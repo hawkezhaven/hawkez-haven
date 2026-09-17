@@ -22,10 +22,6 @@
       ]
     },
     {
-      "source": "/hub",
-      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, follow" }]
-    },
-    {
       "source": "/enquire/(.*)",
       "headers": [{ "key": "X-Robots-Tag", "value": "noindex, follow" }]
     },
