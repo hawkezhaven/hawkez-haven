@@ -91,7 +91,7 @@ export default function SEO() {
     const horseSlug = horseMatch?.[1];
     const horseName = horseSlug ? HORSE_NAMES[horseSlug] : undefined;
     const basePath = pathname === "/shop" ? "/support" : pathname;
-    const isNoIndex = pathname === "/hub" || pathname.startsWith("/enquire/") || pathname === "/experiences" || pathname === "/shop";
+    const isNoIndex = pathname.startsWith("/enquire/") || pathname === "/experiences" || pathname === "/shop";
     const meta: Meta = horseName
       ? { title: `${horseName} | Hawkez Haven Horse Rescue New Zealand`, description: `Meet ${horseName}, follow their rescue, rehabilitation and second-chance journey at Hawkez Haven Horse Rescue New Zealand.`, canonical: `/horses/${horseSlug}` }
       : PAGE_META[basePath] || { title: "Hawkez Haven | Second Chances for Horses", description: DEFAULT_DESCRIPTION };
