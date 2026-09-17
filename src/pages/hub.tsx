@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Gift, Newspaper, CalendarDays, Heart, MapPin } from "lucide-react";
+import { ArrowRight, Gift, Newspaper, CalendarDays, Heart, MapPin, BookOpen } from "lucide-react";
 
 export default function HubPage() {
   return (
@@ -56,8 +56,37 @@ export default function HubPage() {
         </div>
       </section>
 
-      {/* Rehomed horses */}
+      {/* Horse Adoption NZ Hub article */}
       <section className="bg-[#ede5d4] py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-[2rem] overflow-hidden border border-[#ddd4be]/60 shadow-sm grid lg:grid-cols-[1.1fr_.9fr]">
+            <div className="min-h-[320px] bg-[#1a1a18]">
+              <img
+                src="/images/horse-adoption-nz-hawkez-haven.jpg"
+                alt="Rescue horse at Hawkez Haven – Second Chances in New Zealand"
+                className="h-full w-full object-cover"
+                onError={(event) => {
+                  event.currentTarget.src = "/images/hero-horse.jpg";
+                }}
+              />
+            </div>
+            <div className="p-8 md:p-10 flex flex-col justify-center">
+              <BookOpen className="text-[#b8922a] mb-5" size={34} strokeWidth={1.5} />
+              <p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium text-[#8c6e1e]">Hawkez Haven Guide</p>
+              <h2 className="mt-3 font-serif text-3xl md:text-4xl">Horse Adoption NZ: How to Adopt a Rescue Horse in New Zealand</h2>
+              <p className="mt-4 text-[#4a4a42] leading-relaxed">
+                Thinking about adopting a rescue horse? Learn how the process works, what to prepare, the ongoing costs and welfare responsibilities, and how to find the right match.
+              </p>
+              <Link to="/hub/horse-adoption-nz" className="mt-7 inline-flex w-fit items-center gap-2 px-6 py-3 bg-[#b8922a] text-white text-sm font-medium rounded-full hover:bg-[#8c6e1e] transition-colors">
+                Read the Horse Adoption Guide <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Rehomed horses */}
+      <section className="bg-[#f5f0e8] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-4">
