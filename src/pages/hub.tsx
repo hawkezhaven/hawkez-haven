@@ -62,7 +62,7 @@ export default function HubPage() {
           <div className="bg-white rounded-[2rem] overflow-hidden border border-[#ddd4be]/60 shadow-sm grid lg:grid-cols-[1.1fr_.9fr]">
             <div className="min-h-[320px] bg-[#1a1a18]">
               <img
-                src="/images/horse-adoption-nz-hawkez-haven.jpg"
+                src="/images/hero_image_hub.png"
                 alt="Rescue horse at Hawkez Haven – Second Chances in New Zealand"
                 className="h-full w-full object-cover"
                 onError={(event) => {
