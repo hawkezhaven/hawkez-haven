@@ -17,6 +17,7 @@ const MORE_LINKS = [
   { label: "Foster Program", href: "/foster" },
   { label: "Education & Horsemanship", href: "/education" },
   { label: "The Hub", href: "/hub" },
+  { label: "Frequently Asked Questions", href: "/faq" },
   { label: "Gift Cards", href: "/gift-card" },
 ];
 
