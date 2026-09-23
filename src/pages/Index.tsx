@@ -266,8 +266,9 @@ export default function Index() {
      {/* ── Adoption CTA banner ───────────────────────────── */}
       <section className="relative py-36 md:py-48 min-h-[520px] flex items-center justify-center overflow-hidden">
         <img
-          src="/images/pasture.webp"
+          src="/images/pasture-v2.webp"
           alt="Haven and Rob at Hawkez Haven"
+          loading="lazy"
           className="absolute inset-0 h-full w-full object-cover object-top"
         />
         <div className="absolute inset-0 bg-[#1a1a18]/70" />
