@@ -37,9 +37,17 @@ export default function AboutPage() {
         </div>
         <h2 className="font-serif text-4xl md:text-5xl text-[#1a1a18] leading-tight">A life around horses led here.</h2>
         <p className="mt-6 text-[#4a4a42] leading-relaxed">My journey with horses began when I was young. I taught myself to ride from around the age of 11, with help from my older sister, and horses became a constant part of my life.</p>
-        <p className="mt-4 text-[#4a4a42] leading-relaxed">Over the years, that journey grew through riding, horse care and racetrack work, and eventually into a deeper understanding of the horses who needed patience, rehabilitation and another chance.</p>
-        <p className="mt-4 text-[#4a4a42] leading-relaxed">Hawkez Haven grew from that experience and from seeing just how much the right approach can change a horse's life. It is not about having all the answers. It is about being willing to listen, learn and give each horse the time they need.</p>
-        <p className="mt-4 text-[#4a4a42] leading-relaxed">That is the heart of Hawkez Haven: rescue, rehabilitation, education and responsible rehoming, with the welfare of the horse at the centre of every decision.</p>
+        <p className="mt-4 text-[#4a4a42] leading-relaxed">Over the years, that journey took me through many different sides of the horse world. I spent years riding and caring for horses, teaching riding lessons, working around the racetrack, working at a stud, and restarting local horses in the Wairarapa and bringing them back into work.</p>
+        <p className="mt-4 text-[#4a4a42] leading-relaxed">I learnt a lot along the way — about riding, handling, training, horse care and the different personalities and quirks that make every horse an individual.</p>
+        <p className="mt-4 text-[#4a4a42] leading-relaxed">But it wasn't until Rip came into my life that my understanding of horses really began to change.</p>
+        <p className="mt-4 text-[#4a4a42] leading-relaxed">Rip wasn't simply another horse. He opened my eyes to a completely different way of looking at them. Through him, I began to understand that sometimes what a horse needs most isn't more pressure, more training or someone trying to make them fit into a mould.</p>
+        <p className="mt-4 text-[#4a4a42] leading-relaxed">Sometimes they need someone to stop, listen and see the horse underneath everything that has happened to them.</p>
+        <p className="mt-4 text-[#4a4a42] leading-relaxed">Rip showed me just how much patience, trust, time and understanding could change a horse. He challenged what I thought I knew and started me on a very different path — one where the horse's individual needs, experiences and wellbeing came first.</p>
+        <p className="mt-4 text-[#4a4a42] leading-relaxed">That journey eventually became Hawkez Haven.</p>
+        <p className="mt-4 text-[#4a4a42] leading-relaxed">Hawkez Haven grew from years spent around horses, but also from everything Rip taught me about seeing them differently. It is not about having all the answers. It is about being willing to listen, learn, adapt and give each horse the time they need.</p>
+        <p className="mt-4 text-[#4a4a42] leading-relaxed">That is the heart of Hawkez Haven: <strong>rescue, rehabilitation, education and responsible rehoming</strong>, with the welfare of the horse at the centre of every decision.</p>
+        <p className="mt-4 text-[#4a4a42] leading-relaxed">Because sometimes a horse doesn't need someone to fix them.</p>
+        <p className="mt-4 text-[#4a4a42] leading-relaxed">They just need someone willing to give them a second chance.</p>
       </section>
 
       <section className="bg-[#ede5d4] py-24 md:py-32">
@@ -91,7 +99,7 @@ export default function AboutPage() {
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Link to="/horses" className="inline-flex items-center gap-2 px-7 py-3 bg-[#b8922a] text-white text-sm font-medium rounded-full hover:bg-[#8c6e1e] transition-colors cursor-pointer">Meet Our Horses <ArrowRight size={16} /></Link>
           <Link to="/adoption" className="inline-flex items-center gap-2 px-7 py-3 border border-[#1a1a18] text-[#1a1a18] text-sm font-medium rounded-full hover:bg-[#1a1a18] hover:text-[#f5f0e8] transition-colors cursor-pointer">Adoption</Link>
-          <Link to="/support" className="inline-flex items-center gap-2 px-7 py-3 border border-[#1a1a18] text-[#1a1a18] text-sm font-medium rounded-full hover:bg-[#1a1a18] hover:text-[#f5f0e8] transition-colors cursor-pointer">Support A Second Chance</Link>
+          <Link to="/support" className="inline-flex items-center gap-2 px-7 py-3 border border-[#1a1a18] text-[#1a1a18] font-medium rounded-full hover:bg-[#1a1a18] hover:text-[#f5f0e8] transition-colors cursor-pointer">Support A Second Chance</Link>
         </div>
       </section>
     </div>
