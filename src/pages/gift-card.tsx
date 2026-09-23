@@ -54,7 +54,7 @@ export default function GiftCardPage() {
               {/* Banner / header card */}
               <article className="relative overflow-hidden rounded-[18px] border-2 border-[#b77b28] bg-[#f8f0df] shadow-[0_14px_35px_rgba(35,28,18,.14)]">
                 <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
-                  <img src="/images/hawkez-logo-transparent.png" alt="" className="w-[58%] max-w-[820px] opacity-[.075]" />
+                  <img src="/images/transparent.webp" alt="" className="w-[58%] max-w-[820px] opacity-[.075]" />
                 </div>
                 <div className="relative h-full flex flex-col px-[4%] py-[2.5%] lg:py-[4%]">
                   <div className="text-center">
