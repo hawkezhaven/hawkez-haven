@@ -36,7 +36,7 @@ const FAQ_SECTIONS = [
       },
       {
         q: "Does every horse receive veterinary assessment?",
-        a: <>Veterinary care is part of Hawkez Haven's welfare and rehabilitation work, with the horse's health needs considered individually. The type and level of veterinary care depends on the circumstances and needs of each horse.</>,
+        a: <>Every horse entering Hawkez Haven is assessed according to its individual health, history and circumstances, and veterinary care is sought whenever it is required. Depending on the horse, this can include assessment or treatment relating to weight and body condition, injuries or previous injuries, lameness or mobility concerns, feet and hoof condition, dental health, skin or other visible health problems, parasites and worming requirements, nutrition and dietary needs, medications or ongoing treatment, previous racing, riding or work history, and any other concern identified during rehabilitation. The type and level of veterinary care is not identical for every horse — some may require extensive veterinary intervention while another may require routine care and monitoring. The horse is assessed as an individual, and its care plan is based on what that horse actually requires.</>,
       },
       {
         q: "How long does rehabilitation take?",
@@ -44,7 +44,7 @@ const FAQ_SECTIONS = [
       },
       {
         q: "What happens when a horse isn't suitable for rehoming?",
-        a: <>A horse's future is considered around their individual welfare and needs. Hawkez Haven does not believe a horse should be pushed into an unsuitable home simply because they are difficult to place.</>,
+        a: <>Not every horse that comes into Hawkez Haven will be suitable for rehoming, and being unable to be rehomed does not mean that horse is unwanted or has failed. Some horses may have permanent physical limitations, ongoing medical needs, significant behavioural or emotional needs, age-related requirements, or simply be unsuitable for the type of home available to them. Where a horse is not considered suitable for a conventional rehoming placement, Hawkez Haven looks at what that individual horse actually needs for the rest of its life. Depending on the circumstances, this may mean remaining under Hawkez Haven's care, remaining as a companion horse, living a non-ridden life, requiring ongoing veterinary, hoof, dietary or management support, or being placed only with a home that can genuinely meet its specific needs. A horse will not be placed into an unsuitable home simply to make room for another horse. Some horses may therefore remain with Hawkez Haven indefinitely when that is the safest and most appropriate outcome available to them.</>,
       },
       {
         q: "Do you help senior horses?",
@@ -65,7 +65,7 @@ const FAQ_SECTIONS = [
       },
       {
         q: "What are the requirements to adopt a horse?",
-        a: <>Requirements vary by horse. Hawkez Haven considers the adopter's horse experience, understanding of equine behaviour and body language, intended rider or handler, environment, available support and ability to meet that particular horse's needs.</>,
+        a: <>Hawkez Haven is looking for genuine, committed homes — not temporary homes, impulse purchases or placements based simply on wanting a horse. Adoption is intended to be a <strong>long-term, lifelong commitment wherever possible.</strong> Before adopting, applicants need to be confident that they are prepared to care for the horse throughout its life, including through <strong>changes in circumstances and the horse's changing needs as it ages.</strong> An approved adopter must be willing to provide safe, appropriate accommodation and daily care, meet the horse's feed, hoof, dental, veterinary and general welfare needs, provide appropriate companionship and management, have the experience, knowledge or support necessary for that particular horse, respect any restrictions or special requirements relating to the horse, communicate honestly with Hawkez Haven, agree to Hawkez Haven's <strong>Approved Home Agreement</strong> and associated adoption documentation, and commit to the horse's long-term welfare. Every horse is different, so the requirements aren't identical for every adoption. Approval is based on whether the individual horse and individual home are a suitable match.</>,
       },
       {
         q: "Do you require references?",
@@ -73,7 +73,7 @@ const FAQ_SECTIONS = [
       },
       {
         q: "Can a beginner adopt a rescue horse?",
-        a: <>Some horses may suit beginners or younger riders, but this is always assessed individually. Hawkez Haven will not place a horse where the knowledge, confidence or support required to safely meet that horse's needs is not present.</>,
+        a: <>Yes, potentially — but being a beginner does not automatically make a horse suitable for you. Some horses may be appropriate for a less experienced owner when the right support system is in place, while others will require an experienced handler. For a beginner, Hawkez Haven may look at whether you have reliable access to someone who can help you learn and make safe decisions, such as a qualified riding instructor, an experienced horse-owning friend, a knowledgeable sibling or parent, a partner with appropriate horse experience, or another trusted local horse professional. The important thing is whether you have the support, willingness to learn and commitment required to safely care for the particular horse you're applying for. Hawkez Haven would rather say “this horse isn't the right one for you” than place a beginner with a horse that is beyond their current experience. A good match gives both horse and human the opportunity to build confidence together.</>,
       },
       {
         q: "How do you decide which home is suitable for each horse?",
@@ -81,11 +81,11 @@ const FAQ_SECTIONS = [
       },
       {
         q: "What happens if an adopter can no longer keep the horse?",
-        a: <>Hawkez Haven would rather a horse be returned than placed into an unsuitable situation. The organisation remains a support network after adoption and can discuss what needs to happen if circumstances change.</>,
+        a: <>Hawkez Haven's first priority is making sure the horse remains safe. If circumstances change and an adopter can no longer keep their horse, the adopter must contact Hawkez Haven rather than simply selling, giving away or passing the horse on without communication. The adopter can have two options, depending on the circumstances: the horse can be returned to Hawkez Haven for assessment and the next appropriate placement to be considered, or the adopter may be able to help Hawkez Haven find a suitable new home themselves, provided the proposed home is approved and is willing to enter into the same required agreements and welfare conditions. Any new placement must continue to protect the horse's welfare and maintain the information and history needed to safely track its future. The aim is not to prevent an adopter from ever finding another home for their horse. The aim is to prevent a Hawkez Haven horse from disappearing into an unknown chain of homes where nobody knows where it has gone or what has happened to it.</>,
       },
       {
         q: "Why are Hawkez Haven horses placed in approved homes?",
-        a: <>The approved-home process helps make sure the horse's next home is suitable for their individual needs, experience level, environment and long-term welfare. The goal is not simply to find a home, but to find the right home.</>,
+        a: <>Because where a rescue horse goes next can be just as important as what happens to it while it is in rescue. Horses can be sold, given away or passed on with good intentions, only for circumstances to change afterwards. A horse may end up with someone who does not understand its needs, is inexperienced with its temperament, expected it to perform at a level it cannot safely manage, wanted a riding horse but received a horse requiring rehabilitation, loses interest once the novelty wears off, does not understand the horse's previous trauma or limitations, or simply turns out not to be the person they presented themselves as when obtaining it. Sometimes the horse and human simply do not connect. A horse may become anxious, confused or lose confidence in a new environment, while a rider may lose confidence because they do not understand the horse's behaviour. Handling mistakes can escalate, and a horse that was previously progressing can begin to regress. Eventually the horse may acquire a reputation or label based on that failed relationship. Once a horse is labelled as “difficult,” “dangerous,” “naughty,” “unrideable” or “problematic,” it can attract the wrong kind of attention and be passed to someone who approaches the horse through force rather than understanding why it is struggling. That can create another cycle of fear, loss of confidence and failed placement. In the worst circumstances, a horse can continue moving from home to home, become neglected, lose condition, receive inadequate care, or end up in a situation where its welfare is seriously compromised. That is exactly the cycle Hawkez Haven is trying to interrupt. An approved home is not about judging people or making adoption unnecessarily difficult. It is about taking the time to establish who this horse is, what this horse needs, who the person applying is, what they can realistically provide, and whether these two are actually going to work together. The goal is a safe, appropriate and lasting connection rather than simply getting a horse out of rescue quickly. That is why Hawkez Haven uses approved-home agreements and why adopters are expected to remain accountable for the horse's welfare. The horse's story should not end when it leaves Hawkez Haven. We want to know that the next chapter is a safe one.</>,
       },
     ],
   },
