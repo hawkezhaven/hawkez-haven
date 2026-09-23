@@ -51,7 +51,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-6 py-4">
           <Link to="/" aria-label="Hawkez Haven — Home" className="shrink-0">
             <img
-              src="/images/hawkez-haven-horizontal.png"
+              src="/images/horizontal.webp"
               alt="Hawkez Haven"
               className="h-16 w-auto object-contain"
             />
