@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="bg-[#1a1a18] text-[#f5f0e8] mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 grid gap-14 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
         <div className="max-w-sm">
-          <img src="/images/hawkez-logo-transparent.png" alt="Hawkez Haven" className="h-16 w-auto object-contain brightness-0 invert sepia saturate-200 hue-rotate-10" />
+          <img src="/images/transparent.webp" alt="Hawkez Haven" className="h-16 w-auto object-contain brightness-0 invert sepia saturate-200 hue-rotate-10" />
           <p className="mt-6 text-sm text-[#f5f0e8]/70 leading-relaxed">A New Zealand horse rescue, rehabilitation, education and rehoming service. Every horse in our care is given the time, space and love to find their stride again.</p>
         </div>
 
