@@ -15,7 +15,7 @@ const HEROES: Record<string, HeroConfig> = {
     alt: "Electra at Hawkez Haven",
   },
   "/horses": {
-    image: "/images/pasture.webp",
+    image: "/images/pasture-v2.webp",
     eyebrow: "Meet The Horses",
     title: "Every Horse Has A Story.",
     alt: "Horses together in the paddock at Hawkez Haven",
