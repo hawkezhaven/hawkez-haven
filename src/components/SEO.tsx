@@ -163,14 +163,6 @@ export default function SEO() {
       document.getElementById("hawkez-haven-horse-schema")?.remove();
     }
 
-    if (pathname === "/faq") {
-      const faqQuestions = [];
-      // FAQ content is rendered visibly on the FAQ page; this schema mirrors those question-and-answer pairs for machine-readable context.
-      setStructuredData("hawkez-haven-faq-schema", { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqQuestions.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) });
-    } else {
-      document.getElementById("hawkez-haven-faq-schema")?.remove();
-    }
-
     if (pathname === "/education") {
       setStructuredData("hawkez-haven-education-faq-schema", { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: EDUCATION_FAQS.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) });
     } else {
