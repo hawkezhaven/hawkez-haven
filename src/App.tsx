@@ -18,6 +18,7 @@ import GiftCardPage from "./pages/gift-card.tsx";
 import ContactPage from "./pages/contact.tsx";
 import HubPage from "./pages/hub.tsx";
 import HorseAdoptionNzPage from "./pages/horse-adoption-nz.tsx";
+import HorseRescueRealityPage from "./pages/horse-rescue-reality.tsx";
 import PrivacyPage from "./pages/privacy.tsx";
 import TermsPage from "./pages/terms.tsx";
 import EnquiryPage from "./pages/enquire/EnquiryPage.tsx";
@@ -57,6 +58,7 @@ export default function App() {
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/hub" element={<HubPage />} />
             <Route path="/hub/horse-adoption-nz" element={<HorseAdoptionNzPage />} />
+            <Route path="/hub/behind-the-gates-horse-rescue" element={<HorseRescueRealityPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/terms" element={<TermsPage />} />
             <Route path="/enquire/general" element={<EnquiryPage type="general" />} />
