@@ -85,6 +85,34 @@ export default function HubPage() {
         </div>
       </section>
 
+      {/* Horse rescue reality article */}
+      <section className="bg-[#f5f0e8] py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-[#1a1a18] text-[#f5f0e8] rounded-[2rem] overflow-hidden grid lg:grid-cols-[.9fr_1.1fr]">
+            <div className="min-h-[320px]">
+              <img
+                src="/images/hero_image_hub.png"
+                alt="Rescue horse at Hawkez Haven – Second Chances in New Zealand"
+                className="h-full w-full object-cover"
+                onError={(event) => {
+                  event.currentTarget.src = "/images/hero-horse.jpg";
+                }}
+              />
+            </div>
+            <div className="p-8 md:p-10 flex flex-col justify-center">
+              <p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium text-[#b8922a]">Hawkez Haven Information Hub</p>
+              <h2 className="mt-3 font-serif text-3xl md:text-4xl">Behind the Gates of Hawkez Haven: The Raw Reality of Horse Rescue</h2>
+              <p className="mt-4 text-[#f5f0e8]/75 leading-relaxed">
+                Horse rescue is far more than a paddock full of horses. Learn what happens behind the gates — the costs, the responsibility, the consequences of irresponsible rehoming and what a genuine second chance can require.
+              </p>
+              <Link to="/hub/behind-the-gates-horse-rescue" className="mt-7 inline-flex w-fit items-center gap-2 px-6 py-3 bg-[#b8922a] text-white text-sm font-medium rounded-full hover:bg-[#d1b15d] transition-colors">
+                Read the Rescue Reality Guide <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Rehomed horses */}
       <section className="bg-[#f5f0e8] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
