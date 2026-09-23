@@ -21,6 +21,7 @@ const PAGE_META: Record<string, Meta> = {
   "/education": { title: "Education & Horsemanship | Hawkez Haven NZ", description: "Explore horse education, horsemanship and practical experiences at Hawkez Haven, with welfare and understanding at the heart of every lesson." },
   "/support": { title: "Support Hawkez Haven | Help Give Horses a Second Chance", description: "Support Hawkez Haven through donations and other ways to help provide rescue horses with care, rehabilitation and a safe future." },
   "/contact": { title: "Contact Hawkez Haven | Horse Rescue New Zealand", description: "Contact Hawkez Haven about horse rescue, adoption, sponsorship, volunteering, fostering, lessons and other enquiries." },
+  "/faq": { title: "Frequently Asked Questions | Hawkez Haven – Second Chances", description: "Answers about Hawkez Haven horse rescue, rehabilitation, adoption, volunteering, support and horsemanship education in New Zealand." },
   "/gift-card": { title: "Hawkez Haven Gift Cards | Give a Second Chance", description: "Give a Hawkez Haven gift card and share meaningful horse experiences while supporting welfare-first rescue and rehabilitation." },
   "/privacy": { title: "Privacy Statement | Hawkez Haven NZ", description: "Learn how Hawkez Haven collects, uses, stores and protects personal information in connection with our website, enquiries, bookings and support." },
   "/terms": { title: "Terms of Use | Hawkez Haven NZ", description: "Read the terms that apply to use of the Hawkez Haven website, enquiries, bookings, experiences, gift cards and donations." },
@@ -160,6 +161,14 @@ export default function SEO() {
       setStructuredData("hawkez-haven-horse-schema", { "@context": "https://schema.org", "@type": "WebPage", name: `${horseName} | Hawkez Haven Horse Rescue New Zealand`, url: canonical, description: meta.description, about: { "@type": "Animal", name: horseName, description: meta.description }, isPartOf: { "@type": "WebSite", name: "Hawkez Haven", url: SITE } });
     } else {
       document.getElementById("hawkez-haven-horse-schema")?.remove();
+    }
+
+    if (pathname === "/faq") {
+      const faqQuestions = [];
+      // FAQ content is rendered visibly on the FAQ page; this schema mirrors those question-and-answer pairs for machine-readable context.
+      setStructuredData("hawkez-haven-faq-schema", { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqQuestions.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) });
+    } else {
+      document.getElementById("hawkez-haven-faq-schema")?.remove();
     }
 
     if (pathname === "/education") {
