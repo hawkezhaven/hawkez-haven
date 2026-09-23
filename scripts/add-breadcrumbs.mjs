@@ -16,6 +16,7 @@ const labels = {
   contact: "Contact",
   hub: "Horse Hub",
   "gift-card": "Gift Cards",
+  faq: "Frequently Asked Questions",
 };
 
 function escapeHtml(value) {
