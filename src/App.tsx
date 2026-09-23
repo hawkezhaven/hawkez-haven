@@ -21,6 +21,7 @@ import HorseAdoptionNzPage from "./pages/horse-adoption-nz.tsx";
 import PrivacyPage from "./pages/privacy.tsx";
 import TermsPage from "./pages/terms.tsx";
 import EnquiryPage from "./pages/enquire/EnquiryPage.tsx";
+import FAQPage from "./pages/faq.tsx";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -53,6 +54,7 @@ export default function App() {
             <Route path="/gift-card" element={<GiftCardPage />} />
             <Route path="/shop" element={<SupportPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/faq" element={<FAQPage />} />
             <Route path="/hub" element={<HubPage />} />
             <Route path="/hub/horse-adoption-nz" element={<HorseAdoptionNzPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
