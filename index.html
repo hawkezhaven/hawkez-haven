@@ -60,7 +60,7 @@
     <meta name="description" content="Hawkez Haven is a New Zealand horse rescue and rehabilitation organisation. We rescue, rehabilitate and rehome horses, giving every horse a second chance." />
     <link rel="canonical" href="https://hawkezhaven.org/" />
     <meta name="author" content="Hawkez Haven" />
-    <link rel="icon" type="image/png" href="/favicon-hawkez-gold.svg" />
+    <link rel="icon" type="image/png" href="/favicon-hawkez-gold.png" />
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://hawkezhaven.org/" />
@@ -92,7 +92,7 @@
       try {
         let theme = localStorage.getItem("theme");
         if (theme === "system" || !theme) {
-          let prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          let prefersDark = window.matchMedia("prefers-color-scheme: dark").matches;
           theme = prefersDark ? "dark" : "light";
         }
         document.documentElement.classList.add(theme);
