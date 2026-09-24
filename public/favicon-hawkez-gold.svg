@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="18" fill="#111111"/>
+  <circle cx="64" cy="64" r="52" fill="none" stroke="#B88A2A" stroke-width="3"/>
+  <path d="M18 53 C31 36 45 28 62 31 C76 33 87 42 104 39 C96 47 87 51 78 51 C88 57 96 65 108 66 C97 71 87 70 77 66 C84 75 91 84 101 88 C87 88 77 82 68 73 C68 86 61 97 51 104 C54 91 53 82 47 74 C40 78 31 79 21 75 C31 72 37 67 41 60 C32 61 24 59 18 53 Z" fill="#B88A2A"/>
+  <path d="M45 55 C53 49 63 47 72 50 C66 55 61 61 59 69 C54 65 50 61 45 55 Z" fill="#111111"/>
+  <text x="64" y="72" text-anchor="middle" font-family="Georgia,serif" font-size="30" font-weight="700" fill="#111111">HH</text>
+  <path d="M38 96 Q64 106 90 96" fill="none" stroke="#B88A2A" stroke-width="2"/>
+</svg>
