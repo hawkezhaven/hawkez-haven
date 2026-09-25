@@ -19,5 +19,9 @@ export const BEFORE_AFTER: Record<string, BeforeAfterEntry> = {
   electra: {
     image: "/images/COLLAGE ELECTRA.jpg",
     caption: "Electra — a young mare whose journey shows just how much can change when a horse is given time, safety, and understanding."
+  },
+  kohan: {
+    image: "/images/kohan_after_photo_sequence_updated.jpg",
+    caption: "Kohan — recent recovery photographs documenting the healing of his previously affected hind leg, the residual scarring, and his return to comfortable, purposeful movement."
   }
 };
