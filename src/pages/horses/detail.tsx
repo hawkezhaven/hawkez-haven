@@ -15,6 +15,8 @@ export default function HorseDetailPage() {
   const identity = getHorseIdentity(horse.id);
   const others = HORSES.filter(h => h.id !== horse.id).slice(0, 3);
   const beforeAfter = BEFORE_AFTER[horse.id];
+  const isRehomable = horse.status === "Future Rehoming Candidate" || horse.status === "Available for Adoption";
+  const keepsHawkezHavenOwnership = horse.status === "Permanent Resident" || horse.status === "Long-term Lease";
 
   const schemaData = {
     "@context": "https://schema.org",
@@ -76,7 +78,11 @@ export default function HorseDetailPage() {
             )}
 
             <div className="mt-7 flex flex-wrap gap-3">
-              {horse.status === "Permanent Resident" ? (
+              {isRehomable ? (
+                <Link to="/enquire/adoption" className="inline-flex items-center gap-2 px-7 py-3 bg-[#b8922a] text-white text-sm font-medium rounded-full hover:bg-[#8c6e1e] transition-colors cursor-pointer">
+                  Enquire about {horse.name} <ArrowRight size={16} />
+                </Link>
+              ) : keepsHawkezHavenOwnership ? (
                 <>
                   <Link to="/sponsorship" className="inline-flex items-center gap-2 px-7 py-3 bg-[#b8922a] text-white text-sm font-medium rounded-full hover:bg-[#8c6e1e] transition-colors cursor-pointer">
                     <Heart size={16} /> Sponsor {horse.name}
@@ -85,12 +91,8 @@ export default function HorseDetailPage() {
                     Meet {horse.name}'s Story
                   </a>
                 </>
-              ) : (
-                <Link to="/enquire/adoption" className="inline-flex items-center gap-2 px-7 py-3 bg-[#b8922a] text-white text-sm font-medium rounded-full hover:bg-[#8c6e1e] transition-colors cursor-pointer">
-                  Enquire about {horse.name} <ArrowRight size={16} />
-                </Link>
-              )}
-              {horse.status !== "Permanent Resident" && (
+              ) : null}
+              {isRehomable && (
                 <Link to="/support" className="inline-flex items-center gap-2 px-7 py-3 border border-[#1a1a18] text-[#1a1a18] text-sm font-medium rounded-full hover:bg-[#1a1a18] hover:text-[#f5f0e8] transition-colors cursor-pointer">
                   Support Hawkez Haven
                 </Link>
@@ -111,7 +113,7 @@ export default function HorseDetailPage() {
             {[
               { label: "Height", value: horse.height },
               { label: "Colour", value: horse.colour },
-              { label: "Age", value: horseAge },
+              { label: "Age", value: horseAge === "Age not recorded" ? horse.age : horseAge },
               { label: "Sex", value: horse.sex },
               { label: "Status", value: horse.status },
             ].map(({ label, value }) => (
@@ -182,15 +184,15 @@ export default function HorseDetailPage() {
           <h2 className="font-serif text-3xl text-[#f5f0e8] mb-4">Looking forward.</h2>
           <p className="text-[#f5f0e8]/70 max-w-2xl leading-relaxed">{horse.lookingForward}</p>
           <div className="mt-8 flex flex-wrap gap-3">
-            {horse.status === "Permanent Resident" ? (
-              <Link to="/sponsorship" className="inline-flex items-center gap-2 px-7 py-3 bg-[#b8922a] text-white text-sm font-medium rounded-full hover:bg-[#8c6e1e] transition-colors cursor-pointer">
-                <Heart size={16} /> Sponsor {horse.name}
-              </Link>
-            ) : (
+            {isRehomable ? (
               <Link to="/enquire/adoption" className="inline-flex items-center gap-2 px-7 py-3 bg-[#b8922a] text-white text-sm font-medium rounded-full hover:bg-[#8c6e1e] transition-colors cursor-pointer">
                 Enquire about adoption <ArrowRight size={16} />
               </Link>
-            )}
+            ) : keepsHawkezHavenOwnership ? (
+              <Link to="/sponsorship" className="inline-flex items-center gap-2 px-7 py-3 bg-[#b8922a] text-white text-sm font-medium rounded-full hover:bg-[#8c6e1e] transition-colors cursor-pointer">
+                <Heart size={16} /> Sponsor {horse.name}
+              </Link>
+            ) : null}
             <Link to="/contact" className="inline-flex items-center gap-2 px-7 py-3 border border-[#f5f0e8]/20 text-[#f5f0e8] text-sm font-medium rounded-full hover:bg-white/10 transition-colors cursor-pointer">
               Get in touch
             </Link>
