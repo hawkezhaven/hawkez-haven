@@ -5,7 +5,10 @@ import { trackEvent } from "@/lib/analytics";
 
 export default function HorsesPage() {
   const residents = HORSES.filter(h => h.status === "Permanent Resident");
+  const lease = HORSES.filter(h => h.status === "Long-term Lease");
+  const available = HORSES.filter(h => h.status === "Available for Adoption");
   const rehoming = HORSES.filter(h => h.status === "Future Rehoming Candidate");
+  const confirmed = HORSES.filter(h => h.status === "Placement Confirmed");
 
   return (
     <div className="bg-[#f5f0e8]">
@@ -38,6 +41,41 @@ export default function HorsesPage() {
         </div>
       </section>
 
+      {/* Long-term Lease */}
+      {lease.length > 0 && (
+        <section className="bg-[#ede5d4] py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center gap-3 mb-10">
+              <span className="block h-px w-8 bg-[#b8922a]" />
+              <h2 className="text-[0.65rem] tracking-[0.18em] uppercase font-medium text-[#1a1a18]">Long-term Lease</h2>
+            </div>
+            <p className="text-[#4a4a42] mb-10 max-w-xl">
+              These horses remain Hawkez Haven horses while enjoying life in carefully chosen lease homes.
+            </p>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {lease.map(horse => (
+                <HorseCard key={horse.id} horse={horse} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Available for Adoption */}
+      {available.length > 0 && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="flex items-center gap-3 mb-10">
+            <span className="block h-px w-8 bg-[#b8922a]" />
+            <h2 className="text-[0.65rem] tracking-[0.18em] uppercase font-medium text-[#1a1a18]">Available for Adoption</h2>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {available.map(horse => (
+              <HorseCard key={horse.id} horse={horse} />
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Future Rehoming Candidates */}
       <section className="bg-[#ede5d4] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -55,6 +93,24 @@ export default function HorsesPage() {
           </div>
         </div>
       </section>
+
+      {/* Placement Confirmed */}
+      {confirmed.length > 0 && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="flex items-center gap-3 mb-10">
+            <span className="block h-px w-8 bg-[#b8922a]" />
+            <h2 className="text-[0.65rem] tracking-[0.18em] uppercase font-medium text-[#1a1a18]">Placement Confirmed</h2>
+          </div>
+          <p className="text-[#4a4a42] mb-10 max-w-xl">
+            These horses have a confirmed next chapter and are no longer available for new enquiries.
+          </p>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {confirmed.map(horse => (
+              <HorseCard key={horse.id} horse={horse} />
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* CTA Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
