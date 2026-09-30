@@ -1,4 +1,4 @@
-export type HorseStatus = "Permanent Resident" | "Future Rehoming Candidate" | "Available for Adoption";
+export type HorseStatus = "Permanent Resident" | "Long-term Lease" | "Future Rehoming Candidate" | "Available for Adoption" | "Placement Confirmed";
 
 export type Horse = {
   id: string;
@@ -168,12 +168,12 @@ Care, Health & Well-being:
   {
     id: "pedro",
     name: "Pedro",
-    status: "Permanent Resident",
+    status: "Long-term Lease",
     sex: "Gelding",
     breed: "Thoroughbred",
     journeyBegan: "2025",
     tagline: "Our gentle teacher.",
-    description: "Affectionately known as 'Big Red,' a placid, kind chestnut gelding who thrives on routine and partnership.",
+    description: "Affectionately known as 'Big Red,' a placid, kind chestnut gelding who has now moved into his long-term lease home for the next year.",
     storyTitle: "Pedro - The Horse Who Chose Partnership",
     disciplines: [
       "Pleasure Riding",
@@ -186,7 +186,7 @@ Care, Health & Well-being:
     age: "10 years",
     colour: "Chestnut",
     image: "/images/pedro.jpg",
-    lookingForward: "Pedro is available on a long-term Personalized Care Lease to an approved home, retaining the lifelong security of always having Hawkez Haven as his home.",
+    lookingForward: "Pedro has moved to his new lease home for one year. He remains a Hawkez Haven horse, with the lifelong security of being able to return to us if his circumstances ever change.",
     fullStory: `Not every horse that arrives at Hawkez Haven has suffered neglect.
 
 Some arrive carrying something much harder to see — a lifetime of habits, opinions, and a belief that they have to rely only on themselves.
@@ -223,7 +223,7 @@ While Pedro will never be offered for outright sale or permanent separation, his
 
 He has helped people rebuild confidence, find companionship, and discover the quiet magic that horses can bring into our lives.
 
-Now, Pedro is preparing for his next chapter on a long-term lease to help another human along in their own journey. This isn't goodbye, nor is it the end of his story. Pedro will always have a home at Hawkez Haven, and our gates will always remain open for him.
+Now, Pedro has begun his next chapter on a long-term lease, living with his leasee for the next year. This isn't goodbye, nor is it the end of his story. Pedro remains a Hawkez Haven horse, and our gates will always remain open for him.
 
 We aren't letting Pedro go.
 
@@ -654,12 +654,12 @@ Care, Health & Well-being:
   {
     id: "joey",
     name: "Joey",
-    status: "Future Rehoming Candidate",
+    status: "Placement Confirmed",
     sex: "Gelding",
     breed: "Thoroughbred",
     journeyBegan: "2026",
     tagline: "Legends don't retire quietly.",
-    description: "Our 19yo veteran Thoroughbred gelding and former Horse of the Year showjumper (formerly Rampant), thriving after rehabilitation and ready for a quiet, purposeful care lease home.",
+    description: "Our 19yo veteran Thoroughbred gelding and former Horse of the Year showjumper (formerly Rampant), thriving after rehabilitation and preparing for his next chapter with a dedicated home.",
     storyTitle: "Joey - The Horse Who Refused to Retire",
     disciplines: [
       "Pleasure Riding",
@@ -672,7 +672,7 @@ Care, Health & Well-being:
     age: "19 years",
     colour: "Dapple Liver Bay",
     image: "/images/joey-story.jpg",
-    lookingForward: "Joey is available on a long-term Personalized Care Lease. We are seeking a compassionate, knowledgeable home that appreciates his rich history, manages his front hoof care and seasonal grass thoughtfully, and provides him with a relaxed, loving routine.",
+    lookingForward: "Joey's next chapter is now taking shape. He is heading to a dedicated home in Huntly within the coming month on a long-term lease, where he will receive the care, routine, and attention he needs.",
     fullStory: `Joey arrived at Hawkez Haven in early 2026 carrying a name that many in the New Zealand equestrian community would recognise.
 
 Previously known as Rampant, Joey lived a life that many horses could only dream of. From his early days on the racetrack to competing in showjumping at Horse of the Year, he made his connections immensely proud. But decades of giving his absolute all had taken a toll on his body.
@@ -695,13 +695,50 @@ Care, Hoof Management & Well-being:
 
 • Handling: Joey thrives under calm, consistent, and patient hands. He is a gentle soul who gives his heart completely once trust is established.
 
-Long-Term Care Lease Opportunity:
+His Next Chapter:
 
-• Lifelong Safety Net: Hawkez Haven retains ownership, ensuring Joey will always have a safe haven should your circumstances ever change.
+• Confirmed Home: Joey is preparing to become the first Hawkez Haven horse to go and live with his own family.
 
-• Ongoing Support: We remain available for guidance regarding his hoof care, nutrition, and management.
+• Timing: He is expected to leave for his new home in Huntly within the coming month.
 
-• Ideal Home: A quiet, knowledgeable property where he will be loved as part of the family, receive daily interaction, and enjoy a fulfilling routine.`
+• Lifelong Safety Net: Hawkez Haven remains his safety net, with his long-term care arrangement supported by the rescue.`
+  },
+  {
+    id: "poppy",
+    name: "Poppy",
+    status: "Available for Adoption",
+    sex: "Mare",
+    breed: "Not yet recorded",
+    journeyBegan: "2026",
+    tagline: "A second chance begins here.",
+    description: "A 9-year-old mare who arrived at Hawkez Haven in September 2026 after a history of mistreatment, ready to begin a safer chapter built around patience, trust, and understanding.",
+    storyTitle: "Poppy - A Second Chance",
+    disciplines: [
+      "Groundwork",
+      "Confidence Building",
+      "Companionship"
+    ],
+    riderLevel: "To be assessed as her rehabilitation and confidence develop.",
+    height: "15.1hh",
+    age: "9 years",
+    colour: "Not yet recorded",
+    image: "/images/poppy-hero.jpg",
+    lookingForward: "Poppy has arrived at Hawkez Haven to begin her next chapter. Her future will be shaped around safety, patience, rehabilitation, and finding the right approved home when she is ready.",
+    fullStory: `Poppy arrived at Hawkez Haven in September 2026, beginning a new chapter after experiencing mistreatment.
+
+She is a nine-year-old mare standing at approximately 15.1hh, and right now her story is about something very simple: safety.
+
+Poppy has been given the time and space to settle into her new surroundings, learn that her daily needs will be met, and discover that people can be patient, predictable, and kind.
+
+We won't rush her.
+
+Every horse arrives carrying a different history, and Poppy deserves the chance to show us who she is without being defined by what happened before Hawkez Haven.
+
+Her rehabilitation will focus on trust, confidence, routine, and building a future that feels safe.
+
+Poppy is here for her second chance.
+
+And when the time is right, we will help her find the right approved home for the next part of her journey.`,
   },
   {
     id: "electra",
