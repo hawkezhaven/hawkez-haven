@@ -706,7 +706,7 @@ His Next Chapter:
   {
     id: "poppy",
     name: "Poppy",
-    status: "Available for Adoption",
+    status: "Future Rehoming Candidate",
     sex: "Mare",
     breed: "Not yet recorded",
     journeyBegan: "2026",
