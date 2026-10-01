@@ -232,7 +232,7 @@ export default function Index() {
               The Breakthroughs That Matter Most
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-[#4a4a42]">
-              In under a year of dedication, Hawkez Haven has welcomed 10 rescues through our gates. Every horse arrived with a unique past—facing health setbacks, uncertainty, or a need for patient re-handling.
+              In under a year of dedication, Hawkez Haven has welcomed 11 rescues through our gates. Every horse arrived with a unique past—facing health setbacks, uncertainty, or a need for patient re-handling.
             </p>
             <p className="mt-4 text-base leading-relaxed text-[#4a4a42]">
               Today, <strong className="text-[#1a1a18] font-semibold">100% of these rescues</strong> have made profound breakthroughs: regaining healthy body condition, mastering calm groundwork, and rediscovering trust in human hands.
