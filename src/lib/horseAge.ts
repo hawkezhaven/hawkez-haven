@@ -56,6 +56,11 @@ export const HORSE_IDENTITIES: Record<string, HorseIdentity> = {
     dob: "2006-09-16",
     microchip: "985125000002695",
   },
+  poppy: {
+    registeredName: "To be confirmed",
+    dob: "2017-10-02",
+    microchip: "985125000100439",
+  },
 };
 
 /** Calculate a horse's current age from its recorded date of birth. */
