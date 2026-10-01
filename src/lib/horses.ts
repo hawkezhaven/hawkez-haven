@@ -708,37 +708,136 @@ His Next Chapter:
     name: "Poppy",
     status: "Future Rehoming Candidate",
     sex: "Mare",
-    breed: "Not yet recorded",
+    breed: "Thoroughbred",
     journeyBegan: "2026",
-    tagline: "A second chance begins here.",
-    description: "A 9-year-old mare who arrived at Hawkez Haven in September 2026 after a history of mistreatment, ready to begin a safer chapter built around patience, trust, and understanding.",
-    storyTitle: "Poppy - A Second Chance",
+    tagline: "The little firecracker with a very soft eye.",
+    description: "A 9-year-old Thoroughbred mare with plenty of personality, a strong opinion about life, and a surprisingly soft side waiting for the right person to earn her trust.",
+    storyTitle: "Poppy - The Firecracker Who Is Learning to Let Her Walls Down",
     disciplines: [
       "Groundwork",
       "Confidence Building",
-      "Companionship"
+      "Partnership Development",
+      "Future Riding & Horsemanship"
     ],
-    riderLevel: "To be assessed as her rehabilitation and confidence develop.",
+    riderLevel: "To be assessed as her rehabilitation develops; potentially suited to a confident, gutsy young rider with knowledgeable adult support.",
     height: "15.1hh",
     age: "9 years",
-    colour: "Not yet recorded",
+    colour: "To be confirmed",
     image: "/images/poppy-hero.jpg",
-    lookingForward: "Poppy has arrived at Hawkez Haven to begin her next chapter. Her future will be shaped around safety, patience, rehabilitation, and finding the right approved home when she is ready.",
-    fullStory: `Poppy arrived at Hawkez Haven in September 2026, beginning a new chapter after experiencing mistreatment.
+    lookingForward: "Poppy has no deadline and no timetable. For now, she is settling into Hawkez Haven, learning that she is safe, and allowing us to discover who she really is. Her eventual goal is to find the right rider and handler with whom she can genuinely thrive.",
+    fullStory: `Poppy arrived at Hawkez Haven in September 2026 after a difficult history in which she had been beaten and mistreated. Her owner made the decision to surrender her because they wanted to make sure she would not fall into the wrong hands again, while ultimately hoping she could find a person who would give her the right partnership and a place where she could thrive.
 
-She is a nine-year-old mare standing at approximately 15.1hh, and right now her story is about something very simple: safety.
+Poppy is nine years old, stands at approximately 15.1hh, and is a Thoroughbred mare. She was foaled on 2 October 2017, by He's Remarkable out of Poppy Rose, and was bred by J B Struthers. Her recorded history includes a May Gavelhouse sale, where she was Lot 2 and sold for $300.
 
-Poppy has been given the time and space to settle into her new surroundings, learn that her daily needs will be met, and discover that people can be patient, predictable, and kind.
+But the paperwork only tells part of Poppy's story.
 
-We won't rush her.
+The horse standing in front of us is a little firecracker.
 
-Every horse arrives carrying a different history, and Poppy deserves the chance to show us who she is without being defined by what happened before Hawkez Haven.
+She is spicy, clever, alert, opinionated, and absolutely willing to let you know when she thinks something is a terrible idea.
 
-Her rehabilitation will focus on trust, confidence, routine, and building a future that feels safe.
+The float is a particularly good example.
 
-Poppy is here for her second chance.
+Poppy made her feelings about ramps extremely clear. She was not impressed by the idea of getting on a float and appeared to have decided that placing a hoof on a ramp was something she had no intention of ever doing again.
 
-And when the time is right, we will help her find the right approved home for the next part of her journey.`,
+But after a few hours of quietly asking a little more of her, little by little, she eventually submitted far more easily than expected.
+
+And that was when we started to see the other side of her.
+
+Poppy really does have a soft eye.
+
+She really does want to let her walls down.
+
+The problem is that when there is no connection, trust, or foundation between Poppy and the person in front of her, those walls come straight back up.
+
+Her eyes can shift from soft to hard. Her mind becomes busy. She stays alert, examines every movement, and keeps just enough distance between herself and the person around her to feel safe.
+
+So we don't chase the connection.
+
+We give her room to find it.
+
+Sometimes that means doing something as simple as picking at the fence, looking up at the sky, humming a tune, and behaving as though we're completely unbothered by the mare watching our every move.
+
+And, remarkably, it works.
+
+Curiosity begins to take over.
+
+Poppy strolls closer.
+
+There are little short snorts telling us that she isn't completely relaxed and certainly isn't ready to hand over all her trust yet — but she has crossed her own boundary line to come and find out what we're doing.
+
+She watches.
+
+Her head bobs.
+
+Her expression changes.
+
+Her eyes brighten.
+
+And then comes the moment we are looking for.
+
+That soft eye returns.
+
+Poppy lowers her head and draws us in for a quiet hello.
+
+She allows the contact.
+
+She relaxes.
+
+For a few seconds, anyway.
+
+Then the tension starts to return, her feet become busy, and that's our cue.
+
+We walk away.
+
+No pressure.
+
+No argument.
+
+Just a quiet message that she is safe and she can take her time.
+
+And sometimes, Poppy has other ideas.
+
+She may walk away in the opposite direction, only to have a quick change of mind and follow us back to the gate line.
+
+That's the Poppy we are getting to know.
+
+A mare with walls.
+
+A mare with opinions.
+
+A mare who can be spicy as hell.
+
+But underneath all of that is a horse who is curious, sensitive, and capable of incredible softness when she feels safe enough to show it.
+
+There is a long way to go.
+
+And that's okay.
+
+There is no pressure, no timeline, and no list of goals that Poppy has to tick off by a certain date.
+
+While she settles, we can continue working with our other horses and allow Poppy to simply become comfortable in her new environment. Over time, we will keep learning what she needs, what she enjoys, what challenges her, and what kind of partnership will allow her to thrive.
+
+Our eventual goal is not simply to find Poppy a home.
+
+It is to find Poppy the right person.
+
+We suspect that person may be a confident, gutsy teenager with the right experienced adult support — someone who enjoys developing a partnership, can read a horse, and is prepared to earn the trust of a mare who has every reason to keep her walls up.
+
+But that decision belongs to Poppy's journey, and we are not going to make it before she is ready.
+
+For now, she gets to settle.
+
+She gets to explore.
+
+She gets to be curious.
+
+She gets to be a little spicy.
+
+And, hopefully, over time, we will see those walls come down a few knots at a time.
+
+Because somewhere underneath the firecracker is a very soft mare.
+
+And we have all the time in the world to meet her.`,
   },
   {
     id: "electra",
