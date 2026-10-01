@@ -660,7 +660,7 @@ Care, Health & Well-being:
     breed: "Thoroughbred",
     journeyBegan: "2026",
     tagline: "Legends don't retire quietly.",
-    description: "Our 19yo veteran Thoroughbred gelding and former Horse of the Year showjumper (formerly Rampant), thriving after rehabilitation and preparing for his next chapter with a dedicated home.",
+    description: "Our 20yo veteran Thoroughbred gelding and former Horse of the Year showjumper (formerly Rampant), thriving after rehabilitation and preparing for his next chapter with a dedicated home.",
     storyTitle: "Joey - The Horse Who Refused to Retire",
     disciplines: [
       "Pleasure Riding",
