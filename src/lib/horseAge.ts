@@ -57,9 +57,9 @@ export const HORSE_IDENTITIES: Record<string, HorseIdentity> = {
     microchip: "985125000002695",
   },
   poppy: {
-    registeredName: "To be confirmed",
+    registeredName: "Poppy Rose",
     dob: "2017-10-02",
-    microchip: "985125000100439",
+    microchip: "985125000100349",
   },
 };
 
