@@ -670,7 +670,7 @@ Care, Health & Well-being:
     ],
     riderLevel: "Confident Beginner to Experienced Home (Companionship & Light Duties)",
     height: "16.1hh - 16.2hh",
-    age: "19 years",
+    age: "20 years",
     colour: "Dapple Liver Bay",
     image: "/images/joey-story.jpg",
     lookingForward: "Joey's next chapter is now taking shape. His placement in Huntly is confirmed, and he will head to his dedicated long-term home within the coming month, once we can safely organise and complete the six-hour journey with him.",
