@@ -185,7 +185,7 @@ Care, Health & Well-being:
     height: "16.1hh",
     age: "10 years",
     colour: "Chestnut",
-    image: "/images/pedro.jpg",
+    image: "/images/pedro new year home.jpg",
     lookingForward: "Pedro has moved to his new lease home for one year. He remains a Hawkez Haven horse, with the lifelong security of being able to return to us if his circumstances ever change.",
     fullStory: `Not every horse that arrives at Hawkez Haven has suffered neglect.
 
