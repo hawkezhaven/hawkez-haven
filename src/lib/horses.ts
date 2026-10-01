@@ -672,7 +672,7 @@ Care, Health & Well-being:
     age: "19 years",
     colour: "Dapple Liver Bay",
     image: "/images/joey-story.jpg",
-    lookingForward: "Joey's next chapter is now taking shape. He is heading to a dedicated home in Huntly within the coming month on a long-term lease, where he will receive the care, routine, and attention he needs.",
+    lookingForward: "Joey's next chapter is now taking shape. His placement in Huntly is confirmed, and he will head to his dedicated long-term home within the coming month, once we can safely organise and complete the six-hour journey with him.",
     fullStory: `Joey arrived at Hawkez Haven in early 2026 carrying a name that many in the New Zealand equestrian community would recognise.
 
 Previously known as Rampant, Joey lived a life that many horses could only dream of. From his early days on the racetrack to competing in showjumping at Horse of the Year, he made his connections immensely proud. But decades of giving his absolute all had taken a toll on his body.
@@ -697,9 +697,9 @@ Care, Hoof Management & Well-being:
 
 His Next Chapter:
 
-• Confirmed Home: Joey is preparing to become the first Hawkez Haven horse to go and live with his own family.
+• Confirmed Home: Joey's placement in Huntly is confirmed, and he will go to live with his new family on a long-term lease.
 
-• Timing: He is expected to leave for his new home in Huntly within the coming month.
+• Timing: Joey is expected to travel to Huntly within the coming month, once the six-hour journey can be safely organised and completed for him.
 
 • Lifelong Safety Net: Hawkez Haven remains his safety net, with his long-term care arrangement supported by the rescue.`
   },
