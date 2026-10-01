@@ -25,7 +25,6 @@ const EXPERIENCE_OPTIONS: string[] = [
   "Riding at Hawkez Haven",
   "Riding Outside the Haven: The Countryside Adventure",
   "Rescue & Rehabilitation Experience",
-  "Senior Horse & Companion Session",
   "Family Horse Experience",
   "Riding Lessons",
   "One-Off Riding Lesson",
@@ -71,13 +70,13 @@ const EXPERIENCES: Experience[] = [
   {
     id: "horsemanship",
     title: "Horsemanship Deep Dive",
-    subtitle: "With Pedro, Khan, Haven & Diablo",
+    subtitle: "With Khan, Haven & Diablo",
     duration: "3 hours",
     price: "$65",
     priceNote: "per person",
     maxPeople: "Up to 2 people",
     level: "Some horse experience preferred",
-    desc: "An immersive session for those who want to go deeper. You'll work with our horses to develop real feel, timing and understanding — the three pillars of great horsemanship. This session draws on the quiet wisdom of Pedro, Khan, Haven and Diablo and your own willingness to slow down, listen and learn.",
+    desc: "An immersive session for those who want to go deeper. You'll work with our horses to develop real feel, timing and understanding — the three pillars of great horsemanship. This session draws on the quiet wisdom of Khan, Haven and Diablo and your own willingness to slow down, listen and learn.",
     learn: ["Pressure, release and timing", "Emotional regulation around horses", "How to read resistance versus confusion", "Building a genuine partnership", "Why trust must come before training"],
   },
   {
@@ -108,7 +107,7 @@ const EXPERIENCES: Experience[] = [
   {
     id: "riding-lessons",
     title: "Riding Lessons",
-    subtitle: "With Peanut, Pedro, Haven, Khan & eventually Diablo",
+    subtitle: "With Peanut, Haven, Khan & eventually Diablo",
     image: "/images/pedro-lesson.jpg",
     duration: "1 hour",
     price: "",
@@ -116,7 +115,7 @@ const EXPERIENCES: Experience[] = [
     priceLines: ["Children under 15 — $50 per 1-hour lesson", "Ages 16+ / Adults — $70 per 1-hour lesson"],
     maxPeople: "Private (1 rider per lesson)",
     level: "Beginners welcome (all ages)",
-    desc: "Private, progressive horsemanship and riding lessons focused on building confident, capable horse people — not just riders who can sit in a saddle. Lessons include safe handling, grooming, tacking up, groundwork, horse behaviour and ridden skills tailored to the rider's experience and the horse's needs.\n\nWe have horses and ponies to suit different ages and stages, including Peanut, our bush pony mare who is an amazing asset for younger and smaller students building confidence, alongside Pedro, Haven and Khan.\n\nFor children completing a riding milestone, Hawkez Haven provides a universal graduation completion card featuring a photo of the horse or pony they worked with. The same reusable card is used for every student, with the rider's name, horse, date and achievement recorded for their keepsake.\n\nBeginners are welcome. Horse or pony provided. By appointment.",
+    desc: "Private, progressive horsemanship and riding lessons focused on building confident, capable horse people — not just riders who can sit in a saddle. Lessons include safe handling, grooming, tacking up, groundwork, horse behaviour and ridden skills tailored to the rider's experience and the horse's needs.\n\nWe have horses and ponies to suit different ages and stages, including Peanut, our bush pony mare who is an amazing asset for younger and smaller students building confidence, alongside Haven and Khan.\n\nFor children completing a riding milestone, Hawkez Haven provides a universal graduation completion card featuring a photo of the horse or pony they worked with. The same reusable card is used for every student, with the rider's name, horse, date and achievement recorded for their keepsake.\n\nBeginners are welcome. Horse or pony provided. By appointment.",
     learn: ["Safe handling, grooming and horse care", "Tacking up and preparation", "Groundwork and communication before riding", "Balance, position, feel and ridden skills", "Reading your horse and adapting to their responses", "Working toward riding milestones and completion"],
   },
   {
@@ -134,13 +133,13 @@ const EXPERIENCES: Experience[] = [
   {
     id: "rescue-education",
     title: "Rescue & Rehabilitation Experience",
-    subtitle: "With Rip, Joey, Electra & Kohan",
+    subtitle: "With Rip, Electra & Kohan",
     duration: "3 hours",
     price: "$35",
     priceNote: "per person",
     maxPeople: "Up to 4 people",
     level: "All levels — no riding required",
-    desc: "Go behind the scenes of a real horse rescue. Meet our horses, hear their stories, and learn about the rehabilitation journey — from the moment a horse arrives frightened and unsure, to the day they find their stride again. This is an honest, moving and educational experience for horse lovers who want to understand welfare at a deeper level.\n\nYour experience contribution: $35 per person. This contribution directly supports Hawkez Haven's horses and helps provide essential care, such as Joey's senior joint supplements.",
+    desc: "Go behind the scenes of a real horse rescue. Meet our horses, hear their stories, and learn about the rehabilitation journey — from the moment a horse arrives frightened and unsure, to the day they find their stride again. This is an honest, moving and educational experience for horse lovers who want to understand welfare at a deeper level.\n\nYour experience contribution: $35 per person. This contribution directly supports Hawkez Haven's horses and helps provide essential care across the rescue.",
     learn: ["What equine rescue really looks like", "The physical and emotional toll of neglect", "How we assess and plan each horse's rehabilitation", "Life after racing and competition", "How to advocate for better horse welfare in NZ"],
   },
   {
@@ -155,18 +154,7 @@ const EXPERIENCES: Experience[] = [
     desc: "A private, hands-on, ground-based horse experience created for families to enjoy together. Meet the Hawkez Haven horses, hear their stories, how horses communicate, and enjoy grooming, feeding, safe handling, and simple groundwork activities.\n\nEach family receives their own horse treat bag to share with the horses during their visit.\n\nNear the end of the experience, children can choose the horse they connected with most and, with supervision, paint their name on their favourite horse using horse-safe, washable colours. To capture the memory, we'll snap an instant keepsake photo of your family with your horse to take home on the spot — plus we'll text you the high-resolution digital copy so you have it saved on your phone!\n\nActivities can be adapted to suit the ages and confidence levels within the family. This is a ground-based experience; riding experiences are booked separately.",
     learn: ["How horses communicate and show emotion", "Safe handling, grooming, and feeding", "Simple groundwork activities", "Each horse's rescue story", "Supervised name-painting on their favourite horse"],
   },
-  {
-    id: "retirement",
-    title: "Senior Horse & Companion Session",
-    subtitle: "With Joey",
-    duration: "1.5 hours",
-    price: "$30",
-    priceNote: "per person",
-    maxPeople: "Up to 4 people",
-    level: "Suitable for all ages including children",
-    desc: "Spend gentle, meaningful time with Joey — our wise, much-loved elder. This session is entirely at Joey's pace and on his terms. We ask for quiet, calm and patience, and in return Joey offers his presence, his history and a connection that is truly special. You'll learn what it means to give an older horse a life full of dignity, comfort and choice. There is no performance here, no agenda — just two species taking time to simply be together. Perfect for those who want a heartfelt, unhurried connection with a horse who has earned his peace.",
-    learn: ["Senior horse care and needs", "What a companion home looks like", "Managing aging horses with kindness", "Quality of life decisions", "The profound gift of a peaceful retirement"],
-  },
+
 ];
 
 const FAQS = [
