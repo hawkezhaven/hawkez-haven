@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "npx convex deploy --cmd 'npm run build'",
+  "buildCommand": "npm run build",
   "redirects": [
     { "source": "/experiences", "destination": "/education", "permanent": true },
     { "source": "/shop", "destination": "/support", "permanent": true }
