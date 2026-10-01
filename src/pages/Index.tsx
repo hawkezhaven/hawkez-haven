@@ -62,7 +62,7 @@ export default function Index() {
         <div className="absolute bottom-0 left-0 right-0 border-t border-[#f5f0e8]/10 bg-[#1a1a18]/50 backdrop-blur-sm z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-6 py-6">
             {[
-              { value: "10", label: "Horses currently in care" },
+              { value: "11", label: "Horses currently in care" },
               { value: "100%", label: "Committed to welfare" },
               { value: "Connection", label: "Before correction" },
               { value: "Second Chances", label: "Every day" },
