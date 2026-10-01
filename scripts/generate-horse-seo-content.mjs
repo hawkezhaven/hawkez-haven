@@ -36,6 +36,7 @@ const HORSE_IDENTITIES = {
   kahu: { registeredName: "Kahu Rock (NZ)", dob: "2015-10-17", microchip: "985125000093898" },
   khan: { registeredName: "Whiteout (NZ)", dob: "2015-10-27", microchip: "985125000076551" },
   joey: { registeredName: "Rampant (NZ)", dob: "2006-09-16", microchip: "985125000002695" },
+  poppy: { registeredName: "To be confirmed", dob: "2017-10-02", microchip: "985125000100439" },
 };
 
 function getHorseAge(id) {
