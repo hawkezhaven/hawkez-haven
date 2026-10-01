@@ -725,7 +725,7 @@ His Next Chapter:
     age: "9 years",
     colour: "Bay",
     microchip: "985125000100349",
-    image: "/images/poppy-hero.jpg",
+    image: "/images/poppys first day.jpg",
     lookingForward: "Poppy has no deadline and no timetable. For now, she is settling into Hawkez Haven, learning that she is safe, and allowing us to discover who she really is. Her eventual goal is to find the right rider and handler with whom she can genuinely thrive.",
     fullStory: `Poppy arrived at Hawkez Haven in September 2026 after a difficult history in which she had been beaten and mistreated. Her owner made the decision to surrender her because they wanted to make sure she would not fall into the wrong hands again, while ultimately hoping she could find a person who would give her the right partnership and a place where she could thrive.
 
