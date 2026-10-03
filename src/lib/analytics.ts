@@ -9,7 +9,8 @@ export type AnalyticsEvent =
   | "contact_click"
   | "phone_click"
   | "email_click"
-  | "facebook_click";
+  | "facebook_click"
+  | "generate_lead";
 
 declare global {
   interface Window {

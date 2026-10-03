@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
 import { useAction } from "convex/react";
 import { api } from "@/convex/_generated/api.js";
+import { trackEvent } from "@/lib/analytics";
 
 type Field = { id: string; label: string; type?: "text" | "textarea" | "select"; options?: string[] };
 
@@ -43,6 +44,11 @@ export default function EnquiryForm({ subject, fields = [], serverSend = false }
             label: field.label,
             value: (data.get(field.id) as string) ?? "",
           })),
+        });
+
+        trackEvent("generate_lead", {
+          enquiry_type: subject,
+          lead_source: "website_enquiry",
         });
 
         setSent(true);
