@@ -22,7 +22,7 @@ export default function HorsesPage() {
             Every horse here has a name, a story and a person waiting somewhere.
           </h1>
           <p className="mt-6 text-lg text-[#f5f0e8]/70 max-w-2xl leading-relaxed">
-            We currently care for {HORSES.length} horses at Hawkez Haven. Some are permanent residents who will always call this home. Others are working towards their forever families.
+            We currently care for {HORSES.reduce((total, horse) => total + (horse.horseCount ?? 1), 0)} horses at Hawkez Haven. Some are permanent residents who will always call this home. Others are working towards their forever families.
           </p>
         </div>
       </section>
