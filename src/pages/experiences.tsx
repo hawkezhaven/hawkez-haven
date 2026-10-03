@@ -81,7 +81,7 @@ const EXPERIENCES: Experience[] = [
   {
     id: "riding",
     title: "Riding at Hawkez Haven",
-    subtitle: "A relaxed riding experience at the Haven",
+    subtitle: "Currently unavailable",
     image: "/images/Peanut-riding-lessons.jpg",
     duration: "Up to 2 hours",
     price: "$50",
@@ -95,7 +95,7 @@ const EXPERIENCES: Experience[] = [
   {
     id: "road-ride",
     title: "Riding Outside the Haven: The Countryside Adventure",
-    subtitle: "A longer guided ride beyond the Haven",
+    subtitle: "Currently unavailable",
     duration: "Up to 3 hours",
     price: "$80",
     priceNote: "per person",
@@ -123,7 +123,7 @@ const EXPERIENCES: Experience[] = [
   {
     id: "one-off-riding-lesson",
     title: "One-Off Riding Lesson",
-    subtitle: "A complete introduction to riding and groundwork",
+    subtitle: "Currently unavailable",
     duration: "1.5 hours",
     price: "TBC",
     priceNote: "",
@@ -157,7 +157,7 @@ const EXPERIENCES: Experience[] = [
     maxPeople: "By enquiry",
     level: "Little kids — age suitability confirmed when you enquire",
     available: false,
-    desc: "A gentle, welfare-led experience with Jasper and Onyx. Children can brush and pat the minis, have a photo with them, and take them for a short in-hand walk as part of their daily exercise. There is no riding — just grooming, learning, connection and little-mini-horse fun.\\n\\nMorning or afternoon sessions may be available. Only one Little Minis Day session will be offered per day, even if the other time of day remains available, so Jasper and Onyx have plenty of rest and the experience stays enjoyable for them.\\n\\nBookings are enquiry-only. Hawkez Haven will confirm the date, morning or afternoon time, child suitability and whether the minis are happy and comfortable to participate on the day.",
+    desc: "A gentle, welfare-led experience with Jasper and Onyx. Children can brush and pat the minis, have a photo with them, and take them for a short in-hand walk as part of their daily exercise. There is no riding — just grooming, learning, connection and little-mini-horse fun.\n\nMorning or afternoon sessions may be available. Only one Little Minis Day session will be offered per day, even if the other time of day remains available, so Jasper and Onyx have plenty of rest and the experience stays enjoyable for them.\n\nBookings are enquiry-only. Hawkez Haven will confirm the date, morning or afternoon time, child suitability and whether the minis are happy and comfortable to participate on the day.",
     learn: ["Brushing and gentle grooming", "Safe, respectful interaction with miniature horses", "Reading simple horse body language", "A short supervised in-hand walk", "A photo memory with Jasper & Onyx"],
   },
   {
