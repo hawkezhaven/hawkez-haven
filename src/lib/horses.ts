@@ -1186,10 +1186,6 @@ Jasper was an orphan, which may explain a little of the sassiness that comes wit
 
 Underneath all that cheekiness, though, he's a quiet, loving little sweetheart.
 
-He's an easy-care boy with good feet and is happy with strip grazing on grass. Information provided to Hawkez Haven also notes that he's good with a grazing muzzle and easy to worm.
-
-Jasper has had some seedy toe that we're keeping an eye on, but otherwise he's proving to be a lovely little character.
-
 And yes... he is absolutely convinced that whatever is happening around Hawkez Haven probably involves him. 😂
 
 Onyx is quite the opposite.
@@ -1201,8 +1197,6 @@ He doesn't really enjoy lots of noise, attention or being approached when he fee
 And honestly, we completely understand that.
 
 Onyx has recently been diagnosed with PPID (Cushing's) and needs careful management. His current care includes a strict dry lot, soaked hay and beet pulp, along with ½ a Prascend tablet daily.
-
-He also had a mild episode of laminitis last year. It wasn't severe, but it's something we now need to be mindful of and monitor carefully as part of his ongoing management.
 
 Onyx is a little more weary than Jasper, particularly with all the changes that come with a new environment — new smells, new routines and suddenly finding himself surrounded by horses many times his size.
 
@@ -1244,9 +1238,9 @@ Tiny bodies. Huge personalities. And two very special little characters finding 
 
 Care, Health & Well-being:
 
-• Jasper: Easy-care, good feet, strip grazing on grass, grazing muzzle as needed, and monitoring of seedy toe.
+• Jasper: Current care and management will be documented as we get to know him at Hawkez Haven.
 
-• Onyx: PPID (Cushing's) management includes a strict dry lot, soaked hay and beet pulp, and ½ a Prascend tablet daily. Previous mild laminitis is monitored as part of his ongoing care.
+• Onyx: PPID (Cushing's) management includes a strict dry lot, soaked hay and beet pulp, and ½ a Prascend tablet daily.
 
 • Handling: Both boys are described as sweet and non-aggressive, with neither biting nor kicking.`
   },
