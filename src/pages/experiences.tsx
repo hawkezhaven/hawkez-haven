@@ -28,6 +28,7 @@ const EXPERIENCE_OPTIONS: string[] = [
   "Family Horse Experience",
   "Riding Lessons",
   "One-Off Riding Lesson",
+  "Little Minis Day — Jasper & Onyx",
 ];
 
 const EXPERIENCES: Experience[] = [
@@ -143,6 +144,18 @@ const EXPERIENCES: Experience[] = [
     learn: ["What equine rescue really looks like", "The physical and emotional toll of neglect", "How we assess and plan each horse's rehabilitation", "Life after racing and competition", "How to advocate for better horse welfare in NZ"],
   },
   {
+    id: "little-minis",
+    title: "Little Minis Day — Jasper & Onyx",
+    subtitle: "A gentle little-kids experience with our two miniature boys",
+    duration: "30 minutes",
+    price: "$25",
+    priceNote: "per session",
+    maxPeople: "By enquiry",
+    level: "Little kids — age suitability confirmed when you enquire",
+    desc: "A gentle, welfare-led experience with Jasper and Onyx. Children can brush and pat the minis, have a photo with them, and take them for a short in-hand walk as part of their daily exercise. There is no riding — just grooming, learning, connection and little-mini-horse fun.\\n\\nMorning or afternoon sessions may be available. Only one Little Minis Day session will be offered per day, even if the other time of day remains available, so Jasper and Onyx have plenty of rest and the experience stays enjoyable for them.\\n\\nBookings are enquiry-only. Hawkez Haven will confirm the date, morning or afternoon time, child suitability and whether the minis are happy and comfortable to participate on the day.",
+    learn: ["Brushing and gentle grooming", "Safe, respectful interaction with miniature horses", "Reading simple horse body language", "A short supervised in-hand walk", "A photo memory with Jasper & Onyx"],
+  },
+  {
     id: "family",
     title: "Family Horse Experience",
     subtitle: "A hands-on experience for the whole family",
@@ -166,7 +179,7 @@ const FAQS = [
   ["How many people can attend?", "Group sizes are kept small so each person receives genuine time and attention. The maximum group size is listed for each experience."],
   ["Where are the sessions held?", "All experiences take place at Hawkez Haven in Ashhurst, Manawatū, New Zealand. Visits are by appointment only."],
   ["What should I wear?", "Closed-toe shoes are required and long trousers are recommended. We'll tell you about any additional safety equipment needed for your session."],
-  ["How do I book?", "Use the enquiry form on this page to tell us which experience you want, how many people are attending and your preferred dates. We'll confirm availability and payment details before your booking is finalised."],
+  ["How do I book?", "Use the enquiry form on this page to tell us which experience you want, how many people are attending and your preferred dates. We'll confirm availability and payment details before your booking is finalised. Little Minis Day is enquiry-only; we confirm the morning or afternoon session directly and only offer one minis session per day."],
 ] as const;
 
 export default function ExperiencesPage() {
