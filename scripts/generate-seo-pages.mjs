@@ -37,6 +37,7 @@ const horsePages = {
   ritz: { name: "Ritz", title: "Ritz | Hawkez Haven Horse Rescue New Zealand", description: "Meet Ritz, a striking Thoroughbred gelding whose next chapter is being carefully matched to the right approved home through Hawkez Haven.", image: "/images/ritz.jpg" },
   electra: { name: "Electra", title: "Electra | Hawkez Haven Horse Rescue New Zealand", description: "Meet Electra, a young mare continuing her rehabilitation journey at Hawkez Haven while she builds confidence, trust and a safe future.", image: "/images/electra.jpg" },
   kahu: { name: "Kahu", title: "Kahu | Hawkez Haven Horse Rescue New Zealand", description: "Meet Kahu, a Thoroughbred gelding whose rehabilitation and ongoing development are part of his second-chance journey at Hawkez Haven.", image: "/images/kahu.jpg" },
+  "jasper-onyx": { name: "Jasper & Onyx", title: "Jasper & Onyx | Hawkez Haven Miniature Horses", description: "Meet Jasper and Onyx, the miniature geldings who are permanent residents of Hawkez Haven and part of our little-horse education programme.", image: "/images/japer-onyx-profile.png" },
 };
 
 const routeBody = {
