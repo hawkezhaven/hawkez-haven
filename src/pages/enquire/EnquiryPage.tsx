@@ -2,18 +2,10 @@ import EnquiryForm from "../_components/EnquiryForm.tsx";
 import { Link } from "react-router-dom";
 
 const EXPERIENCE_OPTIONS: string[] = [
-  "Horse Care Discovery",
   "Inside the Herd: The Secret Life of Horses",
-  "Groundwork & Connection",
-  "Horsemanship Deep Dive",
-  "Riding at Hawkez Haven",
-  "Riding Outside the Haven: The Countryside Adventure",
   "Rescue & Rehabilitation Experience",
-  "Senior Horse & Companion Session",
   "Family Horse Experience",
   "Riding Lessons",
-  "One-Off Riding Lesson",
-  "Little Minis Day — Jasper & Onyx",
 ];
 
 const ENQUIRY_TYPES: Record<string, { title: string; subtitle: string; fields: { id: string; label: string; type?: "text" | "textarea" | "select"; options?: string[] }[] }> = {
