@@ -1,10 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { ArrowRight, Heart, X, CheckCircle, AlertCircle, ShieldCheck } from "lucide-react";
-import { PERMANENT_RESIDENTS } from "@/lib/horses.ts";
+import { HORSES } from "@/lib/horses.ts";
 import { SUBSCRIPTION_PLAN_IDS } from "@/lib/paypal.ts";
 import PayPalButton from "@/components/PayPalButton.tsx";
 import PayPalSubscriptionButton from "@/components/PayPalSubscriptionButton.tsx";
+
+const SPONSORABLE_HORSES = HORSES.filter(
+  (horse) => horse.status === "Permanent Resident" || horse.ownershipTag === "Long-term Lease • Permanent Hawkez Haven Horse"
+);
 
 const TIERS = [
   {
@@ -59,7 +63,7 @@ export default function SponsorshipPage() {
     const horseParam = searchParams.get("horse");
     const tierParam = searchParams.get("tier");
     if (horseParam || tierParam) {
-      const matchedHorse = PERMANENT_RESIDENTS.find(
+      const matchedHorse = SPONSORABLE_HORSES.find(
         (h) => h.name.toLowerCase() === horseParam?.toLowerCase() || h.id.toLowerCase() === horseParam?.toLowerCase()
       );
       const initialHorse = matchedHorse ? matchedHorse.name : horseParam;
@@ -209,7 +213,7 @@ export default function SponsorshipPage() {
             Choose a horse whose story speaks to you. Every sponsorship directly funds their ongoing feed, farrier, and care.
           </p>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {PERMANENT_RESIDENTS.map((horse) => (
+            {SPONSORABLE_HORSES.map((horse) => (
               <div key={horse.id} className="bg-white rounded-2xl overflow-hidden shadow-sm border border-[#ddd4be]/50">
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <img
@@ -355,7 +359,7 @@ export default function SponsorshipPage() {
                 <div>
                   <p className="text-[0.6rem] tracking-widest uppercase text-[#4a4a42]/60 mb-3">1. Choose your horse</p>
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                    {PERMANENT_RESIDENTS.map((horse) => (
+                    {SPONSORABLE_HORSES.map((horse) => (
                       <button
                         key={horse.id}
                         onClick={() => {
