@@ -159,9 +159,14 @@ function HorseCard({ horse }: { horse: (typeof HORSES)[0] }) {
               >
                 {horse.status}
               </span>
+              {horse.ownershipTag && (
+                <span className="px-3 py-1 rounded-full text-[0.65rem] font-medium shadow-sm bg-[#b8922a]/95 text-white backdrop-blur-sm">
+                  {horse.ownershipTag}
+                </span>
+              )}
               {horse.availability && (
                 <span className="px-3 py-1 rounded-full text-[0.65rem] font-medium shadow-sm bg-white/90 text-[#1a1a18] backdrop-blur-sm">
-                  Currently unavailable for experiences
+                  {horse.availability}
                 </span>
               )}
             </div>
