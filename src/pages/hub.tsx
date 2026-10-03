@@ -138,7 +138,18 @@ export default function HubPage() {
 
               <h3 className="mt-5 font-serif text-3xl md:text-4xl">Pedro’s Year of Adventures on the Farm with Dennis</h3>
 
-              <p className="mt-4 text-[#4a4a42] leading-relaxed">
+              <div className="mt-7 overflow-hidden rounded-3xl border border-[#ddd4be]/60 bg-[#1a1a18]">
+                <img
+                  src="/images/pedro-year-farm.jpg"
+                  alt="Pedro enjoying life on the farm during his year of adventures with Dennis"
+                  className="w-full h-auto object-cover"
+                  width={500}
+                  height={376}
+                  loading="lazy"
+                />
+              </div>
+
+              <p className="mt-6 text-[#4a4a42] leading-relaxed">
                 Some stories aren't about a horse finding a new home and disappearing from the pages of the rescue that helped them. They're about watching a horse step into a new chapter, settle into a different rhythm and simply enjoy being a horse.
               </p>
 
