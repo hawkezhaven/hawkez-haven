@@ -106,7 +106,7 @@ export default function Navbar() {
 
           <button
             type="button"
-            className="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-full border border-white/20 text-white cursor-pointer"
+            className="md:hidden inline-flex items-center justify-center h-12 w-12 rounded-full border border-white/20 text-white cursor-pointer"
             onClick={() => setMobileOpen(o => !o)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
           >
@@ -119,7 +119,7 @@ export default function Navbar() {
         <div className="fixed inset-0 z-40 bg-[#b8922a] flex flex-col pt-20 px-6 pb-8 overflow-y-auto">
           <button
             type="button"
-            className="absolute top-5 right-5 text-white/70 cursor-pointer"
+            className="absolute top-5 right-5 h-12 w-12 inline-flex items-center justify-center rounded-full text-white/70 cursor-pointer"
             onClick={() => setMobileOpen(false)}
           >
             <X size={24} />
