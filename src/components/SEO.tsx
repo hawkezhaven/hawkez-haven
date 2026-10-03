@@ -125,7 +125,7 @@ export default function SEO() {
       name: "Hawkez Haven",
       alternateName: ["Hawkez Haven – Second Chances", "Hawkez Haven Second Chances"],
       url: SITE,
-      logo: `${SITE}/logo.png`,
+      logo: `${SITE}/images/hawkez-logo-transparent.png`,
       image: `${SITE}/images/hero-horse.jpg`,
       description: DEFAULT_DESCRIPTION,
       areaServed: "New Zealand",

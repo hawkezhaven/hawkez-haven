@@ -16,7 +16,7 @@ const organisation = {
   name: "Hawkez Haven",
   alternateName: "Hawkez Haven – Second Chances",
   url: `${site}/`,
-  logo: `${site}/favicon-hawkez-gold.png`,
+  logo: `${site}/images/hawkez-logo-transparent.png`,
   image: `${site}/images/hero-horse.jpg`,
   description: "Independent equine rescue, rehabilitation, rehoming and connection-based horsemanship service in New Zealand.",
   areaServed: { "@type": "Country", name: "New Zealand" },
