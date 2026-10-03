@@ -15,6 +15,7 @@ type Experience = {
   desc: string;
   learn: string[];
   image?: string;
+  available?: boolean;
 };
 
 const EXPERIENCE_OPTIONS: string[] = [
