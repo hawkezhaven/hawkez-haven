@@ -113,7 +113,7 @@ export default function HubPage() {
         </div>
       </section>
 
-      {/* Rehomed horses */}
+      {/* Beyond the Haven */}
       <section className="bg-[#f5f0e8] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
@@ -121,12 +121,48 @@ export default function HubPage() {
               <span className="block h-px w-8 bg-[#b8922a]" />
               <p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">Beyond the Haven</p>
             </div>
-            <h2 className="font-serif text-4xl">Where are they now?</h2>
+            <h2 className="font-serif text-4xl">Newly Rehomed &amp; Where They Are Now</h2>
             <p className="mt-5 text-[#4a4a42] leading-relaxed">
-              A horse leaving Hawkez Haven isn’t the end of their story. This space will share updates on newly rehomed and adopted Hawkez Haven horses, their progress and the lives they’re building beyond the Haven.
+              A horse moving into a new chapter is never the end of their story. This space is where we celebrate the horses who have moved beyond the Haven, share their updates, and show what a second chance can look like once they have settled into their next adventure.
             </p>
           </div>
-          <div className="mt-10 grid md:grid-cols-2 gap-6">
+
+          <article className="mt-10 bg-white rounded-[2rem] overflow-hidden border border-[#ddd4be]/60 shadow-sm">
+            <div className="p-8 md:p-10">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="inline-flex items-center rounded-full bg-[#1a1a18] px-4 py-1.5 text-[0.65rem] uppercase tracking-[0.14em] text-[#f5f0e8]">
+                  Beyond the Haven
+                </span>
+                <span className="text-[0.7rem] uppercase tracking-[0.14em] text-[#8c6e1e]">Pedro</span>
+              </div>
+
+              <h3 className="mt-5 font-serif text-3xl md:text-4xl">Pedro’s Year of Adventures on the Farm with Dennis</h3>
+
+              <p className="mt-4 text-[#4a4a42] leading-relaxed">
+                Some stories aren't about a horse finding a new home and disappearing from the pages of the rescue that helped them. They're about watching a horse step into a new chapter, settle into a different rhythm and simply enjoy being a horse.
+              </p>
+
+              <p className="mt-4 text-[#4a4a42] leading-relaxed">
+                Pedro’s year on the farm with Dennis is one of those stories. After everything he has experienced, this chapter is about space, routine, companionship and the everyday adventures that make up a good horse’s life.
+              </p>
+
+              <p className="mt-4 text-[#4a4a42] leading-relaxed">
+                There are no grand promises here — just a horse getting to enjoy the farm, the people around him and the little moments that become the best memories. From ordinary days in the paddock to whatever adventures the farm brings, Pedro is getting to experience life beyond the Haven in a way that feels right for him.
+              </p>
+
+              <p className="mt-4 text-[#4a4a42] leading-relaxed">
+                And that's exactly what we want these stories to be about: not goodbye, but <strong>where are they now?</strong>
+              </p>
+
+              <div className="mt-8 pt-6 border-t border-[#ddd4be]/60">
+                <p className="text-sm text-[#6b6b61] leading-relaxed">
+                  More photos and updates from Pedro’s year will be added as his adventure continues.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <div className="mt-8 grid md:grid-cols-2 gap-6">
             <div className="bg-white/80 rounded-3xl p-7 border border-[#ddd4be]/60">
               <MapPin className="text-[#b8922a] mb-4" size={30} strokeWidth={1.5} />
               <h3 className="font-serif text-2xl">Newly Rehomed</h3>
