@@ -13,6 +13,7 @@ const EXPERIENCE_OPTIONS: string[] = [
   "Family Horse Experience",
   "Riding Lessons",
   "One-Off Riding Lesson",
+  "Little Minis Day — Jasper & Onyx",
 ];
 
 const ENQUIRY_TYPES: Record<string, { title: string; subtitle: string; fields: { id: string; label: string; type?: "text" | "textarea" | "select"; options?: string[] }[] }> = {
@@ -59,7 +60,7 @@ const ENQUIRY_TYPES: Record<string, { title: string; subtitle: string; fields: {
   },
   experiences: {
     title: "Book an Experience",
-    subtitle: "Tell us which experience you're interested in and your preferred dates. We'll confirm availability and any experience contribution or pricing before your booking is finalised.",
+    subtitle: "Tell us which experience you're interested in and your preferred dates. We'll confirm availability and any experience contribution or pricing before your booking is finalised. Little Minis Day is enquiry-only and is limited to one session per day for Jasper & Onyx.",
     fields: [
       { id: "experience", label: "Which experience(s) interest you?", type: "select", options: EXPERIENCE_OPTIONS },
       { id: "people", label: "Number of people" },
