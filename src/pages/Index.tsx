@@ -3,7 +3,7 @@ import { ArrowRight, Heart, Sprout, GraduationCap, HandHeart, ArrowUpRight, Quot
 import { HORSES } from "@/lib/horses";
 
 const PREVIEW_HORSES = HORSES.slice(0, 4);
-const SPONSOR_HORSES = HORSES.filter(h => h.status === "Permanent Resident").slice(0, 4);
+const SPONSOR_HORSES = HORSES.filter(h => h.status === "Permanent Resident" || h.ownershipTag === "Long-term Lease • Permanent Hawkez Haven Horse").slice(0, 4);
 
 export default function Index() {
   return (
@@ -65,7 +65,7 @@ export default function Index() {
         <div className="absolute bottom-0 left-0 right-0 border-t border-[#f5f0e8]/10 bg-[#1a1a18]/50 backdrop-blur-sm z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-6 py-6">
             {[
-              { value: "11", label: "Horses currently in care" },
+              { value: "13", label: "Horses currently in care" },
               { value: "100%", label: "Committed to welfare" },
               { value: "Connection", label: "Before correction" },
               { value: "Second Chances", label: "Every day" },
@@ -241,10 +241,10 @@ export default function Index() {
               The Breakthroughs That Matter Most
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-[#4a4a42]">
-              In under a year of dedication, Hawkez Haven has welcomed 11 rescues through our gates. Every horse arrived with a unique past—facing health setbacks, uncertainty, or a need for patient re-handling.
+              In under a year of dedication, Hawkez Haven has welcomed 13 horses through our gates. Every horse arrived with a unique past—facing health setbacks, uncertainty, or a need for patient re-handling.
             </p>
             <p className="mt-4 text-base leading-relaxed text-[#4a4a42]">
-              Today, <strong className="text-[#1a1a18] font-semibold">100% of these rescues</strong> have made profound breakthroughs: regaining healthy body condition, mastering calm groundwork, and rediscovering trust in human hands.
+              Today, <strong className="text-[#1a1a18] font-semibold">100% of these horses</strong> have made profound breakthroughs: regaining healthy body condition, mastering calm groundwork, and rediscovering trust in human hands.
             </p>
 
             {/* Adoption Intake Notice Box */}
