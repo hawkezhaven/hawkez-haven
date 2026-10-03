@@ -73,7 +73,7 @@ function structuredData(meta, path) {
   const canonical = `${site}${path}`;
   const graph = [
     { "@type": "WebSite", "@id": `${site}/#website`, url: `${site}/`, name: "Hawkez Haven", description: "Hawkez Haven is a New Zealand horse rescue and rehabilitation organisation.", inLanguage: "en-NZ" },
-    { "@type": "AnimalShelter", "@id": `${site}/#organisation`, name: "Hawkez Haven", url: `${site}/`, logo: `${site}/favicon-hawkez-gold.png`, description: "Independent equine rescue, rehabilitation and connection-based horsemanship sanctuary in New Zealand.", areaServed: "New Zealand", slogan: "Where Second Chances Find Their Stride" },
+    { "@type": "AnimalShelter", "@id": `${site}/#organisation`, name: "Hawkez Haven", url: `${site}/`, logo: `${site}/images/hawkez-logo-transparent.png`, description: "Independent equine rescue, rehabilitation and connection-based horsemanship sanctuary in New Zealand.", areaServed: "New Zealand", slogan: "Where Second Chances Find Their Stride" },
     { "@type": "WebPage", "@id": `${canonical}#webpage`, url: canonical, name: meta.title, description: meta.description, inLanguage: "en-NZ", isPartOf: { "@id": `${site}/#website` }, about: { "@id": `${site}/#organisation` } },
   ];
   return `<script id="hawkez-haven-prerendered-schema" type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@graph": graph })}</script>`;
