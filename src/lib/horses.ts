@@ -5,6 +5,7 @@ export type Horse = {
   name: string;
   status: HorseStatus;
   availability?: string;
+  horseCount?: number;
   sex: string;
   breed: string;
   journeyBegan: string;
@@ -1135,6 +1136,117 @@ Care, Health & Well-being:
 
 • Energy & Activity: Requires an engaged, active partner who channels his quick mind into trail riding, cross-country, and groundwork.`
   }
+  {
+    id: "jasper-onyx",
+    name: "Jasper & Onyx",
+    status: "Permanent Resident",
+    horseCount: 2,
+    sex: "Geldings",
+    breed: "Miniature Horses",
+    journeyBegan: "2026",
+    tagline: "The little guys with big personalities.",
+    description: "Two 16-year-old, 9hh miniature geldings who have been together since foals — one cheeky and nosey, the other a quieter little teddy.",
+    storyTitle: "Jasper & Onyx - The Little Guys With Big Personalities",
+    disciplines: [
+      "Companionship",
+      "Groundwork",
+      "Learning Experiences",
+      "Herd Life"
+    ],
+    riderLevel: "Companion & Learning Experience",
+    height: "9hh",
+    age: "16 years",
+    colour: "Jasper: Skewbald • Onyx: Black",
+    image: "/images/japer-onyx-profile.png",
+    lookingForward: "Jasper and Onyx are settling into life at Hawkez Haven and bringing a completely different kind of energy to the Haven. After years of big horses, we're thoroughly enjoying having some little guys around for a change.",
+    fullStory: `Jasper and Onyx arrived at Hawkez Haven on 2 October 2026, beginning a new chapter after spending their lives together.
+
+These two little guys may only stand 9hh, but they've already made themselves very much at home.
+
+They were raised together from foals and have spent their 16 years side by side. They had also spent many years grazing alongside a much larger horse, so being surrounded by the big horses at Hawkez Haven isn't entirely new territory for them — although when you're only 9hh, some of these horses must look absolutely enormous!
+
+These two couldn't be more different in personality.
+
+Jasper is the little shit of the family. 😂
+
+He's cheeky, vocal and incredibly nosey, and somehow seems to know exactly what you're doing at all times.
+
+Those beady little eyes spying through the gaps in his Bob Marley hairdo are constantly watching your every move.
+
+And heaven forbid you walk into the feed room.
+
+Because Jasper knows.
+
+You can practically feel those eyes following you as you disappear inside, and when you come back out, he's already waiting to see what you've got.
+
+Jasper was an orphan, which may explain a little of the sassiness that comes with him. He's definitely got a personality of his own and isn't afraid to let you know about it.
+
+Underneath all that cheekiness, though, he's a quiet, loving little sweetheart.
+
+He's an easy-care boy with good feet and is happy with strip grazing on grass. Information provided to Hawkez Haven also notes that he's good with a grazing muzzle and easy to worm.
+
+Jasper has had some seedy toe that we're keeping an eye on, but otherwise he's proving to be a lovely little character.
+
+And yes... he is absolutely convinced that whatever is happening around Hawkez Haven probably involves him. 😂
+
+Onyx is quite the opposite.
+
+He's more reserved, uncertain and a little wary, and he's not particularly interested in being fussed over when everything around him is busy.
+
+He doesn't really enjoy lots of noise, attention or being approached when he feels enclosed. He much prefers having some space around him and the opportunity to take things in at his own pace.
+
+And honestly, we completely understand that.
+
+Onyx has recently been diagnosed with PPID (Cushing's) and needs careful management. His current care includes a strict dry lot, soaked hay and beet pulp, along with ½ a Prascend tablet daily.
+
+He also had a mild episode of laminitis last year. It wasn't severe, but it's something we now need to be mindful of and monitor carefully as part of his ongoing management.
+
+Onyx is a little more weary than Jasper, particularly with all the changes that come with a new environment — new smells, new routines and suddenly finding himself surrounded by horses many times his size.
+
+But underneath that cautious, slightly stand-offish exterior is a very sweet little teddy bear.
+
+Give him some quiet one-on-one time, when things aren't busy and noisy, and he quickly realises that perhaps all this attention isn't so bad after all.
+
+He's already showing us that softer side.
+
+He'll neigh to us in the morning and is often waiting at the gate, ready to see what's happening.
+
+He does like a good pat.
+
+That is...
+
+Until Jasper decides his turn is over. 😂
+
+Jasper will push past him, lean into him just enough to knock him off balance, and eventually Onyx gets fed up and walks away.
+
+Because apparently even at 16 years old, sibling politics are still alive and well.
+
+There's always one in the family.
+
+The one who loves the spotlight, needs to know what's happening and believes every human interaction should probably involve them.
+
+And then there's the quiet one who'd rather stand back, watch everything from the sidelines and decide for himself when he's ready to join in.
+
+That's Jasper and Onyx.
+
+Two little geldings who have spent their lives together, each with a completely different personality, now beginning a new chapter at Hawkez Haven.
+
+They've already brought something completely different to the Haven.
+
+After years of having big horses around us, Hawkez Haven is thoroughly enjoying having some little guys for a change. 😂❤️
+
+They may only stand 9hh, but they've already made it very clear that their personalities are anything but miniature.
+
+Tiny bodies. Huge personalities. And two very special little characters finding their feet at Hawkez Haven.
+
+Care, Health & Well-being:
+
+• Jasper: Easy-care, good feet, strip grazing on grass, grazing muzzle as needed, and monitoring of seedy toe.
+
+• Onyx: PPID (Cushing's) management includes a strict dry lot, soaked hay and beet pulp, and ½ a Prascend tablet daily. Previous mild laminitis is monitored as part of his ongoing care.
+
+• Handling: Both boys are described as sweet and non-aggressive, with neither biting nor kicking.`
+  },
 ];
 
 export const PERMANENT_RESIDENTS = HORSES.filter(h => h.status === "Permanent Resident");
