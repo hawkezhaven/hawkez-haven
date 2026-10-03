@@ -4,6 +4,7 @@ export type Horse = {
   id: string;
   name: string;
   status: HorseStatus;
+  availability?: string;
   sex: string;
   breed: string;
   journeyBegan: string;
@@ -169,12 +170,13 @@ Care, Health & Well-being:
   {
     id: "pedro",
     name: "Pedro",
-    status: "Long-term Lease",
+    status: "Permanent Resident",
+    availability: "Currently on a one-year lease — unavailable for Hawkez Haven experiences and riding lessons.",
     sex: "Gelding",
     breed: "Thoroughbred",
     journeyBegan: "2025",
     tagline: "Our gentle teacher.",
-    description: "Affectionately known as 'Big Red,' a placid, kind chestnut gelding who has now moved into his long-term lease home for the next year.",
+    description: "Affectionately known as 'Big Red,' a placid, kind chestnut gelding who remains a permanent Hawkez Haven horse while enjoying a one-year lease home.",
     storyTitle: "Pedro - The Horse Who Chose Partnership",
     disciplines: [
       "Pleasure Riding",
