@@ -16,7 +16,7 @@ export default function HorseDetailPage() {
   const others = HORSES.filter(h => h.id !== horse.id).slice(0, 3);
   const beforeAfter = BEFORE_AFTER[horse.id];
   const isRehomable = horse.status === "Future Rehoming Candidate" || horse.status === "Available for Adoption";
-  const keepsHawkezHavenOwnership = horse.status === "Permanent Resident" || horse.status === "Long-term Lease";
+  const keepsHawkezHavenOwnership = horse.status === "Permanent Resident" || horse.status === "Long-term Lease" || !!horse.ownershipTag;
 
   const schemaData = {
     "@context": "https://schema.org",
@@ -54,9 +54,16 @@ export default function HorseDetailPage() {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div className="relative">
             <img src={horse.image} alt={horse.name} width={1200} height={900} className="w-full rounded-3xl object-cover aspect-[4/3]" />
-            <span className={`absolute top-5 left-5 px-4 py-1.5 rounded-full text-[0.65rem] tracking-[0.18em] uppercase font-medium ${horse.status === "Permanent Resident" ? "bg-[#1a1a18] text-[#b8922a]" : "bg-[#ede5d4] text-[#1a1a18]"}`}>
-              {horse.status}
-            </span>
+            <div className="absolute top-5 left-5 flex flex-wrap gap-2">
+              <span className={`px-4 py-1.5 rounded-full text-[0.65rem] tracking-[0.18em] uppercase font-medium ${horse.status === "Permanent Resident" ? "bg-[#1a1a18] text-[#b8922a]" : "bg-[#ede5d4] text-[#1a1a18]"}`}>
+                {horse.status}
+              </span>
+              {horse.ownershipTag && (
+                <span className="px-4 py-1.5 rounded-full text-[0.65rem] font-medium bg-[#b8922a] text-white shadow-sm">
+                  {horse.ownershipTag}
+                </span>
+              )}
+            </div>
           </div>
           <div className="lg:pt-4">
             <p className="text-xs text-[#b8922a] tracking-[0.14em] uppercase font-medium">
@@ -116,6 +123,8 @@ export default function HorseDetailPage() {
               { label: "Age", value: horseAge === "Age not recorded" ? horse.age : horseAge },
               { label: "Sex", value: horse.sex },
               { label: "Status", value: horse.status },
+              ...(horse.ownershipTag ? [{ label: "Hawkez Haven status", value: horse.ownershipTag }] : []),
+              ...(horse.availability ? [{ label: "Availability", value: horse.availability }] : []),
             ].map(({ label, value }) => (
               <div key={label} className="bg-white rounded-2xl p-6 border border-[#ddd4be]/50">
                 <dt className="text-[0.6rem] tracking-widest uppercase text-[#4a4a42]/60 mb-2">{label}</dt>
