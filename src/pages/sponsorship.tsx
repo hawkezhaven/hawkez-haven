@@ -7,7 +7,11 @@ import PayPalButton from "@/components/PayPalButton.tsx";
 import PayPalSubscriptionButton from "@/components/PayPalSubscriptionButton.tsx";
 
 const SPONSORABLE_HORSES = HORSES.filter(
-  (horse) => horse.status === "Permanent Resident" || horse.ownershipTag === "Long-term Lease • Permanent Hawkez Haven Horse"
+  (horse) => horse.status === "Permanent Resident"
+);
+
+const ESSENTIAL_CARE_HORSES = HORSES.filter(
+  (horse) => horse.ownershipTag === "Long-term Lease • Permanent Hawkez Haven Horse"
 );
 
 const TIERS = [
@@ -236,6 +240,39 @@ export default function SponsorshipPage() {
                     <Heart size={14} /> Sponsor {horse.name}
                   </button>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Essential care support for permanent lease horses */}
+      <section className="bg-[#f5f0e8] py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="block h-px w-8 bg-[#b8922a]" />
+            <p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium text-[#b8922a]">Essential care support</p>
+          </div>
+          <h2 className="font-serif text-4xl text-[#1a1a18] mb-4">Supporting horses in long-term lease homes</h2>
+          <p className="text-[#4a4a42] leading-relaxed max-w-3xl mb-8">
+            Joey and Pedro remain permanent Hawkez Haven horses, but their day-to-day care is provided by their lease homes. They are therefore not part of our general monthly sponsorship programme. From time to time, Hawkez Haven may seek support for a specific essential cost that remains our responsibility, such as farrier care or worming.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-5">
+            {ESSENTIAL_CARE_HORSES.map((horse) => (
+              <div key={horse.id} className="bg-white rounded-2xl border border-[#ddd4be]/50 p-6">
+                <h3 className="font-serif text-2xl text-[#1a1a18]">{horse.name}</h3>
+                <p className="text-sm text-[#4a4a42] mt-2 leading-relaxed">
+                  Permanent Hawkez Haven horse • Long-term lease
+                </p>
+                <p className="text-sm text-[#4a4a42] mt-3 leading-relaxed">
+                  General sponsorship isn't offered for this horse while they are in their lease home. If Hawkez Haven has a specific essential care cost to cover, we may make a separate request for that item.
+                </p>
+                <Link
+                  to="/enquire/general"
+                  className="mt-5 inline-flex items-center gap-2 px-5 py-2.5 bg-[#b8922a] text-white text-sm font-medium rounded-full hover:bg-[#8c6e1e] transition-colors"
+                >
+                  Enquire about essential care <ArrowRight size={15} />
+                </Link>
               </div>
             ))}
           </div>
