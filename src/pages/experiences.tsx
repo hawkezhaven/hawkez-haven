@@ -36,7 +36,7 @@ const EXPERIENCES: Experience[] = [
     maxPeople: "Up to 4 people",
     level: "All ages & experience levels",
     available: false,
-    desc: "Step into the daily life of a horse rescuer. Learn the foundations of horse ownership — what they eat, how they think, and what they need to feel safe and loved. You'll groom, feed, handle and connect with Khan, Rip and Diablo in a relaxed, guided session that's perfect for curious beginners, families, and anyone thinking about owning horses one day. Another suitable horse in Hawkez Haven's care may also be involved depending on availability and suitability at the time.",
+    desc: "Step into the daily life of a horse rescuer. Learn the foundations of horse ownership — what they eat, how they think, and what they need to feel safe and loved. You'll groom, feed, handle and connect with suitable horses from the herd in a relaxed, guided session that's perfect for curious beginners, families, and anyone thinking about owning horses one day. Horse allocation depends on availability and suitability at the time.",
     learn: ["Grooming techniques and why they matter", "Feed, nutrition and daily routines", "Rugging, health checks and water requirements", "Reading a horse's body language and mood", "What it truly costs to care for a horse"],
   },
   {
@@ -75,7 +75,7 @@ const EXPERIENCES: Experience[] = [
     maxPeople: "Up to 2 people",
     level: "Some horse experience preferred",
     available: false,
-    desc: "An immersive session for those who want to go deeper. You'll work with our horses to develop real feel, timing and understanding — the three pillars of great horsemanship. This session draws on the quiet wisdom of Khan, Haven and Diablo and your own willingness to slow down, listen and learn.",
+    desc: "An immersive session for those who want to go deeper. You'll work with our horses to develop real feel, timing and understanding — the three pillars of great horsemanship. This session is built around the horses available and suitable on the day, and your own willingness to slow down, listen and learn.",
     learn: ["Pressure, release and timing", "Emotional regulation around horses", "How to read resistance versus confusion", "Building a genuine partnership", "Why trust must come before training"],
   },
   {
@@ -117,7 +117,7 @@ const EXPERIENCES: Experience[] = [
     maxPeople: "Private (1 rider per lesson)",
     level: "Beginners welcome (all ages)",
     available: true,
-    desc: "Private, progressive horsemanship and riding lessons focused on building confident, capable horse people — not just riders who can sit in a saddle. Lessons include safe handling, grooming, tacking up, groundwork, horse behaviour and ridden skills tailored to the rider's experience and the horse's needs.\n\nWe have horses and ponies to suit different ages and stages, including Peanut, our bush pony mare who is an amazing asset for younger and smaller students building confidence, alongside Haven and Khan.\n\nFor children completing a riding milestone, Hawkez Haven provides a universal graduation completion card featuring a photo of the horse or pony they worked with. The same reusable card is used for every student, with the rider's name, horse, date and achievement recorded for their keepsake.\n\nBeginners are welcome. Horse or pony provided. By appointment.",
+    desc: "Private, progressive horsemanship and riding lessons focused on building confident, capable horse people — not just riders who can sit in a saddle. Lessons include safe handling, grooming, tacking up, groundwork, horse behaviour and ridden skills tailored to the rider's experience and the horse's needs.\n\nWe have horses and ponies to suit different ages and stages. Horse allocation is based on the rider's experience, confidence, the horse's suitability and availability on the day.\n\nFor children completing a riding milestone, Hawkez Haven provides a universal graduation completion card featuring a photo of the horse or pony they worked with. The same reusable card is used for every student, with the rider's name, horse, date and achievement recorded for their keepsake.\n\nBeginners are welcome. A suitable horse or pony is provided. No particular horse is guaranteed. By appointment.",
     learn: ["Safe handling, grooming and horse care", "Tacking up and preparation", "Groundwork and communication before riding", "Balance, position, feel and ridden skills", "Reading your horse and adapting to their responses", "Working toward riding milestones and completion"],
   },
   {
