@@ -6,6 +6,7 @@ const EXPERIENCE_OPTIONS: string[] = [
   "Rescue & Rehabilitation Experience",
   "Family Horse Experience",
   "Riding Lessons",
+  "Little Minis Day — Jasper & Onyx",
 ];
 
 const ENQUIRY_TYPES: Record<string, { title: string; subtitle: string; fields: { id: string; label: string; type?: "text" | "textarea" | "select"; options?: string[] }[] }> = {
