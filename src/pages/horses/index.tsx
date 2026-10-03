@@ -199,13 +199,23 @@ function HorseCard({ horse }: { horse: (typeof HORSES)[0] }) {
       </div>
 
       <div className="p-6 pt-3">
-        <Link
-          to={`/sponsorship?horse=${encodeURIComponent(horse.name)}`}
-          onClick={trackHorseSponsor}
-          className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#b8922a] text-white text-xs font-medium rounded-full hover:bg-[#8c6e1e] transition-colors w-full cursor-pointer shadow-sm"
-        >
-          <Heart size={14} /> Sponsor {horse.name}
-        </Link>
+        {horse.status === "Future Rehoming Candidate" ? (
+          <Link
+            to="/support"
+            onClick={() => trackEvent("horse_support_click", { horse_name: horse.name, horse_id: horse.id })}
+            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#b8922a] text-white text-xs font-medium rounded-full hover:bg-[#8c6e1e] transition-colors w-full cursor-pointer shadow-sm"
+          >
+            <Heart size={14} /> Help With Their Care
+          </Link>
+        ) : (
+          <Link
+            to={`/sponsorship?horse=${encodeURIComponent(horse.name)}`}
+            onClick={trackHorseSponsor}
+            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-[#b8922a] text-white text-xs font-medium rounded-full hover:bg-[#8c6e1e] transition-colors w-full cursor-pointer shadow-sm"
+          >
+            <Heart size={14} /> Sponsor {horse.name}
+          </Link>
+        )}
       </div>
     </div>
   );
