@@ -5,7 +5,6 @@ import { trackEvent } from "@/lib/analytics";
 
 export default function HorsesPage() {
   const residents = HORSES.filter(h => h.status === "Permanent Resident");
-  const lease = HORSES.filter(h => h.status === "Long-term Lease");
   const available = HORSES.filter(h => h.status === "Available for Adoption");
   const rehoming = HORSES.filter(h => h.status === "Future Rehoming Candidate");
   const confirmed = HORSES.filter(h => h.status === "Placement Confirmed");
@@ -40,26 +39,6 @@ export default function HorsesPage() {
           ))}
         </div>
       </section>
-
-      {/* Long-term Lease */}
-      {lease.length > 0 && (
-        <section className="bg-[#ede5d4] py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center gap-3 mb-10">
-              <span className="block h-px w-8 bg-[#b8922a]" />
-              <h2 className="text-[0.65rem] tracking-[0.18em] uppercase font-medium text-[#1a1a18]">Long-term Lease</h2>
-            </div>
-            <p className="text-[#4a4a42] mb-10 max-w-xl">
-              These horses remain Hawkez Haven horses while enjoying life in carefully chosen lease homes.
-            </p>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {lease.map(horse => (
-                <HorseCard key={horse.id} horse={horse} />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* Available for Adoption */}
       {available.length > 0 && (
@@ -170,15 +149,22 @@ function HorseCard({ horse }: { horse: (typeof HORSES)[0] }) {
               className="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-700 ease-out group-hover:scale-105"
             />
 
-            <span
-              className={`absolute top-4 left-4 z-10 px-3 py-1 rounded-full text-[0.65rem] tracking-[0.18em] uppercase font-medium shadow-sm ${
-                horse.status === "Permanent Resident"
-                  ? "bg-[#1a1a18]/90 text-[#b8922a] backdrop-blur-sm"
-                  : "bg-[#ede5d4]/90 text-[#1a1a18] backdrop-blur-sm"
-              }`}
-            >
-              {horse.status}
-            </span>
+            <div className="absolute top-4 left-4 z-10 flex flex-wrap gap-2">
+              <span
+                className={`px-3 py-1 rounded-full text-[0.65rem] tracking-[0.18em] uppercase font-medium shadow-sm ${
+                  horse.status === "Permanent Resident"
+                    ? "bg-[#1a1a18]/90 text-[#b8922a] backdrop-blur-sm"
+                    : "bg-[#ede5d4]/90 text-[#1a1a18] backdrop-blur-sm"
+                }`}
+              >
+                {horse.status}
+              </span>
+              {horse.availability && (
+                <span className="px-3 py-1 rounded-full text-[0.65rem] font-medium shadow-sm bg-white/90 text-[#1a1a18] backdrop-blur-sm">
+                  Currently unavailable for experiences
+                </span>
+              )}
+            </div>
 
             <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a18]/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
               <span className="w-full text-center py-2.5 px-4 bg-[#b8922a] text-white text-xs tracking-wider uppercase font-semibold rounded-xl shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 flex items-center justify-center gap-2">
