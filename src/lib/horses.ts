@@ -5,6 +5,7 @@ export type Horse = {
   name: string;
   status: HorseStatus;
   availability?: string;
+  ownershipTag?: string;
   horseCount?: number;
   sex: string;
   breed: string;
@@ -171,8 +172,9 @@ Care, Health & Well-being:
   {
     id: "pedro",
     name: "Pedro",
-    status: "Permanent Resident",
-    availability: "Currently on a one-year lease — unavailable for Hawkez Haven experiences and riding lessons.",
+    status: "Placement Confirmed",
+    ownershipTag: "Long-term Lease • Permanent Hawkez Haven Horse",
+    availability: "No longer available for lease enquiries, Hawkez Haven experiences or riding lessons.",
     sex: "Gelding",
     breed: "Thoroughbred",
     journeyBegan: "2025",
@@ -659,6 +661,8 @@ Care, Health & Well-being:
     id: "joey",
     name: "Joey",
     status: "Placement Confirmed",
+    ownershipTag: "Long-term Lease • Permanent Hawkez Haven Horse",
+    availability: "No longer available for lease enquiries, Hawkez Haven experiences or riding lessons.",
     sex: "Gelding",
     breed: "Thoroughbred",
     journeyBegan: "2026",
@@ -1135,7 +1139,7 @@ Care, Health & Well-being:
 • Hoof Management: Front feet managed bare and healthy with balanced trimming and mineral support.
 
 • Energy & Activity: Requires an engaged, active partner who channels his quick mind into trail riding, cross-country, and groundwork.`
-  }
+  },
   {
     id: "jasper-onyx",
     name: "Jasper & Onyx",
