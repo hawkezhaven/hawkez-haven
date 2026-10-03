@@ -149,6 +149,7 @@ const EXPERIENCES: Experience[] = [
   {
     id: "little-minis",
     title: "Little Minis Day — Jasper & Onyx",
+    image: "/images/Jasper and Onyx-experience.png",
     subtitle: "Currently unavailable",
     duration: "30 minutes",
     price: "$25",
