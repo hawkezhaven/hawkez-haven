@@ -147,4 +147,13 @@
   [role="button"]:not(:disabled) {
     cursor: pointer;
   }
+
+  /* Accessible touch targets: interactive controls stay easy to tap on mobile. */
+  @media (pointer: coarse) {
+    button:not(:disabled),
+    [role="button"]:not(:disabled) {
+      min-width: 48px;
+      min-height: 48px;
+    }
+  }
 }
