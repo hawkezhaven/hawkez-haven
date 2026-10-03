@@ -1,6 +1,7 @@
 export type AnalyticsEvent =
   | "horse_profile_view"
   | "horse_sponsorship_click"
+  | "horse_support_click"
   | "adoption_enquiry_click"
   | "foster_enquiry_click"
   | "volunteer_enquiry_click"
