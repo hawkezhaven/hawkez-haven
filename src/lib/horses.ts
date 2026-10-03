@@ -1144,6 +1144,7 @@ Care, Health & Well-being:
     id: "jasper-onyx",
     name: "Jasper & Onyx",
     status: "Permanent Resident",
+    ownershipTag: "Permanent Hawkez Haven Horse • Sponsorable",
     horseCount: 2,
     sex: "Geldings",
     breed: "Miniature Horses",
