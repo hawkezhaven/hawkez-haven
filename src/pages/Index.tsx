@@ -13,6 +13,9 @@ export default function Index() {
         <img
           src="/images/hero-horse.jpg"
           alt="Rescued horse at Hawkez Haven"
+          width={1920}
+          height={1080}
+          sizes="100vw"
           fetchPriority="high"
           className="absolute inset-0 h-full w-full object-cover object-top opacity-80"
         />
@@ -168,6 +171,9 @@ export default function Index() {
                   <img
                     src={horse.image}
                     alt={`${horse.name} at Hawkez Haven`}
+                    width={1200}
+                    height={900}
+                    sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw"
                     loading="lazy"
                     className="max-h-full max-w-full w-auto h-auto object-contain transition-transform duration-700 ease-out group-hover:scale-105"
                   />
@@ -211,6 +217,9 @@ export default function Index() {
             <img
               src="/images/saphira-khan.jpg"
               alt="Saphira with Khan at Hawkez Haven"
+              width={1200}
+              height={900}
+              sizes="(max-width: 1023px) 100vw, 50vw"
               loading="lazy"
               className="w-full rounded-3xl object-cover aspect-[4/3]"
             />
@@ -268,6 +277,9 @@ export default function Index() {
         <img
           src="/images/pasture-v2.webp"
           alt="Haven and Rob at Hawkez Haven"
+          width={1920}
+          height={1080}
+          sizes="100vw"
           loading="lazy"
           className="absolute inset-0 h-full w-full object-cover object-top"
         />
