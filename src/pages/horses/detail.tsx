@@ -16,7 +16,7 @@ export default function HorseDetailPage() {
   const others = HORSES.filter(h => h.id !== horse.id).slice(0, 3);
   const beforeAfter = BEFORE_AFTER[horse.id];
   const isRehomable = horse.status === "Future Rehoming Candidate" || horse.status === "Available for Adoption";
-  const keepsHawkezHavenOwnership = horse.status === "Permanent Resident" || horse.status === "Long-term Lease" || !!horse.ownershipTag;
+  const keepsHawkezHavenOwnership = horse.status === "Permanent Resident" || horse.status === "Long-term Lease" || !!horse.ownershipTags?.length;
 
   const schemaData = {
     "@context": "https://schema.org",
@@ -58,11 +58,11 @@ export default function HorseDetailPage() {
               <span className={`px-4 py-1.5 rounded-full text-[0.65rem] tracking-[0.18em] uppercase font-medium ${horse.status === "Permanent Resident" ? "bg-[#1a1a18] text-[#b8922a]" : "bg-[#ede5d4] text-[#1a1a18]"}`}>
                 {horse.status}
               </span>
-              {horse.ownershipTag && (
+              {horse.ownershipTags?.map((tag) => (
                 <span className="px-4 py-1.5 rounded-full text-[0.65rem] font-medium bg-[#b8922a] text-white shadow-sm">
-                  {horse.ownershipTag}
+                  {tag}
                 </span>
-              )}
+              ))}
             </div>
           </div>
           <div className="lg:pt-4">
@@ -123,7 +123,7 @@ export default function HorseDetailPage() {
               { label: "Age", value: horseAge === "Age not recorded" ? horse.age : horseAge },
               { label: "Sex", value: horse.sex },
               { label: "Status", value: horse.status },
-              ...(horse.ownershipTag ? [{ label: "Hawkez Haven status", value: horse.ownershipTag }] : []),
+              ...(horse.ownershipTags?.length ? [{ label: "Hawkez Haven status", value: horse.ownershipTags.join(" • ") }] : []),
               ...(horse.availability ? [{ label: "Availability", value: horse.availability }] : []),
             ].map(({ label, value }) => (
               <div key={label} className="bg-white rounded-2xl p-6 border border-[#ddd4be]/50">
