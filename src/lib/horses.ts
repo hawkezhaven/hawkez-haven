@@ -5,7 +5,7 @@ export type Horse = {
   name: string;
   status: HorseStatus;
   availability?: string;
-  ownershipTag?: string;
+  ownershipTags?: string[];
   horseCount?: number;
   sex: string;
   breed: string;
@@ -173,7 +173,7 @@ Care, Health & Well-being:
     id: "pedro",
     name: "Pedro",
     status: "Placement Confirmed",
-    ownershipTag: "Long-term Lease",
+    ownershipTags: ["Long-term Lease", "Permanent Hawkez Haven Horse"],
         sex: "Gelding",
     breed: "Thoroughbred",
     journeyBegan: "2025",
