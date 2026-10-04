@@ -11,7 +11,7 @@ const SPONSORABLE_HORSES = HORSES.filter(
 );
 
 const ESSENTIAL_CARE_HORSES = HORSES.filter(
-  (horse) => horse.ownershipTag === "Long-term Lease • Permanent Hawkez Haven Horse"
+  (horse) => horse.ownershipTags?.includes("Long-term Lease")
 );
 
 const TIERS = [
