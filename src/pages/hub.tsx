@@ -140,7 +140,7 @@ export default function HubPage() {
 
               <div className="mt-7 overflow-hidden rounded-3xl border border-[#ddd4be]/60 bg-[#1a1a18]">
                 <img
-                  src="/images/pedro-year-adventures.png"
+                  src="/images/Pedro_ A Year of Farm Adventures.png"
                   alt="Pedro enjoying life on the farm during his year of adventures with Dennis"
                   className="w-full h-auto object-cover"
                   loading="lazy"
