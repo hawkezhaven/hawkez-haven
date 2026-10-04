@@ -173,7 +173,7 @@ Care, Health & Well-being:
     id: "pedro",
     name: "Pedro",
     status: "Placement Confirmed",
-    ownershipTags: ["Long-term Lease", "Permanent Hawkez Haven Horse"],
+    ownershipTags: ["Long-term Lease", "Hawkez Haven's Team"],
         sex: "Gelding",
     breed: "Thoroughbred",
     journeyBegan: "2025",
