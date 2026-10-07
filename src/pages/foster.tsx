@@ -63,6 +63,8 @@ export default function FosterPage() {
         </div>
       </section>
 
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14"><div className="border-l-4 border-[#b8922a] pl-6"><h2 className="font-serif text-2xl md:text-3xl text-[#1a1a18] mb-3">Have grazing but not sure you can foster?</h2><p className="text-sm text-[#4a4a42] leading-relaxed">We can also discuss supported, part-time arrangements where a suitable horse lives on your property while Hawkez Haven remains involved. <Link to="/volunteer" className="text-[#8c6e1e] font-medium underline underline-offset-4">Learn about grazing and supported placements.</Link></p></div></section>
+
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <h2 className="font-serif text-3xl md:text-4xl text-[#1a1a18] mb-6">Could you foster a rescue horse?</h2>
         <div className="space-y-4 text-[#4a4a42] leading-relaxed">
