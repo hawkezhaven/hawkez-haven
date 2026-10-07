@@ -168,6 +168,17 @@ export default function HorseAdoptionNzPage() {
             </Subsection>
           </Section>
 
+          <Section title="Finding a Horse Rescue in New Zealand">
+            <p>If you're looking for a <strong>horse rescue in New Zealand</strong>, start by looking beyond the horse's photo or asking only what riding ability they have. A responsible rescue should be able to explain the horse's known history, current needs, rehabilitation progress and the type of home they believe will suit that individual.</p>
+            <p>Horse rescue in NZ can involve many different situations, including owner surrender, neglect, hardship, off-the-track horses, injury rehabilitation and horses needing a safe reset before rehoming. Not every rescue horse will be ready to ride, and not every horse will be suitable for every home.</p>
+            <p>When considering <strong>horse adoption in New Zealand</strong>, look for clear information about the horse, honest disclosure of known health and behavioural history, a thoughtful matching process and a responsible pathway if circumstances change.</p>
+            <p>At Hawkez Haven – Second Chances, our approach to horse rescue, rehabilitation and rehoming is centred on welfare first. We take time to understand each horse as an individual and to find an approved home that can genuinely meet their needs.</p>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Link to="/horses" className="inline-flex items-center gap-2 rounded-full bg-[#b8922a] text-white px-6 py-3 text-sm font-medium hover:bg-[#8c6e1e] transition-colors">Meet the Rescue Horses <ArrowRight size={16} /></Link>
+              <Link to="/adoption" className="inline-flex items-center gap-2 rounded-full border border-[#b8922a] text-[#8c6e1e] px-6 py-3 text-sm font-medium hover:bg-[#ede5d4] transition-colors">How Hawkez Haven Adoption Works <ArrowRight size={16} /></Link>
+            </div>
+          </Section>
+
           <Section title="Finding the Right Rescue Horse">
             <p>One of the most important parts of horse adoption is finding a horse whose needs and temperament fit your circumstances.</p>
             <p>Consider your:</p>

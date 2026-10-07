@@ -3,7 +3,7 @@ import { ArrowRight, Heart, Sprout, GraduationCap, HandHeart, ArrowUpRight, Quot
 import { HORSES } from "@/lib/horses";
 
 const PREVIEW_HORSES = HORSES.slice(0, 4);
-const SPONSOR_HORSES = HORSES.filter(h => h.status === "Permanent Resident" || h.ownershipTag === "Long-term Lease • Permanent Hawkez Haven Horse").slice(0, 4);
+const SPONSOR_HORSES = HORSES.filter(h => h.status === "Permanent Resident" || h.ownershipTags?.includes("Long-term Lease")).slice(0, 4);
 
 export default function Index() {
   return (

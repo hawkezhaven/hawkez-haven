@@ -36,7 +36,7 @@ export const HORSES: Horse[] = [
     description: "The foundation horse of Hawkez Haven who inspired our mission and remains the heart of our rescue.",
     storyTitle: "Rip - The Horse That Started It All",
     disciplines: [
-      "Sanctuary Resident",
+      "Hawkez Haven Resident",
       "Groundwork",
       "Foundation Teacher",
       "Supervised Riding"
@@ -660,7 +660,7 @@ Care, Health & Well-being:
     id: "joey",
     name: "Joey",
     status: "Placement Confirmed",
-    ownershipTag: "Long-term Lease",
+    ownershipTags: ["Long-term Lease", "Hawkez Haven's Team"],
         sex: "Gelding",
     breed: "Thoroughbred",
     journeyBegan: "2026",
