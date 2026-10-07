@@ -85,6 +85,35 @@ export default function HubPage() {
         </div>
       </section>
 
+      {/* Unwanted horses NZ article */}
+      <section className="bg-[#f5f0e8] py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-[2rem] overflow-hidden border border-[#ddd4be]/60 shadow-sm grid lg:grid-cols-[.9fr_1.1fr]">
+            <div className="min-h-[320px] bg-[#1a1a18]">
+              <img
+                src="/images/hero_image_hub.png"
+                alt="Rescue horse at Hawkez Haven – Second Chances in New Zealand"
+                className="h-full w-full object-cover"
+                onError={(event) => {
+                  event.currentTarget.src = "/images/hero-horse.jpg";
+                }}
+              />
+            </div>
+            <div className="p-8 md:p-10 flex flex-col justify-center">
+              <BookOpen className="text-[#b8922a] mb-5" size={34} strokeWidth={1.5} />
+              <p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium text-[#8c6e1e]">Hawkez Haven Information Hub</p>
+              <h2 className="mt-3 font-serif text-3xl md:text-4xl">What Happens to Unwanted Horses in New Zealand?</h2>
+              <p className="mt-4 text-[#4a4a42] leading-relaxed">
+                What happens when a horse can no longer stay where they are? Learn about surrender, neglect, rehabilitation, responsible rehoming and what giving a horse a genuine second chance can really involve.
+              </p>
+              <Link to="/hub/unwanted-horses-nz" className="mt-7 inline-flex w-fit items-center gap-2 px-6 py-3 bg-[#b8922a] text-white text-sm font-medium rounded-full hover:bg-[#8c6e1e] transition-colors">
+                Read the Unwanted Horses Guide <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Horse rescue reality article */}
       <section className="bg-[#f5f0e8] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
