@@ -114,6 +114,34 @@ export default function HubPage() {
         </div>
       </section>
 
+      {/* Horse Rescue New Zealand guide */}
+      <section className="bg-[#ede5d4] py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-[#1a1a18] text-[#f5f0e8] rounded-[2rem] overflow-hidden grid lg:grid-cols-[1.1fr_.9fr]">
+            <div className="min-h-[320px]">
+              <img
+                src="/images/hero_image_hub.png"
+                alt="Rescue horse at Hawkez Haven – Second Chances in New Zealand"
+                className="h-full w-full object-cover"
+                onError={(event) => {
+                  event.currentTarget.src = "/images/hero-horse.jpg";
+                }}
+              />
+            </div>
+            <div className="p-8 md:p-10 flex flex-col justify-center">
+              <p className="text-[0.65rem] tracking-[.18em] uppercase font-medium text-[#b8922a]">Hawkez Haven Guide</p>
+              <h2 className="mt-3 font-serif text-3xl md:text-4xl">Horse Rescue New Zealand</h2>
+              <p className="mt-4 text-[#f5f0e8]/75 leading-relaxed">
+                Learn what horse rescue actually involves — from owner surrender and rehabilitation to careful assessment and responsible rehoming.
+              </p>
+              <Link to="/horse-rescue-new-zealand" className="mt-7 inline-flex w-fit items-center gap-2 px-6 py-3 bg-[#b8922a] text-white text-sm font-medium rounded-full hover:bg-[#d1b15d] transition-colors">
+                Read the Horse Rescue Guide <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Horse rescue reality article */}
       <section className="bg-[#f5f0e8] py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
