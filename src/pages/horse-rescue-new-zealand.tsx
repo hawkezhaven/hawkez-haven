@@ -139,6 +139,12 @@ export default function HorseRescueNewZealandPage() {
             <p>Responsible rehoming therefore needs a plan for what happens next. At Hawkez Haven, adopters are expected to contact us if they can no longer keep their horse rather than passing the horse on without communication.</p>
           </Section>
 
+          <Section title="Horse Rescue in Manawatū and Palmerston North">
+            <p>Hawkez Haven is a working horse rescue in the Manawatū region of New Zealand, serving the local community while also considering horses and approved homes from further afield when circumstances and capacity allow.</p>
+            <p>Because rescue work happens on a private working property, visits are arranged by appointment. If you are looking for a <strong>horse rescue near you</strong>, need to discuss surrender, or want to understand whether a rescue horse may be suitable for your home, the best first step is to contact us and explain your situation.</p>
+            <p><Link to="/contact" className="text-[#8c6e1e] font-medium underline underline-offset-4">Contact Hawkez Haven about horse rescue</Link> or <Link to="/horses" className="text-[#8c6e1e] font-medium underline underline-offset-4">meet the horses currently in our care</Link>.</p>
+          </Section>
+
           <Section title="How You Can Help Horse Rescue in New Zealand">
             <p>Rescue is a community effort. Not everyone can take a horse, but there are many ways people can help.</p>
             <ul className="list-disc pl-6 space-y-2">
