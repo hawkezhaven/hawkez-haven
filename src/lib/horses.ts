@@ -660,7 +660,7 @@ Care, Health & Well-being:
     id: "joey",
     name: "Joey",
     status: "Placement Confirmed",
-    ownershipTag: "Long-term Lease",
+    ownershipTags: ["Long-term Lease", "Hawkez Haven's Team"],
         sex: "Gelding",
     breed: "Thoroughbred",
     journeyBegan: "2026",
