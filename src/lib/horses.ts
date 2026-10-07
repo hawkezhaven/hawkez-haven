@@ -36,7 +36,7 @@ export const HORSES: Horse[] = [
     description: "The foundation horse of Hawkez Haven who inspired our mission and remains the heart of our rescue.",
     storyTitle: "Rip - The Horse That Started It All",
     disciplines: [
-      "Sanctuary Resident",
+      "Hawkez Haven Resident",
       "Groundwork",
       "Foundation Teacher",
       "Supervised Riding"
