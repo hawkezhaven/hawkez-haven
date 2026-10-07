@@ -26,7 +26,7 @@ const pages = {
 };
 
 const horsePages = {
-  rip: { name: "Rip", title: "Rip | Hawkez Haven Horse Rescue New Zealand", description: "Meet Rip, the Thoroughbred who inspired Hawkez Haven. Follow his rescue, rehabilitation, recovery and lifelong journey as the heart of the sanctuary.", image: "/images/rip.jpg" },
+  rip: { name: "Rip", title: "Rip | Hawkez Haven Horse Rescue New Zealand", description: "Meet Rip, the Thoroughbred who inspired Hawkez Haven. Follow his rescue, rehabilitation, recovery and lifelong journey as the heart of Hawkez Haven.", image: "/images/rip.jpg" },
   haven: { name: "Haven", title: "Haven | Hawkez Haven Horse Rescue New Zealand", description: "Meet Haven, a Thoroughbred mare whose journey from uncertainty to trust made her a permanent resident and confidence-building horse at Hawkez Haven.", image: "/images/haven.jpg" },
   pedro: { name: "Pedro", title: "Pedro | Hawkez Haven Horse Rescue New Zealand", description: "Meet Pedro, the gentle chestnut Thoroughbred who became a teacher of partnership, confidence and horsemanship at Hawkez Haven.", image: "/images/pedro.jpg" },
   diablo: { name: "Diablo", title: "Diablo | Hawkez Haven Horse Rescue New Zealand", description: "Meet Diablo, Hawkez Haven's cheeky little devil. Follow the young Thoroughbred's story of growth, recovery and finding a permanent place in the herd.", image: "/images/diablo.jpg" },
