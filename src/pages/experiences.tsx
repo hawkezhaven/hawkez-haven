@@ -19,10 +19,15 @@ type Experience = {
 };
 
 const EXPERIENCE_OPTIONS: string[] = [
-  "Inside the Herd: The Secret Life of Horses",
+  "Meet the Horses / Horse Care Discovery",
+  "Horsemanship & Groundwork",
+  "Inside the Herd: The Secret Life of Horses (homeschooling)",
   "Rescue & Rehabilitation Experience",
   "Family Horse Experience",
+  "Little Minis Day — Jasper & Onyx",
+  "Riding Experience (if suitable)",
   "Riding Lessons",
+  "Not sure yet — please discuss options with me",
 ];
 
 const EXPERIENCES: Experience[] = [
@@ -31,8 +36,8 @@ const EXPERIENCES: Experience[] = [
     title: "Horse Care Discovery",
     subtitle: "Currently unavailable",
     duration: "2 hours",
-    price: "$50",
-    priceNote: "per person",
+    price: "Optional donation",
+    priceNote: "",
     maxPeople: "Up to 4 people",
     level: "All ages & experience levels",
     available: false,
@@ -44,8 +49,8 @@ const EXPERIENCES: Experience[] = [
     title: "Inside the Herd: The Secret Life of Horses",
     subtitle: "A Hands-On Homeschool Workshop at Hawkez Haven",
     duration: "3 hours",
-    price: "$40",
-    priceNote: "NZD per child",
+    price: "Optional donation",
+    priceNote: "",
     maxPeople: "Spaces strictly limited",
     level: "Suitable for all school-aged children — no prior horse experience required",
     available: true,
@@ -57,8 +62,8 @@ const EXPERIENCES: Experience[] = [
     title: "Groundwork & Connection",
     subtitle: "Currently unavailable",
     duration: "2.5 hours",
-    price: "$45",
-    priceNote: "per person",
+    price: "Optional donation",
+    priceNote: "",
     maxPeople: "Up to 3 people",
     level: "Confident beginners / intermediate beginners — some horse-handling experience required",
     available: false,
@@ -70,8 +75,8 @@ const EXPERIENCES: Experience[] = [
     title: "Horsemanship Deep Dive",
     subtitle: "Currently unavailable",
     duration: "3 hours",
-    price: "$65",
-    priceNote: "per person",
+    price: "Optional donation",
+    priceNote: "",
     maxPeople: "Up to 2 people",
     level: "Some horse experience preferred",
     available: false,
@@ -84,8 +89,8 @@ const EXPERIENCES: Experience[] = [
     subtitle: "Currently unavailable",
     image: "/images/Peanut-riding-lessons.jpg",
     duration: "Up to 2 hours",
-    price: "$50",
-    priceNote: "per person",
+    price: "Optional donation",
+    priceNote: "",
     maxPeople: "Up to 2 riders",
     level: "Beginner to intermediate riders",
     available: false,
@@ -97,8 +102,8 @@ const EXPERIENCES: Experience[] = [
     title: "Riding Outside the Haven: The Countryside Adventure",
     subtitle: "Currently unavailable",
     duration: "Up to 3 hours",
-    price: "$80",
-    priceNote: "per person",
+    price: "Optional donation",
+    priceNote: "",
     maxPeople: "Up to 2 riders",
     level: "Confident riders with suitable experience",
     available: false,
@@ -138,12 +143,12 @@ const EXPERIENCES: Experience[] = [
     title: "Rescue & Rehabilitation Experience",
     subtitle: "Behind the scenes at Hawkez Haven",
     duration: "3 hours",
-    price: "$35",
-    priceNote: "per person",
+    price: "Optional donation",
+    priceNote: "",
     maxPeople: "Up to 4 people",
     level: "All levels — no riding required",
     available: true,
-    desc: "Go behind the scenes of a real horse rescue. Meet our horses, hear their stories, and learn about the rehabilitation journey — from the moment a horse arrives frightened and unsure, to the day they find their stride again. This is an honest, moving and educational experience for horse lovers who want to understand welfare at a deeper level.\n\nYour experience contribution: $35 per person. This contribution directly supports Hawkez Haven's horses and helps provide essential care across the rescue.",
+    desc: "Go behind the scenes of a real horse rescue. Meet our horses, hear their stories, and learn about the rehabilitation journey — from the moment a horse arrives frightened and unsure, to the day they find their stride again. This is an honest, moving and educational experience for horse lovers who want to understand welfare at a deeper level.\n\nThere is no fixed fee for this summer experience and no obligation to donate. If you choose to contribute, your donation helps support essential care across the rescue.",
     learn: ["What equine rescue really looks like", "The physical and emotional toll of neglect", "How we assess and plan each horse's rehabilitation", "Life after racing and competition", "How to advocate for better horse welfare in NZ"],
   },
   {
@@ -152,8 +157,8 @@ const EXPERIENCES: Experience[] = [
     image: "/images/Jasper and Onyx-experience.png",
     subtitle: "A gentle mini-horse experience for little kids",
     duration: "30 minutes",
-    price: "$25",
-    priceNote: "per session",
+    price: "Optional donation",
+    priceNote: "",
     maxPeople: "By enquiry",
     level: "Little kids — age suitability confirmed when you enquire",
     available: true,
@@ -165,8 +170,8 @@ const EXPERIENCES: Experience[] = [
     title: "Family Horse Experience",
     subtitle: "A hands-on experience for the whole family",
     duration: "2 hours",
-    price: "$60",
-    priceNote: "per family",
+    price: "Optional donation",
+    priceNote: "",
     maxPeople: "Up to 4 people",
     level: "No experience required — all ages welcome",
     available: true,
@@ -179,13 +184,13 @@ const EXPERIENCES: Experience[] = [
 const FAQS = [
   ["Do I need horse experience?", "Not always. Inside the Herd and the Family Horse Experience are suitable for beginners, and riding lessons can be tailored to beginner riders."],
   ["Are the experiences suitable for children?", "Children are welcome in suitable sessions. The Inside the Herd: The Secret Life of Horses workshop is designed for school-aged children, while family and other sessions can be adapted to suit age and confidence. Tell us the ages of everyone attending when you enquire."],
-  ["Do you offer riding lessons?", "Yes. Riding lessons are available for beginners and developing riders, with lessons built around safe handling, balance, communication and the suitability of the horse. A one-off 1.5-hour lesson is also available for riders wanting a complete introduction or refresher."],
-  ["What does an experience cost?", "Current introductory prices are listed on the Education & Horsemanship page. Prices may change as the programme grows, and the current price will be confirmed when you book. Some experiences are described as an experience contribution because they directly support the horses in our care."],
+  ["Can I ride during my visit?", "Riding is considered individually and is never guaranteed. We assess the participant, horse, activity, supervision, weather and welfare needs before deciding whether riding is suitable. Regular riding lessons are a separate, priced service."],
+  ["Are donations compulsory?", "No. Summer experience visits are donation-supported, with no fixed fee and absolutely no obligation to donate. Regular riding lessons remain separately priced, and any lesson price will be confirmed before you book."],
   ["Can I combine experiences?", "We keep sessions small and welfare-led. If you'd like to combine learning activities, mention it in your enquiry and we'll let you know what is currently possible."],
   ["How many people can attend?", "Group sizes are kept small so each person receives genuine time and attention. The maximum group size is listed for each experience."],
   ["Where are the sessions held?", "All experiences take place at Hawkez Haven in Ashhurst, Manawatū, New Zealand. Visits are by appointment only."],
   ["What should I wear?", "Closed-toe shoes are required and long trousers are recommended. We'll tell you about any additional safety equipment needed for your session."],
-  ["How do I book?", "Use the enquiry form on this page to tell us which experience you want, how many people are attending and your preferred dates. We'll confirm availability and payment details before your booking is finalised."],
+  ["How do I arrange a visit?", "All visits are enquiry-only. Tell us who would like to attend, ages, horse experience, interests and preferred dates. We will discuss suitable options and confirm arrangements personally. Please do not arrive without a confirmed appointment."],
 ] as const;
 
 export default function ExperiencesPage() {
@@ -196,8 +201,8 @@ export default function ExperiencesPage() {
           <div className="flex items-center gap-3 text-[#b8922a]"><span className="block h-px w-8 bg-[#b8922a]" /><span className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">Education & Horsemanship • Ashhurst, Manawatū</span></div>
           <h1 className="mt-6 font-serif text-5xl md:text-6xl text-[#f5f0e8] leading-tight max-w-4xl">Education & Horsemanship</h1>
           <p className="mt-6 text-lg text-[#f5f0e8]/70 max-w-3xl leading-relaxed">Learn to understand horses, not just ride them. Hawkez Haven offers horse riding lessons, groundwork, horse care education and practical horsemanship experiences in Ashhurst, Manawatū. Our aim is simple: build knowledgeable, confident horse people who can listen, communicate and make better decisions for the horses in their care.</p>
-          <div className="mt-8 inline-flex items-center rounded-full border border-[#b8922a]/40 bg-[#b8922a]/10 px-5 py-3 text-sm text-[#f5f0e8]/80"><span className="text-[#b8922a] font-medium mr-2">Introductory pricing</span> Selected experiences are currently offered at introductory rates while we build our education programme and community. Prices may change as the programme grows; current pricing will be confirmed at the time of booking.</div>
-          <p className="mt-4 text-[#f5f0e8]/50 text-sm">All sessions are by appointment. Numbers are kept small so every person receives genuine time and attention.</p>
+          <div className="mt-8 inline-flex items-center rounded-full border border-[#b8922a]/40 bg-[#b8922a]/10 px-5 py-3 text-sm text-[#f5f0e8]/80"><span className="text-[#b8922a] font-medium mr-2">Summer launch</span> Summer experience visits are donation-supported, with no fixed fee and no obligation to donate. Regular riding lessons remain separately priced. All visits are arranged individually by enquiry.</div>
+          <p className="mt-4 text-[#f5f0e8]/50 text-sm">Enquiry-only visits • Riding considered individually • Horse welfare comes first. Please wait for confirmation before visiting.</p>
         </div>
       </section>
 
@@ -208,17 +213,17 @@ export default function ExperiencesPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 space-y-8">
         {EXPERIENCES.map((exp, i) => (
           <div key={exp.id} id={exp.id} className={`rounded-3xl overflow-hidden grid lg:grid-cols-[1fr_1.6fr] border border-[#ddd4be]/50 shadow-sm ${i % 2 === 1 ? "bg-[#ede5d4]" : "bg-white"} ${exp.available === false ? "opacity-75" : ""}`}>
-            <div className="p-8 md:p-10 border-b lg:border-b-0 lg:border-r border-[#ddd4be]/50"><p className="text-xs italic text-[#b8922a] mb-2">{exp.subtitle}</p><h2 className="font-serif text-3xl text-[#1a1a18] leading-tight">{exp.title}</h2><div className="mt-6 space-y-3 text-sm text-[#4a4a42]"><div className="flex items-center gap-3"><span className="text-[#b8922a] font-medium w-20 shrink-0">Duration</span><span>{exp.duration}</span></div><div className="flex items-start gap-3"><span className="text-[#b8922a] font-medium w-20 shrink-0">Price</span>{exp.priceLines ? <div className="space-y-0.5">{exp.priceLines.map(line => <p key={line} className="text-sm text-[#1a1a18]">{line}</p>)}</div> : <span className="font-serif text-xl text-[#1a1a18]">{exp.price} <span className="text-sm font-sans text-[#4a4a42]">{exp.priceNote}</span></span>}</div><div className="flex items-center gap-3"><span className="text-[#b8922a] font-medium w-20 shrink-0">Group</span><span>{exp.maxPeople}</span></div><div className="flex items-start gap-3"><span className="text-[#b8922a] font-medium w-20 shrink-0">Level</span><span>{exp.level}</span></div></div>{exp.available ? <Link to="/enquire/experiences" className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-[#b8922a] text-white text-sm font-medium rounded-full hover:bg-[#8c6e1e] transition-colors cursor-pointer">Book this experience <ArrowRight size={16} /></Link> : <span className="mt-8 inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#d7d0c2] text-[#5b574f] text-sm font-medium rounded-full cursor-not-allowed">Currently unavailable</span>}</div>
+            <div className="p-8 md:p-10 border-b lg:border-b-0 lg:border-r border-[#ddd4be]/50"><p className="text-xs italic text-[#b8922a] mb-2">{exp.subtitle}</p><h2 className="font-serif text-3xl text-[#1a1a18] leading-tight">{exp.title}</h2><div className="mt-6 space-y-3 text-sm text-[#4a4a42]"><div className="flex items-center gap-3"><span className="text-[#b8922a] font-medium w-20 shrink-0">Duration</span><span>{exp.duration}</span></div><div className="flex items-start gap-3"><span className="text-[#b8922a] font-medium w-20 shrink-0">Cost</span>{exp.priceLines ? <div className="space-y-0.5">{exp.priceLines.map(line => <p key={line} className="text-sm text-[#1a1a18]">{line}</p>)}</div> : <span className="font-serif text-xl text-[#1a1a18]">{exp.price} <span className="text-sm font-sans text-[#4a4a42]">{exp.priceNote}</span></span>}</div><div className="flex items-center gap-3"><span className="text-[#b8922a] font-medium w-20 shrink-0">Group</span><span>{exp.maxPeople}</span></div><div className="flex items-start gap-3"><span className="text-[#b8922a] font-medium w-20 shrink-0">Level</span><span>{exp.level}</span></div></div>{exp.available ? <Link to="/enquire/experiences" className="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-[#b8922a] text-white text-sm font-medium rounded-full hover:bg-[#8c6e1e] transition-colors cursor-pointer">Enquire about this experience <ArrowRight size={16} /></Link> : <span className="mt-8 inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#d7d0c2] text-[#5b574f] text-sm font-medium rounded-full">Ask about future availability</span>}</div>
             <div className="p-8 md:p-10 flex flex-col justify-between"><div>{exp.image && <div className="mb-6 overflow-hidden rounded-2xl bg-[#ede5d4]/60 border border-[#ddd4be]/50 shadow-sm flex items-center justify-center p-2"><img src={exp.image} alt={exp.title} loading="lazy" className="w-full max-h-80 sm:max-h-96 object-contain rounded-xl" /></div>}<p className="text-[#4a4a42] leading-relaxed mb-6 whitespace-pre-line">{exp.desc}</p><h4 className="text-[0.65rem] tracking-[0.18em] uppercase font-medium text-[#b8922a] mb-4">What you'll learn</h4><ul className="space-y-2">{exp.learn.map(item => <li key={item} className="flex items-start gap-2 text-sm text-[#4a4a42]"><span className="mt-2 block w-1.5 h-1.5 rounded-full bg-[#b8922a] shrink-0" />{item}</li>)}</ul></div></div>
           </div>
         ))}
       </section>
 
-      <section className="bg-[#ede5d4] py-20"><div className="max-w-3xl mx-auto px-4 sm:px-6"><div className="flex items-center gap-3 mb-4"><span className="block h-px w-8 bg-[#b8922a]" /><p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">Good to know</p></div><h2 className="font-serif text-3xl text-[#1a1a18] mb-8">Before you book</h2><div className="grid md:grid-cols-2 gap-6">{[{title:"Location",desc:"All experiences take place at Hawkez Haven, Ashhurst, New Zealand. We are a working property — please do not drop in unannounced."},{title:"What to wear",desc:"Closed-toe shoes are required. Long trousers are recommended. We'll provide any additional safety equipment needed."},{title:"Booking",desc:"All sessions are by appointment only and subject to availability. We keep group sizes small so every visit is personal and meaningful."},{title:"Cancellations",desc:"We understand things come up. Please give us as much notice as possible if you need to reschedule. We'll do our best to find a suitable alternative."},{title:"Children",desc:"Children are welcome in most sessions. Please mention their ages when booking so we can match them with the right horse and experience."},{title:"Payment",desc:"Payment is due when your booking is confirmed. We accept bank transfer and PayPal. Experience contributions and prices are confirmed before the visit."}].map(({title,desc})=><div key={title} className="bg-white rounded-xl p-5 border border-[#ddd4be]/50"><h3 className="font-medium text-[#1a1a18] text-sm mb-1">{title}</h3><p className="text-sm text-[#4a4a42] leading-relaxed">{desc}</p></div>)}</div></div></section>
+      <section className="bg-[#ede5d4] py-20"><div className="max-w-3xl mx-auto px-4 sm:px-6"><div className="flex items-center gap-3 mb-4"><span className="block h-px w-8 bg-[#b8922a]" /><p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">Good to know</p></div><h2 className="font-serif text-3xl text-[#1a1a18] mb-8">Before you book</h2><div className="grid md:grid-cols-2 gap-6">{[{title:"Location",desc:"All experiences take place at Hawkez Haven, Ashhurst, New Zealand. We are a working property — please do not drop in unannounced."},{title:"What to wear",desc:"Closed-toe shoes are required. Long trousers are recommended. We'll provide any additional safety equipment needed."},{title:"Booking",desc:"All sessions are by appointment only and subject to availability. We keep group sizes small so every visit is personal and meaningful."},{title:"Cancellations",desc:"We understand things come up. Please give us as much notice as possible if you need to reschedule. We'll do our best to find a suitable alternative."},{title:"Children",desc:"Children are welcome in most sessions. Please mention their ages when booking so we can match them with the right horse and experience."},{title:"Donations & lessons",desc:"Summer experience donations are entirely optional and there is no fixed fee. Regular riding lessons remain separately priced. We will explain any arrangements before confirming your visit."}].map(({title,desc})=><div key={title} className="bg-white rounded-xl p-5 border border-[#ddd4be]/50"><h3 className="font-medium text-[#1a1a18] text-sm mb-1">{title}</h3><p className="text-sm text-[#4a4a42] leading-relaxed">{desc}</p></div>)}</div></div></section>
 
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20"><div className="flex items-center gap-3 mb-4"><span className="block h-px w-8 bg-[#b8922a]" /><p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">Frequently asked questions</p></div><h2 className="font-serif text-3xl md:text-4xl text-[#1a1a18] mb-8">Questions before you visit?</h2><div className="space-y-4">{FAQS.map(([question, answer]) => <details key={question} className="bg-white rounded-2xl border border-[#ddd4be]/50 p-5"><summary className="cursor-pointer font-medium text-[#1a1a18]">{question}</summary><p className="mt-3 text-sm text-[#4a4a42] leading-relaxed">{answer}</p></details>)}</div></section>
 
-      <section className="max-w-2xl mx-auto px-4 sm:px-6 py-20"><div className="flex items-center gap-3 mb-4"><span className="block h-px w-8 bg-[#b8922a]" /><p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">Book an experience</p></div><h2 className="font-serif text-4xl text-[#1a1a18] mb-3">Ready to visit?</h2><p className="text-[#4a4a42] mb-8 text-sm">Tell us which experience you're interested in, how many people, and your preferred dates. We'll confirm availability and send payment details.</p><EnquiryForm subject="Experience Booking Enquiry" serverSend fields={[{id:"experience",label:"Which experience(s) interest you?",type:"select",options:EXPERIENCE_OPTIONS},{id:"people",label:"Number of people"},{id:"dates",label:"Preferred dates / times"},{id:"level",label:"Your horse experience (if any)"}]} /></section>
+      <section className="max-w-2xl mx-auto px-4 sm:px-6 py-20"><div className="flex items-center gap-3 mb-4"><span className="block h-px w-8 bg-[#b8922a]" /><p className="text-[0.65rem] tracking-[0.18em] uppercase font-medium">Book an experience</p></div><h2 className="font-serif text-4xl text-[#1a1a18] mb-3">Ready to visit?</h2><p className="text-[#4a4a42] mb-8 text-sm">Every visit is arranged individually. Tell us who is coming, their ages and experience, what they hope to learn and their preferred dates. We will discuss suitable options and confirm the visit with you. Donations are completely optional.</p><EnquiryForm subject="Summer Experience & Horsemanship Enquiry" serverSend fields={[{id:"experience",label:"What would you like to explore?",type:"select",options:EXPERIENCE_OPTIONS},{id:"people",label:"Number of participants"},{id:"ages",label:"Ages of everyone attending"},{id:"dates",label:"Preferred dates or general availability"},{id:"level",label:"Your horse experience (if any)"},{id:"learning_goals",label:"What would you most like to learn or experience?"}]} /></section>
     </div>
   );
 }
