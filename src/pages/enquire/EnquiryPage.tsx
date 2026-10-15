@@ -2,15 +2,12 @@ import EnquiryForm from "../_components/EnquiryForm.tsx";
 import { Link } from "react-router-dom";
 
 const EXPERIENCE_OPTIONS: string[] = [
-  "Meet the Horses / Horse Care Discovery",
-  "Horsemanship & Groundwork",
-  "Inside the Herd: The Secret Life of Horses (homeschooling)",
-  "Rescue & Rehabilitation Experience",
-  "Family Horse Experience",
-  "Little Minis Day — Jasper & Onyx",
-  "Riding Experience (if suitable)",
-  "Regular Riding Lessons (separate pricing)",
-  "Not sure yet — please discuss options with me",
+  "Horse Care & Discovery — optional donation",
+  "Inside the Herd — optional donation (bring a packed lunch and drink)",
+  "Groundwork & Connection — optional donation",
+  "Riding Lessons — $50 for ages 15 and under; $70 for ages 16 and over",
+  "Rescue & Rehabilitation — optional donation",
+  "Jasper & Onyx — optional donation",
 ];
 
 const ENQUIRY_TYPES: Record<string, { title: string; subtitle: string; fields: { id: string; label: string; type?: "text" | "textarea" | "select"; options?: string[] }[] }> = {
@@ -57,9 +54,9 @@ const ENQUIRY_TYPES: Record<string, { title: string; subtitle: string; fields: {
   },
   experiences: {
     title: "Summer Experience & Horsemanship Enquiry",
-    subtitle: "Every visit is arranged individually. Summer experience donations are entirely optional, with no fixed fee. Riding is considered case by case and is never guaranteed. Regular riding lessons remain separately priced.",
+    subtitle: "Every visit is arranged individually. Only the six experiences listed are offered. Donations for experience visits are entirely optional, with no fixed fee. Riding lessons are separately priced at $50 for ages 15 and under and $70 for ages 16 and over. Horses are not pre-booked: horse and activity suitability depends on each horse’s schooling, behaviour, confidence and learning skills at the time.",
     fields: [
-      { id: "experience", label: "What would you like to explore?", type: "select", options: EXPERIENCE_OPTIONS },
+      { id: "experience", label: "Which experience are you enquiring about?", type: "select", options: EXPERIENCE_OPTIONS },
       { id: "people", label: "Number of participants" },
       { id: "ages", label: "Ages of everyone attending" },
       { id: "dates", label: "Preferred dates or general availability" },
