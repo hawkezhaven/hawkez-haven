@@ -2,11 +2,12 @@ import EnquiryForm from "../_components/EnquiryForm.tsx";
 import { Link } from "react-router-dom";
 
 const EXPERIENCE_OPTIONS: string[] = [
-  "Inside the Herd: The Secret Life of Horses",
-  "Rescue & Rehabilitation Experience",
-  "Family Horse Experience",
-  "Riding Lessons",
-  "Little Minis Day — Jasper & Onyx",
+  "Horse Care & Discovery — optional donation",
+  "Inside the Herd — optional donation (bring a packed lunch and drink)",
+  "Groundwork & Connection — optional donation",
+  "Riding Lessons — $50 for ages 15 and under; $70 for ages 16 and over",
+  "Rescue & Rehabilitation — optional donation",
+  "Jasper & Onyx — optional donation",
 ];
 
 const ENQUIRY_TYPES: Record<string, { title: string; subtitle: string; fields: { id: string; label: string; type?: "text" | "textarea" | "select"; options?: string[] }[] }> = {
@@ -52,13 +53,15 @@ const ENQUIRY_TYPES: Record<string, { title: string; subtitle: string; fields: {
     ],
   },
   experiences: {
-    title: "Book an Experience",
-    subtitle: "Tell us which experience you're interested in and your preferred dates. We'll confirm availability and any experience contribution or pricing before your booking is finalised.",
+    title: "Summer Experience & Horsemanship Enquiry",
+    subtitle: "Every visit is arranged individually. Only the six experiences listed are offered. Donations for experience visits are entirely optional, with no fixed fee. Riding lessons are separately priced at $50 for ages 15 and under and $70 for ages 16 and over. Horses are not pre-booked: horse and activity suitability depends on each horse’s schooling, behaviour, confidence and learning skills at the time.",
     fields: [
-      { id: "experience", label: "Which experience(s) interest you?", type: "select", options: EXPERIENCE_OPTIONS },
-      { id: "people", label: "Number of people" },
-      { id: "dates", label: "Preferred dates / times" },
+      { id: "experience", label: "Which experience are you enquiring about?", type: "select", options: EXPERIENCE_OPTIONS },
+      { id: "people", label: "Number of participants" },
+      { id: "ages", label: "Ages of everyone attending" },
+      { id: "dates", label: "Preferred dates or general availability" },
       { id: "level", label: "Your horse experience (if any)" },
+      { id: "learning_goals", label: "What would you most like to learn or experience?", type: "textarea" },
     ],
   },
 };

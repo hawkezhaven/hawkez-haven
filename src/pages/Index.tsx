@@ -138,6 +138,45 @@ export default function Index() {
         </div>
       </section>
 
+      {/* ── Summer Experience & Horsemanship launch ───────── */}
+      <section className="relative overflow-hidden bg-[#1a1a18] py-20 md:py-28">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#b8922a]/20 via-transparent to-transparent" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-[1.2fr_1fr] gap-10 md:gap-16 items-center">
+          <div>
+            <div className="flex items-center gap-3 text-[#b8922a] text-[0.65rem] tracking-[0.18em] uppercase font-medium">
+              <span className="block h-px w-8 bg-[#b8922a]" />
+              The Summer of Second Chances
+            </div>
+            <h2 className="mt-5 font-serif text-4xl md:text-5xl leading-tight text-[#f5f0e8]">
+              More than riding. <span className="italic text-[#b8922a]">A chance to connect.</span>
+            </h2>
+            <p className="mt-5 max-w-2xl text-base md:text-lg leading-relaxed text-[#f5f0e8]/75">
+              Meet our horses, discover their stories and learn about grooming, horse care, body language and welfare. Our Experience &amp; Horsemanship visits welcome enquiries from adults, children and families.
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-[#f5f0e8]/60">
+              Individually arranged by enquiry · Donations are completely optional · Riding considered only when suitable for the horse and participant.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link to="/education" className="inline-flex items-center gap-2 px-7 py-3 bg-[#b8922a] text-white text-sm font-medium rounded-full hover:bg-[#8c6e1e] transition-colors cursor-pointer">
+                Explore Experiences <ArrowRight size={16} />
+              </Link>
+              <Link to="/enquire/experiences" className="inline-flex items-center gap-2 px-7 py-3 border border-[#f5f0e8]/30 text-[#f5f0e8] text-sm font-medium rounded-full hover:bg-[#f5f0e8]/10 transition-colors cursor-pointer">
+                Make an enquiry
+              </Link>
+            </div>
+          </div>
+          <div className="relative rounded-2xl border border-[#b8922a]/30 bg-[#f5f0e8]/5 p-7 md:p-9">
+            <p className="font-serif italic text-2xl text-[#f5f0e8]">“Every horse has a story. Every connection matters.”</p>
+            <div className="mt-7 space-y-4 text-sm text-[#f5f0e8]/75">
+              <div className="flex gap-3"><span className="text-[#b8922a]">✦</span><span>Meet the horses and hear about their journeys.</span></div>
+              <div className="flex gap-3"><span className="text-[#b8922a]">✦</span><span>Learn practical horse care and safe groundwork.</span></div>
+              <div className="flex gap-3"><span className="text-[#b8922a]">✦</span><span>Explore welfare, rehabilitation and responsible ownership.</span></div>
+              <div className="flex gap-3"><span className="text-[#b8922a]">✦</span><span>Ask about equine learning experiences for home-educated children.</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── Meet the Horses preview ───────────────────────── */}
       <section className="bg-[#ede5d4] py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
