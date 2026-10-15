@@ -2,11 +2,15 @@ import EnquiryForm from "../_components/EnquiryForm.tsx";
 import { Link } from "react-router-dom";
 
 const EXPERIENCE_OPTIONS: string[] = [
-  "Inside the Herd: The Secret Life of Horses",
+  "Meet the Horses / Horse Care Discovery",
+  "Horsemanship & Groundwork",
+  "Inside the Herd: The Secret Life of Horses (homeschooling)",
   "Rescue & Rehabilitation Experience",
   "Family Horse Experience",
-  "Riding Lessons",
   "Little Minis Day — Jasper & Onyx",
+  "Riding Experience (if suitable)",
+  "Regular Riding Lessons (separate pricing)",
+  "Not sure yet — please discuss options with me",
 ];
 
 const ENQUIRY_TYPES: Record<string, { title: string; subtitle: string; fields: { id: string; label: string; type?: "text" | "textarea" | "select"; options?: string[] }[] }> = {
@@ -52,13 +56,15 @@ const ENQUIRY_TYPES: Record<string, { title: string; subtitle: string; fields: {
     ],
   },
   experiences: {
-    title: "Book an Experience",
-    subtitle: "Tell us which experience you're interested in and your preferred dates. We'll confirm availability and any experience contribution or pricing before your booking is finalised.",
+    title: "Summer Experience & Horsemanship Enquiry",
+    subtitle: "Every visit is arranged individually. Summer experience donations are entirely optional, with no fixed fee. Riding is considered case by case and is never guaranteed. Regular riding lessons remain separately priced.",
     fields: [
-      { id: "experience", label: "Which experience(s) interest you?", type: "select", options: EXPERIENCE_OPTIONS },
-      { id: "people", label: "Number of people" },
-      { id: "dates", label: "Preferred dates / times" },
+      { id: "experience", label: "What would you like to explore?", type: "select", options: EXPERIENCE_OPTIONS },
+      { id: "people", label: "Number of participants" },
+      { id: "ages", label: "Ages of everyone attending" },
+      { id: "dates", label: "Preferred dates or general availability" },
       { id: "level", label: "Your horse experience (if any)" },
+      { id: "learning_goals", label: "What would you most like to learn or experience?", type: "textarea" },
     ],
   },
 };
