@@ -17,7 +17,6 @@ const MORE_LINKS = [
   { label: "Foster Program", href: "/foster" },
   { label: "Education & Horsemanship", href: "/education" },
   { label: "Behind the Fence — Education Hub", href: "/hub/behind-the-fence" },
-  { label: "Behind the Fence — Education Hub", href: "/hub/behind-the-fence" },
   { label: "The Hub", href: "/hub" },
   { label: "Frequently Asked Questions", href: "/faq" },
   { label: "Gift Cards", href: "/gift-card" },
