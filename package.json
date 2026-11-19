@@ -8,7 +8,7 @@
     "dev": "vite",
     "preview": "vite preview",
     "prebuild": "node scripts/update-horse-wording.mjs && node scripts/remove-sanctuary-wording.mjs && node scripts/update-khan-rider-level.mjs",
-    "build": "tsc -b && vite build && node scripts/generate-seo-pages.mjs && node scripts/generate-enquiry-pages.mjs && node scripts/enrich-seo-content.mjs && node scripts/generate-horse-seo-content.mjs && node scripts/add-breadcrumbs.mjs && node scripts/fix-education-prerender.mjs && node scripts/fix-adoption-prerender.mjs && node scripts/generate-legal-pages.mjs",
+    "build": "tsc -b && vite build && node scripts/generate-seo-pages.mjs && node scripts/generate-enquiry-pages.mjs && node scripts/enrich-seo-content.mjs && node scripts/generate-horse-seo-content.mjs && node scripts/add-breadcrumbs.mjs && node scripts/fix-education-prerender.mjs && node scripts/fix-adoption-prerender.mjs && node scripts/generate-legal-pages.mjs && node scripts/generate-behind-the-fence-page.mjs",
     "test": "vitest run",
     "lint": "eslint .",
     "prettier-fix": "prettier --write .",
@@ -71,7 +71,5 @@
     "vite": "^7.3.6",
     "vitest": "^4.1.9"
   },
-  "engines": {
-    "node": "22.x"
-  }
+  "engines": { "node": "22.x" }
 }
