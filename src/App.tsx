@@ -21,6 +21,7 @@ import HorseAdoptionNzPage from "./pages/horse-adoption-nz.tsx";
 import HorseRescueRealityPage from "./pages/horse-rescue-reality.tsx";
 import UnwantedHorsesNzPage from "./pages/unwanted-horses-nz.tsx";
 import HorseRescueNewZealandPage from "./pages/horse-rescue-new-zealand.tsx";
+import BehindTheFencePage from "./pages/behind-the-fence.tsx";
 import PrivacyPage from "./pages/privacy.tsx";
 import TermsPage from "./pages/terms.tsx";
 import EnquiryPage from "./pages/enquire/EnquiryPage.tsx";
@@ -62,6 +63,7 @@ export default function App() {
             <Route path="/hub/horse-adoption-nz" element={<HorseAdoptionNzPage />} />
             <Route path="/hub/behind-the-gates-horse-rescue" element={<HorseRescueRealityPage />} />
             <Route path="/hub/unwanted-horses-nz" element={<UnwantedHorsesNzPage />} />
+            <Route path="/hub/behind-the-fence" element={<BehindTheFencePage />} />
             <Route path="/horse-rescue-new-zealand" element={<HorseRescueNewZealandPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/terms" element={<TermsPage />} />
