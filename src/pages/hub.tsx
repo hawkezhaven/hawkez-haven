@@ -246,13 +246,14 @@ export default function HubPage() {
       {/* Behind the Fence education feature */}
       <section className="bg-[#ede5d4] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#1a1a18] text-[#f5f0e8] rounded-[2rem] p-8 md:p-12 grid md:grid-cols-[1fr_auto] gap-8 items-center">
+          <div className="bg-[#1a1a18] text-[#f5f0e8] rounded-[2rem] p-6 md:p-10 grid md:grid-cols-[.8fr_1.2fr] gap-8 items-center">
+            <img src="/images/japer-onyx-profile.png" alt="Jasper and Onyx, Hawkez Haven's miniature geldings" className="w-full aspect-[4/3] object-cover rounded-2xl" />
             <div>
               <p className="text-xs tracking-[.18em] uppercase text-[#d4ad43]">Hawkez Haven Education Hub</p>
               <h2 className="mt-3 font-serif text-3xl md:text-4xl">Behind the Fence: What You See Isn't Always What You Know.</h2>
               <p className="mt-4 max-w-3xl text-sm md:text-base leading-relaxed text-[#f5f0e8]/75">Learn why unfamiliar horses should never be fed without permission, why some ponies need restricted grazing, and how laminitis, PPID, EMS and body condition affect responsible horse care.</p>
+              <Link to="/hub/behind-the-fence" className="mt-6 inline-flex items-center justify-center gap-2 px-7 py-3 bg-[#b8922a] text-white text-sm font-medium rounded-full hover:bg-[#d1b15d] transition-colors whitespace-nowrap">Explore the Education Guide <ArrowRight size={16} /></Link>
             </div>
-            <Link to="/hub/behind-the-fence" className="inline-flex items-center justify-center gap-2 px-7 py-3 bg-[#b8922a] text-white text-sm font-medium rounded-full hover:bg-[#d1b15d] transition-colors whitespace-nowrap">Explore the Education Guide <ArrowRight size={16} /></Link>
           </div>
         </div>
       </section>
