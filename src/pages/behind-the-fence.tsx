@@ -29,9 +29,17 @@ export default function BehindTheFencePage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link to="/hub" className="inline-flex items-center gap-2 text-sm text-[#d4ad43] hover:text-white"><ArrowLeft size={16} /> Back to The Hub</Link>
           <div className="mt-10 flex items-center gap-3 text-[#d4ad43]"><span className="h-px w-8 bg-[#d4ad43]" /><span className="text-xs tracking-[.18em] uppercase">Hawkez Haven Education Hub</span></div>
-          <h1 className="mt-5 max-w-4xl font-serif text-4xl md:text-6xl leading-tight">Behind the Fence: What You See Isn't Always What You Know.</h1>
-          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[#f5f0e8]/75">A practical guide to responsible feeding, restricted grazing, laminitis, metabolic conditions and recognising genuine welfare concerns. Good intentions matter — but informed decisions protect horses.</p>
-          <p className="mt-8 text-sm text-[#d4ad43] tracking-wide uppercase">Education · Welfare · Responsible horse care</p>
+          <div className="grid md:grid-cols-[1.15fr_.85fr] gap-10 items-center">
+            <div>
+              <h1 className="mt-5 max-w-4xl font-serif text-4xl md:text-6xl leading-tight">Behind the Fence: What You See Isn't Always What You Know.</h1>
+              <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[#f5f0e8]/75">A practical guide to responsible feeding, restricted grazing, laminitis, metabolic conditions and recognising genuine welfare concerns. Good intentions matter — but informed decisions protect horses.</p>
+              <p className="mt-8 text-sm text-[#d4ad43] tracking-wide uppercase">Education · Welfare · Responsible horse care</p>
+            </div>
+            <figure className="overflow-hidden rounded-3xl border border-[#d4ad43]/30 bg-[#292923]">
+              <img src="/images/japer-onyx-profile.png" alt="Jasper, the black-and-white miniature gelding, and Onyx, the black miniature gelding, Hawkez Haven permanent residents" className="w-full aspect-[4/3] object-cover" />
+              <figcaption className="px-4 py-3 text-sm text-[#f5f0e8]/75">Jasper & Onyx — our little reminders that every horse deserves thoughtful, individual care</figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 
