@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight, AlertTriangle, Heart, Leaf, ShieldCheck, Stethoscope, Scale } from "lucide-react";
 
@@ -11,6 +12,17 @@ const topics = [
 ];
 
 export default function BehindTheFencePage() {
+  useEffect(() => {
+    const title = "Horse Feeding, Laminitis & Restricted Grazing | Hawkez Haven Education Hub";
+    const description = "Learn why you should never feed an unfamiliar horse, how restricted grazing can protect ponies, and understand laminitis, PPID, EMS and horse welfare.";
+    document.title = title;
+    let meta = document.querySelector('meta[name="description"]');
+    if (!meta) { meta = document.createElement("meta"); meta.setAttribute("name", "description"); document.head.appendChild(meta); }
+    meta.setAttribute("content", description);
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) { canonical = document.createElement("link"); canonical.setAttribute("rel", "canonical"); document.head.appendChild(canonical); }
+    canonical.setAttribute("href", "https://hawkezhaven.org/hub/behind-the-fence");
+  }, []);
   return (
     <div className="bg-[#f5f0e8] text-[#1a1a18]">
       <section className="bg-[#1a1a18] text-[#f5f0e8] py-20 md:py-28">
